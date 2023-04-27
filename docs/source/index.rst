@@ -33,7 +33,8 @@ JTrack platform includes:
 |
 
 
-.. toctree:: maxdepth: 2
+.. toctree:: 
+   :maxdepth: 2
 
    JTrack_Social
    JTrack_Dashboard
