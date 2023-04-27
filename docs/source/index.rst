@@ -33,8 +33,7 @@ JTrack platform includes:
 |
 
 
-.. toctree::
-   :maxdepth: 2
+.. toctree:: maxdepth: 2
 
    JTrack_Social
    JTrack_Dashboard
@@ -44,6 +43,7 @@ JTrack platform includes:
 
 How to Cite :
 +++++++++++++
+https://doi.org/10.3389/fpubh.2021.763621
 
 Contact Us:
 +++++++++++
