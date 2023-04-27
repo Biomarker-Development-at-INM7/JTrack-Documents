@@ -25,7 +25,7 @@ JTrack platform includes:
 
 
 .. image:: image/JTrackEco.png
-   :scale: 100 %
+   :scale: 70 %
    :align: center
 
 
