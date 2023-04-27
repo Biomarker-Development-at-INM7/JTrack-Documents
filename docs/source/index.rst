@@ -16,9 +16,9 @@ you may perform **Active** and **Passive** data collection and adopt the open-so
 
 JTrack platform includes:
 
-* Android application 
-* Python dashboard 
-* python server API
+* Android and iOS applications 
+* Online dashboard 
+* API
 
 |
 |
