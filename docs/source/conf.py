@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'JuTrack'
+project = 'JTrack'
 copyright = '2020, INM7'
 author = 'Mehran Sahandi Far'
 
