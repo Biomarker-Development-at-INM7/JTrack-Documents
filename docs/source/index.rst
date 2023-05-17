@@ -21,7 +21,7 @@ JTrack platform includes:
 
 
 .. image:: image/3Apps.png
-   :scale: 40 %
+   :scale: 30 %
    :align: center
 
 
@@ -44,6 +44,7 @@ Publications:
 Contact Us:
 +++++++++++
 Interested in using JTrack in you study? `Contact us: <https://test.jutrack.inm7.de/jdash/>`_
+
 
 
 
