@@ -1,37 +1,10 @@
-Developers
-----------
+=====================
+developers
+=====================
 
 
-SAVE TO DATABASE
+How Deploy JDash
 ++++++++++++++++
-
-Synchronization with server
-+++++++++++++++++++++++++++
-
-foreground services
-+++++++++++++++++++
-
-crashHandler
-++++++++++++
-
-OnBoarding
-++++++++++
-
-server Interface
-++++++++++++++++
-
-
-
-
-
-
-
-
-how to contribute:
-------------------
-
-Source Code:
-------------
 
 
     

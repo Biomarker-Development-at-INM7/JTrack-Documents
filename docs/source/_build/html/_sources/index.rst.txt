@@ -8,23 +8,19 @@ Welcome to JTrack Platform
 
 
 
-JTrack is a platform for remote assessments of an individual's data in situ using smartphones.
-JTrack is more than a single application, you can create, manage a study and, share your collected data using one platform.
-
-A wide range of measurements using motion sensors (e.g. acceleration, gyroscope) as well as social activities (e.g. time spent in social networks) are extracted from the device while it is being used. Recorded are activity types (e.g. walking, running), relative location, and ecological momentary assessments.
-you may perform **Active** and **Passive** data collection and adopt the open-source codes for further requirements.
+JTrack is a platform for remote assessments of an individual's in situ using smartphones. JTrack is an adaptable, configurable, and scalable platform that prioritizes security and privacy.JTrack is more than a single application, you can create, manage a study and, share your collected data using one platform.
 
 JTrack platform includes:
 
-* Android and iOS applications 
-* Online dashboard 
-* API
+* JTrack Social
+* JTrack EMA
+* JDash
 
 |
 |
 
 
-.. image:: image/JTrackEco.png
+.. image:: image/3Apps.png
    :scale: 40 %
    :align: center
 
@@ -36,23 +32,18 @@ JTrack platform includes:
 .. toctree:: 
    :maxdepth: 2
 
-   JTrack_Dashboard
+   EMA
+   Social
    developers
     
 
-How to Cite :
+Publications:
 +++++++++++++
-https://doi.org/10.3389/fpubh.2021.763621
+`JTrack Social <https://doi.org/10.3389/fpubh.2021.763621>`_
 
 Contact Us:
 +++++++++++
-Interested in using JTrack in you study? contact us:
-
-https://test.jutrack.inm7.de/jdash/
-
-|
-
-To contribution as a development please check :doc:`/developers` page. 
+Interested in using JTrack in you study? `Contact us: <https://test.jutrack.inm7.de/jdash/>`_
 
 
 
