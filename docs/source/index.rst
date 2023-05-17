@@ -21,7 +21,7 @@ JTrack platform includes:
 
 
 .. image:: image/3Apps.png
-   :scale: 30 %
+   :scale: 20 %
    :align: center
 
 
