@@ -41,7 +41,9 @@ JTrack platform includes:
 
 Publications:
 +++++++++++++
-`JTrack Social <https://doi.org/10.3389/fpubh.2021.763621>`_
+`JTrack: A Digital Biomarker Platform for Remote Monitoring of Daily-Life Behaviour in Health and Disease <https://doi.org/10.3389/fpubh.2021.763621>`_
+
+`System Comparison for Gait and Balance Monitoring Used for the Evaluation of a Home-Based Training <https://www.mdpi.com/1707028>`_
 
 Contact Us:
 +++++++++++
