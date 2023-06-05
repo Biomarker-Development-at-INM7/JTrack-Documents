@@ -4,7 +4,7 @@ JTrack Social
 
 to Install this app first go to the Google Play Store on your Android phone
 
-.. image:: image/Social/Social_1.png
+.. image:: image/Social/social_1.png
    :scale: 20 %
    :align: center
 
