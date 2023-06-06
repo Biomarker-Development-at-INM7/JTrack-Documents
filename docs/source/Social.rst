@@ -133,7 +133,7 @@ To enable the application usage please follow the instruction in the app (left) 
 |
 
 .. image:: image/Social/social_11.png
-   :scale: 30 %
+   :scale: 15 %
    :align: center
 |
 

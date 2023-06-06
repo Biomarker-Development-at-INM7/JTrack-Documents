@@ -31,7 +31,7 @@ once you installed the app, Open the JTrack Social App and click on Join study b
 
 |
 
-The need to access the camera for scanning Qr-code. Thereby, accept the permission according to the following image.
+This app needs to access the camera for scanning Qr-code. Thereby, accept the permission according to the following image.
 
 |
 
@@ -133,7 +133,7 @@ To enable the application usage please follow the instruction in the app (left) 
 |
 
 .. image:: image/Social/social_11.png
-   :scale: 100 %
+   :scale: 15 %
    :align: center
 |
 
