@@ -3,7 +3,8 @@ JTrack Social
 =====================
 this app is available for Android and iOS operating Systems.
 
-* For Android Version 
+* For Android version 
+* For iOS version (check here)
   
 General Settings
 ^^^^^^^^^^^^^^^^
@@ -107,8 +108,37 @@ and then permission for access to the file, which is required to save the record
 Location Sensor
 ^^^^^^^^^^^^^^^^
 
+if the location sensor is selected, the following permission will be asked, please select according to the image.
+|
+
+.. image:: image/Social/social_10.png
+   :scale: 40 %
+   :align: center
+
+|
+
+.. important:: please note that this application transforms all location information before recording, therefore all location information is anonymized. 
+
+|
+
 Application Usage Sensor
 ^^^^^^^^^^^^^^^^^^^^^^^^
+To enable the application usage please follow the instruction in the app (left) which will take you to the "Usage access" page (middle), then select the "JTrack Social" application and make sure that permission is granted (right)
+.. important:: please note that this module has no access to identifier data and information such as text, images and etc within your application.
+|
+
+.. image:: image/Social/social_11.png
+   :scale: 40 %
+   :align: center
+|
 
 Activity Detection Sensor
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+To enable activity recognition sensor, please accept the following permission.
+|
+
+.. image:: image/Social/social_12.png
+   :scale: 40 %
+   :align: center
+
+|
