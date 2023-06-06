@@ -128,7 +128,7 @@ To enable the application usage please follow the instruction in the app (left) 
 |
 
 .. image:: image/Social/social_11.png
-   :scale: 70 %
+   :scale: 150 %
    :align: center
 |
 
