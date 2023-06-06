@@ -9,7 +9,8 @@ this app is available for Android and iOS operating Systems.
 General Settings
 ^^^^^^^^^^^^^^^^
 
-to Install this app first go to the Google Play Store on your Android phone
+to Install this app first go to the Google Play Store on your Android phone.
+
 |
 
 .. image:: image/Social/social_1.png
@@ -20,6 +21,7 @@ to Install this app first go to the Google Play Store on your Android phone
 |
 
 once you installed the app, Open the JTrack Social App and click on Join study button.
+
 |
 
 .. image:: image/Social/social_2.png
@@ -29,7 +31,8 @@ once you installed the app, Open the JTrack Social App and click on Join study b
 
 |
 
-The need to access the camera for scanning Qr-code. Thereby, accept the permission according to the following image 
+The need to access the camera for scanning Qr-code. Thereby, accept the permission according to the following image.
+
 |
 
 .. image:: image/Social/social_3.png
@@ -39,9 +42,11 @@ The need to access the camera for scanning Qr-code. Thereby, accept the permissi
 |
 
 Now you can scan the provided Qr-code using your device camera.
+
 .. important:: (for more information about Qr-code and how to generate them please see...) 
 
 Once the logging is successful, you will see the following screen, which asks you to go to the app settings page and change the settings according to the following steps:
+
 |
 
 .. image:: image/Social/social_4.png
@@ -128,7 +133,7 @@ To enable the application usage please follow the instruction in the app (left) 
 |
 
 .. image:: image/Social/social_11.png
-   :scale: 150 %
+   :scale: 100 %
    :align: center
 |
 
