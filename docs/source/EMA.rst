@@ -68,7 +68,7 @@ now look for "battery optimization" and select it
 then select the "Unrestricted" option according to the below image, This step will guarantee that the JTrack Social app will not be restricted by the phone application system (Android).
 |
 
-.. image:: image/Social/social_6.png
+.. image:: image/EMA/EMA_6.png
    :scale: 40 %
    :align: center
 
