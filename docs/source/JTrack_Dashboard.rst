@@ -5,7 +5,7 @@ JTrack Dashboard
 General
 ------------
 
-* JDash is a web app built with the python framework `Dash <https://dash.plotly.com>`_ that is written on top of FLASK. 
+* JDash is a web app built with the Django framework combined with `Dash <https://dash.plotly.com>`_ for . 
 * It provides several functionalities that are necessary for creating, viewing and closing studies currently initiated by clinical institutions and the `Biomarker Development Group <https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672>`_.
 
 
@@ -21,6 +21,8 @@ How  to Use
    :align: center
 
 * **(c)** After logging in the menu buttons are available for navigation.
+
+THe user can create new studies  
 
 .. image:: image/dash_logged_in.png
    :scale: 30 %
@@ -38,26 +40,15 @@ Create a new study
    :align: center
 
 
-* **(b)** Before creating a new study (i. e. click **'Create study'** below) all **mandatory fields** have to be filled (*). Further, at least one modalitiy (*Ecological momentary assessment* or *Passive monitoring*) has to be selected.
 
-.. image:: image/dash_create_checked.png
-   :scale: 30 %
-   :align: center
-
-.. note:: Omitting (*) fields results in an error message.
 
 |
 
 View an ongoing study
 +++++++++++++++++++++
 
-* **(a)** Navigating to **Current Studies** directs to an empty dropdown list containing all ongoing studies.
 
-.. image:: image/dash_display_empty.png
-   :scale: 30 %
-   :align: center
-
-* **(b)** Selecting a study results in displaying all relevant information (general information, sent data information) and the options to send push notifications, to remove users from the study manually and to download participant sheets.
+* **(a)** Selecting a study results in displaying all relevant information (general information, sent data information) and the options to send push notifications, to remove users from the study manually and to download participant sheets.
 
 .. image:: image/dash_display_study.png
    :scale: 30 %
@@ -69,14 +60,16 @@ View an ongoing study
 .. important:: In **Push notifications** section fill out title, message and reveicer list in order to send a notification to chosen receivers.
 .. important:: In **Remove user** section select an user to remove him/her from the study (*Confirmation needed*).
 
-|
+.. image:: image/dash_create_remove_subjects.png
+   :scale: 30 %
+   :align: center
 
 Close an ongoing study
 ++++++++++++++++++++++
 
 * **(a)** Navigating to **Close Study** directs to an empty dropdown list containing all ongoing studies that can be closed.
 
-.. image:: image/dash_close_empty.png
+.. image:: image/dash_send_notification.png
    :scale: 30 %
    :align: center
 
