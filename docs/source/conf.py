@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'jtrack'
+project = 'JTrack Document'
 copyright = '2023, mehran sahandi'
 author = 'mehran sahandi'
 release = '2020'
