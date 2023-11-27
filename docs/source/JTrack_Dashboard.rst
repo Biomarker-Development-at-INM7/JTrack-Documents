@@ -74,9 +74,3 @@ Close an ongoing study
    :align: center
 
 * **(b)** Selecting a study and pressing **'Close study'** below closes (i. e. moves it to the archive) the study (*Confirmation needed*).
-
-
-
-
-
-
