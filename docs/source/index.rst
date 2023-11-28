@@ -45,6 +45,8 @@ Publications:
 
 `System Comparison for Gait and Balance Monitoring Used for the Evaluation of a Home-Based Training <https://www.mdpi.com/1707028>`_
 
+`JTrack-EMA+: A Cross-platform Ecological Momentary Assessment Application (preprint) <https://preprints.jmir.org/preprint/51689>`_
+
 Contact Us:
 +++++++++++
 Interested in using JTrack in you study? `Contact us: <https://test.jutrack.inm7.de/jdash/>`_
