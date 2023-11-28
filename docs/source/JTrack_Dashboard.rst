@@ -13,7 +13,7 @@ General
 How  to Use
 -----------
 
-* **(a)** Visit `https://jutrack.inm7.de <https://jutrack.inm7.de>`_.
+* **(a)** Visit `https://jdash.inm7.de <https://jdash.inm7.de/>`_.
 * **(b)** Enter your personal credentials into the login fields and press **'Login'**.
 
 .. image:: image/dash_index.png
