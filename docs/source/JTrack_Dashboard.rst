@@ -22,26 +22,29 @@ GIT - used to clone the source code from the Github repository
 Manual Build
 ++++++++++++++++
 Download the code
-
-$ git clone https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard.git
-$ cd JTrack-dashboard
+.. code-block:: shell
+   $ git clone https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard.git
+   $ cd JTrack-dashboard
 
 Set Up for Unix, MacOS
 
-   Install modules via VENV
-   $ virtualenv jdash
-   $ source jdash/bin/activate
-   $ pip3 install -r requirements.txt
+Install modules via VENV
+.. code-block:: shell
+      $ virtualenv jdash
+      $ source jdash/bin/activate
+      $ pip3 install -r requirements.txt
 
-   Set Up Database
-   $ python collect static
-   $ python manage.py makemigrations
-   $ python manage.py migrate
+Set Up Database
+.. code-block:: shell
+      $ python collect static
+      $ python manage.py makemigrations
+      $ python manage.py migrate
 
-   Start the app
-   $ python manage.py runserver
+Start the app
+.. code-block:: shell
+      $ python manage.py runserver
 
-   At this point, the app runs at http://127.0.0.1:8000/.
+At this point, the app runs at http://127.0.0.1:8000/.
 
 Manage App Users
 
@@ -50,12 +53,12 @@ Manage App Users
    Create Superusers
 
    To access the admin section, Django requires superuser privilegies. Let's create a new superuser and access the admin section of the project:
-
+.. code-block:: shell
    $ python manage.py createsuperuser
 
-   Once the superuser is successfully created, we can access the admin section:
+Once the superuser is successfully created, we can access the admin section:
 
-   http://localhost:8000/admin/
+http://localhost:8000/admin/
 
    Create Groups
 
@@ -84,9 +87,6 @@ Usage
    :scale: 30 %
    :align: center
 
-* **(c)** After logging in the menu buttons are available for navigation.
-
-THe user can create new studies  
 
 .. image:: image/dash_logged_in.png
    :scale: 30 %
@@ -115,11 +115,6 @@ Studies
       :align: center
 
    |
-
-   .. important:: Click **'Download unused study sheets'** to download participant sheets that were not used yet.
-   .. important:: In **Push notifications** section fill out title, message and reveicer list in order to send a notification to chosen receivers.
-
-
 
 
    Close an ongoing study
