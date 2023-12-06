@@ -53,7 +53,7 @@ Start the app
 
    $ python manage.py runserver
 
-At this point, the app runs at http://127.0.0.1:8000/.
+At this point, the app runs at :literal:`http://127.0.0.1:8000/`.
 
 Manage App Users
 
@@ -62,12 +62,14 @@ Manage App Users
    Create Superusers
 
    To access the admin section, Django requires superuser privilegies. Let's create a new superuser and access the admin section of the project:
+
 .. code-block:: shell
+
    $ python manage.py createsuperuser
 
 Once the superuser is successfully created, we can access the admin section:
 
-http://localhost:8000/admin/
+:literal:`http://localhost:8000/admin/`
 
    Create Groups
 
@@ -101,6 +103,10 @@ Usage
    :scale: 30 %
    :align: center
 
+* **(c)** Search view of all the studies.
+.. image:: image/dash_display_search_view.png
+   :scale: 30 %
+   :align: center
 Studies
 
    Create a new study
@@ -132,7 +138,7 @@ Studies
    * **(a)** Navigating to **Close Study** directs to an empty dropdown list containing all ongoing studies that can be closed.
    * **(b)** Selecting a study and pressing **'Close study'** below closes (i. e. moves it to the archive) the study (*Confirmation needed*).
 
-   .. image:: image/dash_send_notification.png
+   .. image:: image/dash_close_study.png
       :scale: 30 %
       :align: center
 
@@ -140,12 +146,12 @@ Studies
 
    Other Features
 
-   .. important:: Click **'Refresh'** to refresh the data to view current status of subjects/sensors.
-   .. important:: Click **'Download unused study sheets'** to download participant sheets that were not used yet.
-   .. important:: Click **'Download Data'** to download study data.
-   .. important:: Click **'Delete Subjects'** to delete subject data from the study and server.
+   * **(a)** Click **'Refresh'** to refresh the data to view current status of subjects/sensors.
+   * **(b)** Click **'Download unused study sheets'** to download participant sheets that were not used yet.
+   * **(c)** Click **'Download Data'** to download study data.
+   * **(d)** Click **'Delete Subjects'** to delete subject data from the study and server.
 
-   .. image:: image/dash_send_notification.png
+   .. image:: image/dash_features.png
       :scale: 30 %
       :align: center
 
@@ -162,7 +168,7 @@ Subjects
    Create/Remove  subjects
    .. important:: In **Remove user** section select an user to remove him/her from the study (*Confirmation needed*).
 
-      .. image:: image/dash_create_remove_subjects.png
+   .. image:: image/dash_create_remove_subjects.png
       :scale: 30 %
       :align: center
 
