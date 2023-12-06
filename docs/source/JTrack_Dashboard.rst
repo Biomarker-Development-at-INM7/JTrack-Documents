@@ -21,29 +21,37 @@ GIT - used to clone the source code from the Github repository
 
 Manual Build
 ++++++++++++++++
+
 Download the code
+
 .. code-block:: shell
+
    $ git clone https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard.git
-.. code-block:: shell
    $ cd JTrack-dashboard
 
 Set Up for Unix, MacOS
 
 Install modules via VENV
+
 .. code-block:: shell
-      $ virtualenv jdash
-      $ source jdash/bin/activate
-      $ pip3 install -r requirements.txt
+
+   $ virtualenv jdash
+   $ source jdash/bin/activate
+   $ pip3 install -r requirements.txt
 
 Set Up Database
+
 .. code-block:: shell
-      $ python collect static
-      $ python manage.py makemigrations
-      $ python manage.py migrate
+
+   $ python collect static
+   $ python manage.py makemigrations
+   $ python manage.py migrate
 
 Start the app
+
 .. code-block:: shell
-      $ python manage.py runserver
+
+   $ python manage.py runserver
 
 At this point, the app runs at http://127.0.0.1:8000/.
 
