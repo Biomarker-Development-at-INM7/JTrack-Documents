@@ -126,39 +126,37 @@ Studies
 
 
    * **(a)** Navigating to **Close Study** directs to an empty dropdown list containing all ongoing studies that can be closed.
+   * **(b)** Selecting a study and pressing **'Close study'** below closes (i. e. moves it to the archive) the study (*Confirmation needed*).
 
    .. image:: image/dash_send_notification.png
       :scale: 30 %
       :align: center
 
-<<<<<<< Updated upstream
-|
 
-.. important:: Click **'Download unused study sheets'** to download participant sheets that were not used yet.
-.. important:: In **Push notifications** section fill out title, message and reveicer list in order to send a notification to chosen receivers.
-.. important:: In **Remove user** section select an user to remove him/her from the study (*Confirmation needed*).
 
-.. image:: image/dash_create_remove_subjects.png
-   :scale: 30 %
-   :align: center
+   Other Features
 
-Close an ongoing study
-++++++++++++++++++++++
+   .. important:: Click **'Refresh'** to refresh the data to view current status of subjects/sensors.
+   .. important:: Click **'Download unused study sheets'** to download participant sheets that were not used yet.
+   .. important:: Click **'Download Data'** to download study data.
+   .. important:: Click **'Delete Subjects'** to delete subject data from the study and server.
 
-* **(a)** Navigating to **Close Study** directs to an empty dropdown list containing all ongoing studies that can be closed.
+   .. image:: image/dash_send_notification.png
+      :scale: 30 %
+      :align: center
 
-.. image:: image/dash_send_notification.png
-   :scale: 30 %
-   :align: center
+   .. important:: In **Push notifications** section fill out title, message and reveicer list in order to send a notification to chosen receivers.
 
-* **(b)** Selecting a study and pressing **'Close study'** below closes (i. e. moves it to the archive) the study (*Confirmation needed*).
-=======
-   * **(b)** Selecting a study and pressing **'Close study'** below closes (i. e. moves it to the archive) the study (*Confirmation needed*).
+   .. image:: image/dash_send_notification.png
+      :scale: 30 %
+      :align: center
+
 
 
 Subjects
 
    Create/Remove  subjects
+   .. important:: In **Remove user** section select an user to remove him/her from the study (*Confirmation needed*).
 
       .. image:: image/dash_create_remove_subjects.png
       :scale: 30 %
@@ -166,4 +164,4 @@ Subjects
 
 Survey
 
->>>>>>> Stashed changes
+
