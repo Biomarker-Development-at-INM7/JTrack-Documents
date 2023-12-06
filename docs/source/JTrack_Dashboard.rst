@@ -24,6 +24,7 @@ Manual Build
 Download the code
 .. code-block:: shell
    $ git clone https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard.git
+.. code-block:: shell
    $ cd JTrack-dashboard
 
 Set Up for Unix, MacOS
