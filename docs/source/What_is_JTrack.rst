@@ -79,10 +79,12 @@ If required for study conduct, we may request to send users push notifications. 
 5.1	Intended use of collected information
 ^^^^^^^^^^^^^^^^^^^^^^^^
 We may use the information collected from users via the JTrack applications to: 
+
 1.	Conduct data analysis for internal use and publication (scientific journals and conferences) as per study specific protocols
 2.	Share anonymized data with other researchers (if covered by the specific study protocols and informed consents)
 3.	Improve the efficiency and operation of the applications.
 4.	Resolve troubleshoot issues.
+
 
 5.2	Third-party data sharing
 ^^^^^^^^^^^^^^^^^^^^^^^^
