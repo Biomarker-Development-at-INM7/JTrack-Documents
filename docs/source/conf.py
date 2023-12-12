@@ -25,7 +25,7 @@ author = 'Mehran Sahandi Far'
 release = '2.0'
 
 master_doc = 'index'
-
+PYTHONUTF8 = 1
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be

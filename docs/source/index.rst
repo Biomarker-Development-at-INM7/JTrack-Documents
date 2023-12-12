@@ -29,7 +29,7 @@ JTrack platform includes:
 |
 
 
-.. toctree:: 
+.. toctree::
    :maxdepth: 2
 
    What_is_JTrack

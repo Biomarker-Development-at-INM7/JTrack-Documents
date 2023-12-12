@@ -1,6 +1,6 @@
-=====================
+========================
 JDash - JTrack Dashboard
-=====================
+========================
 
 * JDash is a web app built with the Django framework combined with `Dash <https://dash.plotly.com>`_ for analysis purpose. 
 * It provides several functionalities that are necessary for creating, viewing and closing studies currently initiated by clinical institutions and the `Biomarker Development Group <https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672>`_.
