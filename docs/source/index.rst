@@ -8,7 +8,7 @@ Welcome to the JTrack Platform
 
 
 
-JTrack is a platform for remote assessments of an individual's in situ using smartphones. JTrack is an adaptable, configurable, and scalable platform that prioritizes security and privacy.JTrack is more than a single application, you can create, manage a study and, share your collected data using one platform.
+JTrack is a platform for remote assessments of an individual's in situ using smartphones. JTrack was developed in the group Biomarker Development at the Institute of Neuroscience and Medicine 7 (Brain and Behaviour) of the Research Center Jülich. It is an adaptable, configurable, and scalable platform that prioritizes security and privacy.JTrack is more than a single application, you can create, manage a study and, share your collected data using one platform.
 
 JTrack platform includes:
 
