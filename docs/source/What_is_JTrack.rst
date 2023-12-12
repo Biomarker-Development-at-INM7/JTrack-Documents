@@ -38,7 +38,7 @@ Timing, duration and the name of the used apps can be collected to allow evaluat
 Accelerometer and gyroscope data can be recorded to estimate movement patterns of the participants. Anonymization: the sensor information is only combined with anonymized JTrack specific study and subject ID.
 
 
-Ecological Momentary Sssessments
+Ecological Momentary Assessments
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 The information collected in each specific study are outlined in the respective written informed consent and the study protocol. Such information may include:
 
