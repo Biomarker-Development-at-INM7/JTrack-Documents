@@ -61,10 +61,12 @@ The information our application automatically collects when users access the EMA
 ^^^^^^^^^^^^^^^^
 
 We may request access or permission to certain features from users’ mobile device. these requests are necessary to provide you with a smooth experience of application usage as well as to get access to study specific sensors. We provided a list of all the request users that may be required by the application, i.e.
+
 * Camera access: we used camera access to scan provided Qr-Codes which are used to activate the application.
 * GPS information: the information is required for location tracking. The coordinates are anonymized on the phone as described above prior to transfer to the central JTrack server.
 * File read and write access: we used file read and write access to write and save information about the survey (i.e. images).
 * Battery optimization: to prevent the application from sleeping we ask the user to disable battery optimization. 
+
 Users may alter their access or permissions at any time by going through the device's settings.
 
 4.1	Push Notifications
