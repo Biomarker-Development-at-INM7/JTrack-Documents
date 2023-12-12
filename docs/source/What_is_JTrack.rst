@@ -1,5 +1,5 @@
 =====================
-JTRACK 
+What is JTrack 
 =====================
 A COLLABORATIVE TOOL FOR SMARTPHONE-BASED PASSIVE MONITORING AND ECOLOGICAL MOMENTARY ASSESSMENTS
 ^^^^^^^^^^^^^^^^
