@@ -2,7 +2,8 @@
 JTRACK – A COLLABORATIVE TOOL FOR PASSIVE MONITORING AND ECOLOGICAL MOMENTARY ASSESSMENTS
 =====================
 
-* 1	SCOPE OF APPLICATION, PRINCIPLES AND DEFINITION OF TERMS
+1	SCOPE OF APPLICATION, PRINCIPLES AND DEFINITION OF TERMS
+^^^^^^^^^^^^^^^^
 The JTrack platform consists of the two JTrack applications EMA and social and a server structure to enable central data collection (Figure 1). The platform was developed to gather study specific digital phenotyping information about smartphone usage, sensor data and participants' (“users”) self-perceptions of specific events or activities that occur in their daily lives. The JTrack platform was developed as an open source collaboration tool to enable clinical and behavioral researchers to collect their own digital phenotyping data from specific study populations.
 
 The JTrack social application was developed to collect sensor data from sensors embedded in any modern smartwatches and smartphones aside with general smartphone usage information. Thereby, the specific sensor and phone usage measure combinations are study specific and completely customizable. Thereby, a high priority is assigned to data privacy to ensure that the collected data do not contain any identifiable or personal information. In example, the GPS information is encoded into a random coordinate system to ensure that the location of the user cannot be derived from the data. The JTrack social has two different modes which can be used selectively or combined. The first is passive monitoring not requiring any interaction with the user and second is active labeling, where the user enters a specific activity she or he currently performs and the sensor data are labeled using this provided information.
