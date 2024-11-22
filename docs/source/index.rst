@@ -53,6 +53,7 @@ Publications:
 Contact Us:
 +++++++++++
 Interested in using JTrack in you study? `Contact us: <biomarkers.inm7@gmail.com>`_
+We also offer a weekly JTrack zoom hour where we answer all questions regarding JTrack. It takes place on Tuesdays from 1 to 2 pm German time. In case you would like to join the JTrack hour please let us know and we will send you the zoom details.
 
 
 
