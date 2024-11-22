@@ -52,7 +52,7 @@ Publications:
 
 Contact Us:
 +++++++++++
-Interested in using JTrack in you study? `Contact us: <https://test.jutrack.inm7.de/jdash/>`_
+Interested in using JTrack in you study? `Contact us: <biomarkers.inm7@gmail.com>`_
 
 
 
