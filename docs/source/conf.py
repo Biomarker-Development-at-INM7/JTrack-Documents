@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'JTrack'
-copyright = '2020, INM7'
-author = 'Mehran Sahandi Far'
+copyright = '2025, INM7'
+author = 'Mehran Turna & Jona M Fischer'
 
 # The full version, including alpha/beta/rc tags
-release = '2.0'
+release = '2.1'
 
 master_doc = 'index'
 PYTHONUTF8 = 1
@@ -50,10 +50,19 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 
-
+html_theme = "furo"
 html_show_sourcelink = False
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_sidebars = {
+    "**": [
+        "sidebar/brand.html",
+        "sidebar/navigation.html",
+        "sidebar/ethical-ads.html",
+        "footer.html",
+    ]
+}

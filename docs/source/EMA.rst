@@ -2,15 +2,15 @@
 JTrack EMA
 =====================
 
-this app is available for Android and iOS operating Systems.
+This app is available for Android and iOS operating systems.
 
-* For Android version 
-* For iOS version (check here)
+* For the Android version
+* For the iOS version (check here)
 
 General Settings
 ^^^^^^^^^^^^^^^^
 
-to Install this app first go to the Google Play Store on your Android phone.
+To install this app, first go to the Google Play Store on your Android phone.
 
 |
 
@@ -18,10 +18,10 @@ to Install this app first go to the Google Play Store on your Android phone.
    :scale: 40 %
    :align: center
 
-
 |
 
-once the app is installed, Open the JTrack EMA+ App and click on Join study button.
+Once the app is installed, open the **JTrack EMA+** app and click on the **Join Study** button.
+
 |
 
 .. image:: image/EMA/EMA_2.png
@@ -30,7 +30,7 @@ once the app is installed, Open the JTrack EMA+ App and click on Join study butt
 
 |
 
-This app needs to access the camera for scanning Qr-code. Thereby, accept the permission according to the following image.
+This app needs to access the camera to scan a QR code. Therefore, accept the permission prompt as shown below.
 
 |
 
@@ -40,11 +40,12 @@ This app needs to access the camera for scanning Qr-code. Thereby, accept the pe
 
 |
 
-Now you can scan the provided Qr-code using your device camera.
+Now you can scan the provided QR code using your device’s camera.
 
-.. important:: (for more information about Qr-code and how to generate them please see...) 
+.. important::
+   For more information about QR codes and how to generate them, please see the relevant section of this documentation.
 
-Once the logging is successful, you will see the following screen, which asks you to go to the app settings page and change the settings according to the following steps:
+Once login is successful, you will see the following screen. It asks you to go to the app settings page and change the settings according to the following steps:
 
 |
 
@@ -54,8 +55,8 @@ Once the logging is successful, you will see the following screen, which asks yo
 
 |
 
+Next, look for **Battery Optimization** and select it.
 
-now look for "battery optimization" and select it
 |
 
 .. image:: image/EMA/EMA_5.png
@@ -64,8 +65,8 @@ now look for "battery optimization" and select it
 
 |
 
+Then select the **Unrestricted** option as shown below. This step ensures that the JTrack EMA app will not be restricted by the Android system.
 
-then select the "Unrestricted" option according to the below image, This step will guarantee that the JTrack Social app will not be restricted by the phone application system (Android).
 |
 
 .. image:: image/EMA/EMA_6.png
@@ -74,7 +75,8 @@ then select the "Unrestricted" option according to the below image, This step wi
 
 |
 
-Now go back to "app info" page and  scroll to find "Remove permission and free up space", and make sure that it's disabled.
+Now go back to the **App Info** page and scroll to find **Remove permissions and free up space**, and make sure that it is disabled.
+
 |
 
 .. image:: image/EMA/EMA_7.png
@@ -83,4 +85,4 @@ Now go back to "app info" page and  scroll to find "Remove permission and free u
 
 |
 
-Now the main setting of the JTrack EMA+ application is done, and
+Now the main setup of the JTrack EMA+ application is complete. You can proceed to use the app as intended.

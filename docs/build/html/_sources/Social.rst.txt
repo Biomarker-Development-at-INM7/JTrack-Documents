@@ -1,15 +1,16 @@
 =====================
 JTrack Social
 =====================
-this app is available for Android and iOS operating Systems.
 
-* For Android version 
-* For iOS version (check here)
-  
+This app is available for Android and iOS operating systems.
+
+* For the Android version
+* For the iOS version (check here)
+
 General Settings
 ^^^^^^^^^^^^^^^^
 
-to Install this app first go to the Google Play Store on your Android phone.
+To install this app, first go to the Google Play Store on your Android phone.
 
 |
 
@@ -17,10 +18,9 @@ to Install this app first go to the Google Play Store on your Android phone.
    :scale: 40 %
    :align: center
 
-
 |
 
-once you installed the app, Open the JTrack Social App and click on Join study button.
+Once you have installed the app, open the **JTrack Social** app and click on the **Join Study** button.
 
 |
 
@@ -28,10 +28,9 @@ once you installed the app, Open the JTrack Social App and click on Join study b
    :scale: 40 %
    :align: center
 
-
 |
 
-This app needs to access the camera for scanning Qr-code. Thereby, accept the permission according to the following image.
+This app needs access to the camera to scan a QR code. Therefore, accept the permission prompt as shown below.
 
 |
 
@@ -41,11 +40,12 @@ This app needs to access the camera for scanning Qr-code. Thereby, accept the pe
 
 |
 
-Now you can scan the provided Qr-code using your device camera.
+Now you can scan the provided QR code using your device camera.
 
-.. important:: (for more information about Qr-code and how to generate them please see...) 
+.. important::
+   For more information about QR codes and how to generate them, please see the relevant section of this documentation.
 
-Once the logging is successful, you will see the following screen, which asks you to go to the app settings page and change the settings according to the following steps:
+Once login is successful, you will see the following screen, which asks you to go to the app settings page and adjust the settings as described below.
 
 |
 
@@ -53,11 +53,10 @@ Once the logging is successful, you will see the following screen, which asks yo
    :scale: 40 %
    :align: center
 
-.. now click on to go to the application setting page 
-
 |
 
-Now scroll to find "Remove permission and free up space", and make sure that it's disabled.
+Next, scroll to find **Remove permissions and free up space**, and make sure that it is disabled.
+
 |
 
 .. image:: image/Social/social_6.png
@@ -66,7 +65,8 @@ Now scroll to find "Remove permission and free up space", and make sure that it'
 
 |
 
-and then you can go back to the previous step in app setting and look for "battery optimization" and select it
+Then return to the previous step in **App Settings**, look for **Battery Optimization**, and select it.
+
 |
 
 .. image:: image/Social/social_5.png
@@ -75,7 +75,8 @@ and then you can go back to the previous step in app setting and look for "batte
 
 |
 
-then select the "Unrestricted" option according to the below image, This step will guarantee that the JTrack Social app will not be restricted by the phone application system (Android).
+Select the **Unrestricted** option as shown below. This step ensures that the JTrack Social app will not be restricted by the Android system.
+
 |
 
 .. image:: image/Social/social_7.png
@@ -84,36 +85,40 @@ then select the "Unrestricted" option according to the below image, This step wi
 
 |
 
-Now the main setting of the JTrack Social application is done, and
-The following steps will depend on the type of study and the selected sensors. different permissions according to the pre-selected
-Sensors will be asked. Please follow the following steps to get more information on different required permissions:
+Now the main setup of the JTrack Social application is complete.
+
+The following steps will depend on the type of study and the selected sensors. Different permissions will be requested according to the pre-selected sensors. Please follow the instructions below for more information on each required permission.
 
 Audio Sensor
 ^^^^^^^^^^^^
 
-Audio sensor: this sensor is responsible for recording audio from the app, and two permissions are required.
-First, permission to access the microphone according to the below image:
+This sensor is responsible for recording audio from the app and requires two permissions.
+
+First, permission to access the microphone:
+
 |
 
 .. image:: image/Social/social_8.png
    :scale: 40 %
    :align: center
-   
+
 |
 
+Then, permission to access files, which is required to save the recorded audio:
 
-and then permission for access to the file, which is required to save the recorded files.
 |
 
 .. image:: image/Social/social_9.png
    :scale: 40 %
    :align: center
+
 |
 
 Location Sensor
 ^^^^^^^^^^^^^^^^
 
-if the location sensor is selected, the following permission will be asked, please select according to the image.
+If the location sensor is selected, the following permission will be requested. Please enable it as shown below.
+
 |
 
 .. image:: image/Social/social_10.png
@@ -122,24 +127,32 @@ if the location sensor is selected, the following permission will be asked, plea
 
 |
 
-.. important:: please note that this application transforms all location information before recording, therefore all location information is anonymized. 
+.. important::
+   Please note that this application transforms all location information before recording it. All location data is anonymized.
 
 |
 
 Application Usage Sensor
 ^^^^^^^^^^^^^^^^^^^^^^^^
-To enable the application usage please follow the instruction in the app (left) which will take you to the "Usage access" page (middle), then select the "JTrack Social" application and make sure that permission is granted (right)
-.. important:: please note that this module has no access to identifier data and information such as text, images and etc within your application.
+
+To enable the application usage sensor, follow the instructions in the app (left), which will guide you to the **Usage Access** page (middle). Then select the **JTrack Social** application and ensure that permission is granted (right).
+
+.. important::
+   Please note that this module has no access to identifying data or content such as text, images, etc., within your applications.
+
 |
 
 .. image:: image/Social/social_11.png
    :scale: 15 %
    :align: center
+
 |
 
 Activity Detection Sensor
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-To enable activity recognition sensor, please accept the following permission.
+
+To enable the activity recognition sensor, please accept the following permission prompt.
+
 |
 
 .. image:: image/Social/social_12.png

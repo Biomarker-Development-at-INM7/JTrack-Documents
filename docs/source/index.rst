@@ -1,34 +1,49 @@
-.. JTrack_social_docs documentation master file, created by
-   sphinx-quickstart on Sun May  3 16:57:11 2020.
+.. JTrack documentation master file, created by
+   sphinx-quickstart on Sun May 3 16:57:11 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
+
+.. raw:: html
+
+   <div style="text-align: center; margin: 2em 0;">
+     <a href="https://apps.apple.com/sk/developer/forschungszentrum-juelich-gmbh/id1109397147">
+       <img src="_static/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" style="height:50px; margin:0 1em;" alt="Download on the App Store">
+     </a>
+     <a href="https://play.google.com/store/apps/developer?id=Biomarker+Group">
+       <img src="_static/GetItOnGooglePlay_Badge_Web_color_English.png" style="height:50px; margin:0 1em;" alt="Get it on Google Play">
+     </a>
+   </div>
+
+|
 
 Welcome to the JTrack Platform
 ==============================================
 
+JTrack is an open-source platform, free of charge, for remote assessments of individuals *in situ* using smartphones.
 
+It was developed by the Biomarker Development Group at the Institute of Neuroscience and Medicine 7 (Brain and Behaviour) of the Research Center Jülich.
 
-JTrack is an open-source and free of charge platform for remote assessments of an individual's in situ using smartphones. JTrack was developed in the group Biomarker Development at the Institute of Neuroscience and Medicine 7 (Brain and Behaviour) of the Research Center Jülich. It is an adaptable, configurable, and scalable platform that prioritizes security and privacy. JTrack is more than a single application, you can create, manage a study and, share your collected data using one platform. if you are interested in using JTrack in your studies please reach out to us at biomarkers.inm7 [at] gmail.com
+JTrack is adaptable, configurable, and scalable, with a strong focus on security and privacy.
 
+More than just a single application, it enables you to create and manage studies and share collected data in one unified platform.
 
-JTrack platform includes:
-
-* JTrack Social
-* JTrack EMA
-* JDash
-
-|
-|
-
-
-.. image:: image/3Apps.png
-   :scale: 20 %
-   :align: center
-
+If you are interested in using JTrack in your studies, please reach out to us at: biomarkers.inm7 [at] gmail.com
 
 |
+
+Platform Components
+++++++++++++++++++++
+
+The JTrack platform includes:
+
+* **JTrack Social** – passive sensing and behavioral monitoring
+* **JTrack EMA** – ecological momentary assessment surveys
+* **JDash** – study management and analysis dashboard
+
 |
 
+Contents:
++++++++++
 
 .. toctree::
    :maxdepth: 2
@@ -40,29 +55,26 @@ JTrack platform includes:
    JTrack_Dashboard
    Team
 
-    
+Publications
+++++++++++++
 
-Publications:
-+++++++++++++
-`JTrack: A Digital Biomarker Platform for Remote Monitoring of Daily-Life Behaviour in Health and Disease <https://doi.org/10.3389/fpubh.2021.763621>`_
+- `JTrack: A Digital Biomarker Platform for Remote Monitoring of Daily-Life Behaviour in Health and Disease <https://doi.org/10.3389/fpubh.2021.763621>`_
 
-`System Comparison for Gait and Balance Monitoring Used for the Evaluation of a Home-Based Training <https://www.mdpi.com/1707028>`_
+- `System Comparison for Gait and Balance Monitoring Used for the Evaluation of a Home-Based Training <https://www.mdpi.com/1707028>`_
 
-`JTrack-EMA+: A Cross-platform Ecological Momentary Assessment Application (preprint) <https://preprints.jmir.org/preprint/51689>`_
+- `JTrack-EMA+: A Cross-platform Ecological Momentary Assessment Application (preprint) <https://preprints.jmir.org/preprint/51689>`_
 
-Contact Us:
-+++++++++++
-Interested in using JTrack in you study? 
-|
-|
-`Contact us: <biomarkers.inm7@gmail.com>`_
-|
-|
+Contact Us
+++++++++++
 
-We also offer a weekly JTrack zoom hour where we answer all questions regarding JTrack. It takes place on Tuesdays from 1 to 2 pm German time. In case you would like to join the JTrack hour please let us know and we will send you the zoom details.
+Interested in using JTrack in your study?
+Please get in touch:
 
+`Contact us <mailto:biomarkers.inm7@gmail.com>`_
 
-
+We also offer a weekly **JTrack Zoom Hour**, where we answer all questions regarding JTrack.
+It takes place on **Tuesdays from 1 to 2 pm German time**.
+If you would like to join, please let us know, and we will send you the Zoom details.
 
 .. * :ref:`genindex`
 .. * :ref:`modindex`

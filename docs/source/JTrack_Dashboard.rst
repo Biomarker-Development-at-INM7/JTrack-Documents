@@ -1,177 +1,285 @@
 ========================
-JDash - JTrack Dashboard
+JDash – JTrack Dashboard
 ========================
 
-* JDash is a web app built with the Django framework combined with `Dash <https://dash.plotly.com>`_ for analysis purpose. 
-* It provides several functionalities that are necessary for creating, viewing and closing studies currently initiated by clinical institutions and the `Biomarker Development Group <https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672>`_.
+* JDash is a web app built with the Django framework combined with `Dash <https://dash.plotly.com>`_ for analysis purposes.
+* It provides several functionalities necessary for creating, viewing, and closing studies initiated by clinical institutions and the `Biomarker Development Group <https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672>`_.
 
 Features
-++++++++++++++++
+++++++++
 
-
-
-Set up
-++++++++++++++++
+Set Up
+++++++
 
 Environment
-To use the starter, Python3 should be installed properly in the workstation. If you are not sure if Python is installed, please open a terminal and type python --version. Here is the full list with dependencies and tools required to build the app:
+-----------
 
-Python3 - the programming language used to code the app
-GIT - used to clone the source code from the Github repository
+To use the starter, Python 3 should be installed properly on your workstation.
+If you are not sure if Python is installed, open a terminal and type:
+
+.. code-block:: shell
+
+   python --version
+
+Here is the full list of dependencies and tools required to build the app:
+
+- **Python 3** – the programming language used to code the app
+- **Git** – used to clone the source code from the GitHub repository
 
 Manual Build
-++++++++++++++++
+------------
 
-Download the code
-
-.. code-block:: shell
-
-   $ git clone https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard.git
-   $ cd JTrack-dashboard
-
-Set Up for Unix, MacOS
-
-Install modules via VENV
+Download the code:
 
 .. code-block:: shell
 
-   $ virtualenv jdash
-   $ source jdash/bin/activate
-   $ pip3 install -r requirements.txt
+   git clone https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard.git
+   cd JTrack-dashboard
 
-Set Up Database
+Set Up for Unix/macOS
+----------------------
 
-.. code-block:: shell
-
-   $ python collect static
-   $ python manage.py makemigrations
-   $ python manage.py migrate
-
-Start the app
+Install modules via virtual environment:
 
 .. code-block:: shell
 
-   $ python manage.py runserver
+   virtualenv jdash
+   source jdash/bin/activate
+   pip3 install -r requirements.txt
 
-At this point, the app runs at :literal:`http://127.0.0.1:8000/`.
+Set Up Database:
+
+.. code-block:: shell
+
+   python manage.py collectstatic
+   python manage.py makemigrations
+   python manage.py migrate
+
+Start the app:
+
+.. code-block:: shell
+
+   python manage.py runserver
+
+At this point, the app runs at:
+
+:literal:`http://127.0.0.1:8000/`
 
 Manage App Users
+----------------
 
-   By default, the starter is not provided with users. To access the private pages and the admin section (reserved for superusers) follow up the next sections.
+By default, the starter is not provided with users. To access the private pages and the admin section (reserved for superusers), follow the steps below.
 
-   Create Superusers
+**Create Superusers**
 
-   To access the admin section, Django requires superuser privilegies. Let's create a new superuser and access the admin section of the project:
+To access the admin section, Django requires superuser privileges. Let's create a new superuser:
 
 .. code-block:: shell
 
-   $ python manage.py createsuperuser
+   python manage.py createsuperuser
 
-Once the superuser is successfully created, we can access the admin section:
+Once the superuser is successfully created, you can access the admin section at:
 
 :literal:`http://localhost:8000/admin/`
 
-   Create Groups
+**Create Groups**
 
-      Administrator
+- Administrator
+- Investigator
+- Viewer
 
-      Investigator
+**Create Users**
 
-      Viewer
+(Instructions to create users can be added here.)
 
-   Create Users
+Codebase Structure
+------------------
 
-      
-
-Codebase structure
+(Provide details about the codebase structure here.)
 
 Deploy on Webserver
+-------------------
 
-   
-Usage
-++++++++++++++++
+(Add instructions for deployment here.)
 
-* **(a)** Visit `https://jdash.inm7.de <https://jdash.inm7.de/>`_.
-* **(b)** Enter your personal credentials into the login fields and press **'Login'**.
+Using the Dashboard
++++++++++++++++++++
+
+Login Page
+-----------
 
 .. image:: image/dash_index.png
+   :width: 600px
+   :align: center
+
+.. raw:: html
+
+   <div style="
+     border: 1px solid var(--color-border);
+     background-color: var(--color-background-secondary);
+     color: var(--color-foreground-primary);
+     padding: 1em 1.5em;
+     border-radius: 8px;
+     margin: 2em 0;
+   ">
+     <strong>Quick access:</strong>
+     <ul>
+       <li><a href="#login" style="color: var(--color-link); text-decoration: none;">(1) – Login form</a></li>
+       <li><a href="#language" style="color: var(--color-link); text-decoration: none;">(2) – Language switcher</a></li>
+       <li><a href="#contact" style="color: var(--color-link); text-decoration: none;">(3) – Contact form</a></li>
+       <li><a href="#delete" style="color: var(--color-link); text-decoration: none;">(4) – Data Deletion form</a></li>
+       <li><a href="#directcontacts" style="color: var(--color-link); text-decoration: none;">(5) – Direct contacts</a></li>
+     </ul>
+   </div>
+
+.. _login:
+
+**(1) Logging in**
+
+* Visit `https://jdash.inm7.de <https://jdash.inm7.de/>`_
+* Enter your personal credentials into the login fields and press **"Login"**.
+* You can find your login credentials inside a PDF-file that was sent to you via email.
+
+.. _language:
+
+**(2) Switch language**
+
+To change the language of the website please click on the respective flag.
+Currently only German and English are supported. Additional languages will be added in the future.
+
+.. _contact:
+
+**(3) Contact form**
+
+For general enquiries and messages, please use the provided contact form that appears after clicking the button.
+
+.. image:: image/dash_contactform.png
    :scale: 30 %
    :align: center
 
+.. _delete:
+
+**(4) Data Deletion Request**
+
+When a participant requests his/her data to be deleted, click this link to open our Data Deletion Request form.
+
+.. image:: image/dash_data_deletion_form.png
+   :width: 600px
+   :align: center
+
+.. important::
+   The data will be **permanently** removed and cannot be restored.
+   Please make sure to provide the correct **Subject ID**.
+
+.. _directcontacts:
+
+**(5) Direct Contacts**
+
+For collaboration enquiries and scientific questions you can contact Dr. Juergen Dukart or Dr. Mehran Turna.
+For technical questions please contact `Jona M. Fischer <mailto:j.fischer@fz-juelich.de>`_ or `Mamaka Narava <mailto:m.narava@fz-juelich.de>`_
+
+Landing Page
+-------------
+
+**Studies**
+
+* View all studies in a grid view.
 
 .. image:: image/dash_logged_in.png
-   :scale: 30 %
+   :width: 600px
    :align: center
 
-* **(c)** Search view of all the studies.
+* View all studies in a search view.
+
 .. image:: image/dash_display_search_view.png
-   :scale: 30 %
+   :width: 600px
    :align: center
+
+**Survey**
+
+Shows all surveys in a search view.
+
+.. image:: image/dash_display_search_view.png
+   :width: 600px
+   :align: center
+
+**Analytics**
+
+Shows a selection of all studies available for Analytics.
+
+
+
 Studies
+--------
 
-   Create a new study
+**Create a New Study**
 
+* **(a)** Navigating to **Create Study** opens an empty form to create a new study.
 
-   * **(a)** Navigating to **Create Study** directs to an empty mask for creating a new study.
+.. image:: image/dash_create_empty.png
+   :width: 600px
+   :align: center
 
-   .. image:: image/dash_create_empty.png
-      :scale: 30 %
-      :align: center
-   |
+|
 
-   View an ongoing study
+**View an Ongoing Study**
 
+* **(a)** Selecting a study displays all relevant information (general info, sent data) and options to:
+  - Send push notifications
+  - Remove users manually
+  - Download participant sheets
 
+.. image:: image/dash_display_study.png
+   :width: 600px
+   :align: center
 
-   * **(a)** Selecting a study results in displaying all relevant information (general information, sent data information) and the options to send push notifications, to remove users from the study manually and to download participant sheets.
+|
 
-   .. image:: image/dash_display_study.png
-      :scale: 30 %
-      :align: center
+**Close an Ongoing Study**
 
-   |
+* **(a)** Navigating to **Close Study** displays a dropdown list of ongoing studies that can be closed.
+* **(b)** Selecting a study and pressing **"Close Study"** moves it to the archive (**confirmation needed**).
 
+.. image:: image/dash_close_study.png
+   :width: 600px
+   :align: center
 
-   Close an ongoing study
+**Side-panel Features**
 
+* **(a)** Click **"Refresh"** to update the data and view the current status of subjects/sensors.
+* **(b)** Click **"Download unused study sheets"** to download participant sheets that have not been used.
+* **(c)** Click **"Download Data"** to download study data.
+* **(d)** Click **"Delete Subjects"** to delete subject data from the study and server.
 
-   * **(a)** Navigating to **Close Study** directs to an empty dropdown list containing all ongoing studies that can be closed.
-   * **(b)** Selecting a study and pressing **'Close study'** below closes (i. e. moves it to the archive) the study (*Confirmation needed*).
+.. image:: image/dash_features.png
+   :width: 600px
+   :align: center
 
-   .. image:: image/dash_close_study.png
-      :scale: 30 %
-      :align: center
+.. important::
+   In the **Push Notifications** section, fill out the title, message, and receiver list to send a notification to selected recipients.
 
+.. image:: image/dash_send_notification.png
+   :width: 600px
+   :align: center
 
+**Create / Remove Subjects**
 
-   Other Features
+.. important::
+   In the **Remove User** section, select a user to remove them from the study (**confirmation needed**).
 
-   * **(a)** Click **'Refresh'** to refresh the data to view current status of subjects/sensors.
-   * **(b)** Click **'Download unused study sheets'** to download participant sheets that were not used yet.
-   * **(c)** Click **'Download Data'** to download study data.
-   * **(d)** Click **'Delete Subjects'** to delete subject data from the study and server.
-
-   .. image:: image/dash_features.png
-      :scale: 30 %
-      :align: center
-
-   .. important:: In **Push notifications** section fill out title, message and reveicer list in order to send a notification to chosen receivers.
-
-   .. image:: image/dash_send_notification.png
-      :scale: 30 %
-      :align: center
-
-
-
-Subjects
-
-   Create/Remove  subjects
-   .. important:: In **Remove user** section select an user to remove him/her from the study (*Confirmation needed*).
-
-   .. image:: image/dash_create_remove_subjects.png
-      :scale: 30 %
-      :align: center
+.. image:: image/dash_create_remove_subjects.png
+   :width: 600px
+   :align: center
 
 Survey
+------
 
+**Create / Edit Survey**
 
+**Create / Edit Category**
+
+**Create / Edit Question**
+
+**Create / Edit Answer**
+
+(Add details about the survey functionality here.)
