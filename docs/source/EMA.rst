@@ -2,10 +2,10 @@
 JTrack EMA
 =====================
 
-This app is available for Android and iOS operating systems.
+JTrack EMA is available for **Android** and **iOS**:
 
-* For the Android version
-* For the iOS version (check here)
+- In the `Google Play Store <https://play.google.com/store/apps/details?id=inm7.JTrack.JTrack_EMA_Plus>`__
+- In `Apple's App Store <https://apps.apple.com/de/app/jtrack-ema/id1605100657>`__
 
 General Settings
 ^^^^^^^^^^^^^^^^

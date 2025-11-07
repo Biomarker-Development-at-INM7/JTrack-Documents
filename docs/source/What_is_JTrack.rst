@@ -7,26 +7,28 @@ A Collaborative Tool for Passive Monitoring and Ecological Momentary Assessments
 Scope of Application
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The JTrack platform consists of the two JTrack applications (:doc:`EMA <EMA>` and :doc:`Social <Social>`) and a server infrastructure to enable central data collection.
+The JTrack platform consists of a web dashboard (:doc:`JDash <JTrack_Dashboard>`) and two mobile JTrack applications (:doc:`EMA <EMA>` and :doc:`Social <Social>`). We also provide server infrastructure to enable central data collection with JTrack.
 
-The platform was developed to gather study-specific digital phenotyping information about smartphone usage, sensor data, and participants’ (i.e., “users”) self-perceptions of specific events or activities occurring in their daily lives.
+The platform was developed to gather study-specific digital phenotyping information like various :ref:`sensor data <sensor-data>` and participants’ (i.e., “users”) :ref:`self-perceptions <ema-data>` of specific events or activities occurring in their daily lives.
 
 JTrack was designed as an open-source collaboration tool to enable clinical and behavioral researchers to collect their own digital phenotyping data from study populations.
 
-The **JTrack Social** application was developed to collect sensor data from sensors embedded in modern smartphones and smartwatches, as well as general smartphone usage information. The specific sensor and phone usage combinations are study-specific and fully customizable.
+The :doc:`JTrack Social <Social>` application was developed to collect sensor data from sensors embedded in modern smartphones and smartwatches, as well as general smartphone usage information. The specific sensor and phone usage combinations are study-specific and fully customizable.
 
 A high priority is assigned to data privacy to ensure that the collected data does not contain any identifiable or personal information. For example, GPS information is encoded into a random coordinate system to ensure that the user’s actual location cannot be derived.
 
 JTrack Social has two different modes that can be used selectively or in combination:
 
-1. **Passive monitoring**, which does not require any interaction with the user.
-2. **Active labeling**, where the user enters a specific activity they are performing, and the sensor data are labeled accordingly.
+1. **Passive monitoring**: records data in the background with only a minimal interaction by the user.
+2. **Active labeling**: the user enters a specific activity they are performing and recorded sensor data is labeled accordingly.
 
-The **JTrack EMA** application was developed to collect questionnaire data in longitudinal studies. Using JTrack EMA, one can collect “user-generated” data based on users’ interactions or responses to fully customizable surveys. These data are collected, transferred, and stored on our servers anonymously.
+The :doc:`JTrack EMA <EMA>` application was developed to collect questionnaire data in longitudinal studies. Using JTrack EMA, one can collect “user-generated” data based on users’ interactions or responses to customizable surveys. This data is collected, transferred, and stored on our servers anonymously.
 
-In addition, both apps can collect “derivative data.” These data are collected automatically for technical reasons, such as sending push notifications, recording error logs, and ensuring smooth app behavior. This information is not stored permanently and contains no user identifiers.
+Additionally, both apps may collect "derivative data", which is gathered automatically for technical purposes — such as sending push notifications, logging errors, or maintaining smooth app performance. This data is not stored permanently and does not include any user-identifying information.
 
 Both apps only collect data from users who have registered for a study and accepted the necessary permissions provided during installation. Installing the applications without participating in a study will not result in any data collection or storage. For all participants, only study-specific information is collected, as specified in the written informed consent.
+
+.. _sensor-data:
 
 Sensor Data
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -68,44 +70,40 @@ Accelerometer and gyroscope data can be recorded to estimate movement patterns.
 
 **Anonymization:** These data are only combined with anonymized, JTrack-specific study and subject IDs.
 
+Sample Data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Curious about how this data would look like?* :ref:`Contact us <contact-us>` *to get a sample dataset.*
+
+.. _ema-data:
+
 Ecological Momentary Assessments
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Information collected in each study is outlined in the written informed consent and study protocol. Such information may include:
 
-3.1 Personal Data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If required for study conduct, personal information (such as name, email address, and clinical data) may be collected. This data is never stored via the application but only in study-specific, dedicated databases accessible only to authorized study staff.
-
-This information is never used to identify additional personal data or to contact participants for reasons unrelated to the study.
-
-3.2 Demographic and Clinical Data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Demographic and clinical data may be collected as specified in the study protocol and informed consent. This data is never collected via the application itself but rather in dedicated databases accessible only to authorized study personnel.
-
-3.3 User-Generated Survey Data
+3.1 User-Generated Survey Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Information provided by users when completing surveys is stored separately from any personal data. All survey responses are confidential and not used to identify participants.
 
-3.4 Derivative Data
+*Demographic and clinical data may be collected if specified by the study protocol. Access to this information is restricted to authorized study personnel only.*
+
+3.2 Derivative Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Data automatically collected by the application (e.g., app version, device operating system, log files) are temporarily stored and deleted when the application is uninstalled. No employee has direct access to this data, and it cannot be linked to identify any person.
 
-Device Access Permissions
+Application Permissions
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-We may request access or permission to certain device features. These requests are necessary to provide a smooth experience and to access study-specific sensors.
+Our apps may request access or permission to certain device features. These features are necessary to provide a smooth experience and to access study-specific sensors.
 
 Below is a list of permissions the application may request:
 
 * **Camera access:** Used to scan QR codes for app activation.
-* **GPS information:** Required for location tracking. Coordinates are anonymized on the device before transfer to the server.
+* **Location information:** Required for location tracking. Coordinates are anonymized on the device before transfer to the server.
 * **File read and write access:** Used to write and save survey information (e.g., images).
-* **Battery optimization:** To prevent the application from being put to sleep, we ask users to disable battery optimization.
+* **Battery optimization:** To prevent the application from being put to sleep, we ask users to disable the system's battery optimization.
 
 Users can modify permissions at any time via the device settings.
 
@@ -138,7 +136,7 @@ Personal information will **never** be shared with third-party applications or o
 5.3 Disclosure of Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Personal information is never shared with individuals not involved in the study. It will never be used to contact you for reasons unrelated to the study. Data you provide will never be sold or used for marketing or advertising. We may share anonymized data to address scientific questions or verify study results.
+Personal information is **never** shared with individuals not involved in the study. It will **never** be used to contact you for reasons unrelated to the study. Data you provide will **never** be sold or used for marketing or advertising. We may share anonymized data to address scientific questions or verify study results.
 
 Data Security
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -149,7 +147,7 @@ All data transfers are protected via HTTPS. Additional checks (e.g., MD5 checksu
 
 Any personally identifiable information is stored separately and never linked to user-generated data. All employees with access to study data are contractually obligated to maintain data security.
 
-For Study Participants
+Study Participants
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Users may stop data collection or leave the study at any time via the app. If a device is lost, participants may request that study owners stop data collection.

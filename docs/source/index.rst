@@ -19,9 +19,9 @@
 Welcome to the JTrack Platform
 ==============================================
 
-JTrack is an open-source platform, free of charge, for remote assessments of individuals *in situ* using smartphones.
+JTrack is an open-source platform, free of charge, for remote assessments of individuals *in situ* using smartphones and wearables.
 
-It was developed by the Biomarker Development Group at the Institute of Neuroscience and Medicine 7 (Brain and Behaviour) of the Research Center Jülich.
+It was developed by the Biomarker Development Group at the INM - Institute of Neuroscience and Medicine (INM-7, Brain and Behaviour) of the Research Center Jülich (FZJ).
 
 JTrack is adaptable, configurable, and scalable, with a strong focus on security and privacy.
 
@@ -51,8 +51,10 @@ Contents:
    What_is_JTrack
    EMA
    Social
-   developers
    JTrack_Dashboard
+   developers
+   FAQ
+   Troubleshooting
    Team
 
 Publications
@@ -63,6 +65,8 @@ Publications
 - `System Comparison for Gait and Balance Monitoring Used for the Evaluation of a Home-Based Training <https://www.mdpi.com/1707028>`_
 
 - `JTrack-EMA+: A Cross-platform Ecological Momentary Assessment Application (preprint) <https://preprints.jmir.org/preprint/51689>`_
+
+.. _contact-us:
 
 Contact Us
 ++++++++++

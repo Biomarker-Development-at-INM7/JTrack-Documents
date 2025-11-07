@@ -108,7 +108,7 @@ Using the Dashboard
 Login Page
 -----------
 
-.. image:: image/dash_index.png
+.. image:: image/JDash/dash_index.png
    :width: 600px
    :align: center
 
@@ -270,6 +270,54 @@ Studies
 .. image:: image/dash_create_remove_subjects.png
    :width: 600px
    :align: center
+
+.. _conf-active-labeling:
+
+**How to Configure Active Labeling**
+
+In **JDash**, study conductors can configure the **Active Labeling** feature to collect labeled sensor data for specific tasks or activities. This setup is essential when precise associations between sensor signals and user-performed tasks are required.
+
+.. image:: image/JDash/ActiveLabeling.png
+   :width: 600px
+   :align: center
+
+Within the study settings on **JDash**, you can:
+
+- ✅ **Enable active labeling** for your study.
+- 🎯 **Select the sensors** that should be recorded during active labeling sessions (e.g., accelerometer, gyroscope, microphone, etc.).
+- 📝 **Define multiple labeling tasks**:
+
+  - Each task has a **name**, a **default duration**, and an optional **instructional description**.
+  - These tasks will appear in the participant’s app as selectable activities during active labeling.
+
+.. note::
+
+   Active labeling will only be enabled if **active sensors** are selected in the configuration.
+
+Example task list JSON:
+
+.. code-block:: json
+
+    [
+      {
+        "task_name": "Brushing Teeth",
+        "task_duration": 30,
+        "task_description": "Please simulate brushing your teeth for 30 seconds."
+      },
+      {
+        "task_name": "Walking",
+        "task_duration": 60,
+        "task_description": "Walk normally in a straight line for one minute."
+      }
+    ]
+
+This list is presented to participants inside the JTrack Social app with autocomplete, so tasks are standardized and consistent.
+
+.. tip::
+
+   Use descriptive task names and clear instructions to help participants understand what to do during each session.
+
+Inside of JTrack Social, Active Labeling is then accessible from the Main view (both in :ref:`iOS <active-labeling-ios>` and Android).
 
 Survey
 ------
