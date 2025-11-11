@@ -13,6 +13,7 @@
     
     
 
+<<<<<<< HEAD
 
 <style>
   body {
@@ -188,6 +189,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+=======
+    <title>JTrack Social &#8212; JTrack 2.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=60dbed4a"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="JDash - JTrack Dashboard" href="JTrack_Dashboard.html" />
+    <link rel="prev" title="JTrack EMA" href="EMA.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+>>>>>>> eb15e1f (ema and social fix)
   
   
   <span class="sidebar-brand-text">JTrack 2.1 documentation</span>
@@ -419,11 +434,80 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
+<section id="active-labeling-of-activities">
+<h3>Active Labeling of Activities<a class="headerlink" href="#active-labeling-of-activities" title="Link to this heading">¶</a></h3>
+<p>Use <em>Active Labeling</em> to mark what you are doing in real time. This helps the study link sensor data with the correct activity.</p>
+<section id="overview">
+<h4>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>The home screen shows <strong>Recently completed activities</strong> and the large <strong>Play/Stop</strong> control.</p></li>
+<li><p>Use <strong>+</strong> to pick or create an activity, or <strong>▶</strong> (arrow) to load the next scheduled one.</p></li>
+<li><p>Some tasks display a short <strong>instruction</strong> and a <strong>preparation countdown</strong> before starting.</p></li>
+</ul>
+</section>
+<section id="step-by-step">
+<h4>Step-by-Step<a class="headerlink" href="#step-by-step" title="Link to this heading">¶</a></h4>
+<section id="open-the-activity-screen">
+<h5>1) Open the Activity Screen<a class="headerlink" href="#open-the-activity-screen" title="Link to this heading">¶</a></h5>
+<p>You will see your recent tasks and the main control.</p>
+<a class="reference internal image-reference" href="_images/active_label_01.png"><img alt="JTrack Social home screen with recent activities and Play button" class="align-center" src="_images/active_label_01.png" style="width: 432.0px; height: 960.0px;" /></a>
+</section>
+<section id="add-or-select-an-activity">
+<h5>2) Add or Select an Activity<a class="headerlink" href="#add-or-select-an-activity" title="Link to this heading">¶</a></h5>
+<p>Tap the <strong>+</strong> button to add/select a task. In the <strong>New Activity</strong> dialog:</p>
+<ul class="simple">
+<li><p><strong>Enter activity</strong>: type the activity name (e.g., <em>task 1</em>).</p></li>
+<li><p><strong>Duration in seconds (optional)</strong>: set a fixed length if your study requires it; otherwise leave empty.</p></li>
+<li><p><strong>Record Audio</strong>: toggle on only if your study instructs you to capture audio.</p></li>
+</ul>
+<p>Tap <strong>Add</strong>.</p>
+<a class="reference internal image-reference" href="_images/active_label_02.png"><img alt="New Activity dialog with fields for name, optional duration, and audio toggle" class="align-center" src="_images/active_label_02.png" style="width: 432.0px; height: 960.0px;" /></a>
+<p>As you type, you may see suggestions—tap to select one.</p>
+<a class="reference internal image-reference" href="_images/active_label_03.png"><img alt="Activity name suggestions appearing under the text field" class="align-center" src="_images/active_label_03.png" style="width: 432.0px; height: 960.0px;" /></a>
+</section>
+<section id="read-the-task-instruction-if-shown">
+<h5>3) Read the Task Instruction (if shown)<a class="headerlink" href="#read-the-task-instruction-if-shown" title="Link to this heading">¶</a></h5>
+<p>Some studies display a brief instruction popup for the selected task. Tap <strong>OK</strong> to continue.</p>
+<a class="reference internal image-reference" href="_images/active_label_04.png"><img alt="Instruction dialog for the selected task" class="align-center" src="_images/active_label_04.png" style="width: 432.0px; height: 960.0px;" /></a>
+</section>
+<section id="preparation-countdown-if-shown">
+<h5>4) Preparation Countdown (if shown)<a class="headerlink" href="#preparation-countdown-if-shown" title="Link to this heading">¶</a></h5>
+<p>If your study uses a preparation phase, you will see a countdown. The task starts automatically when the countdown (and any beeps) finish.</p>
+<a class="reference internal image-reference" href="_images/active_label_05.png"><img alt="Preparation countdown dialog before task begins" class="align-center" src="_images/active_label_05.png" style="width: 432.0px; height: 960.0px;" /></a>
+</section>
+<section id="start-and-stop-the-task">
+<h5>5) Start and Stop the Task<a class="headerlink" href="#start-and-stop-the-task" title="Link to this heading">¶</a></h5>
+<ul class="simple">
+<li><p>Press the <strong>Play</strong> button to start. The timer and progress bar will run.</p></li>
+<li><p>Press the <strong>Stop</strong> button to end the task.</p></li>
+<li><p>When finished, the task appears under <strong>Recently completed activities</strong> with a timestamp.</p></li>
+</ul>
+</section>
+</section>
+<section id="notes-tips">
+<h4>Notes &amp; Tips<a class="headerlink" href="#notes-tips" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Notifications like <strong>“Main service started”</strong> or <strong>“Acceleration service started”</strong> confirm background sensors are running.</p></li>
+<li><p>If you enabled <strong>Record Audio</strong>, Android may show a temporary green microphone indicator while recording.</p></li>
+<li><p>If you entered a <strong>fixed duration</strong>, the task ends automatically when the timer completes.</p></li>
+<li><p>To repeat a task, either use <strong>▶</strong> (load next task) or tap <strong>+</strong> to pick the activity again.</p></li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h4>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Can’t find the + button</strong>: Scroll slightly if the Play button covers screen elements on small displays.</p></li>
+<li><p><strong>No suggestions appear</strong>: Type the full name or create the activity once—future entries will suggest it.</p></li>
+<li><p><strong>Audio toggle missing</strong>: Your study may not require audio; follow on-screen options only.</p></li>
+</ul>
+</section>
+</section>
 </section>
 </section>
 
         </article>
       </div>
+<<<<<<< HEAD
       <footer>
         
         <div class="related-pages">
@@ -490,8 +574,71 @@
           </div>
         </div>
       </div>
+=======
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">JTrack</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="What_is_JTrack.html">What is JTrack?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EMA.html">JTrack EMA</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">JTrack Social</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-settings">General Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#audio-sensor">Audio Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#location-sensor">Location Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#application-usage-sensor">Application Usage Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#activity-detection-sensor">Activity Detection Sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="JTrack_Dashboard.html">JDash - JTrack Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Team.html">Meet the Team</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="EMA.html" title="previous chapter">JTrack EMA</a></li>
+      <li>Next: <a href="JTrack_Dashboard.html" title="next chapter">JDash - JTrack Dashboard</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, INM7.
+>>>>>>> eb15e1f (ema and social fix)
       
       
+<<<<<<< HEAD
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=c4a36953"></script>
@@ -499,4 +646,12 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
     </body>
+=======
+    </div>
+
+    
+
+    
+  </body>
+>>>>>>> eb15e1f (ema and social fix)
 </html>

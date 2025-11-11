@@ -147,6 +147,7 @@ Allow **Activity recognition** when prompted.
    :align: center
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Active Labeling
 ----------------
 
@@ -375,6 +376,8 @@ If tasks do not start:
 - Verify sensor permissions (motion, microphone) are granted.
 - Ensure that background mode is enabled (on iOS).
 =======
+=======
+>>>>>>> eb15e1f (ema and social fix)
 |
 
 Active Labeling of Activities

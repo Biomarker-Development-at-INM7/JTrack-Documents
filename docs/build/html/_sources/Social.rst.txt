@@ -160,3 +160,94 @@ To enable the activity recognition sensor, please accept the following permissio
    :align: center
 
 |
+
+Active Labeling of Activities
+=============================
+
+Use *Active Labeling* to mark what you are doing in real time. This helps the study link sensor data with the correct activity.
+
+Overview
+--------
+
+- The home screen shows **Recently completed activities** and the large **Play/Stop** control.
+- Use **+** to pick or create an activity, or **▶** (arrow) to load the next scheduled one.
+- Some tasks display a short **instruction** and a **preparation countdown** before starting.
+
+Step-by-Step
+------------
+
+1) Open the Activity Screen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You will see your recent tasks and the main control.
+
+.. image:: image/Social/active_label_01.png
+   :scale: 40%
+   :align: center
+   :alt: JTrack Social home screen with recent activities and Play button
+
+2) Add or Select an Activity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tap the **+** button to add/select a task. In the **New Activity** dialog:
+
+- **Enter activity**: type the activity name (e.g., *task 1*).
+- **Duration in seconds (optional)**: set a fixed length if your study requires it; otherwise leave empty.
+- **Record Audio**: toggle on only if your study instructs you to capture audio.
+
+Tap **Add**.
+
+.. image:: image/Social/active_label_02.png
+   :scale: 40%
+   :align: center
+   :alt: New Activity dialog with fields for name, optional duration, and audio toggle
+
+As you type, you may see suggestions—tap to select one.
+
+.. image:: image/Social/active_label_03.png
+   :scale: 40%
+   :align: center
+   :alt: Activity name suggestions appearing under the text field
+
+3) Read the Task Instruction (if shown)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some studies display a brief instruction popup for the selected task. Tap **OK** to continue.
+
+.. image:: image/Social/active_label_04.png
+   :scale: 40%
+   :align: center
+   :alt: Instruction dialog for the selected task
+
+4) Preparation Countdown (if shown)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your study uses a preparation phase, you will see a countdown. The task starts automatically when the countdown (and any beeps) finish.
+
+.. image:: image/Social/active_label_05.png
+   :scale: 40%
+   :align: center
+   :alt: Preparation countdown dialog before task begins
+
+5) Start and Stop the Task
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Press the **Play** button to start. The timer and progress bar will run.
+- Press the **Stop** button to end the task.
+- When finished, the task appears under **Recently completed activities** with a timestamp.
+
+Notes & Tips
+------------
+
+- Notifications like **“Main service started”** or **“Acceleration service started”** confirm background sensors are running.
+- If you enabled **Record Audio**, Android may show a temporary green microphone indicator while recording.
+- If you entered a **fixed duration**, the task ends automatically when the timer completes.
+- To repeat a task, either use **▶** (load next task) or tap **+** to pick the activity again.
+
+Troubleshooting
+---------------
+
+- **Can’t find the + button**: Scroll slightly if the Play button covers screen elements on small displays.
+- **No suggestions appear**: Type the full name or create the activity once—future entries will suggest it.
+- **Audio toggle missing**: Your study may not require audio; follow on-screen options only.
+

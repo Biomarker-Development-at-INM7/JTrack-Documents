@@ -13,11 +13,26 @@
     
     
 
+<<<<<<< HEAD
 
 <style>
   body {
     --color-code-background: #f8f8f8;
   --color-code-foreground: black;
+=======
+    <title>JDash - JTrack Dashboard &#8212; JTrack 2.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=60dbed4a"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Meet the Team" href="Team.html" />
+    <link rel="prev" title="JTrack Social" href="Social.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+>>>>>>> eb15e1f (ema and social fix)
   
   }
   @media not print {
@@ -144,6 +159,7 @@
   </symbol>
 </svg>
 
+<<<<<<< HEAD
 <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
 <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
 <label class="overlay sidebar-overlay" for="__navigation">
@@ -154,6 +170,133 @@
 </label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+=======
+          <div class="body" role="main">
+            
+  <section id="jdash-jtrack-dashboard">
+<h1>JDash - JTrack Dashboard<a class="headerlink" href="#jdash-jtrack-dashboard" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>JDash is a web app built with the Django framework combined with <a class="reference external" href="https://dash.plotly.com">Dash</a> for analysis purpose.</p></li>
+<li><p>It provides several functionalities that are necessary for creating, viewing and closing studies currently initiated by clinical institutions and the <a class="reference external" href="https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672">Biomarker Development Group</a>.</p></li>
+</ul>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
+</section>
+<section id="set-up">
+<h2>Set up<a class="headerlink" href="#set-up" title="Link to this heading">¶</a></h2>
+<p>Environment
+To use the starter, Python3 should be installed properly in the workstation. If you are not sure if Python is installed, please open a terminal and type python –version. Here is the full list with dependencies and tools required to build the app:</p>
+<p>Python3 - the programming language used to code the app
+GIT - used to clone the source code from the Github repository</p>
+</section>
+<section id="manual-build">
+<h2>Manual Build<a class="headerlink" href="#manual-build" title="Link to this heading">¶</a></h2>
+<p>Download the code</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>JTrack-dashboard
+</pre></div>
+</div>
+<p>Set Up for Unix, MacOS</p>
+<p>Install modules via VENV</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>virtualenv<span class="w"> </span>jdash
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>jdash/bin/activate
+$<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>Set Up Database</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>collect<span class="w"> </span>static
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</pre></div>
+</div>
+<p>Start the app</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+<p>At this point, the app runs at <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000/</span></code>.</p>
+<p>Manage App Users</p>
+<blockquote>
+<div><p>By default, the starter is not provided with users. To access the private pages and the admin section (reserved for superusers) follow up the next sections.</p>
+<p>Create Superusers</p>
+<p>To access the admin section, Django requires superuser privilegies. Let’s create a new superuser and access the admin section of the project:</p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
+</pre></div>
+</div>
+<p>Once the superuser is successfully created, we can access the admin section:</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://localhost:8000/admin/</span></code></p>
+<blockquote>
+<div><p>Create Groups</p>
+<blockquote>
+<div><p>Administrator</p>
+<p>Investigator</p>
+<p>Viewer</p>
+</div></blockquote>
+<p>Create Users</p>
+</div></blockquote>
+<p>Codebase structure</p>
+<p>Deploy on Webserver</p>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>(a)</strong> Visit <a class="reference external" href="https://jdash.inm7.de/">https://jdash.inm7.de</a>.</p></li>
+<li><p><strong>(b)</strong> Enter your personal credentials into the login fields and press <strong>‘Login’</strong>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/dash_index.png"><img alt="_images/dash_index.png" class="align-center" src="_images/dash_index.png" style="width: 859.1999999999999px; height: 490.79999999999995px;" /></a>
+<a class="reference internal image-reference" href="_images/dash_logged_in.png"><img alt="_images/dash_logged_in.png" class="align-center" src="_images/dash_logged_in.png" style="width: 837.6px; height: 465.59999999999997px;" /></a>
+<ul class="simple">
+<li><p><strong>(c)</strong> Search view of all the studies.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/dash_display_search_view.png"><img alt="_images/dash_display_search_view.png" class="align-center" src="_images/dash_display_search_view.png" style="width: 838.1999999999999px; height: 464.4px;" /></a>
+<p>Studies</p>
+<blockquote>
+<div><p>Create a new study</p>
+<ul class="simple">
+<li><p><strong>(a)</strong> Navigating to <strong>Create Study</strong> directs to an empty mask for creating a new study.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/dash_create_empty.png"><img alt="_images/dash_create_empty.png" class="align-center" src="_images/dash_create_empty.png" style="width: 840.6px; height: 448.2px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>View an ongoing study</p>
+<ul class="simple">
+<li><p><strong>(a)</strong> Selecting a study results in displaying all relevant information (general information, sent data information) and the options to send push notifications, to remove users from the study manually and to download participant sheets.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/dash_display_study.png"><img alt="_images/dash_display_study.png" class="align-center" src="_images/dash_display_study.png" style="width: 833.4px; height: 460.79999999999995px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Close an ongoing study</p>
+<ul class="simple">
+<li><p><strong>(a)</strong> Navigating to <strong>Close Study</strong> directs to an empty dropdown list containing all ongoing studies that can be closed.</p></li>
+<li><p><strong>(b)</strong> Selecting a study and pressing <strong>‘Close study’</strong> below closes (i. e. moves it to the archive) the study (<em>Confirmation needed</em>).</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/dash_close_study.png"><img alt="_images/dash_close_study.png" class="align-center" src="_images/dash_close_study.png" style="width: 834.0px; height: 467.4px;" /></a>
+<p>Other Features</p>
+<ul class="simple">
+<li><p><strong>(a)</strong> Click <strong>‘Refresh’</strong> to refresh the data to view current status of subjects/sensors.</p></li>
+<li><p><strong>(b)</strong> Click <strong>‘Download unused study sheets’</strong> to download participant sheets that were not used yet.</p></li>
+<li><p><strong>(c)</strong> Click <strong>‘Download Data’</strong> to download study data.</p></li>
+<li><p><strong>(d)</strong> Click <strong>‘Delete Subjects’</strong> to delete subject data from the study and server.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/dash_features.png"><img alt="_images/dash_features.png" class="align-center" src="_images/dash_features.png" style="width: 840.0px; height: 363.0px;" /></a>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In <strong>Push notifications</strong> section fill out title, message and reveicer list in order to send a notification to chosen receivers.</p>
+</div>
+<a class="reference internal image-reference" href="_images/dash_send_notification.png"><img alt="_images/dash_send_notification.png" class="align-center" src="_images/dash_send_notification.png" style="width: 774.0px; height: 323.4px;" /></a>
+</div></blockquote>
+<p>Subjects</p>
+<blockquote>
+<div><p>Create/Remove  subjects
+.. important:: In <strong>Remove user</strong> section select an user to remove him/her from the study (<em>Confirmation needed</em>).</p>
+<a class="reference internal image-reference" href="_images/dash_create_remove_subjects.png"><img alt="_images/dash_create_remove_subjects.png" class="align-center" src="_images/dash_create_remove_subjects.png" style="width: 832.1999999999999px; height: 457.2px;" /></a>
+</div></blockquote>
+<p>Survey</p>
+</section>
+</section>
+>>>>>>> eb15e1f (ema and social fix)
 
 
 
@@ -178,6 +321,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
+<<<<<<< HEAD
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
@@ -556,15 +700,76 @@ For technical questions please contact <a class="reference external" href="mailt
 <li><a class="reference internal" href="#survey">Survey</a></li>
 </ul>
 </li>
+=======
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">JTrack</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="What_is_JTrack.html">What is JTrack?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EMA.html">JTrack EMA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Social.html">JTrack Social</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">JDash - JTrack Dashboard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up">Set up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manual-build">Manual Build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+>>>>>>> eb15e1f (ema and social fix)
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="Team.html">Meet the Team</a></li>
 </ul>
 
+<<<<<<< HEAD
           </div>
         </div>
       </div>
+=======
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="Social.html" title="previous chapter">JTrack Social</a></li>
+      <li>Next: <a href="Team.html" title="next chapter">Meet the Team</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, INM7.
+>>>>>>> eb15e1f (ema and social fix)
       
       
+<<<<<<< HEAD
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=c4a36953"></script>
@@ -572,4 +777,12 @@ For technical questions please contact <a class="reference external" href="mailt
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
     </body>
+=======
+    </div>
+
+    
+
+    
+  </body>
+>>>>>>> eb15e1f (ema and social fix)
 </html>
