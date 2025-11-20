@@ -19,3 +19,5 @@ security                  1.2.0
 pdfkit                    1.0.0
 numpy                     1.26.1
 pandas                    2.1.2
+sphinx
+sphinx_rtd_theme
