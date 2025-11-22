@@ -125,7 +125,7 @@ Login Page
      <strong>Quick access:</strong>
      <ul>
        <li><a href="#login" style="color: var(--color-link); text-decoration: none;">(1) – Login form</a></li>
-       <li><a href="#language" style="color: var(--color-link); text-decoration: none;">(2) – Language switcher</a></li>
+       <li><a href="#language" style="color: var(--color-link); text-decoration: none;">(2) – Language switcher (in development)</a></li>
        <li><a href="#contact" style="color: var(--color-link); text-decoration: none;">(3) – Contact form</a></li>
        <li><a href="#delete" style="color: var(--color-link); text-decoration: none;">(4) – Data Deletion form</a></li>
        <li><a href="#directcontacts" style="color: var(--color-link); text-decoration: none;">(5) – Direct contacts</a></li>

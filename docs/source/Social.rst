@@ -146,13 +146,6 @@ Allow **Activity recognition** when prompted.
    :scale: 40%
    :align: center
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Active Labeling
-----------------
-
-
-
 .. _jtrack-social-ios:
 
 JTrack Social on iOS
@@ -375,13 +368,9 @@ If tasks do not start:
 - Ensure task list JSON is well-formed and downloaded.
 - Verify sensor permissions (motion, microphone) are granted.
 - Ensure that background mode is enabled (on iOS).
-=======
-=======
->>>>>>> eb15e1f (ema and social fix)
-|
 
-Active Labeling of Activities
-=============================
+Navigating the UI
+=================
 
 Use *Active Labeling* to mark what you are doing in real time. This helps the study link sensor data with the correct activity.
 
@@ -469,4 +458,3 @@ Troubleshooting
 - **Can’t find the + button**: Scroll slightly if the Play button covers screen elements on small displays.
 - **No suggestions appear**: Type the full name or create the activity once—future entries will suggest it.
 - **Audio toggle missing**: Your study may not require audio; follow on-screen options only.
-

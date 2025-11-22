@@ -2,28 +2,21 @@
 JTrack EMA+
 =====================
 
-<<<<<<< HEAD
 JTrack EMA is available for **Android** and **iOS**:
 
 - In the `Google Play Store <https://play.google.com/store/apps/details?id=inm7.JTrack.JTrack_EMA_Plus>`__
 - In `Apple's App Store <https://apps.apple.com/de/app/jtrack-ema/id1605100657>`__
-=======
+
 JTrack EMA+ is available for **Android** and **iOS**. It delivers a consistent, cross-platform survey experience with flexible question types and server-driven updates. :contentReference[oaicite:0]{index=0}
 
 - **Android**: Install from the Google Play Store.
 - **iOS**: Install from the App Store (link: *check here*).
->>>>>>> eb15e1f (ema and social fix)
 
-.. contents::
-   :local:
-   :depth: 2
-
-<<<<<<< HEAD
 To install this app, first go to the Google Play Store on your Android phone.
-=======
+
+
 What JTrack EMA+ Can Do
 =======================
->>>>>>> eb15e1f (ema and social fix)
 
 - **Broad question types**: binary, date/time, duration, sliders, single/multiple choice, and more.
 - **Platform-independent UX** with paging for long surveys, language support, and survey categories to keep forms organized. It also provide same user experience on both Android and iOS devices. 
@@ -32,6 +25,7 @@ What JTrack EMA+ Can Do
 - **Conditional logic** to show/hide questions based on earlier answers, improving relevance and reducing cognitive load. 
 - **Integrated calendar events** for time-sensitive prompts (adds reminders to the native calendar).
 - **Local Administration Menu** for on-device management tasks (study setup, diagnostics, etc.).
+
 .. image:: image/EMA/EMA_q_type.png
       :scale: 20%
       :align: center
@@ -55,7 +49,7 @@ Android — Install & Join the Study
       :scale: 40%
       :align: center
 
-3) Join the Study
+2) Join the Study
 -----------------
 
 1. Open **JTrack EMA+** and tap **Join study**.
@@ -76,7 +70,7 @@ Android — Install & Join the Study
    For more about the study QR code (including how it’s generated), see your project’s QR code documentation.
 
 3) Complete Required App Settings (only if required)
-------------------------------------------
+----------------------------------------------------
 
 After a successful login, the app will prompt you to adjust system settings to ensure reliable background operation.
 
@@ -146,7 +140,6 @@ Conditional Logic
 
 - Some questions appear only if earlier responses meet certain conditions—this keeps surveys shorter and more relevant. This can be configured by the survey designer in Jdash.
 
-<<<<<<< HEAD
 |
 
 Once the app is installed, open the **JTrack EMA+** app and click on the **Join Study** button.
@@ -183,18 +176,14 @@ Once login is successful, you will see the following screen. It asks you to go t
    :align: center
 
 |
-=======
 
->>>>>>> eb15e1f (ema and social fix)
 
 Next, look for **Battery Optimization** and select it.
 
-<<<<<<< HEAD
 |
-=======
+
 Troubleshooting
 ===============
->>>>>>> eb15e1f (ema and social fix)
 
 - **I can’t scan the QR code**
   - Ensure you granted **Camera** permission.
@@ -205,7 +194,6 @@ Troubleshooting
   - On Android, verify **Battery optimization** is **Unrestricted** and “Remove permission and free up space” is **disabled**.
   - Check **Do Not Disturb** or Focus modes.
 
-<<<<<<< HEAD
 Then select the **Unrestricted** option as shown below. This step ensures that the JTrack EMA app will not be restricted by the Android system.
 
 |
@@ -227,8 +215,7 @@ Now go back to the **App Info** page and scroll to find **Remove permissions and
 |
 
 Now the main setup of the JTrack EMA+ application is complete. You can proceed to use the app as intended.
-=======
+
 - **A permission was denied by mistake**
   - Go to **System Settings → Apps → JTrack EMA+** and enable the required permission(s).
 
->>>>>>> eb15e1f (ema and social fix)
