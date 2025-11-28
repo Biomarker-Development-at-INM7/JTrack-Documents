@@ -7,10 +7,6 @@ JTrack EMA is available for **Android** and **iOS**:
 - In the `Google Play Store <https://play.google.com/store/apps/details?id=inm7.JTrack.JTrack_EMA_Plus>`__
 - In `Apple's App Store <https://apps.apple.com/de/app/jtrack-ema/id1605100657>`__
 
-JTrack EMA+ is available for **Android** and **iOS**. It delivers a consistent, cross-platform survey experience with flexible question types and server-driven updates. :contentReference[oaicite:0]{index=0}
-
-- **Android**: Install from the Google Play Store.
-- **iOS**: Install from the App Store (link: *check here*).
 
 To install this app, first go to the Google Play Store on your Android phone.
 
@@ -49,7 +45,7 @@ Android — Install & Join the Study
       :scale: 40%
       :align: center
 
-2) Join the Study
+3) Join the Study
 -----------------
 
 1. Open **JTrack EMA+** and tap **Join study**.
