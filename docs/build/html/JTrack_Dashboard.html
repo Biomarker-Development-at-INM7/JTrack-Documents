@@ -1,38 +1,23 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Meet the Team" href="Team.html" /><link rel="prev" title="Developer Resources" href="developers.html" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Developer Resources" href="developers.html"><link rel="prev" title="JTrack Social" href="Social.html">
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 7.4.7 and Furo 2025.09.25 -->
         <title>JDash – JTrack Dashboard - JTrack 2.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     
     
 
-<<<<<<< HEAD
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-=======
-    <title>JDash - JTrack Dashboard &#8212; JTrack 2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
-    <script src="_static/documentation_options.js?v=60dbed4a"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Meet the Team" href="Team.html" />
-    <link rel="prev" title="JTrack Social" href="Social.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
->>>>>>> eb15e1f (ema and social fix)
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
   
   }
   @media not print {
@@ -159,144 +144,12 @@
   </symbol>
 </svg>
 
-<<<<<<< HEAD
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
-=======
-          <div class="body" role="main">
-            
-  <section id="jdash-jtrack-dashboard">
-<h1>JDash - JTrack Dashboard<a class="headerlink" href="#jdash-jtrack-dashboard" title="Link to this heading">¶</a></h1>
-<ul class="simple">
-<li><p>JDash is a web app built with the Django framework combined with <a class="reference external" href="https://dash.plotly.com">Dash</a> for analysis purpose.</p></li>
-<li><p>It provides several functionalities that are necessary for creating, viewing and closing studies currently initiated by clinical institutions and the <a class="reference external" href="https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672">Biomarker Development Group</a>.</p></li>
-</ul>
-<section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
-</section>
-<section id="set-up">
-<h2>Set up<a class="headerlink" href="#set-up" title="Link to this heading">¶</a></h2>
-<p>Environment
-To use the starter, Python3 should be installed properly in the workstation. If you are not sure if Python is installed, please open a terminal and type python –version. Here is the full list with dependencies and tools required to build the app:</p>
-<p>Python3 - the programming language used to code the app
-GIT - used to clone the source code from the Github repository</p>
-</section>
-<section id="manual-build">
-<h2>Manual Build<a class="headerlink" href="#manual-build" title="Link to this heading">¶</a></h2>
-<p>Download the code</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard.git
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>JTrack-dashboard
-</pre></div>
-</div>
-<p>Set Up for Unix, MacOS</p>
-<p>Install modules via VENV</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>virtualenv<span class="w"> </span>jdash
-$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>jdash/bin/activate
-$<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</pre></div>
-</div>
-<p>Set Up Database</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>collect<span class="w"> </span>static
-$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
-$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
-</pre></div>
-</div>
-<p>Start the app</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
-</pre></div>
-</div>
-<p>At this point, the app runs at <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000/</span></code>.</p>
-<p>Manage App Users</p>
-<blockquote>
-<div><p>By default, the starter is not provided with users. To access the private pages and the admin section (reserved for superusers) follow up the next sections.</p>
-<p>Create Superusers</p>
-<p>To access the admin section, Django requires superuser privilegies. Let’s create a new superuser and access the admin section of the project:</p>
-</div></blockquote>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
-</pre></div>
-</div>
-<p>Once the superuser is successfully created, we can access the admin section:</p>
-<p><code class="docutils literal notranslate"><span class="pre">http://localhost:8000/admin/</span></code></p>
-<blockquote>
-<div><p>Create Groups</p>
-<blockquote>
-<div><p>Administrator</p>
-<p>Investigator</p>
-<p>Viewer</p>
-</div></blockquote>
-<p>Create Users</p>
-</div></blockquote>
-<p>Codebase structure</p>
-<p>Deploy on Webserver</p>
-</section>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><strong>(a)</strong> Visit <a class="reference external" href="https://jdash.inm7.de/">https://jdash.inm7.de</a>.</p></li>
-<li><p><strong>(b)</strong> Enter your personal credentials into the login fields and press <strong>‘Login’</strong>.</p></li>
-</ul>
-<a class="reference internal image-reference" href="_images/dash_index.png"><img alt="_images/dash_index.png" class="align-center" src="_images/dash_index.png" style="width: 859.1999999999999px; height: 490.79999999999995px;" /></a>
-<a class="reference internal image-reference" href="_images/dash_logged_in.png"><img alt="_images/dash_logged_in.png" class="align-center" src="_images/dash_logged_in.png" style="width: 837.6px; height: 465.59999999999997px;" /></a>
-<ul class="simple">
-<li><p><strong>(c)</strong> Search view of all the studies.</p></li>
-</ul>
-<a class="reference internal image-reference" href="_images/dash_display_search_view.png"><img alt="_images/dash_display_search_view.png" class="align-center" src="_images/dash_display_search_view.png" style="width: 838.1999999999999px; height: 464.4px;" /></a>
-<p>Studies</p>
-<blockquote>
-<div><p>Create a new study</p>
-<ul class="simple">
-<li><p><strong>(a)</strong> Navigating to <strong>Create Study</strong> directs to an empty mask for creating a new study.</p></li>
-</ul>
-<a class="reference internal image-reference" href="_images/dash_create_empty.png"><img alt="_images/dash_create_empty.png" class="align-center" src="_images/dash_create_empty.png" style="width: 840.6px; height: 448.2px;" /></a>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<p>View an ongoing study</p>
-<ul class="simple">
-<li><p><strong>(a)</strong> Selecting a study results in displaying all relevant information (general information, sent data information) and the options to send push notifications, to remove users from the study manually and to download participant sheets.</p></li>
-</ul>
-<a class="reference internal image-reference" href="_images/dash_display_study.png"><img alt="_images/dash_display_study.png" class="align-center" src="_images/dash_display_study.png" style="width: 833.4px; height: 460.79999999999995px;" /></a>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<p>Close an ongoing study</p>
-<ul class="simple">
-<li><p><strong>(a)</strong> Navigating to <strong>Close Study</strong> directs to an empty dropdown list containing all ongoing studies that can be closed.</p></li>
-<li><p><strong>(b)</strong> Selecting a study and pressing <strong>‘Close study’</strong> below closes (i. e. moves it to the archive) the study (<em>Confirmation needed</em>).</p></li>
-</ul>
-<a class="reference internal image-reference" href="_images/dash_close_study.png"><img alt="_images/dash_close_study.png" class="align-center" src="_images/dash_close_study.png" style="width: 834.0px; height: 467.4px;" /></a>
-<p>Other Features</p>
-<ul class="simple">
-<li><p><strong>(a)</strong> Click <strong>‘Refresh’</strong> to refresh the data to view current status of subjects/sensors.</p></li>
-<li><p><strong>(b)</strong> Click <strong>‘Download unused study sheets’</strong> to download participant sheets that were not used yet.</p></li>
-<li><p><strong>(c)</strong> Click <strong>‘Download Data’</strong> to download study data.</p></li>
-<li><p><strong>(d)</strong> Click <strong>‘Delete Subjects’</strong> to delete subject data from the study and server.</p></li>
-</ul>
-<a class="reference internal image-reference" href="_images/dash_features.png"><img alt="_images/dash_features.png" class="align-center" src="_images/dash_features.png" style="width: 840.0px; height: 363.0px;" /></a>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>In <strong>Push notifications</strong> section fill out title, message and reveicer list in order to send a notification to chosen receivers.</p>
-</div>
-<a class="reference internal image-reference" href="_images/dash_send_notification.png"><img alt="_images/dash_send_notification.png" class="align-center" src="_images/dash_send_notification.png" style="width: 774.0px; height: 323.4px;" /></a>
-</div></blockquote>
-<p>Subjects</p>
-<blockquote>
-<div><p>Create/Remove  subjects
-.. important:: In <strong>Remove user</strong> section select an user to remove him/her from the study (<em>Confirmation needed</em>).</p>
-<a class="reference internal image-reference" href="_images/dash_create_remove_subjects.png"><img alt="_images/dash_create_remove_subjects.png" class="align-center" src="_images/dash_create_remove_subjects.png" style="width: 832.1999999999999px; height: 457.2px;" /></a>
-</div></blockquote>
-<p>Survey</p>
-</section>
-</section>
->>>>>>> eb15e1f (ema and social fix)
 
 
 
@@ -304,8 +157,7 @@ $<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w">
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -313,18 +165,15 @@ $<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w">
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-<<<<<<< HEAD
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -333,16 +182,18 @@ $<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w">
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
-  
   <span class="sidebar-brand-text">JTrack 2.1 documentation</span>
   
 </a><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="What_is_JTrack.html">What is JTrack?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EMA.html">JTrack EMA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EMA.html">JTrack EMA+</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Social.html">JTrack Social</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developers.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Social.html#active-labeling">Active Labeling</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">JDash – JTrack Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developers.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Team.html">Meet the Team</a></li>
 </ul>
 
@@ -401,8 +252,7 @@ $<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w">
           
 
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -410,188 +260,256 @@ $<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w">
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
           <section id="jdash-jtrack-dashboard">
 <h1>JDash – JTrack Dashboard<a class="headerlink" href="#jdash-jtrack-dashboard" title="Link to this heading">¶</a></h1>
+<p>JDash is a Django-based web platform for managing digital health studies conducted through JTrack mobile applications. This provides a unified interface to design, monitor, and manage behavioral and sensor-based research studies initiated by
+clinical institutions and the <a class="reference external" href="https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672">Biomarker Development Group</a>.
+The system connects mobile app data with researcher-controlled dashboards. The main goal is to simplify the lifecycle of digital studies — from study setup and survey design to subject enrollment, progress monitoring, and data validation.</p>
+<section id="system-architecture">
+<h2>System Architecture<a class="headerlink" href="#system-architecture" title="Link to this heading">¶</a></h2>
+<p>JDash follows a modular Django MVC structure integrated with a clean Bootstrap-based frontend and optional Plotly-Dash analytics components.</p>
+<section id="core-components">
+<h3>Core Components<a class="headerlink" href="#core-components" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><p>JDash is a web app built with the Django framework combined with <a class="reference external" href="https://dash.plotly.com">Dash</a> for analysis purposes.</p></li>
-<li><p>It provides several functionalities necessary for creating, viewing, and closing studies initiated by clinical institutions and the <a class="reference external" href="https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672">Biomarker Development Group</a>.</p></li>
-</ul>
-<section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
-</section>
-<section id="set-up">
-<h2>Set Up<a class="headerlink" href="#set-up" title="Link to this heading">¶</a></h2>
-<section id="environment">
-<h3>Environment<a class="headerlink" href="#environment" title="Link to this heading">¶</a></h3>
-<p>To use the starter, Python 3 should be installed properly on your workstation.
-If you are not sure if Python is installed, open a terminal and type:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
-</pre></div>
-</div>
-<p>Here is the full list of dependencies and tools required to build the app:</p>
-<ul class="simple">
-<li><p><strong>Python 3</strong> – the programming language used to code the app</p></li>
-<li><p><strong>Git</strong> – used to clone the source code from the GitHub repository</p></li>
+<li><p>Backend: Django framework managing user authentication, database models, and view rendering.</p></li>
+<li><p>Frontend: HTML templates with Bootstrap, BootstrapTables, and AJAX for dynamic UI.</p></li>
+<li><p>Data Layer: Centralized database storing study metadata, subjects, sensor configurations, and EMA survey definitions.</p></li>
+<li><p>Analytics Integration: Optional Dash/Plotly apps embedded using Django templates for visualization.</p></li>
 </ul>
 </section>
-<section id="manual-build">
-<h3>Manual Build<a class="headerlink" href="#manual-build" title="Link to this heading">¶</a></h3>
-<p>Download the code:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard.git
-<span class="nb">cd</span><span class="w"> </span>JTrack-dashboard
-</pre></div>
-</div>
 </section>
-<section id="set-up-for-unix-macos">
-<h3>Set Up for Unix/macOS<a class="headerlink" href="#set-up-for-unix-macos" title="Link to this heading">¶</a></h3>
-<p>Install modules via virtual environment:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>virtualenv<span class="w"> </span>jdash
-<span class="nb">source</span><span class="w"> </span>jdash/bin/activate
-pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</pre></div>
-</div>
-<p>Set Up Database:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic
-python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
-python<span class="w"> </span>manage.py<span class="w"> </span>migrate
-</pre></div>
-</div>
-<p>Start the app:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
-</pre></div>
-</div>
-<p>At this point, the app runs at:</p>
-<p><code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000/</span></code></p>
-</section>
-<section id="manage-app-users">
-<h3>Manage App Users<a class="headerlink" href="#manage-app-users" title="Link to this heading">¶</a></h3>
-<p>By default, the starter is not provided with users. To access the private pages and the admin section (reserved for superusers), follow the steps below.</p>
-<p><strong>Create Superusers</strong></p>
-<p>To access the admin section, Django requires superuser privileges. Let’s create a new superuser:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
-</pre></div>
-</div>
-<p>Once the superuser is successfully created, you can access the admin section at:</p>
-<p><code class="docutils literal notranslate"><span class="pre">http://localhost:8000/admin/</span></code></p>
-<p><strong>Create Groups</strong></p>
+<section id="main-modules">
+<h2>Main Modules<a class="headerlink" href="#main-modules" title="Link to this heading">¶</a></h2>
+<section id="login">
+<h3>Login<a class="headerlink" href="#login" title="Link to this heading">¶</a></h3>
+<p>Provides authentication for registered users such as investigators and administrators. Users log in with a username and password. A default demo user (demouser) is available for testing.</p>
+<div class="table-wrapper colwidths-given two-col-plain docutils container">
+<table class="two-col-plain docutils align-left">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="quick-box plain docutils container">
+<p><strong>Quick access:</strong></p>
 <ul class="simple">
-<li><p>Administrator</p></li>
-<li><p>Investigator</p></li>
-<li><p>Viewer</p></li>
+<li><p><a class="reference internal" href="#id1"><span class="std std-ref">(1) – Login form</span></a></p></li>
+<li><p><a class="reference internal" href="#language"><span class="std std-ref">(2) – Language switcher</span></a></p></li>
+<li><p><a class="reference internal" href="#contact"><span class="std std-ref">(3) – Contact form</span></a></p></li>
+<li><p><a class="reference internal" href="#delete"><span class="std std-ref">(4) – Data Deletion form</span></a></p></li>
+<li><p><a class="reference internal" href="#directcontacts"><span class="std std-ref">(5) – Direct contacts</span></a></p></li>
 </ul>
-<p><strong>Create Users</strong></p>
-<p>(Instructions to create users can be added here.)</p>
-</section>
-<section id="codebase-structure">
-<h3>Codebase Structure<a class="headerlink" href="#codebase-structure" title="Link to this heading">¶</a></h3>
-<p>(Provide details about the codebase structure here.)</p>
-</section>
-<section id="deploy-on-webserver">
-<h3>Deploy on Webserver<a class="headerlink" href="#deploy-on-webserver" title="Link to this heading">¶</a></h3>
-<p>(Add instructions for deployment here.)</p>
-</section>
-</section>
-<section id="using-the-dashboard">
-<h2>Using the Dashboard<a class="headerlink" href="#using-the-dashboard" title="Link to this heading">¶</a></h2>
-<section id="login-page">
-<h3>Login Page<a class="headerlink" href="#login-page" title="Link to this heading">¶</a></h3>
-<a class="reference internal image-reference" href="_images/dash_index.png"><img alt="_images/dash_index.png" class="align-center" src="_images/dash_index.png" style="width: 600px;" />
+</div>
+</td>
+<td><a class="reference internal image-reference" href="_images/dash_index.png"><img alt="JDash login" src="_images/dash_index.png" style="width: 100%;" />
 </a>
-<div style="
-  border: 1px solid var(--color-border);
-  background-color: var(--color-background-secondary);
-  color: var(--color-foreground-primary);
-  padding: 1em 1.5em;
-  border-radius: 8px;
-  margin: 2em 0;
-">
-  <strong>Quick access:</strong>
-  <ul>
-    <li><a href="#login" style="color: var(--color-link); text-decoration: none;">(1) – Login form</a></li>
-    <li><a href="#language" style="color: var(--color-link); text-decoration: none;">(2) – Language switcher</a></li>
-    <li><a href="#contact" style="color: var(--color-link); text-decoration: none;">(3) – Contact form</a></li>
-    <li><a href="#delete" style="color: var(--color-link); text-decoration: none;">(4) – Data Deletion form</a></li>
-    <li><a href="#directcontacts" style="color: var(--color-link); text-decoration: none;">(5) – Direct contacts</a></li>
-  </ul>
-</div><p id="login"><strong>(1) Logging in</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="login-form">
+<span id="id1"></span><h4>Login form<a class="headerlink" href="#login-form" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Visit <a class="reference external" href="https://jdash.inm7.de/">https://jdash.inm7.de</a></p></li>
 <li><p>Enter your personal credentials into the login fields and press <strong>“Login”</strong>.</p></li>
+<li><p>You can find your login credentials inside a PDF-file that was sent to you via email.</p></li>
 </ul>
-<p id="language"><strong>(2) Switch language</strong></p>
+</section>
+<section id="language-switcher">
+<span id="language"></span><h4>Language switcher<a class="headerlink" href="#language-switcher" title="Link to this heading">¶</a></h4>
 <p>To change the language of the website please click on the respective flag.
 Currently only German and English are supported. Additional languages will be added in the future.</p>
-<p id="contact"><strong>(3) Contact form</strong></p>
-<p>For general enquiries and messages, please use the provided contact form that appears after clicking the button.</p>
-<a class="reference internal image-reference" href="_images/dash_contactform.png"><img alt="_images/dash_contactform.png" class="align-center" src="_images/dash_contactform.png" style="width: 336.59999999999997px; height: 272.4px;" />
+</section>
+<section id="contact-form">
+<span id="contact"></span><h4>Contact form<a class="headerlink" href="#contact-form" title="Link to this heading">¶</a></h4>
+<p>The form allows users to reach out directly to the JDash
+administration team. Users can enter their full name, email address, and a
+message. After submitting, the message is forwarded to the system’s configured
+support email. All fields are required to ensure proper follow-up.</p>
+<a class="reference internal image-reference" href="_images/dash_contactform.png"><img alt="Contact form screenshot" src="_images/dash_contactform.png" style="width: 80%;" />
 </a>
-<p id="delete"><strong>(4) Data Deletion Request</strong></p>
-<p>When a participant requests his/her data to be deleted, click this link to open our Data Deletion Request form.</p>
-<a class="reference internal image-reference" href="_images/dash_data_deletion_form.png"><img alt="_images/dash_data_deletion_form.png" class="align-center" src="_images/dash_data_deletion_form.png" style="width: 600px;" />
+</section>
+<section id="data-deletion-form">
+<span id="delete"></span><h4>Data Deletion form<a class="headerlink" href="#data-deletion-form" title="Link to this heading">¶</a></h4>
+<p>The page allows participants to request permanent removal of their collected data from the JTrack system.</p>
+<p>To submit a request, users must provide:</p>
+<ul class="simple">
+<li><p><strong>Subject ID</strong> — the identifier shown in the JTrack app</p></li>
+<li><p><strong>Email</strong> — for confirmation or follow-up</p></li>
+<li><p><strong>Reason</strong> — an explanation for the deletion request</p></li>
+</ul>
+<p>After submitting the form, the request is forwarded to the study team for
+manual verification and processing. Data deletion begins once the request is
+reviewed and approved.</p>
+<a class="reference internal image-reference" href="_images/dash_data_deletion_form.png"><img alt="Data Deletion form screenshot" src="_images/dash_data_deletion_form.png" style="width: 100%;" />
 </a>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The data will be <strong>permanently</strong> removed and cannot be restored.
 Please make sure to provide the correct <strong>Subject ID</strong>.</p>
 </div>
-<p id="directcontacts"><strong>(5) Direct Contacts</strong></p>
+</section>
+<section id="direct-contacts">
+<span id="directcontacts"></span><h4>Direct contacts<a class="headerlink" href="#direct-contacts" title="Link to this heading">¶</a></h4>
 <p>For collaboration enquiries and scientific questions you can contact Dr. Juergen Dukart or Dr. Mehran Turna.
 For technical questions please contact <a class="reference external" href="mailto:j&#46;fischer&#37;&#52;&#48;fz-juelich&#46;de">Jona M<span>&#46;</span> Fischer</a> or <a class="reference external" href="mailto:m&#46;narava&#37;&#52;&#48;fz-juelich&#46;de">Mamaka Narava</a></p>
 </section>
-<section id="landing-page">
-<h3>Landing Page<a class="headerlink" href="#landing-page" title="Link to this heading">¶</a></h3>
-<p><strong>Studies</strong></p>
-<ul class="simple">
-<li><p>View all studies in a grid view.</p></li>
-</ul>
-<a class="reference internal image-reference" href="_images/dash_logged_in.png"><img alt="_images/dash_logged_in.png" class="align-center" src="_images/dash_logged_in.png" style="width: 600px;" />
-</a>
-<ul class="simple">
-<li><p>View all studies in a search view.</p></li>
-</ul>
-<a class="reference internal image-reference" href="_images/dash_display_search_view.png"><img alt="_images/dash_display_search_view.png" class="align-center" src="_images/dash_display_search_view.png" style="width: 600px;" />
-</a>
-<p><strong>Survey</strong></p>
-<p>Shows all surveys in a search view.</p>
-<a class="reference internal image-reference" href="_images/dash_display_search_view.png"><img alt="_images/dash_display_search_view.png" class="align-center" src="_images/dash_display_search_view.png" style="width: 600px;" />
-</a>
-<p><strong>Analytics</strong></p>
-<p>Shows a selection of all studies available for Analytics.</p>
 </section>
 <section id="studies">
 <h3>Studies<a class="headerlink" href="#studies" title="Link to this heading">¶</a></h3>
-<p><strong>Create a New Study</strong></p>
+<p>Central hub for study management, showing all studies the user can access or create. Grid/List Toggle: Allows switching between study card and list layouts.
+Search Bar: Filters displayed studies.</p>
+<div class="table-wrapper colwidths-given two-col-plain docutils container">
+<table class="two-col-plain docutils align-left">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="quick-box plain docutils container">
+<p><strong>Interface Overview:</strong></p>
 <ul class="simple">
-<li><p><strong>(a)</strong> Navigating to <strong>Create Study</strong> opens an empty form to create a new study.</p></li>
+<li><p><a class="reference internal" href="#create-study"><span class="std std-ref">(1) – Create new study</span></a></p></li>
+<li><p><a class="reference internal" href="#study-details-subjects-view"><span class="std std-ref">(2) – View study details</span></a></p></li>
+<li><p><a class="reference internal" href="#edit-study"><span class="std std-ref">(3) – Edit study</span></a></p></li>
+<li><p><a class="reference internal" href="#audit-study"><span class="std std-ref">(4) – Test and audit logs</span></a></p></li>
 </ul>
+</div>
+</td>
+<td><a class="reference internal image-reference" href="_images/dash_logged_in.png"><img alt="JDash login" src="_images/dash_logged_in.png" style="width: 100%;" />
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="create-new-study">
+<span id="create-study"></span><h4>Create New Study<a class="headerlink" href="#create-new-study" title="Link to this heading">¶</a></h4>
+<p>The <strong>New Study</strong> form is used to configure and start a new data collection
+project in JDash. Here you define basic metadata, sensor configuration,
+optional EMA surveys, and experimental tasks.</p>
 <a class="reference internal image-reference" href="_images/dash_create_empty.png"><img alt="_images/dash_create_empty.png" class="align-center" src="_images/dash_create_empty.png" style="width: 600px;" />
 </a>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<p><strong>View an Ongoing Study</strong></p>
+<p><strong>Form Fields</strong></p>
+<p><strong>Study name</strong></p>
+<p>Unique identifier for the study.
+Do <strong>not</strong> use spaces or special characters (prefer <code class="docutils literal notranslate"><span class="pre">MyStudy_01</span></code> instead of
+<code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Study</span> <span class="pre">01</span></code>).</p>
+<p><strong>Test Study</strong></p>
+<p>Checkbox indicating whether this is a <strong>test/pilot</strong> study.</p>
 <ul class="simple">
-<li><p><strong>(a)</strong> Selecting a study displays all relevant information (general info, sent data) and options to:
-- Send push notifications
-- Remove users manually
-- Download participant sheets</p></li>
+<li><p>Enabled: data are clearly marked as test data and can be discarded later.</p></li>
+<li><p>Disabled: study is treated as a regular production study.</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/dash_display_study.png"><img alt="_images/dash_display_study.png" class="align-center" src="_images/dash_display_study.png" style="width: 600px;" />
+<p><strong>Study description</strong></p>
+<p>Free-text description of the study purpose, protocol, cohort, or any notes for
+administrators. This is not shown to participants.</p>
+<p><strong>Duration</strong></p>
+<p>Length of the study in <strong>days</strong>.
+Defines the time window during which study is active for each participant.</p>
+<p><strong>Number of subjects</strong></p>
+<p>Planned number of participants for this study.
+Used for planning and monitoring recruitment progress.</p>
+<p><strong>Recording frequency</strong></p>
+<p>Global sampling frequency for sensor data (unit depends on your backend
+configuration, e.g. seconds or minutes).
+Higher values may increase battery and data usage.</p>
+<p><strong>EMA (Ecological Momentary Assessment)</strong></p>
+<p>Checkbox to enable or disable EMA for this study.</p>
+<ul class="simple">
+<li><p>Enabled: the study is linked to one or more EMA surveys.</p></li>
+<li><dl class="simple">
+<dt>Disabled: no EMA questionnaires are used; only sensor data and tasks apply.</dt><dd><ul>
+<li><dl class="simple">
+<dt><strong>Survey title</strong></dt><dd><p>Dropdown to select an existing EMA survey that has been defined in the
+<a class="reference internal" href="#create-survey"><span class="std std-ref">Create Survey</span></a> section.
+This determines which questionnaire is delivered to participants.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>OR UPLOAD EMA JSON FILE</strong></dt><dd><p>Drag-and-drop area or file picker to upload a <strong>survey JSON</strong> directly for
+this study.
+- Can be used instead of selecting an existing survey.
+- The JSON structure must follow the JDash/JTrack EMA schema.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>UPLOAD EMA IMAGES ZIP FILE</strong></dt><dd><p>Drag-and-drop area or file picker to upload a <strong>ZIP archive</strong> containing
+image assets used in EMA questions (e.g., visual prompts).
+- Filenames in the ZIP must match the <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">Url</span></code> fields used in survey
+questions.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Sensor Configuration</strong></p>
+<p><strong>How to Configure Active Labeling</strong></p>
+<p>In <strong>JDash</strong>, study conductors can configure the <strong>Active Labeling</strong> feature to collect labeled sensor data for specific tasks or activities. This setup is essential when precise associations between sensor signals and user-performed tasks are required.</p>
+<a class="reference internal image-reference" href="_images/ActiveLabeling.png"><img alt="_images/ActiveLabeling.png" class="align-center" src="_images/ActiveLabeling.png" style="width: 600px;" />
 </a>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<p><strong>Close an Ongoing Study</strong></p>
+<p>Within the study settings on <strong>JDash</strong>, you can:</p>
 <ul class="simple">
-<li><p><strong>(a)</strong> Navigating to <strong>Close Study</strong> displays a dropdown list of ongoing studies that can be closed.</p></li>
-<li><p><strong>(b)</strong> Selecting a study and pressing <strong>“Close Study”</strong> moves it to the archive (<strong>confirmation needed</strong>).</p></li>
+<li><p>✅ <strong>Enable active labeling</strong> for your study.</p></li>
+<li><p>🎯 <strong>Select the sensors</strong> that should be recorded during active labeling sessions (e.g., accelerometer, gyroscope, microphone, etc.).</p></li>
+<li><p>📝 <strong>Define multiple labeling tasks</strong>:</p>
+<ul>
+<li><dl class="simple">
+<dt>Each task has a</dt><dd><ul>
+<li><p><strong>name</strong> (e.g., <code class="docutils literal notranslate"><span class="pre">Walking</span></code>, <code class="docutils literal notranslate"><span class="pre">Brushing</span> <span class="pre">Teeth</span></code>),</p></li>
+<li><p><strong>preparation time</strong> (in seconds),</p></li>
+<li><p><strong>duration</strong> (in seconds).</p></li>
+<li><p><strong>description/instructions</strong> optional for participants.</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/dash_close_study.png"><img alt="_images/dash_close_study.png" class="align-center" src="_images/dash_close_study.png" style="width: 600px;" />
+</dd>
+</dl>
+</li>
+<li><p>These tasks will appear in the participant’s app as selectable activities during active labeling.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Active labeling will only be enabled if <strong>active sensors</strong> are selected in the configuration.</p>
+</div>
+<p>Example task list JSON:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;task_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brushing Teeth&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;task_duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;task_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Please simulate brushing your teeth for 30 seconds.&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;task_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Walking&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;task_duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;task_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Walk normally in a straight line for one minute.&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>This list is presented to participants inside the JTrack Social app with autocomplete, so tasks are standardized and consistent.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use descriptive task names and clear instructions to help participants understand what to do during each session.</p>
+</div>
+<p>Inside of JTrack Social, Active Labeling is then accessible from the Main view (both in <a class="reference internal" href="Social.html#active-labeling-ios"><span class="std std-ref">iOS</span></a> and Android).</p>
+</section>
+<section id="study-details">
+<span id="study-details-subjects-view"></span><h4>Study Details<a class="headerlink" href="#study-details" title="Link to this heading">¶</a></h4>
+<p><strong>Overview panel</strong></p>
+<p>Duration, selected sensors, and associated EMA surveys.
+Button for viewing Survey details.</p>
+<a class="reference internal image-reference" href="_images/dash_features.png"><img alt="_images/dash_features.png" class="align-center" src="_images/dash_features.png" style="width: 600px;" />
 </a>
 <p><strong>Side-panel Features</strong></p>
 <ul class="simple">
@@ -600,29 +518,708 @@ For technical questions please contact <a class="reference external" href="mailt
 <li><p><strong>(c)</strong> Click <strong>“Download Data”</strong> to download study data.</p></li>
 <li><p><strong>(d)</strong> Click <strong>“Delete Subjects”</strong> to delete subject data from the study and server.</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/dash_features.png"><img alt="_images/dash_features.png" class="align-center" src="_images/dash_features.png" style="width: 600px;" />
-</a>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>In the <strong>Push Notifications</strong> section, fill out the title, message, and receiver list to send a notification to selected recipients.</p>
-</div>
-<a class="reference internal image-reference" href="_images/dash_send_notification.png"><img alt="_images/dash_send_notification.png" class="align-center" src="_images/dash_send_notification.png" style="width: 600px;" />
+<p><strong>Subjects Information</strong></p>
+<p>Lists all study participants and related applications (main, EMA).
+Columns include Subject ID, App Type, Duration, Sensor Information, and Status (e.g., Instudy, Left study).
+Color-coded labels (red for inactive, yellow for active) provide a quick overview of status.</p>
+<a class="reference internal image-reference" href="_images/dash_create_remove_subjects.png"><img alt="_images/dash_create_remove_subjects.png" class="align-center" src="_images/dash_create_remove_subjects.png" style="width: 600px;" />
 </a>
 <p><strong>Create / Remove Subjects</strong></p>
+<p>Displays total and enrolled subject counts.
+“Number of Subjects” dropdown defines how many new subject IDs to generate.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>In the <strong>Remove User</strong> section, select a user to remove them from the study (<strong>confirmation needed</strong>).</p>
 </div>
-<a class="reference internal image-reference" href="_images/dash_create_remove_subjects.png"><img alt="_images/dash_create_remove_subjects.png" class="align-center" src="_images/dash_create_remove_subjects.png" style="width: 600px;" />
+<p id="notifications"><strong>Notification</strong></p>
+<div class="table-wrapper colwidths-given two-col-plain docutils container">
+<table class="two-col-plain docutils align-left">
+<colgroup>
+<col style="width: 60.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="quick-box plain docutils container">
+<p>Target selection (All IDs or Missing IDs).
+“Send notification” button dispatches push notifications to participants’ devices via JTrack-EMA.</p>
+</div>
+</td>
+<td><a class="reference internal image-reference" href="_images/dash_send_notification.png"><img alt="jdash notifications" src="_images/dash_send_notification.png" style="width: 100%;" />
 </a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In the <strong>Push Notifications</strong> section, fill out the title, message, and receiver list to send a notification to selected recipients.</p>
+</div>
+<p id="study-closure"><strong>Close Study Section</strong></p>
+<p>“Close Study” button deactivates data collection and marks the study as completed.</p>
+<a class="reference internal image-reference" href="_images/dash_close_study.png"><img alt="_images/dash_close_study.png" class="align-center" src="_images/dash_close_study.png" style="width: 600px;" />
+</a>
+</section>
+<section id="edit-study">
+<span id="id2"></span><h4>Edit Study<a class="headerlink" href="#edit-study" title="Link to this heading">¶</a></h4>
+<p>The <strong>Edit Study</strong> page allows investigators to modify an existing study’s
+configuration, update sensor settings, change the assigned EMA survey, or
+adjust task settings. This interface is identical to the <em>New Study</em> form,
+but the fields are pre-filled with the study’s current values.</p>
+<a class="reference internal image-reference" href="_images/dash_create_checked.png"><img alt="_images/dash_create_checked.png" class="align-center" src="_images/dash_create_checked.png" style="width: 600px;" />
+</a>
+<p>The following elements can be updated directly:</p>
+<ul class="simple">
+<li><p><strong>Number of subjects</strong> To add more participants check <strong>Create Subject</strong> section</p></li>
+<li><p><strong>Duration</strong></p></li>
+<li><p><strong>Recording frequency</strong></p></li>
+<li><p><strong>Study description</strong></p></li>
+<li><p><strong>Passive sensors</strong> and <strong>active sensors</strong> (multi-select lists)</p></li>
+<li><p><strong>EMA settings</strong> (change the survey from list of surveys created, images ZIP upload)</p></li>
+<li><p><strong>Task list</strong> (add, modify, or remove tasks)</p></li>
+</ul>
+<p>All changes are immediately applied once you save the study.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The study name is fixed once the study is created and <strong>cannot be changed</strong>.
+It serves as the unique identifier for the study.</p>
+</div>
+</section>
+<section id="audit-quality-control">
+<span id="audit-study"></span><h4>Audit / Quality Control<a class="headerlink" href="#audit-quality-control" title="Link to this heading">¶</a></h4>
+<a class="reference internal image-reference" href="_images/dash_close_study.png"><img alt="_images/dash_close_study.png" class="align-center" src="_images/dash_close_study.png" style="width: 600px;" />
+</a>
+</section>
 </section>
 <section id="survey">
 <h3>Survey<a class="headerlink" href="#survey" title="Link to this heading">¶</a></h3>
-<p><strong>Create / Edit Survey</strong></p>
-<p><strong>Create / Edit Category</strong></p>
-<p><strong>Create / Edit Question</strong></p>
-<p><strong>Create / Edit Answer</strong></p>
-<p>(Add details about the survey functionality here.)</p>
+<p>Manages EMA (Ecological Momentary Assessment) questionnaires linked to studies. Displays existing surveys with title, study association, creation date, and actions (edit, copy, delete).
+Upload Section: Allows importing survey definitions via JSON files.</p>
+<div class="table-wrapper colwidths-given two-col-plain docutils container">
+<table class="two-col-plain docutils align-left">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="quick-box plain docutils container">
+<p><strong>Interface Overview:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#create-survey"><span class="std std-ref">(1) – Create Survey</span></a></p></li>
+<li><p><a class="reference internal" href="#upload-survey-json"><span class="std std-ref">(2) – Upload Survey Json</span></a></p></li>
+<li><p><a class="reference internal" href="#survey-edit-view"><span class="std std-ref">(3) – Edit/View Survey</span></a></p></li>
+</ul>
+</div>
+</td>
+<td><a class="reference internal image-reference" href="_images/dash_survey_list.png"><img alt="JDash survey list" src="_images/dash_survey_list.png" style="width: 100%;" />
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="create-survey">
+<span id="id3"></span><h4>Create Survey<a class="headerlink" href="#create-survey" title="Link to this heading">¶</a></h4>
+<p>The Survey module allows administrators to define and manage EMA (Ecological
+Momentary Assessment) questionnaires that will be delivered to study
+participants. Each survey contains a title, description, scrolling behaviour,
+and associated question items uploaded later as a JSON file.</p>
+<p>The <em>New Survey</em> dialog provides a guided form for creating a survey entry in
+the system.</p>
+<a class="reference internal image-reference" href="_images/dash_create_survey.png"><img alt="_images/dash_create_survey.png" class="align-center" src="_images/dash_create_survey.png" style="width: 600px;" />
+</a>
+<p><strong>Form Fields</strong></p>
+<dl>
+<dt><strong>Title</strong></dt><dd><p>The display name of the survey. This name appears in the survey list and
+throughout the dashboard.</p>
+</dd>
+<dt><strong>Description</strong></dt><dd><p>A short explanation of the survey’s purpose, context, or intended use.
+This helps administrators distinguish between multiple surveys.</p>
+</dd>
+<dt><strong>Scroll Type</strong></dt><dd><p>Defines how participants will navigate through the survey items within
+the JTrack EMA app. Two options are available:</p>
+<ul class="simple">
+<li><p><strong>Horizontal</strong> – Questions scroll left/right.
+Suitable for one-question-per-screen layouts, swipe-based navigation,
+and compact mobile interfaces.</p></li>
+<li><p><strong>Vertical</strong> – Questions scroll top/bottom.
+Suitable for longer pages, forms with multiple inputs, or free-text
+responses requiring more space.</p></li>
+</ul>
+<p>Select the option that best matches the design of your survey JSON file.</p>
+</dd>
+</dl>
+</section>
+<section id="upload-survey-via-json">
+<span id="upload-survey-json"></span><h4>Upload Survey via JSON<a class="headerlink" href="#upload-survey-via-json" title="Link to this heading">¶</a></h4>
+<p>Instead of creating a survey manually through the dialog, you can create a
+new survey by <strong>uploading a JSON definition file</strong>. The JSON file must follow
+the JDash/JTrack EMA survey schema.</p>
+<p>The JSON must:</p>
+<ul class="simple">
+<li><p>Be valid UTF-8 encoded JSON.</p></li>
+<li><p>Follow the JDash survey schema (field names and structure).</p></li>
+<li><p>Define at least the survey metadata and a list of items/questions.</p></li>
+</ul>
+<p><strong>Sample JSON format</strong></p>
+<p>A sample format file is provided (for example: <code class="docutils literal notranslate"><span class="pre">sample_survey.json</span></code>).
+Use this as a template when creating new surveys:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EMA Pilot validation survey&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Short description of the survey purpose and context.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;scroll_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;H&quot;</span><span class="p">,</span><span class="w">   </span><span class="c1">// or &quot;V&quot;</span>
+<span class="w">  </span><span class="nt">&quot;topN&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span>
+<span class="w">  </span><span class="nt">&quot;questions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;How are you feeling right now?&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;subText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;How did you sleep last night?&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clockTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clockTime_start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;480&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;clockTime_end&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1430&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;nextDayToAnswer&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;imageURL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;questionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;deactivateOnAnswer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;deactivateOnDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;activate_question&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;deActivate_question&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;activation_condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;deActivation_condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;answer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">             </span><span class="p">{</span>
+<span class="w">                 </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                 </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">                 </span><span class="nt">&quot;subText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">                 </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">                 </span><span class="nt">&quot;defaultValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span>
+<span class="w">                 </span><span class="nt">&quot;stepSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">                 </span><span class="nt">&quot;minVal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">                 </span><span class="nt">&quot;maxVal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">                 </span><span class="nt">&quot;minText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Schlecht | Bad&quot;</span><span class="p">,</span>
+<span class="w">                 </span><span class="nt">&quot;maxText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gut | Good&quot;</span>
+<span class="w">             </span><span class="p">}</span>
+<span class="w">         </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// additional items ...</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When preparing a new survey, copy the provided sample JSON file and adapt:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">description</span></code> to your study.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scroll_type</span></code> to match the intended navigation style.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">questions</span></code> list to include all questions, response options, and any
+additional fields required by the schema.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Only JSON files following this structure will be accepted and correctly rendered by the JTrack EMA app.</p>
+</div>
+</section>
+<section id="survey-details-view">
+<span id="survey-edit-view"></span><h4>Survey Details View<a class="headerlink" href="#survey-details-view" title="Link to this heading">¶</a></h4>
+<p>After creating or uploading a survey, selecting it from the Survey list opens
+the <strong>Survey Details</strong> page. This page displays all questions defined for the
+survey and provides tools for managing categories, adding new questions, and
+exporting the survey as JSON.</p>
+<a class="reference internal image-reference" href="_images/dash_survey_details.png"><img alt="_images/dash_survey_details.png" class="align-center" src="_images/dash_survey_details.png" style="width: 600px;" />
+</a>
+<p><strong>Overview of the Question List</strong></p>
+<p>The table shows all survey questions in a structured format. Each row
+represents a single question and includes:</p>
+<ul class="simple">
+<li><p><strong>id</strong> — The internal question identifier (order in the survey).</p></li>
+<li><p><strong>title</strong> — The primary question text (German example shown).</p></li>
+<li><p><strong>subText</strong> — The secondary text .</p></li>
+<li><p><strong>questionType</strong> — Input type (e.g., Free Number, Single Choice, Multiple Choice).</p></li>
+<li><p><strong>category</strong> — Category assigned to the question (e.g., IHG, GH).</p></li>
+<li><p><strong>frequency</strong> — How often the question is shown in days.</p></li>
+<li><p><strong>clockTimeStart / clockTimeEnd</strong> — Valid times to receive reminder notification to answer the question.</p></li>
+<li><p><strong>nextDayToAnswer</strong> — day when the questions becomes available to answer.</p></li>
+</ul>
+<p>This view allows users to quickly review the full content of the survey and to
+edit or organize items as needed.</p>
+<p><strong>Categories Management</strong></p>
+<p>The <strong>Categories</strong> button opens the category management dialog.
+Administrators can:</p>
+<ul class="simple">
+<li><p>Create new categories</p></li>
+<li><p>Rename existing categories</p></li>
+<li><p>Delete categories</p></li>
+<li><p>Assign categories to questions</p></li>
+</ul>
+<p>Categories help group questions into logical sections and are required for
+surveys with thematic organization (e.g., “Mobility”, “Digital Use”).</p>
+<p><strong>Adding New Questions</strong></p>
+<p>Click <strong>New Question</strong> to add a new item to the survey.
+This opens the question editor, where you can define all properties of the
+question (text, type, category, scheduling rules, etc.).</p>
+<p>For a full description of all editable fields, check <a class="reference internal" href="#question-form"><span class="std std-ref">Create /Edit Question</span></a></p>
+<p>Once the question is saved:</p>
+<ul class="simple">
+<li><p>It appears immediately in the question list</p></li>
+<li><p>It inherits the next available question ID</p></li>
+<li><p>It can be edited, duplicated, or deleted through the action buttons on the right</p></li>
+</ul>
+<p>This workflow ensures that new survey items follow the same structure and
+validation rules as existing ones.</p>
+<p><strong>Downloading the Survey JSON</strong></p>
+<p>The download icon (⬇) in the top-right corner of the page exports the entire
+survey definition as a JSON file.</p>
+<p>This JSON can be used for:</p>
+<ul class="simple">
+<li><p>Backups</p></li>
+<li><p>Versioning</p></li>
+<li><p>Editing offline</p></li>
+<li><p>Sharing surveys between studies</p></li>
+</ul>
+<p><strong>Row Actions (per item)</strong></p>
+<p>Each question row includes three action buttons:</p>
+<dl class="simple">
+<dt><strong>✏️ Edit</strong></dt><dd><p>Opens the question editing dialog.
+Allows modification of text, category, type, time window, and all properties.</p>
+</dd>
+<dt><strong>📄 Copy / Duplicate</strong></dt><dd><p>Creates a new question using the selected item as a template.
+Useful when building surveys with repeated or similar formats.</p>
+</dd>
+<dt><strong>🗑️ Delete</strong></dt><dd><p>Removes the question from the survey.
+A confirmation prompt prevents accidental deletion.</p>
+</dd>
+</dl>
+</section>
+<section id="create-edit-question">
+<span id="question-form"></span><h4>Create / Edit Question<a class="headerlink" href="#create-edit-question" title="Link to this heading">¶</a></h4>
+<p>The Question Editor allows investigators to define or modify a single survey
+question within the EMA survey. Each field controls a specific aspect of how
+the question behaves, how it appears to the user, and when it is shown.</p>
+<a class="reference internal image-reference" href="_images/survey_edit_question.png"><img alt="_images/survey_edit_question.png" class="align-center" src="_images/survey_edit_question.png" style="width: 600px;" />
+</a>
+<p><strong>Form Field Overview</strong></p>
+<p>Below are the descriptions of all fields available in the Create/Edit Question
+form.</p>
+<p><strong>Sequence Id</strong></p>
+<p>The position of the question in the survey.
+Questions are displayed in ascending order based on this value.</p>
+<p><strong>Type</strong></p>
+<p>Specifies the question type (e.g., Free Number, Single Choice, Multiple Choice,
+Free Text, Slider).
+The selected type determines how the question is rendered in the participant
+application.</p>
+<p><strong>Title</strong></p>
+<p>The main question text shown to participants (e.g., in German or the primary
+study language).</p>
+<p><strong>Description</strong></p>
+<p>Additional descriptive text, explanation, or translation shown below the main
+question.
+Useful for bilingual surveys or questions needing clarification.</p>
+<p><strong>Use Default Values Toggle</strong></p>
+<p>If enabled, system-defined default values are used for:</p>
+<ul class="simple">
+<li><p>Frequency</p></li>
+<li><p>NextDayToAnswer</p></li>
+<li><p>ClockTimeStart</p></li>
+<li><p>ClockTimeEnd</p></li>
+<li><p>DeactivateOnDate</p></li>
+</ul>
+<p>When disabled, all values must be filled manually.</p>
+<p><strong>Category</strong></p>
+<p>A numeric category label used to group questions into thematic clusters.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example:</p>
+<ul class="simple">
+<li><p>1 - Mobility</p></li>
+<li><p>2 - Digital Activity</p></li>
+<li><p>3 - Sleep</p></li>
+<li><p>4 - Mood</p></li>
+</ul>
+</div>
+<p><strong>Frequency</strong></p>
+<p>Defines how often the question is shown.</p>
+<div class="admonition-values admonition">
+<p class="admonition-title">Values:</p>
+<ul class="simple">
+<li><p><strong>0</strong> — Ask at any time the user opens the survey</p></li>
+<li><p><strong>1</strong> — Ask every day</p></li>
+<li><p><strong>n</strong> — Ask every <em>n</em> days (e.g., 2 = every second day)</p></li>
+</ul>
+</div>
+<p><strong>NextDayToAnswer</strong></p>
+<p>Controls on which study day this question first becomes available.</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples:</p>
+<ul class="simple">
+<li><p><strong>0</strong> — Starts on day 0</p></li>
+<li><p><strong>1</strong> — Starts on day 1</p></li>
+<li><p><strong>5</strong> — Question begins appearing on day 5</p></li>
+</ul>
+</div>
+<p><strong>DeactivateOnAnswer</strong></p>
+<p>If set, the question will be skipped or hidden in future survey sessions after
+a specific answer value is selected.
+Commonly used to disable follow-up items after a “No” response.</p>
+<p><strong>DeactivateOnDate</strong></p>
+<p>Defines a study day after which the question should no longer be shown.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example:</p>
+<ul class="simple">
+<li><p><strong>0</strong> — No deactivation by date</p></li>
+<li><p><strong>10</strong> — Question disappears after day 10 of the study</p></li>
+</ul>
+</div>
+<p><strong>Activate Question</strong></p>
+<p>A comma-separated list of Sequence Ids for questions to activate if this
+question is answered.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2,3</span></code></p></li>
+</ul>
+</div>
+<p>This enables branching logic (conditional question activation).</p>
+<p><strong>Deactivate Question</strong></p>
+<p>A comma-separated list of Sequence Ids for questions that should be disabled
+when this question is answered.
+Used for mutually exclusive question pathways.</p>
+<p><strong>ClockTime Start</strong></p>
+<p>The time (in minutes from midnight) when the question becomes active.</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples:</p>
+<ul class="simple">
+<li><p><strong>480</strong> = 08:00</p></li>
+<li><p><strong>900</strong> = 15:00</p></li>
+</ul>
+</div>
+<p>If multiple times are provided (comma-separated), the user will receive
+multiple activations.</p>
+<p><strong>ClockTime End</strong></p>
+<p>The time (in minutes since midnight) when the question becomes inactive.</p>
+<p>Must match the number of entries in ClockTime Start if multiple values are
+used.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example:</p>
+<ul class="simple">
+<li><p><strong>1430</strong> = 23:50</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">480,900</span></code> must have a matching <code class="docutils literal notranslate"><span class="pre">600,1000</span></code> (start/end pairs)</p></li>
+</ul>
+</div>
+<p><strong>Image URL</strong></p>
+<p>An optional image filename associated with the question (e.g., <code class="docutils literal notranslate"><span class="pre">image1.png</span></code>).
+This image must exist in the app’s configured image directory.</p>
+<p><strong>URL</strong></p>
+<p>An optional external link related to the question (e.g., informational page,
+instructions, consent wording).
+The link appears below the question text in the app.</p>
+</section>
+<section id="create-edit-answer">
+<span id="answer-form"></span><h4>Create / Edit Answer<a class="headerlink" href="#create-edit-answer" title="Link to this heading">¶</a></h4>
+<p>For question types that require predefined answer options (such as
+<strong>Single Choice</strong>, <strong>Multiple Choice</strong>), the Question
+Editor displays an <strong>Answer Form</strong> section. This section allows the
+investigators to define the selectable choices shown to participants.</p>
+<a class="reference internal image-reference" href="_images/survey_edit_answer.png"><img alt="_images/survey_edit_answer.png" class="align-center" src="_images/survey_edit_answer.png" style="width: 600px;" />
+</a>
+<p>Click <strong>Add Choice</strong> to insert a new answer option row.
+Each row contains two fields:</p>
+<dl class="simple">
+<dt><strong>Sequence Id</strong></dt><dd><p>The display order of the option. Choices appear in ascending order based on
+this value.</p>
+</dd>
+<dt><strong>Choice</strong></dt><dd><p>The text label shown to the participant (e.g., <em>Yes</em>, <em>No</em>, <em>Often</em>, <em>Rarely</em>, etc.).</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">→</span> <span class="pre">Less</span> <span class="pre">than</span> <span class="pre">10</span> <span class="pre">minutes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">→</span> <span class="pre">10–30</span> <span class="pre">minutes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">→</span> <span class="pre">More</span> <span class="pre">than</span> <span class="pre">30</span> <span class="pre">minutes</span></code></p></li>
+</ul>
+</div>
+<p><strong>Deleting a Choice</strong></p>
+<p>To remove an answer option, click the <strong>trash icon</strong> (🗑️) on the right side of
+the row.
+The option is removed immediately from the form.</p>
+</section>
+</section>
+</section>
+<section id="codebase-structure">
+<h2>Codebase Structure<a class="headerlink" href="#codebase-structure" title="Link to this heading">¶</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>JTrack-dashboard/
+├─ admin/               # Django &quot;apps&quot; implementing UI + logic
+├─ jdash/               # Django project configuration
+├─ static/              # Global static assets
+├─ jtrack.sql           # Example SQL schema/data (MySQL or similar)
+├─ manage.py            # Django management entry point
+├─ requirements.txt     # Python dependencies
+├─ setup.sh             # Setup helper script
+├─ setup_mysql.sh       # MySQL setup helper script
+└─ README.md
+</pre></div>
+</div>
+<section id="admin-django-project">
+<h3>admin/ – Django Project<a class="headerlink" href="#admin-django-project" title="Link to this heading">¶</a></h3>
+<p>This directory contains core Django project settings and runtime configuration.</p>
+<p>Key Files</p>
+<p>settings.py : Defines installed apps, database configuration, static settings, security settings.</p>
+<p>urls.py: Routes requests to all dashboard modules (studies, surveys, notifications, analytics).</p>
+<p>wsgi.py: WSGI entry point used by Apache mod_wsgi in production.</p>
+<p>asgi.py: ASGI entry point (not used by Apache, but available for async servers).</p>
+</section>
+<section id="jdash-dashboard-application">
+<h3>jdash/ – Dashboard Application<a class="headerlink" href="#jdash-dashboard-application" title="Link to this heading">¶</a></h3>
+<p>Contains Django apps that implement the dashboard functionality:</p>
+<p>Modules</p>
+<p>Login module – Authentication and access control.</p>
+<p>Studies module – Create/edit studies, manage sensors, manage subjects.</p>
+<p>Survey module – EMA survey creation and management.</p>
+<p>Notifications module – Push notifications to participants.</p>
+<p>Analytics module – Embeds visual analytics (optional Dash integration).</p>
+<p>Typical Structure</p>
+<p>Each app contains:</p>
+<p>models.py — Study, survey, sensor, subject, notification models</p>
+<p>views.py — View logic for HTML pages and APIs</p>
+<p>urls.py — App-level router</p>
+<p>forms.py — Django forms for data input</p>
+<p>templates/&lt;app_name&gt;/ — HTML templates (Bootstrap-based)</p>
+<p>static/&lt;app_name&gt;/ — Local static assets</p>
+</section>
+<section id="static">
+<h3>static/<a class="headerlink" href="#static" title="Link to this heading">¶</a></h3>
+<p>Contains global project-level assets:</p>
+<p>CSS styling for dashboard UI</p>
+<p>JavaScript (Bootstrap, BootstrapTable, custom JS)</p>
+<p>Icons, logos, images</p>
+<p>These are collected via collectstatic into STATIC_ROOT for Apache serving.</p>
+</section>
+</section>
+<section id="deployment-instructions">
+<h2>Deployment Instructions<a class="headerlink" href="#deployment-instructions" title="Link to this heading">¶</a></h2>
+<p>How to deploy the JTrack Dashboard both locally
+(for development) and on a production web server using Apache and
+<code class="docutils literal notranslate"><span class="pre">mod_wsgi</span></code>.</p>
+<section id="local-deployment-development">
+<h3>Local Deployment (Development)<a class="headerlink" href="#local-deployment-development" title="Link to this heading">¶</a></h3>
+<p>Local deployment is intended for development, testing, and debugging.
+Django’s built-in development server is used for this mode.</p>
+<section id="requirements">
+<h4>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h4>
+<p>Install system prerequisites:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3<span class="w"> </span>python3-venv<span class="w"> </span>python3-pip<span class="w"> </span>git
+</pre></div>
+</div>
+<p>Clone the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mamaka7/JTrack-dashboard.git
+<span class="nb">cd</span><span class="w"> </span>JTrack-dashboard
+</pre></div>
+</div>
+</section>
+<section id="create-virtual-environment">
+<h4>Create Virtual Environment<a class="headerlink" href="#create-virtual-environment" title="Link to this heading">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div>
+</div>
+<p>Install dependencies:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>(Optional):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>setup.sh
+./setup.sh
+</pre></div>
+</div>
+</section>
+<section id="database-setup-mariadb">
+<h4>Database Setup (MariaDB)<a class="headerlink" href="#database-setup-mariadb" title="Link to this heading">¶</a></h4>
+<p>For both local development and production, the recommended database is
+<strong>MariaDB</strong>. A helper script is provided to set up the database and
+user automatically.</p>
+<p>Make sure MariaDB is running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>mariadb
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mariadb
+</pre></div>
+</div>
+<p>Run the MariaDB setup script from the project root:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>mysql_set.sh
+./setup_mysql.sh
+</pre></div>
+</div>
+<p>The script typically:</p>
+<ul class="simple">
+<li><p>Creates a MariaDB database (e.g. <code class="docutils literal notranslate"><span class="pre">jtrack</span></code>)</p></li>
+<li><p>Creates a DB user with the required privileges</p></li>
+<li><p>Optionally imports the schema/data from <code class="docutils literal notranslate"><span class="pre">jtrack.sql</span></code></p></li>
+</ul>
+<p>After the script finishes, apply Django migrations (still recommended):</p>
+<p>Apply migrations:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</pre></div>
+</div>
+</section>
+<section id="run-development-server">
+<h4>Run Development Server<a class="headerlink" href="#run-development-server" title="Link to this heading">¶</a></h4>
+<p>Start Django’s built-in server:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+<p>Then open in a browser:</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000</span></code></p>
+<p>In this mode:</p>
+<ul class="simple">
+<li><p>Debug is active</p></li>
+<li><p>Auto-reload is enabled</p></li>
+<li><p>No Apache or external web server is required</p></li>
+</ul>
+</section>
+</section>
+<section id="production-deployment-apache-mod-wsgi">
+<h3>Production Deployment (Apache + mod_wsgi)<a class="headerlink" href="#production-deployment-apache-mod-wsgi" title="Link to this heading">¶</a></h3>
+<p>This method is recommended for real-world hosting of the JTrack Dashboard.</p>
+<section id="prerequisites">
+<h4>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h4>
+<p>Install required packages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3<span class="w"> </span>python3-venv<span class="w"> </span>python3-pip<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>apache2<span class="w"> </span>libapache2-mod-wsgi-py3<span class="w"> </span>git
+</pre></div>
+</div>
+</section>
+<section id="clone-application-into-server-directory">
+<h4>Clone Application into Server Directory<a class="headerlink" href="#clone-application-into-server-directory" title="Link to this heading">¶</a></h4>
+<p>Example installation directory: <code class="docutils literal notranslate"><span class="pre">/srv/jdash</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/jdash
+sudo<span class="w"> </span>chown<span class="w"> </span><span class="nv">$USER</span>:<span class="nv">$USER</span><span class="w"> </span>/srv/jdash
+<span class="nb">cd</span><span class="w"> </span>/srv/jdash
+
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mamaka7/JTrack-dashboard.git<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h4>Create Virtual Environment<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h4>Database Setup (MariaDB)<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h4>
+<p>First, run the MariaDB setup script from the project root
+(e.g. <code class="docutils literal notranslate"><span class="pre">/srv/jdash</span></code>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/srv/jdash
+chmod<span class="w"> </span>+x<span class="w"> </span>setup_mysql.sh
+./setup_mysql.sh
+</pre></div>
+</div>
+<p>(or, if your script is named <code class="docutils literal notranslate"><span class="pre">mysql_set.sh</span></code>:)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>mysql_set.sh
+./mysql_set.sh
+</pre></div>
+</div>
+<p>This script should:</p>
+<ul class="simple">
+<li><p>Create the MariaDB database (e.g. <code class="docutils literal notranslate"><span class="pre">jtrack</span></code>)</p></li>
+<li><p>Create a MariaDB user with password</p></li>
+<li><p>Grant required privileges</p></li>
+<li><p>Optionally import <code class="docutils literal notranslate"><span class="pre">jtrack.sql</span></code></p></li>
+</ul>
+<p>Now open <code class="docutils literal notranslate"><span class="pre">jdash/settings.py</span></code> and ensure the MariaDB configuration is set.
+MariaDB is fully compatible with the MySQL Django backend:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;ENGINE&quot;</span><span class="p">:</span> <span class="s2">&quot;django.db.backends.mysql&quot;</span><span class="p">,</span>  <span class="c1"># MariaDB-compatible</span>
+        <span class="s2">&quot;NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;jtrack&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;USER&quot;</span><span class="p">:</span> <span class="s2">&quot;jtrack_user&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PASSWORD&quot;</span><span class="p">:</span> <span class="s2">&quot;securepassword&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;HOST&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PORT&quot;</span><span class="p">:</span> <span class="s2">&quot;3306&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Also set production options:</p>
+<p><strong>Disable DEBUG</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p><strong>Set Allowed Hosts</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;your-domain.com&quot;</span><span class="p">,</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Apply migrations (even if the script imported the base schema):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</pre></div>
+</div>
+</section>
+<section id="collect-static-files">
+<h4>Collect Static Files<a class="headerlink" href="#collect-static-files" title="Link to this heading">¶</a></h4>
+<p>Set:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="s2">&quot;/srv/jdash/static_collected&quot;</span>
+</pre></div>
+</div>
+<p>Collect static assets:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic
+</pre></div>
+</div>
+</section>
+<section id="configure-apache-mod-wsgi">
+<h4>Configure Apache (mod_wsgi)<a class="headerlink" href="#configure-apache-mod-wsgi" title="Link to this heading">¶</a></h4>
+<p>Create:</p>
+<p><code class="docutils literal notranslate"><span class="pre">/etc/apache2/sites-available/jdash.conf</span></code></p>
+<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:80</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nb">ServerName</span><span class="w"> </span>your-domain.com
+
+<span class="w">    </span><span class="nb">Alias</span><span class="w"> </span><span class="sx">/static/</span><span class="w"> </span><span class="sx">/srv/jdash/static_collected/</span>
+<span class="w">    </span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">/srv/jdash/static_collected/</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
+<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">/srv/jdash/jdash</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Files</span><span class="w"> </span><span class="s">wsgi.py</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
+<span class="w">        </span><span class="nt">&lt;/Files&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
+
+<span class="w">    </span><span class="nb">WSGIDaemonProcess</span><span class="w"> </span>jdash<span class="w"> </span>python-path=/srv/jdash<span class="w"> </span>\
+<span class="w">                      </span>python-home=/srv/jdash/venv
+<span class="w">    </span><span class="nb">WSGIProcessGroup</span><span class="w"> </span>jdash
+<span class="w">    </span><span class="nb">WSGIScriptAlias</span><span class="w"> </span>/<span class="w"> </span><span class="sx">/srv/jdash/jdash/wsgi.py</span>
+
+<span class="w">    </span><span class="nb">ErrorLog</span><span class="w"> </span>${APACHE_LOG_DIR}/jdash_error.log
+<span class="w">    </span><span class="nb">CustomLog</span><span class="w"> </span>${APACHE_LOG_DIR}/jdash_access.log<span class="w"> </span>combined
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</pre></div>
+</div>
+<p>Enable the site:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>a2enmod<span class="w"> </span>wsgi
+sudo<span class="w"> </span>a2ensite<span class="w"> </span>jdash.conf
+sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+</pre></div>
+</div>
+<p>(Optional) Disable default Apache site:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>a2dissite<span class="w"> </span><span class="m">000</span>-default.conf
+sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+</pre></div>
+</div>
+</section>
+<section id="enable-https-recommended">
+<h4>Enable HTTPS (Recommended)<a class="headerlink" href="#enable-https-recommended" title="Link to this heading">¶</a></h4>
+<p>Use Let’s Encrypt:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>certbot<span class="w"> </span>python3-certbot-apache
+sudo<span class="w"> </span>certbot<span class="w"> </span>--apache<span class="w"> </span>-d<span class="w"> </span>your-domain.com
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 </section>
@@ -632,23 +1229,23 @@ For technical questions please contact <a class="reference external" href="mailt
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="Team.html">
+          <a class="next-page" href="developers.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Meet the Team</div>
+                <div class="title">Developer Resources</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="developers.html">
+          <a class="prev-page" href="Social.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Developer Resources</div>
+                <div class="title">JTrack Social</div>
                 
               </div>
             </a>
@@ -683,106 +1280,76 @@ For technical questions please contact <a class="reference external" href="mailt
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">JDash – JTrack Dashboard</a><ul>
-<li><a class="reference internal" href="#features">Features</a></li>
-<li><a class="reference internal" href="#set-up">Set Up</a><ul>
-<li><a class="reference internal" href="#environment">Environment</a></li>
-<li><a class="reference internal" href="#manual-build">Manual Build</a></li>
-<li><a class="reference internal" href="#set-up-for-unix-macos">Set Up for Unix/macOS</a></li>
-<li><a class="reference internal" href="#manage-app-users">Manage App Users</a></li>
-<li><a class="reference internal" href="#codebase-structure">Codebase Structure</a></li>
-<li><a class="reference internal" href="#deploy-on-webserver">Deploy on Webserver</a></li>
+<li><a class="reference internal" href="#system-architecture">System Architecture</a><ul>
+<li><a class="reference internal" href="#core-components">Core Components</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#using-the-dashboard">Using the Dashboard</a><ul>
-<li><a class="reference internal" href="#login-page">Login Page</a></li>
-<li><a class="reference internal" href="#landing-page">Landing Page</a></li>
-<li><a class="reference internal" href="#studies">Studies</a></li>
-<li><a class="reference internal" href="#survey">Survey</a></li>
+<li><a class="reference internal" href="#main-modules">Main Modules</a><ul>
+<li><a class="reference internal" href="#login">Login</a><ul>
+<li><a class="reference internal" href="#login-form">Login form</a></li>
+<li><a class="reference internal" href="#language-switcher">Language switcher</a></li>
+<li><a class="reference internal" href="#contact-form">Contact form</a></li>
+<li><a class="reference internal" href="#data-deletion-form">Data Deletion form</a></li>
+<li><a class="reference internal" href="#direct-contacts">Direct contacts</a></li>
 </ul>
 </li>
-=======
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">JTrack</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="What_is_JTrack.html">What is JTrack?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EMA.html">JTrack EMA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Social.html">JTrack Social</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">JDash - JTrack Dashboard</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#set-up">Set up</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#manual-build">Manual Build</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
->>>>>>> eb15e1f (ema and social fix)
+<li><a class="reference internal" href="#studies">Studies</a><ul>
+<li><a class="reference internal" href="#create-new-study">Create New Study</a></li>
+<li><a class="reference internal" href="#study-details">Study Details</a></li>
+<li><a class="reference internal" href="#edit-study">Edit Study</a></li>
+<li><a class="reference internal" href="#audit-quality-control">Audit / Quality Control</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Team.html">Meet the Team</a></li>
+<li><a class="reference internal" href="#survey">Survey</a><ul>
+<li><a class="reference internal" href="#create-survey">Create Survey</a></li>
+<li><a class="reference internal" href="#upload-survey-via-json">Upload Survey via JSON</a></li>
+<li><a class="reference internal" href="#survey-details-view">Survey Details View</a></li>
+<li><a class="reference internal" href="#create-edit-question">Create / Edit Question</a></li>
+<li><a class="reference internal" href="#create-edit-answer">Create / Edit Answer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#codebase-structure">Codebase Structure</a><ul>
+<li><a class="reference internal" href="#admin-django-project">admin/ – Django Project</a></li>
+<li><a class="reference internal" href="#jdash-dashboard-application">jdash/ – Dashboard Application</a></li>
+<li><a class="reference internal" href="#static">static/</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a><ul>
+<li><a class="reference internal" href="#local-deployment-development">Local Deployment (Development)</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#create-virtual-environment">Create Virtual Environment</a></li>
+<li><a class="reference internal" href="#database-setup-mariadb">Database Setup (MariaDB)</a></li>
+<li><a class="reference internal" href="#run-development-server">Run Development Server</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#production-deployment-apache-mod-wsgi">Production Deployment (Apache + mod_wsgi)</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#clone-application-into-server-directory">Clone Application into Server Directory</a></li>
+<li><a class="reference internal" href="#id4">Create Virtual Environment</a></li>
+<li><a class="reference internal" href="#id5">Database Setup (MariaDB)</a></li>
+<li><a class="reference internal" href="#collect-static-files">Collect Static Files</a></li>
+<li><a class="reference internal" href="#configure-apache-mod-wsgi">Configure Apache (mod_wsgi)</a></li>
+<li><a class="reference internal" href="#enable-https-recommended">Enable HTTPS (Recommended)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-<<<<<<< HEAD
           </div>
         </div>
       </div>
-=======
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="Social.html" title="previous chapter">JTrack Social</a></li>
-      <li>Next: <a href="Team.html" title="next chapter">Meet the Team</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2020, INM7.
->>>>>>> eb15e1f (ema and social fix)
       
       
-<<<<<<< HEAD
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=c4a36953"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
-=======
-    </div>
-
-    
-
-    
-  </body>
->>>>>>> eb15e1f (ema and social fix)
 </html>

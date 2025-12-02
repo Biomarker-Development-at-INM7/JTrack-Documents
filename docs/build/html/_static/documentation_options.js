@@ -1,9 +1,5 @@
 const DOCUMENTATION_OPTIONS = {
-<<<<<<< HEAD
     VERSION: '2.1',
-=======
-    VERSION: '2.0',
->>>>>>> eb15e1f (ema and social fix)
     LANGUAGE: 'en',
     COLLAPSE_INDEX: false,
     BUILDER: 'html',
