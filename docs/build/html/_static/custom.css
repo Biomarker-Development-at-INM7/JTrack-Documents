@@ -1,0 +1,37 @@
+
+/* kill any card/shadow/border around list-tables with this class */
+.two-col-plain {
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+  }
+  
+  /* remove cell borders and background */
+  .two-col-plain td,
+  .two-col-plain th {
+    border: none !important;
+    background: transparent !important;
+  }
+  
+  /* ensure left alignment (themes sometimes center tables by default) */
+  table.align-left {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+  
+  /* neutralize the left “box” so it has no shadow/border/bg */
+  .quick-box.plain {
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0;          /* tweak if you want some spacing */
+    margin: 0 0 1rem 0;  /* bottom space only */
+  }
+  
+  /* OPTIONAL: if you don't want bullet dots */
+  .quick-box.plain ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  
