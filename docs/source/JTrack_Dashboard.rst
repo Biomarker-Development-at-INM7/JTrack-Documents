@@ -209,7 +209,7 @@ Checkbox to enable or disable EMA for this study.
       - Filenames in the ZIP must match the ``Image Url`` fields used in survey
       questions.
 
-
+.. _conf-active-labeling:
 
 **Sensor configuration**
 
@@ -470,7 +470,7 @@ Audit / Quality Control
 The Test checklist provides a structured way for investigators and
 research teams to verify that a study is functioning as intended before and
 during deployment. Each row represents a predefined test case that can be
-marked, reviewed, or updated directly within the dashboard.
+checked directly within the dashboard.
 
 This tool helps ensure data integrity, validate sensor activity, and confirm
 that participant workflows behave correctly.
