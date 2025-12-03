@@ -76,7 +76,7 @@ support email. All fields are required to ensure proper follow-up.
 
 .. _delete:
 
-Data Deletion form
+Data deletion form
 ~~~~~~~~~~~~~~~~~~
 
 The page allows participants to request permanent removal of their collected data from the JTrack system. 
@@ -143,7 +143,7 @@ optional EMA surveys, and experimental tasks.
    :width: 600px
    :align: center
 
-**Form Fields**
+**Form fields**
 
 **Study name**
 
@@ -151,7 +151,7 @@ Unique identifier for the study.
 Do **not** use spaces or special characters (prefer ``MyStudy_01`` instead of
 ``My Study 01``).
 
-**Test Study**
+**Test study**
 
 Checkbox indicating whether this is a **test/pilot** study.
 
@@ -179,15 +179,20 @@ Used for planning and monitoring recruitment progress.
 **Recording frequency**
 
 
-Global sampling frequency for sensor data (unit depends on your backend
-configuration, e.g. seconds or minutes).  
-Higher values may increase battery and data usage.
+Sampling rate for sensor data collection, expressed in **Hertz (Hz)**.  
+This defines how many measurements are recorded per second.
+
+.. note::
+
+   Higher frequencies provide more detailed sensor data but may increase
+   battery consumption and storage requirements. Choose a value appropriate
+   for your study's goals and device performance limits.
 
 **EMA (Ecological Momentary Assessment)**
 
 Checkbox to enable or disable EMA for this study.
 
-- Enabled: the study is linked to one or more EMA surveys.
+- Enabled: the study is linked to EMA survey.
 - Disabled: no EMA questionnaires are used; only sensor data and tasks apply.
    - **Survey title**
       Dropdown to select an existing EMA survey that has been defined in the
@@ -206,9 +211,9 @@ Checkbox to enable or disable EMA for this study.
 
 
 
-**Sensor Configuration**
+**Sensor configuration**
 
-**How to Configure Active Labeling**
+**How to configure active labeling**
 
 In **JDash**, study conductors can configure the **Active Labeling** feature to collect labeled sensor data for specific tasks or activities. This setup is essential when precise associations between sensor signals and user-performed tasks are required.
 
@@ -265,71 +270,166 @@ Study Details
 
 **Overview panel**
 
-Duration, selected sensors, and associated EMA surveys.
-Button for viewing Survey details.
+The panel (1) provides a quick snapshot of the study configuration.
+It summarizes the most relevant study parameters so administrators can review
+key settings at a glance.
 
 .. image:: image/JDash/dash_features.png
    :width: 600px
    :align: center
 
-**Side-panel Features**
+The panel displays:
 
-* **(a)** Click **"Refresh"** to update the data and view the current status of subjects/sensors.
-* **(b)** Click **"Download unused study sheets"** to download participant sheets that have not been used.
-* **(c)** Click **"Download Data"** to download study data.
-* **(d)** Click **"Delete Subjects"** to delete subject data from the study and server.
+- **Duration** — total length of the study in days  
+- **Sensors** — list of passive and active sensors enabled for the study  
+- **EMA** — indicator showing whether an EMA survey is assigned  
+  (with a *Survey details* button to view the full questionnaire)
 
-**Subjects Information**
+This section helps users verify that the study has been configured correctly
+before adding participants or exporting data.
 
-Lists all study participants and related applications (main, EMA).
-Columns include Subject ID, App Type, Duration, Sensor Information, and Status (e.g., Instudy, Left study).
-Color-coded labels (red for inactive, yellow for active) provide a quick overview of status.
+
+
+**Toolbar Panel**
+
+The toolbar (2) contains shortcut actions for managing study-level
+operations. These icons are located in the top-right corner of the Study
+Details page.
+
+The available actions typically include:
+
+- **Refresh** — to update the data and view the current status of subjects/sensors
+- **Export PDF** — generates a PDFs of QR codes of participant sheets that have not been used
+- **Download Data** — triggers email to downlaod the collected sensor or EMA data  
+- **Database Actions** — to delete subject data from the study and server
+  (e.g., remove all data associated with the study)
+
+These tools provide quick access to the most common administrative actions,
+allowing study investigators to monitor progress, retrieve data, and perform
+maintenance efficiently.
+
+
+**Subject Table**
+
+The table (1) displays all subjects associated with the
+selected study. It provides an overview of each participant’s status, app
+type, sensor configuration, and study duration.
 
 .. image:: image/JDash/dash_create_remove_subjects.png
    :width: 600px
    :align: center
 
-**Create / Remove Subjects**
+The table includes the following columns:
 
-Displays total and enrolled subject counts.
-“Number of Subjects” dropdown defines how many new subject IDs to generate.
+- **Subject ID** — the unique identifier assigned to each participant  
+- **App** — indicates whether the entry belongs to the *main* app or the *EMA* app  
+- **Duration** — number of days the participant has been in the study  
+- **Sensor Information** — list of sensors enabled for that subject  
+  (e.g., ``at`` = activity, ``au`` = application usage, ``lo`` = location)  
+- **Status** — participant’s current state (e.g., *In study*, *Left study*)
+
+Each subject may appear multiple times if both main and EMA configurations
+exist for the same participant ID.
+
+Filters above the table allow administrators to search by ID, filter by app
+type, or filter by sensor usage. This panel is useful for monitoring study
+progress, reviewing sensor connectivity, and identifying participants who have
+left the study.
+
+**Subject Management Panel**
+
+The panel (2) allows administrators to add or remove
+subjects from the study.
+
+**Subject Information** 
+   Displays high-level subject counts:
+
+   - **Total Number of Subjects** — planned target number  
+   - **Number of enrolled subjects** — participants currently created in the system  
+
+**Create Subject** 
+The section allows administrators to generate new subject IDs for the study.  
+To add subjects enter the number of new subjects you want to create in the field  **Number of Subjects** and click **Create**.
+
+.. note::
+
+   The system automatically generates new subject QR codes following the study’s naming convention 
+   (e.g., ``Demo_Study_00005``) which can downloaded from **Export PDF** toolbar panel.
+
+**Remove User** 
+
+This section allows administrators to remove a subject entry from the study.
+
+To remove a subject, select the subject from the list and confirm the removal.
 
 .. important::
-   In the **Remove User** section, select a user to remove them from the study (**confirmation needed**).
+
+   Removing a subject deletes it from the active study dashboard but does **not**
+   remove historical data unless server-side deletion procedures are used.
+
+
 
 .. _notifications:
 
 **Notification**
 
-.. list-table::
-   :widths: 60 40
-   :header-rows: 0
-   :align: left
-   :class: two-col-plain
+The notification panel allows administrators to send custom push
+notifications to selected study participants. This can be used for reminders,
+announcements, troubleshooting instructions, or follow-up messages.
 
-   * - .. container:: quick-box plain
+.. image:: image/JDash/dash_send_notification.png
+      :width: 100%
+      :alt: jdash notifications
 
-            Target selection (All IDs or Missing IDs).
-            “Send notification” button dispatches push notifications to participants’ devices via JTrack-EMA.
+The panel contains the following fields:
 
-     - .. image:: image/JDash/dash_send_notification.png
-          :width: 100%
-          :alt: jdash notifications
+- **Message title**  
+  A short title or subject line that appears in the participant’s device
+  notification.
+
+- **Message text**  
+  The main body of the notification. This can include instructions,
+  reminders, or any relevant message content.
+
+- **Recipients list**  
+  This box displays the subject IDs that will receive the notification.
+  Administrators can manually enter IDs or automatically populate the list
+  using the buttons below.
+
+Two shortcut buttons are provided:
+
+- **All IDs** — fills the list with *all enrolled subjects* in the study  
+- **Missing IDs** — fills the list with subjects who have not yet submitted
+  recent data or have missing entries, depending on system configuration
+
+After preparing the message and selecting recipients, click **Send
+notification** to deliver the message to the participants’ devices.
+
+
 
 .. important::
-   In the **Push Notifications** section, fill out the title, message, and receiver list to send a notification to selected recipients.
+   Notifications are sent via the JTrack backend and delivered through the
+   device’s native notification system. Delivery times may vary depending on
+   network connectivity and device settings.
 
 .. _study-closure:
 
-**Close Study Section**
+**Close study**
 
-“Close Study” button deactivates data collection and marks the study as completed.
+This section allows investigators to formally end a study. Once
+a study is closed, no new data will be accepted from enrolled participants.
 
 .. image:: image/JDash/dash_close_study.png
    :width: 600px
    :align: center
 
 
+.. important::
+
+   Closing a study does **not** delete existing data. All sensor and EMA data
+   remain available in the server for export and analysis. However, once a
+   study is closed, it will no longer be visible in the dashboard, and no
+   further data collection will occur.
 
 .. _edit-study:
 
@@ -366,9 +466,51 @@ All changes are immediately applied once you save the study.
 
 Audit / Quality Control 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. image:: image/JDash/dash_close_study.png
+
+The Test checklist provides a structured way for investigators and
+research teams to verify that a study is functioning as intended before and
+during deployment. Each row represents a predefined test case that can be
+marked, reviewed, or updated directly within the dashboard.
+
+This tool helps ensure data integrity, validate sensor activity, and confirm
+that participant workflows behave correctly.
+
+.. image:: image/JDash/dash_test_audit.png
    :width: 600px
    :align: center
+
+The checklist displays the following information for each test case:
+
+- **Admin**  
+  Checkbox used by administrators to mark whether the test case is required
+  or has been reviewed at an admin level.
+
+- **Owner**  
+  Checkbox indicating responsibility or completion for the test case by the
+  assigned user or study owner.
+
+- **Id**  
+  Unique identifier for the test case.
+
+- **Description**  
+  A brief summary of what the test case is verifying (e.g., real-time
+  monitoring, data export, participant enrollment).
+
+- **Steps**  
+  A detailed sequence of actions required to perform the test.  
+  These may include navigation steps in JDash, using the JTrack app, scanning
+  QR codes, or validating exported results.
+
+- **Expected Outcome**  
+  Describes what should occur if the test is successful.  
+  This provides a reference for determining whether the system is behaving
+  correctly.
+  
+.. note::
+
+   Test case results do not affect participant data collection. The checklist
+   is an internal quality-assurance tool used only for validation and study
+   monitoring purposes.
 
 Survey
 ---------------------------
@@ -413,7 +555,7 @@ the system.
 
 
 
-**Form Fields**
+**Form fields**
 
 
 **Title**  
@@ -424,7 +566,7 @@ the system.
    A short explanation of the survey’s purpose, context, or intended use.
    This helps administrators distinguish between multiple surveys.
 
-**Scroll Type**  
+**Scroll type**  
    Defines how participants will navigate through the survey items within
    the JTrack EMA app. Two options are available:
 
@@ -554,18 +696,17 @@ edit or organize items as needed.
 
 **Categories Management**
 
-
-The **Categories** button opens the category management dialog.  
-Administrators can:
+The **Categories** button opens the category management dialog. Categories help group questions into logical sections and are required for
+surveys with thematic organization (e.g., "Mobility", "Digital Use").
+Investigators can:
 
 - Create new categories  
 - Rename existing categories  
-- Delete categories  
-- Assign categories to questions  
+- Delete categories
 
-Categories help group questions into logical sections and are required for
-surveys with thematic organization (e.g., "Mobility", "Digital Use").
-
+.. image:: image/JDash/survey_category.png
+   :width: 600px
+   :align: center 
 
 
 **Adding New Questions**
@@ -579,8 +720,7 @@ For a full description of all editable fields, check :ref:`Create /Edit Question
 
 Once the question is saved:
 
-- It appears immediately in the question list  
-- It inherits the next available question ID  
+- It appears immediately in the question list
 - It can be edited, duplicated, or deleted through the action buttons on the right
 
 This workflow ensures that new survey items follow the same structure and
@@ -588,13 +728,11 @@ validation rules as existing ones.
 
 
 
-**Downloading the Survey JSON**
+**Downloading the survey JSON**
 
 
 The download icon (⬇) in the top-right corner of the page exports the entire
-survey definition as a JSON file.
-
-This JSON can be used for:
+survey definition as a JSON file. This JSON can be used for:
 
 - Backups  
 - Versioning  
@@ -637,7 +775,7 @@ the question behaves, how it appears to the user, and when it is shown.
 
 
 
-**Form Field Overview**
+**Form fields**
 
 
 Below are the descriptions of all fields available in the Create/Edit Question
@@ -675,9 +813,9 @@ question.
 Useful for bilingual surveys or questions needing clarification.
 
 
-**Use Default Values Toggle**
+**Use default values toggle**
 
-If enabled, system-defined default values are used for:
+When disabled, all values must be filled manually. If enabled, system-defined default values are used for:
 
 - Frequency  
 - NextDayToAnswer  
@@ -685,7 +823,7 @@ If enabled, system-defined default values are used for:
 - ClockTimeEnd  
 - DeactivateOnDate  
 
-When disabled, all values must be filled manually.
+
 
 
 **Category**
@@ -837,7 +975,7 @@ Each row contains two fields:
    - ``3 → More than 30 minutes``  
 
 
-**Deleting a Choice**
+**Deleting a choice**
 
 To remove an answer option, click the **trash icon** (🗑️) on the right side of
 the row.  

@@ -335,7 +335,7 @@ support email. All fields are required to ensure proper follow-up.</p>
 </a>
 </section>
 <section id="data-deletion-form">
-<span id="delete"></span><h4>Data Deletion form<a class="headerlink" href="#data-deletion-form" title="Link to this heading">¶</a></h4>
+<span id="delete"></span><h4>Data deletion form<a class="headerlink" href="#data-deletion-form" title="Link to this heading">¶</a></h4>
 <p>The page allows participants to request permanent removal of their collected data from the JTrack system.</p>
 <p>To submit a request, users must provide:</p>
 <ul class="simple">
@@ -395,12 +395,12 @@ project in JDash. Here you define basic metadata, sensor configuration,
 optional EMA surveys, and experimental tasks.</p>
 <a class="reference internal image-reference" href="_images/dash_create_empty.png"><img alt="_images/dash_create_empty.png" class="align-center" src="_images/dash_create_empty.png" style="width: 600px;" />
 </a>
-<p><strong>Form Fields</strong></p>
+<p><strong>Form fields</strong></p>
 <p><strong>Study name</strong></p>
 <p>Unique identifier for the study.
 Do <strong>not</strong> use spaces or special characters (prefer <code class="docutils literal notranslate"><span class="pre">MyStudy_01</span></code> instead of
 <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Study</span> <span class="pre">01</span></code>).</p>
-<p><strong>Test Study</strong></p>
+<p><strong>Test study</strong></p>
 <p>Checkbox indicating whether this is a <strong>test/pilot</strong> study.</p>
 <ul class="simple">
 <li><p>Enabled: data are clearly marked as test data and can be discarded later.</p></li>
@@ -416,13 +416,18 @@ Defines the time window during which study is active for each participant.</p>
 <p>Planned number of participants for this study.
 Used for planning and monitoring recruitment progress.</p>
 <p><strong>Recording frequency</strong></p>
-<p>Global sampling frequency for sensor data (unit depends on your backend
-configuration, e.g. seconds or minutes).
-Higher values may increase battery and data usage.</p>
+<p>Sampling rate for sensor data collection, expressed in <strong>Hertz (Hz)</strong>.
+This defines how many measurements are recorded per second.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Higher frequencies provide more detailed sensor data but may increase
+battery consumption and storage requirements. Choose a value appropriate
+for your study’s goals and device performance limits.</p>
+</div>
 <p><strong>EMA (Ecological Momentary Assessment)</strong></p>
 <p>Checkbox to enable or disable EMA for this study.</p>
 <ul class="simple">
-<li><p>Enabled: the study is linked to one or more EMA surveys.</p></li>
+<li><p>Enabled: the study is linked to EMA survey.</p></li>
 <li><dl class="simple">
 <dt>Disabled: no EMA questionnaires are used; only sensor data and tasks apply.</dt><dd><ul>
 <li><dl class="simple">
@@ -453,8 +458,8 @@ questions.</p>
 </dl>
 </li>
 </ul>
-<p><strong>Sensor Configuration</strong></p>
-<p><strong>How to Configure Active Labeling</strong></p>
+<p><strong>Sensor configuration</strong></p>
+<p><strong>How to configure active labeling</strong></p>
 <p>In <strong>JDash</strong>, study conductors can configure the <strong>Active Labeling</strong> feature to collect labeled sensor data for specific tasks or activities. This setup is essential when precise associations between sensor signals and user-performed tasks are required.</p>
 <a class="reference internal image-reference" href="_images/ActiveLabeling.png"><img alt="_images/ActiveLabeling.png" class="align-center" src="_images/ActiveLabeling.png" style="width: 600px;" />
 </a>
@@ -507,58 +512,128 @@ questions.</p>
 <section id="study-details">
 <span id="study-details-subjects-view"></span><h4>Study Details<a class="headerlink" href="#study-details" title="Link to this heading">¶</a></h4>
 <p><strong>Overview panel</strong></p>
-<p>Duration, selected sensors, and associated EMA surveys.
-Button for viewing Survey details.</p>
+<p>The panel (1) provides a quick snapshot of the study configuration.
+It summarizes the most relevant study parameters so administrators can review
+key settings at a glance.</p>
 <a class="reference internal image-reference" href="_images/dash_features.png"><img alt="_images/dash_features.png" class="align-center" src="_images/dash_features.png" style="width: 600px;" />
 </a>
-<p><strong>Side-panel Features</strong></p>
+<p>The panel displays:</p>
 <ul class="simple">
-<li><p><strong>(a)</strong> Click <strong>“Refresh”</strong> to update the data and view the current status of subjects/sensors.</p></li>
-<li><p><strong>(b)</strong> Click <strong>“Download unused study sheets”</strong> to download participant sheets that have not been used.</p></li>
-<li><p><strong>(c)</strong> Click <strong>“Download Data”</strong> to download study data.</p></li>
-<li><p><strong>(d)</strong> Click <strong>“Delete Subjects”</strong> to delete subject data from the study and server.</p></li>
+<li><p><strong>Duration</strong> — total length of the study in days</p></li>
+<li><p><strong>Sensors</strong> — list of passive and active sensors enabled for the study</p></li>
+<li><p><strong>EMA</strong> — indicator showing whether an EMA survey is assigned
+(with a <em>Survey details</em> button to view the full questionnaire)</p></li>
 </ul>
-<p><strong>Subjects Information</strong></p>
-<p>Lists all study participants and related applications (main, EMA).
-Columns include Subject ID, App Type, Duration, Sensor Information, and Status (e.g., Instudy, Left study).
-Color-coded labels (red for inactive, yellow for active) provide a quick overview of status.</p>
+<p>This section helps users verify that the study has been configured correctly
+before adding participants or exporting data.</p>
+<p><strong>Toolbar Panel</strong></p>
+<p>The toolbar (2) contains shortcut actions for managing study-level
+operations. These icons are located in the top-right corner of the Study
+Details page.</p>
+<p>The available actions typically include:</p>
+<ul class="simple">
+<li><p><strong>Refresh</strong> — to update the data and view the current status of subjects/sensors</p></li>
+<li><p><strong>Export PDF</strong> — generates a PDFs of QR codes of participant sheets that have not been used</p></li>
+<li><p><strong>Download Data</strong> — triggers email to downlaod the collected sensor or EMA data</p></li>
+<li><p><strong>Database Actions</strong> — to delete subject data from the study and server
+(e.g., remove all data associated with the study)</p></li>
+</ul>
+<p>These tools provide quick access to the most common administrative actions,
+allowing study investigators to monitor progress, retrieve data, and perform
+maintenance efficiently.</p>
+<p><strong>Subject Table</strong></p>
+<p>The table (1) displays all subjects associated with the
+selected study. It provides an overview of each participant’s status, app
+type, sensor configuration, and study duration.</p>
 <a class="reference internal image-reference" href="_images/dash_create_remove_subjects.png"><img alt="_images/dash_create_remove_subjects.png" class="align-center" src="_images/dash_create_remove_subjects.png" style="width: 600px;" />
 </a>
-<p><strong>Create / Remove Subjects</strong></p>
-<p>Displays total and enrolled subject counts.
-“Number of Subjects” dropdown defines how many new subject IDs to generate.</p>
+<p>The table includes the following columns:</p>
+<ul class="simple">
+<li><p><strong>Subject ID</strong> — the unique identifier assigned to each participant</p></li>
+<li><p><strong>App</strong> — indicates whether the entry belongs to the <em>main</em> app or the <em>EMA</em> app</p></li>
+<li><p><strong>Duration</strong> — number of days the participant has been in the study</p></li>
+<li><p><strong>Sensor Information</strong> — list of sensors enabled for that subject
+(e.g., <code class="docutils literal notranslate"><span class="pre">at</span></code> = activity, <code class="docutils literal notranslate"><span class="pre">au</span></code> = application usage, <code class="docutils literal notranslate"><span class="pre">lo</span></code> = location)</p></li>
+<li><p><strong>Status</strong> — participant’s current state (e.g., <em>In study</em>, <em>Left study</em>)</p></li>
+</ul>
+<p>Each subject may appear multiple times if both main and EMA configurations
+exist for the same participant ID.</p>
+<p>Filters above the table allow administrators to search by ID, filter by app
+type, or filter by sensor usage. This panel is useful for monitoring study
+progress, reviewing sensor connectivity, and identifying participants who have
+left the study.</p>
+<p><strong>Subject Management Panel</strong></p>
+<p>The panel (2) allows administrators to add or remove
+subjects from the study.</p>
+<dl class="simple">
+<dt><strong>Subject Information</strong></dt><dd><p>Displays high-level subject counts:</p>
+<ul class="simple">
+<li><p><strong>Total Number of Subjects</strong> — planned target number</p></li>
+<li><p><strong>Number of enrolled subjects</strong> — participants currently created in the system</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Create Subject</strong>
+The section allows administrators to generate new subject IDs for the study.
+To add subjects enter the number of new subjects you want to create in the field  <strong>Number of Subjects</strong> and click <strong>Create</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The system automatically generates new subject QR codes following the study’s naming convention
+(e.g., <code class="docutils literal notranslate"><span class="pre">Demo_Study_00005</span></code>) which can downloaded from <strong>Export PDF</strong> toolbar panel.</p>
+</div>
+<p><strong>Remove User</strong></p>
+<p>This section allows administrators to remove a subject entry from the study.</p>
+<p>To remove a subject, select the subject from the list and confirm the removal.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>In the <strong>Remove User</strong> section, select a user to remove them from the study (<strong>confirmation needed</strong>).</p>
+<p>Removing a subject deletes it from the active study dashboard but does <strong>not</strong>
+remove historical data unless server-side deletion procedures are used.</p>
 </div>
 <p id="notifications"><strong>Notification</strong></p>
-<div class="table-wrapper colwidths-given two-col-plain docutils container">
-<table class="two-col-plain docutils align-left">
-<colgroup>
-<col style="width: 60.0%" />
-<col style="width: 40.0%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><div class="quick-box plain docutils container">
-<p>Target selection (All IDs or Missing IDs).
-“Send notification” button dispatches push notifications to participants’ devices via JTrack-EMA.</p>
-</div>
-</td>
-<td><a class="reference internal image-reference" href="_images/dash_send_notification.png"><img alt="jdash notifications" src="_images/dash_send_notification.png" style="width: 100%;" />
+<p>The notification panel allows administrators to send custom push
+notifications to selected study participants. This can be used for reminders,
+announcements, troubleshooting instructions, or follow-up messages.</p>
+<a class="reference internal image-reference" href="_images/dash_send_notification.png"><img alt="jdash notifications" src="_images/dash_send_notification.png" style="width: 100%;" />
 </a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>The panel contains the following fields:</p>
+<ul class="simple">
+<li><p><strong>Message title</strong>
+A short title or subject line that appears in the participant’s device
+notification.</p></li>
+<li><p><strong>Message text</strong>
+The main body of the notification. This can include instructions,
+reminders, or any relevant message content.</p></li>
+<li><p><strong>Recipients list</strong>
+This box displays the subject IDs that will receive the notification.
+Administrators can manually enter IDs or automatically populate the list
+using the buttons below.</p></li>
+</ul>
+<p>Two shortcut buttons are provided:</p>
+<ul class="simple">
+<li><p><strong>All IDs</strong> — fills the list with <em>all enrolled subjects</em> in the study</p></li>
+<li><p><strong>Missing IDs</strong> — fills the list with subjects who have not yet submitted
+recent data or have missing entries, depending on system configuration</p></li>
+</ul>
+<p>After preparing the message and selecting recipients, click <strong>Send
+notification</strong> to deliver the message to the participants’ devices.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>In the <strong>Push Notifications</strong> section, fill out the title, message, and receiver list to send a notification to selected recipients.</p>
+<p>Notifications are sent via the JTrack backend and delivered through the
+device’s native notification system. Delivery times may vary depending on
+network connectivity and device settings.</p>
 </div>
-<p id="study-closure"><strong>Close Study Section</strong></p>
-<p>“Close Study” button deactivates data collection and marks the study as completed.</p>
+<p id="study-closure"><strong>Close study</strong></p>
+<p>This section allows investigators to formally end a study. Once
+a study is closed, no new data will be accepted from enrolled participants.</p>
 <a class="reference internal image-reference" href="_images/dash_close_study.png"><img alt="_images/dash_close_study.png" class="align-center" src="_images/dash_close_study.png" style="width: 600px;" />
 </a>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Closing a study does <strong>not</strong> delete existing data. All sensor and EMA data
+remain available in the server for export and analysis. However, once a
+study is closed, it will no longer be visible in the dashboard, and no
+further data collection will occur.</p>
+</div>
 </section>
 <section id="edit-study">
 <span id="id2"></span><h4>Edit Study<a class="headerlink" href="#edit-study" title="Link to this heading">¶</a></h4>
@@ -587,8 +662,42 @@ It serves as the unique identifier for the study.</p>
 </section>
 <section id="audit-quality-control">
 <span id="audit-study"></span><h4>Audit / Quality Control<a class="headerlink" href="#audit-quality-control" title="Link to this heading">¶</a></h4>
-<a class="reference internal image-reference" href="_images/dash_close_study.png"><img alt="_images/dash_close_study.png" class="align-center" src="_images/dash_close_study.png" style="width: 600px;" />
+<p>The Test checklist provides a structured way for investigators and
+research teams to verify that a study is functioning as intended before and
+during deployment. Each row represents a predefined test case that can be
+marked, reviewed, or updated directly within the dashboard.</p>
+<p>This tool helps ensure data integrity, validate sensor activity, and confirm
+that participant workflows behave correctly.</p>
+<a class="reference internal image-reference" href="_images/dash_test_audit.png"><img alt="_images/dash_test_audit.png" class="align-center" src="_images/dash_test_audit.png" style="width: 600px;" />
 </a>
+<p>The checklist displays the following information for each test case:</p>
+<ul class="simple">
+<li><p><strong>Admin</strong>
+Checkbox used by administrators to mark whether the test case is required
+or has been reviewed at an admin level.</p></li>
+<li><p><strong>Owner</strong>
+Checkbox indicating responsibility or completion for the test case by the
+assigned user or study owner.</p></li>
+<li><p><strong>Id</strong>
+Unique identifier for the test case.</p></li>
+<li><p><strong>Description</strong>
+A brief summary of what the test case is verifying (e.g., real-time
+monitoring, data export, participant enrollment).</p></li>
+<li><p><strong>Steps</strong>
+A detailed sequence of actions required to perform the test.
+These may include navigation steps in JDash, using the JTrack app, scanning
+QR codes, or validating exported results.</p></li>
+<li><p><strong>Expected Outcome</strong>
+Describes what should occur if the test is successful.
+This provides a reference for determining whether the system is behaving
+correctly.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Test case results do not affect participant data collection. The checklist
+is an internal quality-assurance tool used only for validation and study
+monitoring purposes.</p>
+</div>
 </section>
 </section>
 <section id="survey">
@@ -628,7 +737,7 @@ and associated question items uploaded later as a JSON file.</p>
 the system.</p>
 <a class="reference internal image-reference" href="_images/dash_create_survey.png"><img alt="_images/dash_create_survey.png" class="align-center" src="_images/dash_create_survey.png" style="width: 600px;" />
 </a>
-<p><strong>Form Fields</strong></p>
+<p><strong>Form fields</strong></p>
 <dl>
 <dt><strong>Title</strong></dt><dd><p>The display name of the survey. This name appears in the survey list and
 throughout the dashboard.</p>
@@ -636,7 +745,7 @@ throughout the dashboard.</p>
 <dt><strong>Description</strong></dt><dd><p>A short explanation of the survey’s purpose, context, or intended use.
 This helps administrators distinguish between multiple surveys.</p>
 </dd>
-<dt><strong>Scroll Type</strong></dt><dd><p>Defines how participants will navigate through the survey items within
+<dt><strong>Scroll type</strong></dt><dd><p>Defines how participants will navigate through the survey items within
 the JTrack EMA app. Two options are available:</p>
 <ul class="simple">
 <li><p><strong>Horizontal</strong> – Questions scroll left/right.
@@ -746,16 +855,16 @@ represents a single question and includes:</p>
 <p>This view allows users to quickly review the full content of the survey and to
 edit or organize items as needed.</p>
 <p><strong>Categories Management</strong></p>
-<p>The <strong>Categories</strong> button opens the category management dialog.
-Administrators can:</p>
+<p>The <strong>Categories</strong> button opens the category management dialog. Categories help group questions into logical sections and are required for
+surveys with thematic organization (e.g., “Mobility”, “Digital Use”).
+Investigators can:</p>
 <ul class="simple">
 <li><p>Create new categories</p></li>
 <li><p>Rename existing categories</p></li>
 <li><p>Delete categories</p></li>
-<li><p>Assign categories to questions</p></li>
 </ul>
-<p>Categories help group questions into logical sections and are required for
-surveys with thematic organization (e.g., “Mobility”, “Digital Use”).</p>
+<a class="reference internal image-reference" href="_images/survey_category.png"><img alt="_images/survey_category.png" class="align-center" src="_images/survey_category.png" style="width: 600px;" />
+</a>
 <p><strong>Adding New Questions</strong></p>
 <p>Click <strong>New Question</strong> to add a new item to the survey.
 This opens the question editor, where you can define all properties of the
@@ -764,15 +873,13 @@ question (text, type, category, scheduling rules, etc.).</p>
 <p>Once the question is saved:</p>
 <ul class="simple">
 <li><p>It appears immediately in the question list</p></li>
-<li><p>It inherits the next available question ID</p></li>
 <li><p>It can be edited, duplicated, or deleted through the action buttons on the right</p></li>
 </ul>
 <p>This workflow ensures that new survey items follow the same structure and
 validation rules as existing ones.</p>
-<p><strong>Downloading the Survey JSON</strong></p>
+<p><strong>Downloading the survey JSON</strong></p>
 <p>The download icon (⬇) in the top-right corner of the page exports the entire
-survey definition as a JSON file.</p>
-<p>This JSON can be used for:</p>
+survey definition as a JSON file. This JSON can be used for:</p>
 <ul class="simple">
 <li><p>Backups</p></li>
 <li><p>Versioning</p></li>
@@ -800,7 +907,7 @@ question within the EMA survey. Each field controls a specific aspect of how
 the question behaves, how it appears to the user, and when it is shown.</p>
 <a class="reference internal image-reference" href="_images/survey_edit_question.png"><img alt="_images/survey_edit_question.png" class="align-center" src="_images/survey_edit_question.png" style="width: 600px;" />
 </a>
-<p><strong>Form Field Overview</strong></p>
+<p><strong>Form fields</strong></p>
 <p>Below are the descriptions of all fields available in the Create/Edit Question
 form.</p>
 <p><strong>Sequence Id</strong></p>
@@ -818,8 +925,8 @@ study language).</p>
 <p>Additional descriptive text, explanation, or translation shown below the main
 question.
 Useful for bilingual surveys or questions needing clarification.</p>
-<p><strong>Use Default Values Toggle</strong></p>
-<p>If enabled, system-defined default values are used for:</p>
+<p><strong>Use default values toggle</strong></p>
+<p>When disabled, all values must be filled manually. If enabled, system-defined default values are used for:</p>
 <ul class="simple">
 <li><p>Frequency</p></li>
 <li><p>NextDayToAnswer</p></li>
@@ -827,7 +934,6 @@ Useful for bilingual surveys or questions needing clarification.</p>
 <li><p>ClockTimeEnd</p></li>
 <li><p>DeactivateOnDate</p></li>
 </ul>
-<p>When disabled, all values must be filled manually.</p>
 <p><strong>Category</strong></p>
 <p>A numeric category label used to group questions into thematic clusters.</p>
 <div class="admonition-example admonition">
@@ -942,7 +1048,7 @@ this value.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">→</span> <span class="pre">More</span> <span class="pre">than</span> <span class="pre">30</span> <span class="pre">minutes</span></code></p></li>
 </ul>
 </div>
-<p><strong>Deleting a Choice</strong></p>
+<p><strong>Deleting a choice</strong></p>
 <p>To remove an answer option, click the <strong>trash icon</strong> (🗑️) on the right side of
 the row.
 The option is removed immediately from the form.</p>
@@ -1289,7 +1395,7 @@ sudo<span class="w"> </span>certbot<span class="w"> </span>--apache<span class="
 <li><a class="reference internal" href="#login-form">Login form</a></li>
 <li><a class="reference internal" href="#language-switcher">Language switcher</a></li>
 <li><a class="reference internal" href="#contact-form">Contact form</a></li>
-<li><a class="reference internal" href="#data-deletion-form">Data Deletion form</a></li>
+<li><a class="reference internal" href="#data-deletion-form">Data deletion form</a></li>
 <li><a class="reference internal" href="#direct-contacts">Direct contacts</a></li>
 </ul>
 </li>
