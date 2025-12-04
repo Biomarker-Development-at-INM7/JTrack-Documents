@@ -281,7 +281,6 @@ Allow **Activity recognition** when prompted.
 
 .. _active-labeling-ios:
 
-=======================
 Active Labeling
 =======================
 
