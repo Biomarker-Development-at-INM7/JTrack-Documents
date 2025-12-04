@@ -22,15 +22,9 @@ Main Modules
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Login 
 ---------------------------
-Provides authentication for registered users such as investigators and administrators. Users log in with a username and password. A default demo user (demouser) is available for testing. 
+Provides authentication for registered users such as investigators and administrators. Users log in with a username and password. A default demo user (demouser) is available for testing.
 
-.. list-table::
-   :widths: 40 60
-   :header-rows: 0
-   :align: left
-   :class: two-col-plain
-
-   * - .. container:: quick-box plain
+   * .. container:: quick-box plain
 
           **Quick access:**
 
@@ -40,9 +34,10 @@ Provides authentication for registered users such as investigators and administr
           - :ref:`(4) – Data Deletion form <delete>`
           - :ref:`(5) – Direct contacts <directcontacts>`
 
-     - .. image:: image/JDash/dash_index.png
-          :width: 100%
-          :alt: JDash login
+
+.. image:: image/JDash/dash_index.png
+  :width: 100%
+  :alt: JDash login
 
 .. _login:
 
@@ -71,8 +66,8 @@ message. After submitting, the message is forwarded to the system’s configured
 support email. All fields are required to ensure proper follow-up.
 
 .. image:: image/JDash/dash_contactform.png
-          :alt: Contact form screenshot
-          :width: 80%
+    :alt: Contact form screenshot
+    :width: 80%
 
 .. _delete:
 
@@ -92,8 +87,8 @@ manual verification and processing. Data deletion begins once the request is
 reviewed and approved.
 
 .. image:: image/JDash/dash_data_deletion_form.png
-      :alt: Data Deletion form screenshot
-      :width: 100%
+    :alt: Data Deletion form screenshot
+    :width: 100%
 
 .. important::
    The data will be **permanently** removed and cannot be restored.
@@ -110,15 +105,9 @@ For technical questions please contact `Jona M. Fischer <mailto:j.fischer@fz-jue
 Studies 
 ---------------------------
 Central hub for study management, showing all studies the user can access or create. Grid/List Toggle: Allows switching between study card and list layouts.
-Search Bar: Filters displayed studies. 
+Search Bar: Filters displayed studies.
 
-.. list-table::
-   :widths: 40 60
-   :header-rows: 0
-   :align: left
-   :class: two-col-plain
-
-   * - .. container:: quick-box plain
+   * .. container:: quick-box plain
 
             **Interface Overview:**
    
@@ -127,9 +116,9 @@ Search Bar: Filters displayed studies.
             - :ref:`(3) – Edit study <edit-study>`
             - :ref:`(4) – Test and audit logs <audit-study>`
 
-     - .. image:: image/JDash/dash_logged_in.png
-          :width: 100%
-          :alt: JDash login
+.. image:: image/JDash/dash_logged_in.png
+    :width: 100%
+    :alt: JDash login
 
 .. _create-study:
 
@@ -140,10 +129,11 @@ project in JDash. Here you define basic metadata, sensor configuration,
 optional EMA surveys, and experimental tasks.
 
 .. image:: image/JDash/dash_create_empty.png
-   :width: 600px
-   :align: center
+    :width: 600px
+    :align: center
 
-**Form fields**
+Form fields
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Study name**
 
@@ -218,8 +208,8 @@ Checkbox to enable or disable EMA for this study.
 In **JDash**, study conductors can configure the **Active Labeling** feature to collect labeled sensor data for specific tasks or activities. This setup is essential when precise associations between sensor signals and user-performed tasks are required.
 
 .. image:: image/JDash/ActiveLabeling.png
-   :width: 600px
-   :align: center
+    :width: 600px
+    :align: center
 
 Within the study settings on **JDash**, you can:
 
@@ -275,8 +265,8 @@ It summarizes the most relevant study parameters so administrators can review
 key settings at a glance.
 
 .. image:: image/JDash/dash_features.png
-   :width: 600px
-   :align: center
+    :width: 600px
+    :align: center
 
 The panel displays:
 
@@ -316,8 +306,8 @@ selected study. It provides an overview of each participant’s status, app
 type, sensor configuration, and study duration.
 
 .. image:: image/JDash/dash_create_remove_subjects.png
-   :width: 600px
-   :align: center
+    :width: 600px
+    :align: center
 
 The table includes the following columns:
 
@@ -378,8 +368,8 @@ notifications to selected study participants. This can be used for reminders,
 announcements, troubleshooting instructions, or follow-up messages.
 
 .. image:: image/JDash/dash_send_notification.png
-      :width: 100%
-      :alt: jdash notifications
+    :width: 100%
+    :alt: jdash notifications
 
 The panel contains the following fields:
 
@@ -420,8 +410,8 @@ This section allows investigators to formally end a study. Once
 a study is closed, no new data will be accepted from enrolled participants.
 
 .. image:: image/JDash/dash_close_study.png
-   :width: 600px
-   :align: center
+    :width: 600px
+    :align: center
 
 
 .. important::
@@ -441,8 +431,8 @@ adjust task settings. This interface is identical to the *New Study* form,
 but the fields are pre-filled with the study’s current values.
 
 .. image:: image/JDash/dash_create_checked.png
-   :width: 600px
-   :align: center
+    :width: 600px
+    :align: center
 
 The following elements can be updated directly:
 
@@ -476,8 +466,8 @@ This tool helps ensure data integrity, validate sensor activity, and confirm
 that participant workflows behave correctly.
 
 .. image:: image/JDash/dash_test_audit.png
-   :width: 600px
-   :align: center
+    :width: 600px
+    :align: center
 
 The checklist displays the following information for each test case:
 
@@ -517,13 +507,8 @@ Survey
 Manages EMA (Ecological Momentary Assessment) questionnaires linked to studies. Displays existing surveys with title, study association, creation date, and actions (edit, copy, delete).
 Upload Section: Allows importing survey definitions via JSON files.
 
-.. list-table::
-   :widths: 40 60
-   :header-rows: 0
-   :align: left
-   :class: two-col-plain
 
-   * - .. container:: quick-box plain
+   * .. container:: quick-box plain
 
             **Interface Overview:**
             
@@ -531,10 +516,9 @@ Upload Section: Allows importing survey definitions via JSON files.
             - :ref:`(2) – Upload Survey Json <upload-survey-json>`
             - :ref:`(3) – Edit/View Survey <survey-edit-view>`
             
-
-     - .. image:: image/JDash/dash_survey_list.png
-          :width: 100%
-          :alt: JDash survey list
+.. image:: image/JDash/dash_survey_list.png
+    :width: 100%
+    :alt: JDash survey list
 
 .. _create-survey:
 
@@ -550,13 +534,13 @@ The *New Survey* dialog provides a guided form for creating a survey entry in
 the system.
 
 .. image:: image/JDash/dash_create_survey.png
-   :width: 600px
-   :align: center
+    :width: 600px
+    :align: center
 
 
 
-**Form fields**
-
+Form fields
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Title**  
    The display name of the survey. This name appears in the survey list and
@@ -669,8 +653,8 @@ survey and provides tools for managing categories, adding new questions, and
 exporting the survey as JSON.
 
 .. image:: image/JDash/dash_survey_details.png
-   :width: 600px
-   :align: center
+    :width: 600px
+    :align: center
 
 
 
@@ -705,8 +689,8 @@ Investigators can:
 - Delete categories
 
 .. image:: image/JDash/survey_category.png
-   :width: 600px
-   :align: center 
+    :width: 600px
+    :align: center
 
 
 **Adding New Questions**
@@ -770,8 +754,8 @@ question within the EMA survey. Each field controls a specific aspect of how
 the question behaves, how it appears to the user, and when it is shown.
 
 .. image:: image/JDash/survey_edit_question.png
-   :width: 600px
-   :align: center
+    :width: 600px
+    :align: center
 
 
 
@@ -954,8 +938,8 @@ Editor displays an **Answer Form** section. This section allows the
 investigators to define the selectable choices shown to participants.
 
 .. image:: image/JDash/survey_edit_answer.png
-   :width: 600px
-   :align: center
+    :width: 600px
+    :align: center
 
 
 Click **Add Choice** to insert a new answer option row.  
@@ -985,7 +969,6 @@ The option is removed immediately from the form.
 .. ---------------------------
 .. Integrates Plotly-Dash applications for data visualization and analysis. Users can select from available Dash apps to explore study data through interactive graphs and dashboards.
 
-.. .. list-table::
 ..    :widths: 40 60
 ..    :header-rows: 0
 ..    :align: left
@@ -1033,58 +1016,42 @@ admin/ – Django Project
 --------------------------------------
 This directory contains core Django project settings and runtime configuration.
 
-Key Files
+**Key Files**
 
-settings.py : Defines installed apps, database configuration, static settings, security settings.
-
-urls.py: Routes requests to all dashboard modules (studies, surveys, notifications, analytics).
-
-wsgi.py: WSGI entry point used by Apache mod_wsgi in production.
-
-asgi.py: ASGI entry point (not used by Apache, but available for async servers).
+- settings.py : Defines installed apps, database configuration, static settings, security settings.
+- urls.py: Routes requests to all dashboard modules (studies, surveys, notifications, analytics).
+- wsgi.py: WSGI entry point used by Apache mod_wsgi in production.
+- asgi.py: ASGI entry point (not used by Apache, but available for async servers).
 
 
 jdash/ – Dashboard Application
 --------------------------------------
 Contains Django apps that implement the dashboard functionality:
 
-Modules
+**Modules**
 
-Login module – Authentication and access control.
+- Login module – Authentication and access control.
+- Studies module – Create/edit studies, manage sensors, manage subjects.
+- Survey module – EMA survey creation and management.
+- Notifications module – Push notifications to participants.
+- Analytics module – Embeds visual analytics (optional Dash integration).
 
-Studies module – Create/edit studies, manage sensors, manage subjects.
+**Each app typically contains:**
 
-Survey module – EMA survey creation and management.
-
-Notifications module – Push notifications to participants.
-
-Analytics module – Embeds visual analytics (optional Dash integration).
-
-Typical Structure
-
-Each app contains:
-
-models.py — Study, survey, sensor, subject, notification models
-
-views.py — View logic for HTML pages and APIs
-
-urls.py — App-level router
-
-forms.py — Django forms for data input
-
-templates/<app_name>/ — HTML templates (Bootstrap-based)
-
-static/<app_name>/ — Local static assets
+- models.py — Study, survey, sensor, subject, notification models
+- views.py — View logic for HTML pages and APIs
+- urls.py — App-level router
+- forms.py — Django forms for data input
+- templates/<app_name>/ — HTML templates (Bootstrap-based)
+- static/<app_name>/ — Local static assets
 
 static/
 --------------------------------------
 Contains global project-level assets:
 
-CSS styling for dashboard UI
-
-JavaScript (Bootstrap, BootstrapTable, custom JS)
-
-Icons, logos, images
+- CSS styling for dashboard UI
+- JavaScript (Bootstrap, BootstrapTable, custom JS)
+- Icons, logos, images
 
 These are collected via collectstatic into STATIC_ROOT for Apache serving.
 
