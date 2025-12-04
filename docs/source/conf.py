@@ -19,7 +19,7 @@
 
 project = 'JTrack'
 copyright = '2025, INM7'
-author = 'Mehran Turna & Jona M Fischer'
+author = 'Mamaka Narava, Mehran Turna & Jona M. Fischer'
 
 # The full version, including alpha/beta/rc tags
 release = '2.1'
@@ -57,6 +57,9 @@ html_show_sourcelink = False
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = [
+    'custom.css',
+]
 
 html_sidebars = {
     "**": [

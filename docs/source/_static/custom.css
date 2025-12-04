@@ -1,0 +1,21 @@
+.toc-title {
+    visibility: hidden;
+    position: relative;
+}
+
+.toc-title::before {
+    content: "Schnellzugriff / Quick Links";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #006b96;
+    display: block;
+    padding-bottom: 0.5rem;
+}
+
+/* Push the toc-tree content downward */
+.toc-tree-container {
+    padding-top: 2rem;  /* Adjust this value as needed */
+}
