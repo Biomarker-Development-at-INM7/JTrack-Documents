@@ -865,27 +865,100 @@ Defines a study day after which the question should no longer be shown.
    - **0** — No deactivation by date  
    - **10** — Question disappears after day 10 of the study
 
+Conditional Logic
+=================
+
+You can define **conditional logic** for a question to dynamically **activate** or **deactivate** other questions based on a participant’s answer.
+
+.. image:: image/JDash/jdash_activate_question1.png
+   :width: 90%
+   :align: center
+
+**Overview**
+
+Each question provides the following fields:
+
+- **Activate Question**
+- **Deactivate Question**
+- **Activation Condition** *(shown when needed)*
+- **Deactivation Condition** *(shown when needed)*
+
+These fields allow you to control which questions appear next, enabling branching logic within your survey.
+
+---
 
 **Activate Question**
 
+.. image:: image/JDash/jdash_activate_question2.png
+   :width: 90%
+   :align: center
 
-A comma-separated list of Sequence Ids for questions to activate if this
-question is answered.
+A comma-separated list of **Sequence IDs** that should be **enabled** when this question is answered.
 
-.. admonition:: Example:
+.. admonition:: Example
 
-   - ``1``  
+   - ``1``
    - ``2,3``
 
-This enables branching logic (conditional question activation).
+This is typically used to guide participants to follow-up questions.
 
+---
 
 **Deactivate Question**
 
+A comma-separated list of **Sequence IDs** that should be **disabled** when this question is answered.
 
-A comma-separated list of Sequence Ids for questions that should be disabled
-when this question is answered.  
-Used for mutually exclusive question pathways.
+This is useful for excluding irrelevant or mutually exclusive questions.
+
+---
+
+**Conditions**
+
+The **Activation Condition** and **Deactivation Condition** fields define *when* the above rules are applied.
+
+- These fields appear **automatically** once you enter values in **Activate Question** or **Deactivate Question**.
+- The condition must **exactly match** one of the answer options:
+
+  - Matching is **case-sensitive**
+  - The value must be identical to the answer text
+
+.. note::
+
+   If no condition is specified, the activation or deactivation applies to **any answer**.
+
+---
+
+**Combined Logic**
+
+.. image:: image/JDash/jdash_activate_question3.png
+   :width: 90%
+   :align: center
+
+In most cases, only one of the following is used:
+
+- **Activate Question**
+- **Deactivate Question**
+
+However, both can be used together if needed.
+
+.. admonition:: Example scenario
+
+   A question like:
+
+   *"How do you commute to work?"*
+
+   could:
+
+   - **Activate** follow-up questions about *public transport* if the answer is ``Bus``
+   - **Deactivate** questions about *driving* if the answer is ``Bus``
+
+In this case, both **activation** and **deactivation** fields are populated, and both corresponding condition fields become visible.
+
+---
+
+.. tip::
+
+   Always ensure that conditions exactly match the answer options to avoid unexpected behavior.
 
 
 **ClockTime Start**

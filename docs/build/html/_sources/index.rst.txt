@@ -42,6 +42,18 @@ The JTrack platform includes:
 
 |
 
+Minimal App Requirements
+++++++++++++++++++++++++++++
+
+Following OS versions are able to run our Apps:
+
+* **JTrack Social iOS** : iOS 16+ (iOS 15 only until App Version 2.47)
+* **JTrack Social Android** : Android 14+
+* **JTrack EMA iOS** – iOS 16+
+* **JTrack EMA Android** – Android 12+
+
+|
+
 Contents:
 +++++++++
 
