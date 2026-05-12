@@ -2,6 +2,4 @@
 Developer Resources
 ====================
 
-The JTrack code for the backend and the dashboard is available on github at https://github.com/Biomarker-Development-at-INM7/
-
-For questions or support on installations please contact biomarkers.inm7 [at] gmail.com
+To view the JTrack code (Backend and JDash) please visit https://github.com/Biomarker-Development-at-INM7/
