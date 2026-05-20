@@ -68,6 +68,7 @@ Contents:
    FAQ
    Troubleshooting
    Team
+   Partners_and_Collaborations
 
 Publications
 ++++++++++++
