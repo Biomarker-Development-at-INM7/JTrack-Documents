@@ -29,10 +29,9 @@ Provides authentication for registered users such as investigators and administr
           **Quick access:**
 
           - :ref:`(1) – Login form <login>`
-          - :ref:`(2) – Language switcher <language>`
-          - :ref:`(3) – Contact form <contact>`
-          - :ref:`(4) – Data Deletion form <delete>`
-          - :ref:`(5) – Direct contacts <directcontacts>`
+          - :ref:`(2) – Contact form <contact>`
+          - :ref:`(3) – Data Deletion form <delete>`
+          - :ref:`(4) – Direct contacts <directcontacts>`
 
 
 .. image:: image/JDash/dash_index.png
@@ -47,14 +46,6 @@ Login form
 * Visit `https://jdash.inm7.de <https://jdash.inm7.de/>`_
 * Enter your personal credentials into the login fields and press **"Login"**.
 * You can find your login credentials inside a PDF-file that was sent to you via email.
-
-.. _language:
-
-Language switcher
-~~~~~~~~~~~~~~~~~
-
-To change the language of the website please click on the respective flag.
-Currently only German and English are supported. Additional languages will be added in the future.
 
 .. _contact:
 
@@ -110,15 +101,25 @@ Search Bar: Filters displayed studies.
    * .. container:: quick-box plain
 
             **Interface Overview:**
-   
-            - :ref:`(1) – Create new study <create-study>`
-            - :ref:`(2) – View study details <study-details-subjects-view>`
-            - :ref:`(3) – Edit study <edit-study>`
-            - :ref:`(4) – Test and audit logs <audit-study>`
+            
+            - :ref:`(1) – Language <language>`
+            - :ref:`(2) – Create new study <create-study>`
+            - :ref:`(3) – View study details <study-details-subjects-view>`
+            - :ref:`(4) – Edit study <edit-study>`
+            - :ref:`(5) – Test and audit logs <audit-study>`
 
 .. image:: image/JDash/dash_logged_in.png
     :width: 100%
     :alt: JDash login
+
+.. _language:
+
+Language switcher
+~~~~~~~~~~~~~~~~~
+
+To change the language of the website please click on the respective flag.
+Currently only German and English are supported. Additional languages will be added in the future.
+
 
 .. _create-study:
 
@@ -199,6 +200,10 @@ Checkbox to enable or disable EMA for this study.
       - Filenames in the ZIP must match the ``Image Url`` fields used in survey
       questions.
 
+.. image:: image/JDash/dash_create_ema.png
+    :width: 600px
+    :align: center
+
 .. _conf-active-labeling:
 
 **Sensor configuration**
@@ -252,6 +257,75 @@ This list is presented to participants inside the JTrack Social app with autocom
    Use descriptive task names and clear instructions to help participants understand what to do during each session.
 
 Inside of JTrack Social, Active Labeling is then accessible from the Main view (both in :ref:`iOS <active-labeling-ios>` and Android).
+
+
+**Wearable Devices**
+
+This section allows administrators to configure external
+devices (e.g., smartwatches) and define which sensors should be collected as
+part of the study.
+
+This feature enables integration of wearable sensor data alongside mobile and
+EMA data.
+
+
+**Enable Wearables**
+
+- **Show wearables** toggle  
+  Enables or disables wearable device configuration for the study.
+
+- **Add wearable device**  
+  Button to add a new wearable device configuration.
+
+
+**Device Configuration**
+
+Each wearable device includes the following:
+
+**Device name**  
+   Name of the wearable device (e.g., ``garmin (vivoactive 6)``).
+
+**Sensors for this device**  
+   List of available sensors supported by the device, such as:
+
+   - steps  
+   - spo2  
+   - skin_temperature  
+   - bbi / enhanced_bbi  
+   - ppg  
+   - accelerometer  
+
+   Select one or more sensors and click **Add** to include them in the study.
+
+
+**Selected Sensors Table**
+
+After adding sensors, they appear in the configuration table with the following
+fields:
+
+- **Sensor**  
+  Name of the selected sensor (e.g., ``heart_rate``, ``respiration``).
+
+- **Sampling rate**  
+  Frequency at which data is recorded (e.g., ``1 min``, ``15 min``).
+
+- **Unit**  
+  Measurement unit for the sensor data (e.g., ``bpm``, ``breaths/min``,
+  ``boolean``, ``count``).
+
+- **Remove (×)**  
+  Deletes the sensor from the configuration.
+
+
+.. image:: image/JDash/dash_wearable_sensors.png
+    :width: 600px
+    :align: center
+
+.. note::
+
+   Adding high-frequency wearable sensors may increase data volume and impact
+   storage and processing performance. Choose sensors and sampling rates based
+   on the study objectives.
 
 .. _study-details-subjects-view:
 
@@ -479,9 +553,6 @@ The checklist displays the following information for each test case:
   Checkbox indicating responsibility or completion for the test case by the
   assigned user or study owner.
 
-- **Id**  
-  Unique identifier for the test case.
-
 - **Description**  
   A brief summary of what the test case is verifying (e.g., real-time
   monitoring, data export, participant enrollment).
@@ -495,7 +566,20 @@ The checklist displays the following information for each test case:
   Describes what should occur if the test is successful.  
   This provides a reference for determining whether the system is behaving
   correctly.
-  
+
+- **Comments**  
+
+  Comments allows users to add notes for each test case. Comments
+  can be used to document observations, issues, or follow-up actions during the
+  test and audit process. When a comment is submitted:
+
+  - The comment is saved with the related test case.
+  - The username and timestamp are recorded.
+  - An email notification is sent to the administrator.
+
+  This allows the study team to track audit feedback directly from the dashboard
+  and ensures that important issues are communicated to the admin promptly.
+
 .. note::
 
    Test case results do not affect participant data collection. The checklist
@@ -655,7 +739,6 @@ exporting the survey as JSON.
 .. image:: image/JDash/dash_survey_details.png
     :width: 600px
     :align: center
-
 
 
 **Overview of the Question List**
@@ -865,6 +948,49 @@ Defines a study day after which the question should no longer be shown.
    - **0** — No deactivation by date  
    - **10** — Question disappears after day 10 of the study
 
+
+
+**Activation time(s)**
+
+The time (in minutes from midnight) when the question becomes active.
+
+.. admonition:: Examples:
+
+   - **480** = 08:00  
+   - **900** = 15:00
+
+If multiple times are provided (comma-separated), the user will receive
+multiple activations.
+
+These times determine when notifications are sent and when the question
+appears in the JTrack app.
+
+
+**Deactivation time(s)**
+
+The time (in minutes since midnight) when the question becomes inactive.
+
+Must match the number of entries in ClockTime Start if multiple values are
+used.
+
+.. admonition:: Example:
+
+   - **1430** = 23:50  
+   - ``480,900`` must have a matching ``600,1000`` (start/end pairs)
+
+This ensures each activation window has a corresponding end time.
+
+.. image:: image/JDash/jdash_clock_times.png
+   :width: 90%
+   :align: center
+
+.. note::
+
+   Activation and deactivation times together define the valid response window
+   for each question. Ensure that end times are logically after start times to
+   avoid invalid configurations.
+
+
 Conditional Logic
 =================
 
@@ -960,31 +1086,6 @@ In this case, both **activation** and **deactivation** fields are populated, and
 
    Always ensure that conditions exactly match the answer options to avoid unexpected behavior.
 
-
-**ClockTime Start**
-
-
-The time (in minutes from midnight) when the question becomes active.
-
-.. admonition:: Examples:
-
-   - **480** = 08:00  
-   - **900** = 15:00
-
-If multiple times are provided (comma-separated), the user will receive
-multiple activations.
-
-**ClockTime End**
-
-The time (in minutes since midnight) when the question becomes inactive.
-
-Must match the number of entries in ClockTime Start if multiple values are
-used.
-
-.. admonition:: Example:
-
-   - **1430** = 23:50  
-   - ``480,900`` must have a matching ``600,1000`` (start/end pairs)
 
 
 **Image URL**

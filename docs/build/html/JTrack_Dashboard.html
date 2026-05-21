@@ -1,15 +1,15 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Developer Resources" href="developers.html" /><link rel="prev" title="JTrack Social" href="Social.html" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Developer Resources" href="developers.html"><link rel="prev" title="JTrack Social" href="Social.html">
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 7.4.7 and Furo 2025.09.25 -->
         <title>JDash – JTrack Dashboard - JTrack 2.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d9b0ff87" />
     
     
@@ -17,8 +17,8 @@
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
   
   }
   @media not print {
@@ -145,14 +145,10 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -162,8 +158,7 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -171,8 +166,7 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -180,8 +174,7 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -189,7 +182,6 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
-  
   
   <span class="sidebar-brand-text">JTrack 2.1 documentation</span>
   
@@ -278,8 +270,7 @@
           
 
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -287,8 +278,7 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -321,10 +311,9 @@ The system connects mobile app data with researcher-controlled dashboards. The m
 <p><strong>Quick access:</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#id1"><span class="std std-ref">(1) – Login form</span></a></p></li>
-<li><p><a class="reference internal" href="#language"><span class="std std-ref">(2) – Language switcher</span></a></p></li>
-<li><p><a class="reference internal" href="#contact"><span class="std std-ref">(3) – Contact form</span></a></p></li>
-<li><p><a class="reference internal" href="#delete"><span class="std std-ref">(4) – Data Deletion form</span></a></p></li>
-<li><p><a class="reference internal" href="#directcontacts"><span class="std std-ref">(5) – Direct contacts</span></a></p></li>
+<li><p><a class="reference internal" href="#contact"><span class="std std-ref">(2) – Contact form</span></a></p></li>
+<li><p><a class="reference internal" href="#delete"><span class="std std-ref">(3) – Data Deletion form</span></a></p></li>
+<li><p><a class="reference internal" href="#directcontacts"><span class="std std-ref">(4) – Direct contacts</span></a></p></li>
 </ul>
 </div>
 </li>
@@ -339,11 +328,6 @@ The system connects mobile app data with researcher-controlled dashboards. The m
 <li><p>Enter your personal credentials into the login fields and press <strong>“Login”</strong>.</p></li>
 <li><p>You can find your login credentials inside a PDF-file that was sent to you via email.</p></li>
 </ul>
-</section>
-<section id="language-switcher">
-<span id="language"></span><h4>Language switcher<a class="headerlink" href="#language-switcher" title="Link to this heading">¶</a></h4>
-<p>To change the language of the website please click on the respective flag.
-Currently only German and English are supported. Additional languages will be added in the future.</p>
 </section>
 <section id="contact-form">
 <span id="contact"></span><h4>Contact form<a class="headerlink" href="#contact-form" title="Link to this heading">¶</a></h4>
@@ -389,10 +373,11 @@ Search Bar: Filters displayed studies.</p>
 <li><div class="quick-box plain docutils container">
 <p><strong>Interface Overview:</strong></p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#create-study"><span class="std std-ref">(1) – Create new study</span></a></p></li>
-<li><p><a class="reference internal" href="#study-details-subjects-view"><span class="std std-ref">(2) – View study details</span></a></p></li>
-<li><p><a class="reference internal" href="#edit-study"><span class="std std-ref">(3) – Edit study</span></a></p></li>
-<li><p><a class="reference internal" href="#audit-study"><span class="std std-ref">(4) – Test and audit logs</span></a></p></li>
+<li><p><a class="reference internal" href="#language"><span class="std std-ref">(1) – Language</span></a></p></li>
+<li><p><a class="reference internal" href="#create-study"><span class="std std-ref">(2) – Create new study</span></a></p></li>
+<li><p><a class="reference internal" href="#study-details-subjects-view"><span class="std std-ref">(3) – View study details</span></a></p></li>
+<li><p><a class="reference internal" href="#edit-study"><span class="std std-ref">(4) – Edit study</span></a></p></li>
+<li><p><a class="reference internal" href="#audit-study"><span class="std std-ref">(5) – Test and audit logs</span></a></p></li>
 </ul>
 </div>
 </li>
@@ -400,6 +385,11 @@ Search Bar: Filters displayed studies.</p>
 </div></blockquote>
 <a class="reference internal image-reference" href="_images/dash_logged_in.png"><img alt="JDash login" src="_images/dash_logged_in.png" style="width: 100%;" />
 </a>
+<section id="language-switcher">
+<span id="language"></span><h4>Language switcher<a class="headerlink" href="#language-switcher" title="Link to this heading">¶</a></h4>
+<p>To change the language of the website please click on the respective flag.
+Currently only German and English are supported. Additional languages will be added in the future.</p>
+</section>
 <section id="create-new-study">
 <span id="create-study"></span><h4>Create New Study<a class="headerlink" href="#create-new-study" title="Link to this heading">¶</a></h4>
 <p>The <strong>New Study</strong> form is used to configure and start a new data collection
@@ -472,6 +462,8 @@ questions.</p>
 </dl>
 </li>
 </ul>
+<a class="reference internal image-reference" href="_images/dash_create_ema.png"><img alt="_images/dash_create_ema.png" class="align-center" src="_images/dash_create_ema.png" style="width: 600px;" />
+</a>
 <p id="conf-active-labeling"><strong>Sensor configuration</strong></p>
 <p><strong>How to configure active labeling</strong></p>
 <p>In <strong>JDash</strong>, study conductors can configure the <strong>Active Labeling</strong> feature to collect labeled sensor data for specific tasks or activities. This setup is essential when precise associations between sensor signals and user-performed tasks are required.</p>
@@ -522,6 +514,58 @@ questions.</p>
 <p>Use descriptive task names and clear instructions to help participants understand what to do during each session.</p>
 </div>
 <p>Inside of JTrack Social, Active Labeling is then accessible from the Main view (both in <a class="reference internal" href="Social.html#active-labeling-ios"><span class="std std-ref">iOS</span></a> and Android).</p>
+<p><strong>Wearable Devices</strong></p>
+<p>This section allows administrators to configure external
+devices (e.g., smartwatches) and define which sensors should be collected as
+part of the study.</p>
+<p>This feature enables integration of wearable sensor data alongside mobile and
+EMA data.</p>
+<p><strong>Enable Wearables</strong></p>
+<ul class="simple">
+<li><p><strong>Show wearables</strong> toggle
+Enables or disables wearable device configuration for the study.</p></li>
+<li><p><strong>Add wearable device</strong>
+Button to add a new wearable device configuration.</p></li>
+</ul>
+<p><strong>Device Configuration</strong></p>
+<p>Each wearable device includes the following:</p>
+<dl>
+<dt><strong>Device name</strong></dt><dd><p>Name of the wearable device (e.g., <code class="docutils literal notranslate"><span class="pre">garmin</span> <span class="pre">(vivoactive</span> <span class="pre">6)</span></code>).</p>
+</dd>
+<dt><strong>Sensors for this device</strong></dt><dd><p>List of available sensors supported by the device, such as:</p>
+<ul class="simple">
+<li><p>steps</p></li>
+<li><p>spo2</p></li>
+<li><p>skin_temperature</p></li>
+<li><p>bbi / enhanced_bbi</p></li>
+<li><p>ppg</p></li>
+<li><p>accelerometer</p></li>
+</ul>
+<p>Select one or more sensors and click <strong>Add</strong> to include them in the study.</p>
+</dd>
+</dl>
+<p><strong>Selected Sensors Table</strong></p>
+<p>After adding sensors, they appear in the configuration table with the following
+fields:</p>
+<ul class="simple">
+<li><p><strong>Sensor</strong>
+Name of the selected sensor (e.g., <code class="docutils literal notranslate"><span class="pre">heart_rate</span></code>, <code class="docutils literal notranslate"><span class="pre">respiration</span></code>).</p></li>
+<li><p><strong>Sampling rate</strong>
+Frequency at which data is recorded (e.g., <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">15</span> <span class="pre">min</span></code>).</p></li>
+<li><p><strong>Unit</strong>
+Measurement unit for the sensor data (e.g., <code class="docutils literal notranslate"><span class="pre">bpm</span></code>, <code class="docutils literal notranslate"><span class="pre">breaths/min</span></code>,
+<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>).</p></li>
+<li><p><strong>Remove (×)</strong>
+Deletes the sensor from the configuration.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/dash_wearable_sensors.png"><img alt="_images/dash_wearable_sensors.png" class="align-center" src="_images/dash_wearable_sensors.png" style="width: 600px;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding high-frequency wearable sensors may increase data volume and impact
+storage and processing performance. Choose sensors and sampling rates based
+on the study objectives.</p>
+</div>
 </section>
 <section id="study-details">
 <span id="study-details-subjects-view"></span><h4>Study Details<a class="headerlink" href="#study-details" title="Link to this heading">¶</a></h4>
@@ -685,15 +729,13 @@ that participant workflows behave correctly.</p>
 <a class="reference internal image-reference" href="_images/dash_test_audit.png"><img alt="_images/dash_test_audit.png" class="align-center" src="_images/dash_test_audit.png" style="width: 600px;" />
 </a>
 <p>The checklist displays the following information for each test case:</p>
-<ul class="simple">
+<ul>
 <li><p><strong>Admin</strong>
 Checkbox used by administrators to mark whether the test case is required
 or has been reviewed at an admin level.</p></li>
 <li><p><strong>Owner</strong>
 Checkbox indicating responsibility or completion for the test case by the
 assigned user or study owner.</p></li>
-<li><p><strong>Id</strong>
-Unique identifier for the test case.</p></li>
 <li><p><strong>Description</strong>
 A brief summary of what the test case is verifying (e.g., real-time
 monitoring, data export, participant enrollment).</p></li>
@@ -705,6 +747,18 @@ QR codes, or validating exported results.</p></li>
 Describes what should occur if the test is successful.
 This provides a reference for determining whether the system is behaving
 correctly.</p></li>
+<li><p><strong>Comments</strong></p>
+<p>Comments allows users to add notes for each test case. Comments
+can be used to document observations, issues, or follow-up actions during the
+test and audit process. When a comment is submitted:</p>
+<ul class="simple">
+<li><p>The comment is saved with the related test case.</p></li>
+<li><p>The username and timestamp are recorded.</p></li>
+<li><p>An email notification is sent to the administrator.</p></li>
+</ul>
+<p>This allows the study team to track audit feedback directly from the dashboard
+and ensures that important issues are communicated to the admin promptly.</p>
+</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -986,6 +1040,39 @@ Commonly used to disable follow-up items after a “No” response.</p>
 <li><p><strong>10</strong> — Question disappears after day 10 of the study</p></li>
 </ul>
 </div>
+<p><strong>Activation time(s)</strong></p>
+<p>The time (in minutes from midnight) when the question becomes active.</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples:</p>
+<ul class="simple">
+<li><p><strong>480</strong> = 08:00</p></li>
+<li><p><strong>900</strong> = 15:00</p></li>
+</ul>
+</div>
+<p>If multiple times are provided (comma-separated), the user will receive
+multiple activations.</p>
+<p>These times determine when notifications are sent and when the question
+appears in the JTrack app.</p>
+<p><strong>Deactivation time(s)</strong></p>
+<p>The time (in minutes since midnight) when the question becomes inactive.</p>
+<p>Must match the number of entries in ClockTime Start if multiple values are
+used.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example:</p>
+<ul class="simple">
+<li><p><strong>1430</strong> = 23:50</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">480,900</span></code> must have a matching <code class="docutils literal notranslate"><span class="pre">600,1000</span></code> (start/end pairs)</p></li>
+</ul>
+</div>
+<p>This ensures each activation window has a corresponding end time.</p>
+<a class="reference internal image-reference" href="_images/jdash_clock_times.png"><img alt="_images/jdash_clock_times.png" class="align-center" src="_images/jdash_clock_times.png" style="width: 90%;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Activation and deactivation times together define the valid response window
+for each question. Ensure that end times are logically after start times to
+avoid invalid configurations.</p>
+</div>
 <section id="conditional-logic">
 <h5>Conditional Logic<a class="headerlink" href="#conditional-logic" title="Link to this heading">¶</a></h5>
 <p>You can define <strong>conditional logic</strong> for a question to dynamically <strong>activate</strong> or <strong>deactivate</strong> other questions based on a participant’s answer.</p>
@@ -1058,28 +1145,6 @@ Commonly used to disable follow-up items after a “No” response.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Always ensure that conditions exactly match the answer options to avoid unexpected behavior.</p>
-</div>
-<p><strong>ClockTime Start</strong></p>
-<p>The time (in minutes from midnight) when the question becomes active.</p>
-<div class="admonition-examples admonition">
-<p class="admonition-title">Examples:</p>
-<ul class="simple">
-<li><p><strong>480</strong> = 08:00</p></li>
-<li><p><strong>900</strong> = 15:00</p></li>
-</ul>
-</div>
-<p>If multiple times are provided (comma-separated), the user will receive
-multiple activations.</p>
-<p><strong>ClockTime End</strong></p>
-<p>The time (in minutes since midnight) when the question becomes inactive.</p>
-<p>Must match the number of entries in ClockTime Start if multiple values are
-used.</p>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example:</p>
-<ul class="simple">
-<li><p><strong>1430</strong> = 23:50</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">480,900</span></code> must have a matching <code class="docutils literal notranslate"><span class="pre">600,1000</span></code> (start/end pairs)</p></li>
-</ul>
 </div>
 <p><strong>Image URL</strong></p>
 <p>An optional image filename associated with the question (e.g., <code class="docutils literal notranslate"><span class="pre">image1.png</span></code>).
@@ -1467,13 +1532,13 @@ sudo<span class="w"> </span>certbot<span class="w"> </span>--apache<span class="
 <li><a class="reference internal" href="#main-modules">Main Modules</a><ul>
 <li><a class="reference internal" href="#login">Login</a><ul>
 <li><a class="reference internal" href="#login-form">Login form</a></li>
-<li><a class="reference internal" href="#language-switcher">Language switcher</a></li>
 <li><a class="reference internal" href="#contact-form">Contact form</a></li>
 <li><a class="reference internal" href="#data-deletion-form">Data deletion form</a></li>
 <li><a class="reference internal" href="#direct-contacts">Direct contacts</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#studies">Studies</a><ul>
+<li><a class="reference internal" href="#language-switcher">Language switcher</a></li>
 <li><a class="reference internal" href="#create-new-study">Create New Study</a></li>
 <li><a class="reference internal" href="#form-fields">Form fields</a></li>
 <li><a class="reference internal" href="#study-details">Study Details</a></li>
@@ -1533,8 +1598,8 @@ sudo<span class="w"> </span>certbot<span class="w"> </span>--apache<span class="
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=c4a36953"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>
