@@ -64,6 +64,7 @@ Contents:
    EMA
    Social
    JTrack_Dashboard
+   Garmin_Integration
    developers
    FAQ
    Troubleshooting
