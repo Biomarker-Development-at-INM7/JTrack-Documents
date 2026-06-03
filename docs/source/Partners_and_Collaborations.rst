@@ -51,6 +51,54 @@ JTrack and JDash are developed in collaboration with academic and clinical partn
            grid-column: auto;
        }
    }
+
+   .github-card {
+       display: flex;
+       align-items: center;
+       gap: 16px;
+       background: #f5f5f5;
+       border: 1px solid #d0d0d0;
+       border-radius: 14px;
+       padding: 20px;
+       max-width: 720px;
+       margin: 0 auto;
+       box-shadow: 0 0 0 1px rgba(0,0,0,.03);
+   }
+
+   .github-card svg {
+       width: 48px;
+       height: 48px;
+       flex-shrink: 0;
+       color: #24292f;
+   }
+
+   .github-card-content {
+       flex: 1;
+   }
+
+   .github-card-title {
+       margin: 0 0 0.25rem;
+       font-size: 1.1rem;
+       font-weight: 700;
+   }
+
+   .github-card-text {
+       margin: 0;
+       color: #444;
+       line-height: 1.5;
+   }
+
+   .github-card-link {
+       display: inline-block;
+       margin-top: 0.75rem;
+       color: #0969da;
+       text-decoration: none;
+       font-weight: 600;
+   }
+
+   .github-card-link:hover {
+       text-decoration: underline;
+   }
    </style>
 
    <div class="partners-grid">

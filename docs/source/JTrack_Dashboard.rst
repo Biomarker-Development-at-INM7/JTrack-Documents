@@ -4,34 +4,48 @@ JDash – JTrack Dashboard
 
 JDash is a Django-based web platform for managing digital health studies conducted through JTrack mobile applications. This provides a unified interface to design, monitor, and manage behavioral and sensor-based research studies initiated by 
 clinical institutions and the `Biomarker Development Group <https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672>`_.
-The system connects mobile app data with researcher-controlled dashboards. The main goal is to simplify the lifecycle of digital studies — from study setup and survey design to subject enrollment, progress monitoring, and data validation.
+The system connects mobile app data with researcher-controlled dashboards. The main goal is to simplify the lifecycle of digital studies — from study setup and survey design to subject enrollment, progress monitoring, and data quality.
 
 System Architecture
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++
 
-JDash follows a modular Django MVC structure integrated with a clean Bootstrap-based frontend and optional Plotly-Dash analytics components.
+JDash follows a modular Django-based architecture with a Bootstrap-powered
+frontend and embedded Plotly-Dash dashboards for visualizing participant
+compliance, sensor activity, and study progress.
 
 Core Components
 ---------------------------
-* Backend: Django framework managing user authentication, database models, and view rendering.
-* Frontend: HTML templates with Bootstrap, BootstrapTables, and AJAX for dynamic UI.
-* Data Layer: Centralized database storing study metadata, subjects, sensor configurations, and EMA survey definitions.
-* Analytics Integration: Optional Dash/Plotly apps embedded using Django templates for visualization.
+* Backend: Django-based application handling authentication, routing,
+  form processing, database operations, and server-side rendering.
 
-Main Modules
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+* Frontend: HTML templates styled with Bootstrap, using BootstrapTables
+  and AJAX for interactive tables, filtering, file uploads, and dynamic UI
+  updates.
+
+* Database: MariaDB stores studies, subjects, sensor settings, EMA surveys,
+  tasks, audit checks, notifications, and user-related configuration.
+
+* Visualization Components: Interactive compliance visualizations are implemented 
+  using Dash and Plotly components integrated within Django views and templates.
+
+* Deployment: Supports local development with Django ``runserver`` and
+  production deployment using Apache with ``mod_wsgi``.
+
+
 Login 
----------------------------
+++++++++++++
+
 Provides authentication for registered users such as investigators and administrators. Users log in with a username and password. A default demo user (demouser) is available for testing.
 
    * .. container:: quick-box plain
 
           **Quick access:**
 
+
           - :ref:`(1) – Login form <login>`
-          - :ref:`(2) – Contact form <contact>`
+          - :ref:`(2) – Mail us <directcontacts>`
           - :ref:`(3) – Data Deletion form <delete>`
-          - :ref:`(4) – Direct contacts <directcontacts>`
+          - :ref:`(4) – Language <language>`
 
 
 .. image:: image/JDash/dash_index.png
@@ -40,30 +54,17 @@ Provides authentication for registered users such as investigators and administr
 
 .. _login:
 
-Login form
-~~~~~~~~~~
+Login Form
+---------------------------
 
 * Visit `https://jdash.inm7.de <https://jdash.inm7.de/>`_
 * Enter your personal credentials into the login fields and press **"Login"**.
 * You can find your login credentials inside a PDF-file that was sent to you via email.
 
-.. _contact:
-
-Contact form
-~~~~~~~~~~~~
-The form allows users to reach out directly to the JDash
-administration team. Users can enter their full name, email address, and a
-message. After submitting, the message is forwarded to the system’s configured
-support email. All fields are required to ensure proper follow-up.
-
-.. image:: image/JDash/dash_contactform.png
-    :alt: Contact form screenshot
-    :width: 80%
-
 .. _delete:
 
-Data deletion form
-~~~~~~~~~~~~~~~~~~
+Data Deletion Form
+---------------------------
 
 The page allows participants to request permanent removal of their collected data from the JTrack system. 
 
@@ -77,6 +78,14 @@ After submitting the form, the request is forwarded to the study team for
 manual verification and processing. Data deletion begins once the request is
 reviewed and approved.
 
+.. _language:
+
+Language Switcher
+---------------------------
+
+To change the language of the website please click on the respective flag.
+Currently only German and English are supported. 
+
 .. image:: image/JDash/dash_data_deletion_form.png
     :alt: Data Deletion form screenshot
     :width: 100%
@@ -87,11 +96,15 @@ reviewed and approved.
 
 .. _directcontacts:
 
-Direct contacts
-~~~~~~~~~~~~~~~
+Direct Contacts
+---------------------------
 
 For collaboration enquiries and scientific questions you can contact Dr. Juergen Dukart or Dr. Mehran Turna.
 For technical questions please contact `Jona M. Fischer <mailto:j.fischer@fz-juelich.de>`_ or `Mamaka Narava <mailto:m.narava@fz-juelich.de>`_
+
+
+Dashboard Tabs
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Studies 
 ---------------------------
@@ -102,23 +115,14 @@ Search Bar: Filters displayed studies.
 
             **Interface Overview:**
             
-            - :ref:`(1) – Language <language>`
-            - :ref:`(2) – Create new study <create-study>`
-            - :ref:`(3) – View study details <study-details-subjects-view>`
-            - :ref:`(4) – Edit study <edit-study>`
-            - :ref:`(5) – Test and audit logs <audit-study>`
+            - :ref:`(1) – Create new study <create-study>`
+            - :ref:`(2) – View study details <study-details-subjects-view>`
+            - :ref:`(3) – Edit study <edit-study>`
+            - :ref:`(4) – Test and audit logs <audit-study>`
 
 .. image:: image/JDash/dash_logged_in.png
     :width: 100%
     :alt: JDash login
-
-.. _language:
-
-Language switcher
-~~~~~~~~~~~~~~~~~
-
-To change the language of the website please click on the respective flag.
-Currently only German and English are supported. Additional languages will be added in the future.
 
 
 .. _create-study:
@@ -133,7 +137,7 @@ optional EMA surveys, and experimental tasks.
     :width: 600px
     :align: center
 
-Form fields
+Form Fields
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Study name**
@@ -623,7 +627,7 @@ the system.
 
 
 
-Form fields
+Form Fields
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Title**  
@@ -842,7 +846,7 @@ the question behaves, how it appears to the user, and when it is shown.
 
 
 
-**Form fields**
+**Form Fields**
 
 
 Below are the descriptions of all fields available in the Create/Edit Question
@@ -994,7 +998,8 @@ This ensures each activation window has a corresponding end time.
 Conditional Logic
 =================
 
-You can define **conditional logic** for a question to dynamically **activate** or **deactivate** other questions based on a participant’s answer.
+You can define **conditional logic** for a question to dynamically activate or
+deactivate other questions based on a participant's response.
 
 .. image:: image/JDash/jdash_activate_question1.png
    :width: 90%
@@ -1004,14 +1009,13 @@ You can define **conditional logic** for a question to dynamically **activate** 
 
 Each question provides the following fields:
 
-- **Activate Question**
-- **Deactivate Question**
-- **Activation Condition** *(shown when needed)*
-- **Deactivation Condition** *(shown when needed)*
+- **Activate Question** – Sequence IDs of questions to activate.
+- **Deactivate Question** – Sequence IDs of questions to deactivate.
+- **Activation Condition** – Displayed when **Activate Question** is configured.
+- **Deactivation Condition** – Displayed when **Deactivate Question** is configured.
 
-These fields allow you to control which questions appear next, enabling branching logic within your survey.
-
----
+These fields allow you to control which questions appear next, enabling
+branching logic within a survey.
 
 **Activate Question**
 
@@ -1019,40 +1023,53 @@ These fields allow you to control which questions appear next, enabling branchin
    :width: 90%
    :align: center
 
-A comma-separated list of **Sequence IDs** that should be **enabled** when this question is answered.
+A comma-separated list of question **Sequence IDs** that should be activated
+when the specified condition is met.
 
 .. admonition:: Example
 
    - ``1``
    - ``2,3``
 
-This is typically used to guide participants to follow-up questions.
-
----
+This is typically used to display follow-up questions that are only relevant
+for certain answers.
 
 **Deactivate Question**
 
-A comma-separated list of **Sequence IDs** that should be **disabled** when this question is answered.
+A comma-separated list of question **Sequence IDs** that should be deactivated
+when the specified condition is met.
 
-This is useful for excluding irrelevant or mutually exclusive questions.
-
----
+This is useful for skipping irrelevant or mutually exclusive questions.
 
 **Conditions**
 
-The **Activation Condition** and **Deactivation Condition** fields define *when* the above rules are applied.
+The **Activation Condition** and **Deactivation Condition** fields determine
+when the corresponding branching rules are applied.
 
-- These fields appear **automatically** once you enter values in **Activate Question** or **Deactivate Question**.
-- The condition must **exactly match** one of the answer options:
-
-  - Matching is **case-sensitive**
-  - The value must be identical to the answer text
+- **Activation Condition** controls when questions listed in
+  **Activate Question** become visible.
+- **Deactivation Condition** controls when questions listed in
+  **Deactivate Question** are hidden or skipped.
+- These fields become available automatically after entering values in the
+  corresponding **Activate Question** or **Deactivate Question** fields.
+- Conditions must match one or more answer choices defined for the current
+  question.
 
 .. note::
 
-   If no condition is specified, the activation or deactivation applies to **any answer**.
+   Conditions are evaluated against the participant's response to the current
+   question. The selected condition value must correspond to one of the
+   configured answer options.
 
----
+.. important::
+
+   For **Single Choice** and **Multiple Choice** questions, activation and
+   deactivation conditions can be selected directly from the available answer
+   choices.
+
+   For all other question types, condition values must be entered manually.
+   These values are compared against the participant's response to determine
+   whether the corresponding activation or deactivation rule is applied.
 
 **Combined Logic**
 
@@ -1060,32 +1077,44 @@ The **Activation Condition** and **Deactivation Condition** fields define *when*
    :width: 90%
    :align: center
 
-In most cases, only one of the following is used:
+Both activation and deactivation rules can be configured for the same question.
 
-- **Activate Question**
-- **Deactivate Question**
+In the example above:
 
-However, both can be used together if needed.
+- Question ``13`` is activated when the participant selects ``Ja``.
+- Question ``14`` is deactivated when the participant selects ``Nein``.
+
+This allows complex survey flows to be created without requiring separate
+question groups.
 
 .. admonition:: Example scenario
 
-   A question like:
+   Consider the question:
 
-   *"How do you commute to work?"*
+   *"Do you currently drive to work?"*
 
-   could:
+   Available answers:
 
-   - **Activate** follow-up questions about *public transport* if the answer is ``Bus``
-   - **Deactivate** questions about *driving* if the answer is ``Bus``
+   - ``Ja``
+   - ``Nein``
 
-In this case, both **activation** and **deactivation** fields are populated, and both corresponding condition fields become visible.
+   Configuration:
 
----
+   - **Activate Question:** ``13``
+   - **Activation Condition:** ``Ja``
+
+   - **Deactivate Question:** ``14``
+   - **Deactivation Condition:** ``Nein``
+
+   Result:
+
+   - Selecting ``Ja`` activates question ``13``.
+   - Selecting ``Nein`` deactivates question ``14``.
 
 .. tip::
 
-   Always ensure that conditions exactly match the answer options to avoid unexpected behavior.
-
+   Use activation and deactivation logic to build conditional survey paths,
+   reduce unnecessary questions, and improve the participant experience.
 
 
 **Image URL**
@@ -1105,7 +1134,8 @@ The link appears below the question text in the app.
 .. _answer-form:
 
 Create / Edit Answer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================
+
 For question types that require predefined answer options (such as
 **Single Choice**, **Multiple Choice**), the Question
 Editor displays an **Answer Form** section. This section allows the
@@ -1139,393 +1169,162 @@ To remove an answer option, click the **trash icon** (🗑️) on the right side
 the row.  
 The option is removed immediately from the form.
 
-.. Analytics
-.. ---------------------------
-.. Integrates Plotly-Dash applications for data visualization and analysis. Users can select from available Dash apps to explore study data through interactive graphs and dashboards.
+Compliance Monitoring
+------------------------------
 
-..    :widths: 40 60
-..    :header-rows: 0
-..    :align: left
-..    :class: two-col-plain
+The **Compliance Monitoring** tab provides interactive visualizations for
+monitoring sensor data collection throughout a study. It helps researchers
+identify missing recordings, inactive participants, irregular sensor activity,
+and overall data completeness.
 
-..    * - .. container:: quick-box plain
+The dashboard focuses on subject-level monitoring and allows users to explore
+recording patterns across study days using an interactive heatmap.
 
-..             **Interface Overview:**
-            
-..             - :ref:`(1) – Select Dash App <select-dash-app>`
-..             - :ref:`(2) – Dash App View <dash-app-view>`
+Selection Panel
+~~~~~~~~~~~~~~~~~~~
 
-..      - .. image:: image/JDash/dash_analytics.png
-..           :width: 100%
-..           :alt: JDash analytics
+The left-side control panel allows users to configure the displayed
+visualization.
 
-.. .. _select-dash-app:
+**Choose Study**
 
-.. **Default view**
+Select the study for which compliance information should be displayed.
+
+**Select Sensor**
+
+Choose the sensor type to visualize (e.g., activity, location,
+accelerometer, application usage).
+
+**Choose X-axis**
+
+Select how data should be displayed along the horizontal axis.
+Available options may include:
+
+- Study day
+- Calendar date
+
+**Filter Subjects**
+
+Optionally restrict the visualization to specific participants instead of
+displaying the entire study cohort.
+
+Visualization Panel
+~~~~~~~~~~~~~~~~~~~
+
+The main panel displays a heatmap representing sensor activity across
+participants and study days.
+
+.. image:: image/JDash/jdash_compliance_monitoring.png
+   :width: 100%
+   :align: center
+
+Subject QC Timeline
+==================================
+
+The **Subject QC Timeline** heatmap provides an overview of sensor recordings
+for each participant throughout the study.
+
+- **Y-axis** — Subject IDs
+- **X-axis** — Study day or selected time axis
+- **Color intensity** — amount of recorded sensor data for the selected sensor
+
+Higher color intensity indicates greater recording activity, while lighter
+regions may indicate reduced or missing data.
+
+The visualization can help identify:
+
+- Missing recordings
+- Participants with limited sensor activity
+- Periods of device inactivity
+- Sensor interruptions
+- Longitudinal recording patterns
 
 
-.. .. _dash-app-view:
-
-.. **Project specific view**
 
 
+.. note::
 
-Codebase Structure
-++++++++++++++++++++++++++++++++++++++++++++++++++
-.. code-block:: text
-
-   JTrack-dashboard/
-   ├─ admin/               # Django "apps" implementing UI + logic
-   ├─ jdash/               # Django project configuration
-   ├─ static/              # Global static assets
-   ├─ jtrack.sql           # Example SQL schema/data (MySQL or similar)
-   ├─ manage.py            # Django management entry point
-   ├─ requirements.txt     # Python dependencies
-   ├─ setup.sh             # Setup helper script
-   ├─ setup_mysql.sh       # MySQL setup helper script
-   └─ README.md
+   Depending on synchronization schedules and backend processing, uploaded
+   data may appear in the dashboard with a delay after the participant syncs
+   the device.
 
 
-admin/ – Django Project
---------------------------------------
-This directory contains core Django project settings and runtime configuration.
+Notification Scheduler
+++++++++++++++++++++++++
 
-**Key Files**
+JDash includes a background notification scheduler that automatically sends EMA
+reminders to participants based on the survey configuration.
 
-- settings.py : Defines installed apps, database configuration, static settings, security settings.
-- urls.py: Routes requests to all dashboard modules (studies, surveys, notifications, analytics).
-- wsgi.py: WSGI entry point used by Apache mod_wsgi in production.
-- asgi.py: ASGI entry point (not used by Apache, but available for async servers).
+The scheduler runs periodically as a cron job and processes a generated JSON
+schedule containing:
 
+- Study days on which notifications should be sent
+- Activation times configured for survey questions
+- Study-specific notification schedules
 
-jdash/ – Dashboard Application
---------------------------------------
-Contains Django apps that implement the dashboard functionality:
+Workflow
+---------
 
-**Modules**
+1. Survey activation times are configured in the EMA survey definition.
+2. The notification schedule is generated and stored as a JSON structure.
+3. The scheduler runs at regular intervals via cron.
+4. For each participant, the scheduler calculates the current study day based
+   on the enrollment date.
+5. The scheduler checks whether the current study day exists in the generated
+   notification schedule.
+6. If a configured activation time falls within the current processing window,
+   a push notification is sent to the participant's device.
+7. Notifications are delivered through Firebase Cloud Messaging (FCM).
 
-- Login module – Authentication and access control.
-- Studies module – Create/edit studies, manage sensors, manage subjects.
-- Survey module – EMA survey creation and management.
-- Notifications module – Push notifications to participants.
-- Analytics module – Embeds visual analytics (optional Dash integration).
+Generated Schedule
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Each app typically contains:**
+The scheduler uses a generated JSON file that maps study days to activation
+times.
 
-- models.py — Study, survey, sensor, subject, notification models
-- views.py — View logic for HTML pages and APIs
-- urls.py — App-level router
-- forms.py — Django forms for data input
-- templates/<app_name>/ — HTML templates (Bootstrap-based)
-- static/<app_name>/ — Local static assets
+Example:
 
-static/
---------------------------------------
-Contains global project-level assets:
+.. code-block:: json
 
-- CSS styling for dashboard UI
-- JavaScript (Bootstrap, BootstrapTable, custom JS)
-- Icons, logos, images
+   {
+      "Study_A": {
+         "days": {
+            "0": [480, 720],
+            "1": [480, 720],
+            "2": [480]
+         }
+      }
+   }
 
-These are collected via collectstatic into STATIC_ROOT for Apache serving.
+In this example:
+
+- Day 0: notifications at 08:00 and 12:00
+- Day 1: notifications at 08:00 and 12:00
+- Day 2: notification at 08:00
+
+This ensures that participants receive reminders relative to their individual
+enrollment date.
+
+Notification Delivery
+---------------------
+
+Notifications are delivered to enrolled participants through the mobile
+application and are used to inform users that new EMA questions are available.
+
+.. note::
+
+   Notification schedules are derived directly from the EMA survey
+   configuration. Any changes to survey activation times are automatically
+   reflected in future notification schedules after the schedule is
+   regenerated.
 
 
 Deployment Instructions
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-How to deploy the JTrack Dashboard both locally
-(for development) and on a production web server using Apache and
-``mod_wsgi``.
 
+JDash can be deployed locally for development or on a production web server
+using Apache and ``mod_wsgi``. The latest deployment steps, environment setup, database configuration, and
+server configuration details are maintained in the official GitHub repository.
 
-
-
-Local Deployment (Development)
----------------------------------
-
-
-Local deployment is intended for development, testing, and debugging.
-Django’s built-in development server is used for this mode.
-
-
-Requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Install system prerequisites:
-
-.. code-block:: bash
-
-    sudo apt update
-    sudo apt install python3 python3-venv python3-pip git
-
-Clone the repository:
-
-.. code-block:: bash
-
-    git clone https://github.com/mamaka7/JTrack-dashboard.git
-    cd JTrack-dashboard
-
-
-
-Create Virtual Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: bash
-
-    python3 -m venv venv
-    source venv/bin/activate
-
-Install dependencies:
-
-.. code-block:: bash
-
-    pip install --upgrade pip
-    pip install -r requirements.txt
-
-(Optional):
-
-.. code-block:: bash
-
-    chmod +x setup.sh
-    ./setup.sh
-
-
-
-Database Setup (MariaDB)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For both local development and production, the recommended database is
-**MariaDB**. A helper script is provided to set up the database and
-user automatically.
-
-Make sure MariaDB is running:
-
-.. code-block:: bash
-
-    sudo systemctl enable mariadb
-    sudo systemctl start mariadb
-
-Run the MariaDB setup script from the project root:
-
-.. code-block:: bash
-
-    chmod +x mysql_set.sh
-    ./setup_mysql.sh
-
-The script typically:
-
-- Creates a MariaDB database (e.g. ``jtrack``)
-- Creates a DB user with the required privileges
-- Optionally imports the schema/data from ``jtrack.sql``
-
-After the script finishes, apply Django migrations (still recommended):
-
-Apply migrations:
-
-.. code-block:: bash
-
-    python manage.py migrate
-
-
-Run Development Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Start Django's built-in server:
-
-.. code-block:: bash
-
-    python manage.py runserver
-
-Then open in a browser:
-
-``http://127.0.0.1:8000``
-
-In this mode:
-
-- Debug is active  
-- Auto-reload is enabled  
-- No Apache or external web server is required  
-
-
-
-Production Deployment (Apache + mod_wsgi)
-------------------------------------------------------------------
-
-This method is recommended for real-world hosting of the JTrack Dashboard.
-
-
-
-Prerequisites
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Install required packages:
-
-.. code-block:: bash
-
-    sudo apt update
-    sudo apt install python3 python3-venv python3-pip \
-                     apache2 libapache2-mod-wsgi-py3 git
-
-
-
-Clone Application into Server Directory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Example installation directory: ``/srv/jdash``
-
-.. code-block:: bash
-
-    sudo mkdir -p /srv/jdash
-    sudo chown $USER:$USER /srv/jdash
-    cd /srv/jdash
-
-    git clone https://github.com/mamaka7/JTrack-dashboard.git .
-
-
-
-Create Virtual Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: bash
-
-    python3 -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
-
-Database Setup (MariaDB)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-First, run the MariaDB setup script from the project root
-(e.g. ``/srv/jdash``):
-
-.. code-block:: bash
-
-    cd /srv/jdash
-    chmod +x setup_mysql.sh
-    ./setup_mysql.sh
-
-(or, if your script is named ``mysql_set.sh``:)
-
-.. code-block:: bash
-
-    chmod +x mysql_set.sh
-    ./mysql_set.sh
-
-This script should:
-
-- Create the MariaDB database (e.g. ``jtrack``)
-- Create a MariaDB user with password
-- Grant required privileges
-- Optionally import ``jtrack.sql``
-
-Now open ``jdash/settings.py`` and ensure the MariaDB configuration is set.
-MariaDB is fully compatible with the MySQL Django backend:
-
-.. code-block:: python
-
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.mysql",  # MariaDB-compatible
-            "NAME": "jtrack",
-            "USER": "jtrack_user",
-            "PASSWORD": "securepassword",
-            "HOST": "localhost",
-            "PORT": "3306",
-        }
-    }
-
-Also set production options:
-
-**Disable DEBUG**
-
-.. code-block:: python
-
-    DEBUG = False
-
-**Set Allowed Hosts**
-
-.. code-block:: python
-
-    ALLOWED_HOSTS = ["your-domain.com", "127.0.0.1"]
-
-Apply migrations (even if the script imported the base schema):
-
-.. code-block:: bash
-
-    python manage.py migrate
-
-Collect Static Files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Set:
-
-.. code-block:: python
-
-    STATIC_ROOT = "/srv/jdash/static_collected"
-
-Collect static assets:
-
-.. code-block:: bash
-
-    python manage.py collectstatic
-
-
-Configure Apache (mod_wsgi)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Create:
-
-``/etc/apache2/sites-available/jdash.conf``
-
-.. code-block:: apache
-
-    <VirtualHost *:80>
-        ServerName your-domain.com
-
-        Alias /static/ /srv/jdash/static_collected/
-        <Directory /srv/jdash/static_collected/>
-            Require all granted
-        </Directory>
-
-        <Directory /srv/jdash/jdash>
-            <Files wsgi.py>
-                Require all granted
-            </Files>
-        </Directory>
-
-        WSGIDaemonProcess jdash python-path=/srv/jdash \
-                          python-home=/srv/jdash/venv
-        WSGIProcessGroup jdash
-        WSGIScriptAlias / /srv/jdash/jdash/wsgi.py
-
-        ErrorLog ${APACHE_LOG_DIR}/jdash_error.log
-        CustomLog ${APACHE_LOG_DIR}/jdash_access.log combined
-    </VirtualHost>
-
-Enable the site:
-
-.. code-block:: bash
-
-    sudo a2enmod wsgi
-    sudo a2ensite jdash.conf
-    sudo systemctl reload apache2
-
-(Optional) Disable default Apache site:
-
-.. code-block:: bash
-
-    sudo a2dissite 000-default.conf
-    sudo systemctl reload apache2
-
-
-
-Enable HTTPS (Recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Use Let’s Encrypt:
-
-.. code-block:: bash
-
-    sudo apt install certbot python3-certbot-apache
-    sudo certbot --apache -d your-domain.com
+https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard

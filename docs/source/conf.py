@@ -52,6 +52,10 @@ exclude_patterns = []
 
 html_theme = "furo"
 html_show_sourcelink = False
+html_context = {
+    "repo_url": "https://github.com/Biomarker-Development-at-INM7",
+    "repo_description": "Explore JTrack code, issues, and other details on GitHub.",
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -65,6 +69,7 @@ html_sidebars = {
     "**": [
         "sidebar/brand.html",
         "sidebar/navigation.html",
+        "sidebar/repo.html",
         "sidebar/ethical-ads.html",
         "footer.html",
     ]

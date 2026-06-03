@@ -21,43 +21,68 @@ Welcome to the JTrack Platform
 
 JTrack is an open-source platform, free of charge, for remote assessments of individuals *in situ* using smartphones and wearables.
 
-It was developed by the Biomarker Development Group at the INM - Institute of Neuroscience and Medicine (INM-7, Brain and Behaviour) of the Research Center Jülich (FZJ).
+Developed by the Biomarker Development Group at the INM – Institute of Neuroscience and Medicine (INM-7, Brain and Behaviour) of the Research Center Jülich (FZJ), JTrack is adaptable, configurable, and scalable, with a strong focus on security and privacy.
 
-JTrack is adaptable, configurable, and scalable, with a strong focus on security and privacy.
+More than just a single application, JTrack enables researchers to create and manage studies, collect data from smartphones and wearables, and share research data through one unified platform.
 
-More than just a single application, it enables you to create and manage studies and share collected data in one unified platform.
-
-If you are interested in using JTrack in your studies, please reach out to us at: biomarkers.inm7 [at] gmail.com
+If you are interested in using JTrack in your studies, please reach out to us at: 
+`biomarkers.inm7@gmail.com <mailto:biomarkers.inm7@gmail.com>`_
 
 |
 
 Platform Components
 ++++++++++++++++++++
 
-The JTrack platform includes:
+The platform includes three main components:
 
-* **JTrack Social** – passive sensing and behavioral monitoring
-* **JTrack EMA** – ecological momentary assessment surveys
-* **JDash** – study management and analysis dashboard
+.. raw:: html
 
-|
+   <div style="border:1px solid #d0d7de; border-radius:12px; padding:10px; margin:5px 0;">
+      <h5>JTrack Social</h5>
+      <p>Enable passive sensing of social interactions, activity context, and daily-life behaviors to support longitudinal digital health and behavioral research.</p>
+   </div>
+
+   <div style="border:1px solid #d0d7de; border-radius:12px; padding:10px; margin:5px 0;">
+      <h5>JTrack EMA</h5>
+      <p>Collect ecological momentary assessments, daily symptoms, and study questionnaires directly from participants in real-world settings.</p>
+   </div>
+
+   <div style="border:1px solid #d0d7de; border-radius:12px; padding:10px; margin:5px 0;">
+      <h5>JDash</h5>
+      <p>Create studies, manage participants and surveys, configure sensor collection, and monitor study compliance and data quality from a single interface.</p>
+   </div>
+   <div style="border:1px solid #d0d7de; border-radius:12px; padding:10px; margin:5px 0;">
+      <h5>Database</h5>
+      <p>Centralized BIDS-compliant repository for study metadata, participant records, sensor data, and EMA assessments supporting reproducible research workflows.</p>
+   </div>
+
+|   
 
 Minimal App Requirements
 ++++++++++++++++++++++++++++
 
-Following OS versions are able to run our Apps:
+.. raw:: html
 
-* **JTrack Social iOS** : iOS 16+ (iOS 15 only until App Version 2.47)
-* **JTrack Social Android** : Android 14+
-* **JTrack EMA iOS** – iOS 16+
-* **JTrack EMA Android** – Android 12+
+   <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0;">
+      <div style="border:1px solid #d0d7de; border-radius:10px; padding:14px;">
+         <h5 style="margin:0 0 8px 0;">JTrack Social</h5>
+         <p style="margin:4px 0;"><strong>iOS:</strong> iOS 16+</p>
+         <p style="margin:4px 0;"><strong>Android:</strong> Android 14+</p>
+         <p style="margin:8px 0 0 0; font-size:0.9em;"><em>iOS 15 supported up to App Version 2.47.</em></p>
+      </div>
 
-|
+      <div style="border:1px solid #d0d7de; border-radius:10px; padding:14px;">
+         <h5 style="margin:0 0 8px 0;">JTrack EMA</h5>
+         <p style="margin:4px 0;"><strong>iOS:</strong> iOS 16+</p>
+         <p style="margin:4px 0;"><strong>Android:</strong> Android 12+</p>
+      </div>
+   </div>
 
-Contents:
-+++++++++
+.. Contents
+.. +++++++++
 
 .. toctree::
+   :hidden:
    :maxdepth: 2
 
    What_is_JTrack
@@ -85,10 +110,7 @@ Publications
 Contact Us
 ++++++++++
 
-Interested in using JTrack in your study?
-Please get in touch:
-
-`Contact us <mailto:biomarkers.inm7@gmail.com>`_
+Interested in using JTrack in your study? Please get in touch with our team: `Contact <mailto:biomarkers.inm7@gmail.com>`_
 
 We also offer a weekly **JTrack Zoom Hour**, where we answer all questions regarding JTrack.
 It takes place on **Tuesdays from 1 to 2 pm German time**.

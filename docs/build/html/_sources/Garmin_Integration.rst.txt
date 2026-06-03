@@ -238,6 +238,9 @@ Unpairing removes:
 
    </div>
 
+.. note::
+    Be aware that the App cannot override iOS Bluetooth settings, so to remove the Bluetooth connection open the `Settings App -> Bluetooth` and manually remove the Garmin watch.
+
 |
 
 Sync to Phone
@@ -321,6 +324,11 @@ This allows updated user settings (age, gender, weight, height, etc.) for improv
       </div>
 
    </div>
+
+.. note::
+
+    It may take some time for these changes to be properly applied to the Garmin watch.
+
 
 |
 

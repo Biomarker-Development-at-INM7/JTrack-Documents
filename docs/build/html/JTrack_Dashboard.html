@@ -5,12 +5,12 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Garmin Integration" href="Garmin_Integration.html"><link rel="prev" title="JTrack Social" href="Social.html">
 
-    <!-- Generated with Sphinx 7.4.7 and Furo 2025.12.19 -->
+    <!-- Generated with Sphinx 7.4.7 and Furo 2025.09.25 -->
         <title>JDash – JTrack Dashboard - JTrack 2.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d9b0ff87" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=4a697ded" />
     
     
 
@@ -192,13 +192,22 @@
 <li class="toctree-l1"><a class="reference internal" href="Social.html">JTrack Social</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">JDash – JTrack Dashboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Garmin_Integration.html">Garmin Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developers.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developers.html">Data Storage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Team.html">Meet the Team</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Partners_and_Collaborations.html">Partners &amp; Collaborations</a></li>
 </ul>
 
+</div><div class="sidebar-github-box">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="currentColor" d="M12 0.5C5.38 0.5 0 5.88 0 12.54c0 5.28 3.42 9.76 8.16 11.34.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.05-3.32.72-4.02-1.6-4.02-1.6-.55-1.42-1.34-1.8-1.34-1.8-1.1-.75.08-.74.08-.74 1.22.09 1.87 1.27 1.87 1.27 1.08 1.85 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.65-.3-5.44-1.33-5.44-5.9 0-1.3.46-2.36 1.22-3.19-.12-.3-.53-1.52.12-3.17 0 0 .99-.32 3.24 1.22.94-.27 1.95-.4 2.95-.4 1 .01 2.02.14 2.95.4 2.25-1.54 3.24-1.22 3.24-1.22.65 1.65.24 2.87.12 3.17.76.83 1.22 1.9 1.22 3.19 0 4.58-2.8 5.6-5.47 5.89.43.37.82 1.1.82 2.22 0 1.6-.01 2.9-.01 3.3 0 .32.22.7.82.58C20.58 22.3 24 17.82 24 12.54 24 5.88 18.62 0.5 12 0.5z"/>
+  </svg>
+  <div class="sidebar-github-box-content">
+    <p class="sidebar-github-box-title">Open Source</p>
+    <p class="sidebar-github-box-text">Explore JTrack code, issues, and other details on GitHub.</p>
+    <a class="sidebar-github-box-link" href="https://github.com/Biomarker-Development-at-INM7" target="_blank" rel="noopener">View repository</a>
+  </div>
 </div>
 <div style="text-align: center; margin-top: 2em;">
 
@@ -219,25 +228,24 @@
   <div style="margin-top: 1em;"></div>
 
   <!-- Second row: Brain & Behaviour -->
- <div style="display:flex; align-items:center;">
-  <a href="https://www.fz-juelich.de/inm/inm-7/DE/Home/home_node.html"
-     target="_blank"
-     rel="noopener"
-     style="margin-right:24px;">
-    <img src="_static/bb-icon.png"
-         style="height:50px;"
-         alt="Brain & Behaviour">
-  </a>
+  <div style="display:flex; justify-content:center; align-items:center; gap:1rem;">
+    <a href="https://www.fz-juelich.de/inm/inm-7/DE/Home/home_node.html"
+       target="_blank"
+       rel="noopener">
+      <img src="_static/bb-icon.png"
+           style="height:50px;"
+           alt="Brain & Behaviour">
+    </a>
 
-  <a href="https://www.garmin.com/de-DE/"
-     target="_blank"
-     rel="noopener"
-     style="background:white; padding:6px 10px 6px 10px; margin-right:8px;">
-    <img src="_static/Garmin_Health_Black.png"
-         style="height:38px;"
-         alt="Garmin">
-  </a>
-</div>
+    <a href="https://www.garmin.com/de-DE/"
+       target="_blank"
+       rel="noopener"
+       style="background:white; padding:6px 10px;">
+      <img src="_static/Garmin_Health_Black.png"
+           style="height:38px;"
+           alt="Garmin">
+    </a>
+  </div>
 
   <!-- Spacer -->
   <div style="margin-top: 1em;"></div>
@@ -287,24 +295,31 @@
 <h1>JDash – JTrack Dashboard<a class="headerlink" href="#jdash-jtrack-dashboard" title="Link to this heading">¶</a></h1>
 <p>JDash is a Django-based web platform for managing digital health studies conducted through JTrack mobile applications. This provides a unified interface to design, monitor, and manage behavioral and sensor-based research studies initiated by
 clinical institutions and the <a class="reference external" href="https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672">Biomarker Development Group</a>.
-The system connects mobile app data with researcher-controlled dashboards. The main goal is to simplify the lifecycle of digital studies — from study setup and survey design to subject enrollment, progress monitoring, and data validation.</p>
+The system connects mobile app data with researcher-controlled dashboards. The main goal is to simplify the lifecycle of digital studies — from study setup and survey design to subject enrollment, progress monitoring, and data quality.</p>
 <section id="system-architecture">
 <h2>System Architecture<a class="headerlink" href="#system-architecture" title="Link to this heading">¶</a></h2>
-<p>JDash follows a modular Django MVC structure integrated with a clean Bootstrap-based frontend and optional Plotly-Dash analytics components.</p>
+<p>JDash follows a modular Django-based architecture with a Bootstrap-powered
+frontend and embedded Plotly-Dash dashboards for visualizing participant
+compliance, sensor activity, and study progress.</p>
 <section id="core-components">
 <h3>Core Components<a class="headerlink" href="#core-components" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><p>Backend: Django framework managing user authentication, database models, and view rendering.</p></li>
-<li><p>Frontend: HTML templates with Bootstrap, BootstrapTables, and AJAX for dynamic UI.</p></li>
-<li><p>Data Layer: Centralized database storing study metadata, subjects, sensor configurations, and EMA survey definitions.</p></li>
-<li><p>Analytics Integration: Optional Dash/Plotly apps embedded using Django templates for visualization.</p></li>
+<li><p>Backend: Django-based application handling authentication, routing,
+form processing, database operations, and server-side rendering.</p></li>
+<li><p>Frontend: HTML templates styled with Bootstrap, using BootstrapTables
+and AJAX for interactive tables, filtering, file uploads, and dynamic UI
+updates.</p></li>
+<li><p>Database: MariaDB stores studies, subjects, sensor settings, EMA surveys,
+tasks, audit checks, notifications, and user-related configuration.</p></li>
+<li><p>Visualization Components: Interactive compliance visualizations are implemented
+using Dash and Plotly components integrated within Django views and templates.</p></li>
+<li><p>Deployment: Supports local development with Django <code class="docutils literal notranslate"><span class="pre">runserver</span></code> and
+production deployment using Apache with <code class="docutils literal notranslate"><span class="pre">mod_wsgi</span></code>.</p></li>
 </ul>
 </section>
 </section>
-<section id="main-modules">
-<h2>Main Modules<a class="headerlink" href="#main-modules" title="Link to this heading">¶</a></h2>
 <section id="login">
-<h3>Login<a class="headerlink" href="#login" title="Link to this heading">¶</a></h3>
+<h2>Login<a class="headerlink" href="#login" title="Link to this heading">¶</a></h2>
 <p>Provides authentication for registered users such as investigators and administrators. Users log in with a username and password. A default demo user (demouser) is available for testing.</p>
 <blockquote>
 <div><ul>
@@ -312,9 +327,9 @@ The system connects mobile app data with researcher-controlled dashboards. The m
 <p><strong>Quick access:</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#id1"><span class="std std-ref">(1) – Login form</span></a></p></li>
-<li><p><a class="reference internal" href="#contact"><span class="std std-ref">(2) – Contact form</span></a></p></li>
+<li><p><a class="reference internal" href="#directcontacts"><span class="std std-ref">(2) – Mail us</span></a></p></li>
 <li><p><a class="reference internal" href="#delete"><span class="std std-ref">(3) – Data Deletion form</span></a></p></li>
-<li><p><a class="reference internal" href="#directcontacts"><span class="std std-ref">(4) – Direct contacts</span></a></p></li>
+<li><p><a class="reference internal" href="#language"><span class="std std-ref">(4) – Language</span></a></p></li>
 </ul>
 </div>
 </li>
@@ -323,24 +338,15 @@ The system connects mobile app data with researcher-controlled dashboards. The m
 <a class="reference internal image-reference" href="_images/dash_index.png"><img alt="JDash login" src="_images/dash_index.png" style="width: 100%;" />
 </a>
 <section id="login-form">
-<span id="id1"></span><h4>Login form<a class="headerlink" href="#login-form" title="Link to this heading">¶</a></h4>
+<span id="id1"></span><h3>Login Form<a class="headerlink" href="#login-form" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Visit <a class="reference external" href="https://jdash.inm7.de/">https://jdash.inm7.de</a></p></li>
 <li><p>Enter your personal credentials into the login fields and press <strong>“Login”</strong>.</p></li>
 <li><p>You can find your login credentials inside a PDF-file that was sent to you via email.</p></li>
 </ul>
 </section>
-<section id="contact-form">
-<span id="contact"></span><h4>Contact form<a class="headerlink" href="#contact-form" title="Link to this heading">¶</a></h4>
-<p>The form allows users to reach out directly to the JDash
-administration team. Users can enter their full name, email address, and a
-message. After submitting, the message is forwarded to the system’s configured
-support email. All fields are required to ensure proper follow-up.</p>
-<a class="reference internal image-reference" href="_images/dash_contactform.png"><img alt="Contact form screenshot" src="_images/dash_contactform.png" style="width: 80%;" />
-</a>
-</section>
 <section id="data-deletion-form">
-<span id="delete"></span><h4>Data deletion form<a class="headerlink" href="#data-deletion-form" title="Link to this heading">¶</a></h4>
+<span id="delete"></span><h3>Data Deletion Form<a class="headerlink" href="#data-deletion-form" title="Link to this heading">¶</a></h3>
 <p>The page allows participants to request permanent removal of their collected data from the JTrack system.</p>
 <p>To submit a request, users must provide:</p>
 <ul class="simple">
@@ -351,6 +357,11 @@ support email. All fields are required to ensure proper follow-up.</p>
 <p>After submitting the form, the request is forwarded to the study team for
 manual verification and processing. Data deletion begins once the request is
 reviewed and approved.</p>
+</section>
+<section id="language-switcher">
+<span id="language"></span><h3>Language Switcher<a class="headerlink" href="#language-switcher" title="Link to this heading">¶</a></h3>
+<p>To change the language of the website please click on the respective flag.
+Currently only German and English are supported.</p>
 <a class="reference internal image-reference" href="_images/dash_data_deletion_form.png"><img alt="Data Deletion form screenshot" src="_images/dash_data_deletion_form.png" style="width: 100%;" />
 </a>
 <div class="admonition important">
@@ -360,11 +371,13 @@ Please make sure to provide the correct <strong>Subject ID</strong>.</p>
 </div>
 </section>
 <section id="direct-contacts">
-<span id="directcontacts"></span><h4>Direct contacts<a class="headerlink" href="#direct-contacts" title="Link to this heading">¶</a></h4>
+<span id="directcontacts"></span><h3>Direct Contacts<a class="headerlink" href="#direct-contacts" title="Link to this heading">¶</a></h3>
 <p>For collaboration enquiries and scientific questions you can contact Dr. Juergen Dukart or Dr. Mehran Turna.
 For technical questions please contact <a class="reference external" href="mailto:j&#46;fischer&#37;&#52;&#48;fz-juelich&#46;de">Jona M<span>&#46;</span> Fischer</a> or <a class="reference external" href="mailto:m&#46;narava&#37;&#52;&#48;fz-juelich&#46;de">Mamaka Narava</a></p>
 </section>
 </section>
+<section id="dashboard-tabs">
+<h2>Dashboard Tabs<a class="headerlink" href="#dashboard-tabs" title="Link to this heading">¶</a></h2>
 <section id="studies">
 <h3>Studies<a class="headerlink" href="#studies" title="Link to this heading">¶</a></h3>
 <p>Central hub for study management, showing all studies the user can access or create. Grid/List Toggle: Allows switching between study card and list layouts.
@@ -374,11 +387,10 @@ Search Bar: Filters displayed studies.</p>
 <li><div class="quick-box plain docutils container">
 <p><strong>Interface Overview:</strong></p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#language"><span class="std std-ref">(1) – Language</span></a></p></li>
-<li><p><a class="reference internal" href="#create-study"><span class="std std-ref">(2) – Create new study</span></a></p></li>
-<li><p><a class="reference internal" href="#study-details-subjects-view"><span class="std std-ref">(3) – View study details</span></a></p></li>
-<li><p><a class="reference internal" href="#edit-study"><span class="std std-ref">(4) – Edit study</span></a></p></li>
-<li><p><a class="reference internal" href="#audit-study"><span class="std std-ref">(5) – Test and audit logs</span></a></p></li>
+<li><p><a class="reference internal" href="#create-study"><span class="std std-ref">(1) – Create new study</span></a></p></li>
+<li><p><a class="reference internal" href="#study-details-subjects-view"><span class="std std-ref">(2) – View study details</span></a></p></li>
+<li><p><a class="reference internal" href="#edit-study"><span class="std std-ref">(3) – Edit study</span></a></p></li>
+<li><p><a class="reference internal" href="#audit-study"><span class="std std-ref">(4) – Test and audit logs</span></a></p></li>
 </ul>
 </div>
 </li>
@@ -386,11 +398,6 @@ Search Bar: Filters displayed studies.</p>
 </div></blockquote>
 <a class="reference internal image-reference" href="_images/dash_logged_in.png"><img alt="JDash login" src="_images/dash_logged_in.png" style="width: 100%;" />
 </a>
-<section id="language-switcher">
-<span id="language"></span><h4>Language switcher<a class="headerlink" href="#language-switcher" title="Link to this heading">¶</a></h4>
-<p>To change the language of the website please click on the respective flag.
-Currently only German and English are supported. Additional languages will be added in the future.</p>
-</section>
 <section id="create-new-study">
 <span id="create-study"></span><h4>Create New Study<a class="headerlink" href="#create-new-study" title="Link to this heading">¶</a></h4>
 <p>The <strong>New Study</strong> form is used to configure and start a new data collection
@@ -400,7 +407,7 @@ optional EMA surveys, and experimental tasks.</p>
 </a>
 </section>
 <section id="form-fields">
-<h4>Form fields<a class="headerlink" href="#form-fields" title="Link to this heading">¶</a></h4>
+<h4>Form Fields<a class="headerlink" href="#form-fields" title="Link to this heading">¶</a></h4>
 <p><strong>Study name</strong></p>
 <p>Unique identifier for the study.
 Do <strong>not</strong> use spaces or special characters (prefer <code class="docutils literal notranslate"><span class="pre">MyStudy_01</span></code> instead of
@@ -800,7 +807,7 @@ the system.</p>
 </a>
 </section>
 <section id="id4">
-<h4>Form fields<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h4>
+<h4>Form Fields<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h4>
 <dl>
 <dt><strong>Title</strong></dt><dd><p>The display name of the survey. This name appears in the survey list and
 throughout the dashboard.</p>
@@ -970,7 +977,7 @@ question within the EMA survey. Each field controls a specific aspect of how
 the question behaves, how it appears to the user, and when it is shown.</p>
 <a class="reference internal image-reference" href="_images/survey_edit_question.png"><img alt="_images/survey_edit_question.png" class="align-center" src="_images/survey_edit_question.png" style="width: 600px;" />
 </a>
-<p><strong>Form fields</strong></p>
+<p><strong>Form Fields</strong></p>
 <p>Below are the descriptions of all fields available in the Create/Edit Question
 form.</p>
 <p><strong>Sequence Id</strong></p>
@@ -1076,23 +1083,25 @@ avoid invalid configurations.</p>
 </div>
 <section id="conditional-logic">
 <h5>Conditional Logic<a class="headerlink" href="#conditional-logic" title="Link to this heading">¶</a></h5>
-<p>You can define <strong>conditional logic</strong> for a question to dynamically <strong>activate</strong> or <strong>deactivate</strong> other questions based on a participant’s answer.</p>
+<p>You can define <strong>conditional logic</strong> for a question to dynamically activate or
+deactivate other questions based on a participant’s response.</p>
 <a class="reference internal image-reference" href="_images/jdash_activate_question1.png"><img alt="_images/jdash_activate_question1.png" class="align-center" src="_images/jdash_activate_question1.png" style="width: 90%;" />
 </a>
 <p><strong>Overview</strong></p>
 <p>Each question provides the following fields:</p>
 <ul class="simple">
-<li><p><strong>Activate Question</strong></p></li>
-<li><p><strong>Deactivate Question</strong></p></li>
-<li><p><strong>Activation Condition</strong> <em>(shown when needed)</em></p></li>
-<li><p><strong>Deactivation Condition</strong> <em>(shown when needed)</em></p></li>
+<li><p><strong>Activate Question</strong> – Sequence IDs of questions to activate.</p></li>
+<li><p><strong>Deactivate Question</strong> – Sequence IDs of questions to deactivate.</p></li>
+<li><p><strong>Activation Condition</strong> – Displayed when <strong>Activate Question</strong> is configured.</p></li>
+<li><p><strong>Deactivation Condition</strong> – Displayed when <strong>Deactivate Question</strong> is configured.</p></li>
 </ul>
-<p>These fields allow you to control which questions appear next, enabling branching logic within your survey.</p>
-<p>—</p>
+<p>These fields allow you to control which questions appear next, enabling
+branching logic within a survey.</p>
 <p><strong>Activate Question</strong></p>
 <a class="reference internal image-reference" href="_images/jdash_activate_question2.png"><img alt="_images/jdash_activate_question2.png" class="align-center" src="_images/jdash_activate_question2.png" style="width: 90%;" />
 </a>
-<p>A comma-separated list of <strong>Sequence IDs</strong> that should be <strong>enabled</strong> when this question is answered.</p>
+<p>A comma-separated list of question <strong>Sequence IDs</strong> that should be activated
+when the specified condition is met.</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <ul class="simple">
@@ -1100,52 +1109,77 @@ avoid invalid configurations.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">2,3</span></code></p></li>
 </ul>
 </div>
-<p>This is typically used to guide participants to follow-up questions.</p>
-<p>—</p>
+<p>This is typically used to display follow-up questions that are only relevant
+for certain answers.</p>
 <p><strong>Deactivate Question</strong></p>
-<p>A comma-separated list of <strong>Sequence IDs</strong> that should be <strong>disabled</strong> when this question is answered.</p>
-<p>This is useful for excluding irrelevant or mutually exclusive questions.</p>
-<p>—</p>
+<p>A comma-separated list of question <strong>Sequence IDs</strong> that should be deactivated
+when the specified condition is met.</p>
+<p>This is useful for skipping irrelevant or mutually exclusive questions.</p>
 <p><strong>Conditions</strong></p>
-<p>The <strong>Activation Condition</strong> and <strong>Deactivation Condition</strong> fields define <em>when</em> the above rules are applied.</p>
+<p>The <strong>Activation Condition</strong> and <strong>Deactivation Condition</strong> fields determine
+when the corresponding branching rules are applied.</p>
 <ul class="simple">
-<li><p>These fields appear <strong>automatically</strong> once you enter values in <strong>Activate Question</strong> or <strong>Deactivate Question</strong>.</p></li>
-<li><p>The condition must <strong>exactly match</strong> one of the answer options:</p>
-<ul>
-<li><p>Matching is <strong>case-sensitive</strong></p></li>
-<li><p>The value must be identical to the answer text</p></li>
-</ul>
-</li>
+<li><p><strong>Activation Condition</strong> controls when questions listed in
+<strong>Activate Question</strong> become visible.</p></li>
+<li><p><strong>Deactivation Condition</strong> controls when questions listed in
+<strong>Deactivate Question</strong> are hidden or skipped.</p></li>
+<li><p>These fields become available automatically after entering values in the
+corresponding <strong>Activate Question</strong> or <strong>Deactivate Question</strong> fields.</p></li>
+<li><p>Conditions must match one or more answer choices defined for the current
+question.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If no condition is specified, the activation or deactivation applies to <strong>any answer</strong>.</p>
+<p>Conditions are evaluated against the participant’s response to the current
+question. The selected condition value must correspond to one of the
+configured answer options.</p>
 </div>
-<p>—</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For <strong>Single Choice</strong> and <strong>Multiple Choice</strong> questions, activation and
+deactivation conditions can be selected directly from the available answer
+choices.</p>
+<p>For all other question types, condition values must be entered manually.
+These values are compared against the participant’s response to determine
+whether the corresponding activation or deactivation rule is applied.</p>
+</div>
 <p><strong>Combined Logic</strong></p>
 <a class="reference internal image-reference" href="_images/jdash_activate_question3.png"><img alt="_images/jdash_activate_question3.png" class="align-center" src="_images/jdash_activate_question3.png" style="width: 90%;" />
 </a>
-<p>In most cases, only one of the following is used:</p>
+<p>Both activation and deactivation rules can be configured for the same question.</p>
+<p>In the example above:</p>
 <ul class="simple">
-<li><p><strong>Activate Question</strong></p></li>
-<li><p><strong>Deactivate Question</strong></p></li>
+<li><p>Question <code class="docutils literal notranslate"><span class="pre">13</span></code> is activated when the participant selects <code class="docutils literal notranslate"><span class="pre">Ja</span></code>.</p></li>
+<li><p>Question <code class="docutils literal notranslate"><span class="pre">14</span></code> is deactivated when the participant selects <code class="docutils literal notranslate"><span class="pre">Nein</span></code>.</p></li>
 </ul>
-<p>However, both can be used together if needed.</p>
+<p>This allows complex survey flows to be created without requiring separate
+question groups.</p>
 <div class="admonition-example-scenario admonition">
 <p class="admonition-title">Example scenario</p>
-<p>A question like:</p>
-<p><em>“How do you commute to work?”</em></p>
-<p>could:</p>
+<p>Consider the question:</p>
+<p><em>“Do you currently drive to work?”</em></p>
+<p>Available answers:</p>
 <ul class="simple">
-<li><p><strong>Activate</strong> follow-up questions about <em>public transport</em> if the answer is <code class="docutils literal notranslate"><span class="pre">Bus</span></code></p></li>
-<li><p><strong>Deactivate</strong> questions about <em>driving</em> if the answer is <code class="docutils literal notranslate"><span class="pre">Bus</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ja</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nein</span></code></p></li>
+</ul>
+<p>Configuration:</p>
+<ul class="simple">
+<li><p><strong>Activate Question:</strong> <code class="docutils literal notranslate"><span class="pre">13</span></code></p></li>
+<li><p><strong>Activation Condition:</strong> <code class="docutils literal notranslate"><span class="pre">Ja</span></code></p></li>
+<li><p><strong>Deactivate Question:</strong> <code class="docutils literal notranslate"><span class="pre">14</span></code></p></li>
+<li><p><strong>Deactivation Condition:</strong> <code class="docutils literal notranslate"><span class="pre">Nein</span></code></p></li>
+</ul>
+<p>Result:</p>
+<ul class="simple">
+<li><p>Selecting <code class="docutils literal notranslate"><span class="pre">Ja</span></code> activates question <code class="docutils literal notranslate"><span class="pre">13</span></code>.</p></li>
+<li><p>Selecting <code class="docutils literal notranslate"><span class="pre">Nein</span></code> deactivates question <code class="docutils literal notranslate"><span class="pre">14</span></code>.</p></li>
 </ul>
 </div>
-<p>In this case, both <strong>activation</strong> and <strong>deactivation</strong> fields are populated, and both corresponding condition fields become visible.</p>
-<p>—</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Always ensure that conditions exactly match the answer options to avoid unexpected behavior.</p>
+<p>Use activation and deactivation logic to build conditional survey paths,
+reduce unnecessary questions, and improve the participant experience.</p>
 </div>
 <p><strong>Image URL</strong></p>
 <p>An optional image filename associated with the question (e.g., <code class="docutils literal notranslate"><span class="pre">image1.png</span></code>).
@@ -1155,9 +1189,8 @@ This image must exist in the app’s configured image directory.</p>
 instructions, consent wording).
 The link appears below the question text in the app.</p>
 </section>
-</section>
 <section id="create-edit-answer">
-<span id="answer-form"></span><h4>Create / Edit Answer<a class="headerlink" href="#create-edit-answer" title="Link to this heading">¶</a></h4>
+<span id="answer-form"></span><h5>Create / Edit Answer<a class="headerlink" href="#create-edit-answer" title="Link to this heading">¶</a></h5>
 <p>For question types that require predefined answer options (such as
 <strong>Single Choice</strong>, <strong>Multiple Choice</strong>), the Question
 Editor displays an <strong>Answer Form</strong> section. This section allows the
@@ -1188,285 +1221,139 @@ The option is removed immediately from the form.</p>
 </section>
 </section>
 </section>
-<section id="codebase-structure">
-<h2>Codebase Structure<a class="headerlink" href="#codebase-structure" title="Link to this heading">¶</a></h2>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>JTrack-dashboard/
-├─ admin/               # Django &quot;apps&quot; implementing UI + logic
-├─ jdash/               # Django project configuration
-├─ static/              # Global static assets
-├─ jtrack.sql           # Example SQL schema/data (MySQL or similar)
-├─ manage.py            # Django management entry point
-├─ requirements.txt     # Python dependencies
-├─ setup.sh             # Setup helper script
-├─ setup_mysql.sh       # MySQL setup helper script
-└─ README.md
+<section id="compliance-monitoring">
+<h3>Compliance Monitoring<a class="headerlink" href="#compliance-monitoring" title="Link to this heading">¶</a></h3>
+<p>The <strong>Compliance Monitoring</strong> tab provides interactive visualizations for
+monitoring sensor data collection throughout a study. It helps researchers
+identify missing recordings, inactive participants, irregular sensor activity,
+and overall data completeness.</p>
+<p>The dashboard focuses on subject-level monitoring and allows users to explore
+recording patterns across study days using an interactive heatmap.</p>
+<section id="selection-panel">
+<h4>Selection Panel<a class="headerlink" href="#selection-panel" title="Link to this heading">¶</a></h4>
+<p>The left-side control panel allows users to configure the displayed
+visualization.</p>
+<p><strong>Choose Study</strong></p>
+<p>Select the study for which compliance information should be displayed.</p>
+<p><strong>Select Sensor</strong></p>
+<p>Choose the sensor type to visualize (e.g., activity, location,
+accelerometer, application usage).</p>
+<p><strong>Choose X-axis</strong></p>
+<p>Select how data should be displayed along the horizontal axis.
+Available options may include:</p>
+<ul class="simple">
+<li><p>Study day</p></li>
+<li><p>Calendar date</p></li>
+</ul>
+<p><strong>Filter Subjects</strong></p>
+<p>Optionally restrict the visualization to specific participants instead of
+displaying the entire study cohort.</p>
+</section>
+<section id="visualization-panel">
+<h4>Visualization Panel<a class="headerlink" href="#visualization-panel" title="Link to this heading">¶</a></h4>
+<p>The main panel displays a heatmap representing sensor activity across
+participants and study days.</p>
+<a class="reference internal image-reference" href="_images/jdash_compliance_monitoring.png"><img alt="_images/jdash_compliance_monitoring.png" class="align-center" src="_images/jdash_compliance_monitoring.png" style="width: 100%;" />
+</a>
+<section id="subject-qc-timeline">
+<h5>Subject QC Timeline<a class="headerlink" href="#subject-qc-timeline" title="Link to this heading">¶</a></h5>
+<p>The <strong>Subject QC Timeline</strong> heatmap provides an overview of sensor recordings
+for each participant throughout the study.</p>
+<ul class="simple">
+<li><p><strong>Y-axis</strong> — Subject IDs</p></li>
+<li><p><strong>X-axis</strong> — Study day or selected time axis</p></li>
+<li><p><strong>Color intensity</strong> — amount of recorded sensor data for the selected sensor</p></li>
+</ul>
+<p>Higher color intensity indicates greater recording activity, while lighter
+regions may indicate reduced or missing data.</p>
+<p>The visualization can help identify:</p>
+<ul class="simple">
+<li><p>Missing recordings</p></li>
+<li><p>Participants with limited sensor activity</p></li>
+<li><p>Periods of device inactivity</p></li>
+<li><p>Sensor interruptions</p></li>
+<li><p>Longitudinal recording patterns</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Depending on synchronization schedules and backend processing, uploaded
+data may appear in the dashboard with a delay after the participant syncs
+the device.</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="notification-scheduler">
+<h2>Notification Scheduler<a class="headerlink" href="#notification-scheduler" title="Link to this heading">¶</a></h2>
+<p>JDash includes a background notification scheduler that automatically sends EMA
+reminders to participants based on the survey configuration.</p>
+<p>The scheduler runs periodically as a cron job and processes a generated JSON
+schedule containing:</p>
+<ul class="simple">
+<li><p>Study days on which notifications should be sent</p></li>
+<li><p>Activation times configured for survey questions</p></li>
+<li><p>Study-specific notification schedules</p></li>
+</ul>
+<section id="workflow">
+<h3>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Survey activation times are configured in the EMA survey definition.</p></li>
+<li><p>The notification schedule is generated and stored as a JSON structure.</p></li>
+<li><p>The scheduler runs at regular intervals via cron.</p></li>
+<li><p>For each participant, the scheduler calculates the current study day based
+on the enrollment date.</p></li>
+<li><p>The scheduler checks whether the current study day exists in the generated
+notification schedule.</p></li>
+<li><p>If a configured activation time falls within the current processing window,
+a push notification is sent to the participant’s device.</p></li>
+<li><p>Notifications are delivered through Firebase Cloud Messaging (FCM).</p></li>
+</ol>
+<section id="generated-schedule">
+<h4>Generated Schedule<a class="headerlink" href="#generated-schedule" title="Link to this heading">¶</a></h4>
+<p>The scheduler uses a generated JSON file that maps study days to activation
+times.</p>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;Study_A&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;days&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;0&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">480</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">480</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">480</span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<section id="admin-django-project">
-<h3>admin/ – Django Project<a class="headerlink" href="#admin-django-project" title="Link to this heading">¶</a></h3>
-<p>This directory contains core Django project settings and runtime configuration.</p>
-<p><strong>Key Files</strong></p>
+<p>In this example:</p>
 <ul class="simple">
-<li><p>settings.py : Defines installed apps, database configuration, static settings, security settings.</p></li>
-<li><p>urls.py: Routes requests to all dashboard modules (studies, surveys, notifications, analytics).</p></li>
-<li><p>wsgi.py: WSGI entry point used by Apache mod_wsgi in production.</p></li>
-<li><p>asgi.py: ASGI entry point (not used by Apache, but available for async servers).</p></li>
+<li><p>Day 0: notifications at 08:00 and 12:00</p></li>
+<li><p>Day 1: notifications at 08:00 and 12:00</p></li>
+<li><p>Day 2: notification at 08:00</p></li>
 </ul>
+<p>This ensures that participants receive reminders relative to their individual
+enrollment date.</p>
 </section>
-<section id="jdash-dashboard-application">
-<h3>jdash/ – Dashboard Application<a class="headerlink" href="#jdash-dashboard-application" title="Link to this heading">¶</a></h3>
-<p>Contains Django apps that implement the dashboard functionality:</p>
-<p><strong>Modules</strong></p>
-<ul class="simple">
-<li><p>Login module – Authentication and access control.</p></li>
-<li><p>Studies module – Create/edit studies, manage sensors, manage subjects.</p></li>
-<li><p>Survey module – EMA survey creation and management.</p></li>
-<li><p>Notifications module – Push notifications to participants.</p></li>
-<li><p>Analytics module – Embeds visual analytics (optional Dash integration).</p></li>
-</ul>
-<p><strong>Each app typically contains:</strong></p>
-<ul class="simple">
-<li><p>models.py — Study, survey, sensor, subject, notification models</p></li>
-<li><p>views.py — View logic for HTML pages and APIs</p></li>
-<li><p>urls.py — App-level router</p></li>
-<li><p>forms.py — Django forms for data input</p></li>
-<li><p>templates/&lt;app_name&gt;/ — HTML templates (Bootstrap-based)</p></li>
-<li><p>static/&lt;app_name&gt;/ — Local static assets</p></li>
-</ul>
 </section>
-<section id="static">
-<h3>static/<a class="headerlink" href="#static" title="Link to this heading">¶</a></h3>
-<p>Contains global project-level assets:</p>
-<ul class="simple">
-<li><p>CSS styling for dashboard UI</p></li>
-<li><p>JavaScript (Bootstrap, BootstrapTable, custom JS)</p></li>
-<li><p>Icons, logos, images</p></li>
-</ul>
-<p>These are collected via collectstatic into STATIC_ROOT for Apache serving.</p>
+<section id="notification-delivery">
+<h3>Notification Delivery<a class="headerlink" href="#notification-delivery" title="Link to this heading">¶</a></h3>
+<p>Notifications are delivered to enrolled participants through the mobile
+application and are used to inform users that new EMA questions are available.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notification schedules are derived directly from the EMA survey
+configuration. Any changes to survey activation times are automatically
+reflected in future notification schedules after the schedule is
+regenerated.</p>
+</div>
 </section>
 </section>
 <section id="deployment-instructions">
 <h2>Deployment Instructions<a class="headerlink" href="#deployment-instructions" title="Link to this heading">¶</a></h2>
-<p>How to deploy the JTrack Dashboard both locally
-(for development) and on a production web server using Apache and
-<code class="docutils literal notranslate"><span class="pre">mod_wsgi</span></code>.</p>
-<section id="local-deployment-development">
-<h3>Local Deployment (Development)<a class="headerlink" href="#local-deployment-development" title="Link to this heading">¶</a></h3>
-<p>Local deployment is intended for development, testing, and debugging.
-Django’s built-in development server is used for this mode.</p>
-<section id="requirements">
-<h4>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h4>
-<p>Install system prerequisites:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3<span class="w"> </span>python3-venv<span class="w"> </span>python3-pip<span class="w"> </span>git
-</pre></div>
-</div>
-<p>Clone the repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mamaka7/JTrack-dashboard.git
-<span class="nb">cd</span><span class="w"> </span>JTrack-dashboard
-</pre></div>
-</div>
-</section>
-<section id="create-virtual-environment">
-<h4>Create Virtual Environment<a class="headerlink" href="#create-virtual-environment" title="Link to this heading">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-<span class="nb">source</span><span class="w"> </span>venv/bin/activate
-</pre></div>
-</div>
-<p>Install dependencies:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</pre></div>
-</div>
-<p>(Optional):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>setup.sh
-./setup.sh
-</pre></div>
-</div>
-</section>
-<section id="database-setup-mariadb">
-<h4>Database Setup (MariaDB)<a class="headerlink" href="#database-setup-mariadb" title="Link to this heading">¶</a></h4>
-<p>For both local development and production, the recommended database is
-<strong>MariaDB</strong>. A helper script is provided to set up the database and
-user automatically.</p>
-<p>Make sure MariaDB is running:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>mariadb
-sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mariadb
-</pre></div>
-</div>
-<p>Run the MariaDB setup script from the project root:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>mysql_set.sh
-./setup_mysql.sh
-</pre></div>
-</div>
-<p>The script typically:</p>
-<ul class="simple">
-<li><p>Creates a MariaDB database (e.g. <code class="docutils literal notranslate"><span class="pre">jtrack</span></code>)</p></li>
-<li><p>Creates a DB user with the required privileges</p></li>
-<li><p>Optionally imports the schema/data from <code class="docutils literal notranslate"><span class="pre">jtrack.sql</span></code></p></li>
-</ul>
-<p>After the script finishes, apply Django migrations (still recommended):</p>
-<p>Apply migrations:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
-</pre></div>
-</div>
-</section>
-<section id="run-development-server">
-<h4>Run Development Server<a class="headerlink" href="#run-development-server" title="Link to this heading">¶</a></h4>
-<p>Start Django’s built-in server:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
-</pre></div>
-</div>
-<p>Then open in a browser:</p>
-<p><code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000</span></code></p>
-<p>In this mode:</p>
-<ul class="simple">
-<li><p>Debug is active</p></li>
-<li><p>Auto-reload is enabled</p></li>
-<li><p>No Apache or external web server is required</p></li>
-</ul>
-</section>
-</section>
-<section id="production-deployment-apache-mod-wsgi">
-<h3>Production Deployment (Apache + mod_wsgi)<a class="headerlink" href="#production-deployment-apache-mod-wsgi" title="Link to this heading">¶</a></h3>
-<p>This method is recommended for real-world hosting of the JTrack Dashboard.</p>
-<section id="prerequisites">
-<h4>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h4>
-<p>Install required packages:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3<span class="w"> </span>python3-venv<span class="w"> </span>python3-pip<span class="w"> </span><span class="se">\</span>
-<span class="w">                 </span>apache2<span class="w"> </span>libapache2-mod-wsgi-py3<span class="w"> </span>git
-</pre></div>
-</div>
-</section>
-<section id="clone-application-into-server-directory">
-<h4>Clone Application into Server Directory<a class="headerlink" href="#clone-application-into-server-directory" title="Link to this heading">¶</a></h4>
-<p>Example installation directory: <code class="docutils literal notranslate"><span class="pre">/srv/jdash</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/jdash
-sudo<span class="w"> </span>chown<span class="w"> </span><span class="nv">$USER</span>:<span class="nv">$USER</span><span class="w"> </span>/srv/jdash
-<span class="nb">cd</span><span class="w"> </span>/srv/jdash
-
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mamaka7/JTrack-dashboard.git<span class="w"> </span>.
-</pre></div>
-</div>
-</section>
-<section id="id5">
-<h4>Create Virtual Environment<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-<span class="nb">source</span><span class="w"> </span>venv/bin/activate
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</pre></div>
-</div>
-</section>
-<section id="id6">
-<h4>Database Setup (MariaDB)<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h4>
-<p>First, run the MariaDB setup script from the project root
-(e.g. <code class="docutils literal notranslate"><span class="pre">/srv/jdash</span></code>):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/srv/jdash
-chmod<span class="w"> </span>+x<span class="w"> </span>setup_mysql.sh
-./setup_mysql.sh
-</pre></div>
-</div>
-<p>(or, if your script is named <code class="docutils literal notranslate"><span class="pre">mysql_set.sh</span></code>:)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>mysql_set.sh
-./mysql_set.sh
-</pre></div>
-</div>
-<p>This script should:</p>
-<ul class="simple">
-<li><p>Create the MariaDB database (e.g. <code class="docutils literal notranslate"><span class="pre">jtrack</span></code>)</p></li>
-<li><p>Create a MariaDB user with password</p></li>
-<li><p>Grant required privileges</p></li>
-<li><p>Optionally import <code class="docutils literal notranslate"><span class="pre">jtrack.sql</span></code></p></li>
-</ul>
-<p>Now open <code class="docutils literal notranslate"><span class="pre">jdash/settings.py</span></code> and ensure the MariaDB configuration is set.
-MariaDB is fully compatible with the MySQL Django backend:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;ENGINE&quot;</span><span class="p">:</span> <span class="s2">&quot;django.db.backends.mysql&quot;</span><span class="p">,</span>  <span class="c1"># MariaDB-compatible</span>
-        <span class="s2">&quot;NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;jtrack&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;USER&quot;</span><span class="p">:</span> <span class="s2">&quot;jtrack_user&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;PASSWORD&quot;</span><span class="p">:</span> <span class="s2">&quot;securepassword&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;HOST&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;PORT&quot;</span><span class="p">:</span> <span class="s2">&quot;3306&quot;</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Also set production options:</p>
-<p><strong>Disable DEBUG</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
-</pre></div>
-</div>
-<p><strong>Set Allowed Hosts</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;your-domain.com&quot;</span><span class="p">,</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Apply migrations (even if the script imported the base schema):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
-</pre></div>
-</div>
-</section>
-<section id="collect-static-files">
-<h4>Collect Static Files<a class="headerlink" href="#collect-static-files" title="Link to this heading">¶</a></h4>
-<p>Set:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="s2">&quot;/srv/jdash/static_collected&quot;</span>
-</pre></div>
-</div>
-<p>Collect static assets:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic
-</pre></div>
-</div>
-</section>
-<section id="configure-apache-mod-wsgi">
-<h4>Configure Apache (mod_wsgi)<a class="headerlink" href="#configure-apache-mod-wsgi" title="Link to this heading">¶</a></h4>
-<p>Create:</p>
-<p><code class="docutils literal notranslate"><span class="pre">/etc/apache2/sites-available/jdash.conf</span></code></p>
-<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:80</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nb">ServerName</span><span class="w"> </span>your-domain.com
-
-<span class="w">    </span><span class="nb">Alias</span><span class="w"> </span><span class="sx">/static/</span><span class="w"> </span><span class="sx">/srv/jdash/static_collected/</span>
-<span class="w">    </span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">/srv/jdash/static_collected/</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
-<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
-
-<span class="w">    </span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">/srv/jdash/jdash</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;Files</span><span class="w"> </span><span class="s">wsgi.py</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
-<span class="w">        </span><span class="nt">&lt;/Files&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
-
-<span class="w">    </span><span class="nb">WSGIDaemonProcess</span><span class="w"> </span>jdash<span class="w"> </span>python-path=/srv/jdash<span class="w"> </span>\
-<span class="w">                      </span>python-home=/srv/jdash/venv
-<span class="w">    </span><span class="nb">WSGIProcessGroup</span><span class="w"> </span>jdash
-<span class="w">    </span><span class="nb">WSGIScriptAlias</span><span class="w"> </span>/<span class="w"> </span><span class="sx">/srv/jdash/jdash/wsgi.py</span>
-
-<span class="w">    </span><span class="nb">ErrorLog</span><span class="w"> </span>${APACHE_LOG_DIR}/jdash_error.log
-<span class="w">    </span><span class="nb">CustomLog</span><span class="w"> </span>${APACHE_LOG_DIR}/jdash_access.log<span class="w"> </span>combined
-<span class="nt">&lt;/VirtualHost&gt;</span>
-</pre></div>
-</div>
-<p>Enable the site:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>a2enmod<span class="w"> </span>wsgi
-sudo<span class="w"> </span>a2ensite<span class="w"> </span>jdash.conf
-sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
-</pre></div>
-</div>
-<p>(Optional) Disable default Apache site:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>a2dissite<span class="w"> </span><span class="m">000</span>-default.conf
-sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
-</pre></div>
-</div>
-</section>
-<section id="enable-https-recommended">
-<h4>Enable HTTPS (Recommended)<a class="headerlink" href="#enable-https-recommended" title="Link to this heading">¶</a></h4>
-<p>Use Let’s Encrypt:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>certbot<span class="w"> </span>python3-certbot-apache
-sudo<span class="w"> </span>certbot<span class="w"> </span>--apache<span class="w"> </span>-d<span class="w"> </span>your-domain.com
-</pre></div>
-</div>
-</section>
-</section>
+<p>JDash can be deployed locally for development or on a production web server
+using Apache and <code class="docutils literal notranslate"><span class="pre">mod_wsgi</span></code>. The latest deployment steps, environment setup, database configuration, and
+server configuration details are maintained in the official GitHub repository.</p>
+<p><a class="reference external" href="https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard">https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard</a></p>
 </section>
 </section>
 
@@ -1530,18 +1417,17 @@ sudo<span class="w"> </span>certbot<span class="w"> </span>--apache<span class="
 <li><a class="reference internal" href="#core-components">Core Components</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#main-modules">Main Modules</a><ul>
 <li><a class="reference internal" href="#login">Login</a><ul>
-<li><a class="reference internal" href="#login-form">Login form</a></li>
-<li><a class="reference internal" href="#contact-form">Contact form</a></li>
-<li><a class="reference internal" href="#data-deletion-form">Data deletion form</a></li>
-<li><a class="reference internal" href="#direct-contacts">Direct contacts</a></li>
+<li><a class="reference internal" href="#login-form">Login Form</a></li>
+<li><a class="reference internal" href="#data-deletion-form">Data Deletion Form</a></li>
+<li><a class="reference internal" href="#language-switcher">Language Switcher</a></li>
+<li><a class="reference internal" href="#direct-contacts">Direct Contacts</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#dashboard-tabs">Dashboard Tabs</a><ul>
 <li><a class="reference internal" href="#studies">Studies</a><ul>
-<li><a class="reference internal" href="#language-switcher">Language switcher</a></li>
 <li><a class="reference internal" href="#create-new-study">Create New Study</a></li>
-<li><a class="reference internal" href="#form-fields">Form fields</a></li>
+<li><a class="reference internal" href="#form-fields">Form Fields</a></li>
 <li><a class="reference internal" href="#study-details">Study Details</a></li>
 <li><a class="reference internal" href="#edit-study">Edit Study</a></li>
 <li><a class="reference internal" href="#audit-quality-control">Audit / Quality Control</a></li>
@@ -1549,44 +1435,35 @@ sudo<span class="w"> </span>certbot<span class="w"> </span>--apache<span class="
 </li>
 <li><a class="reference internal" href="#survey">Survey</a><ul>
 <li><a class="reference internal" href="#create-survey">Create Survey</a></li>
-<li><a class="reference internal" href="#id4">Form fields</a></li>
+<li><a class="reference internal" href="#id4">Form Fields</a></li>
 <li><a class="reference internal" href="#upload-survey-via-json">Upload Survey via JSON</a></li>
 <li><a class="reference internal" href="#survey-details-view">Survey Details View</a></li>
 <li><a class="reference internal" href="#create-edit-question">Create / Edit Question</a><ul>
 <li><a class="reference internal" href="#conditional-logic">Conditional Logic</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#create-edit-answer">Create / Edit Answer</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#codebase-structure">Codebase Structure</a><ul>
-<li><a class="reference internal" href="#admin-django-project">admin/ – Django Project</a></li>
-<li><a class="reference internal" href="#jdash-dashboard-application">jdash/ – Dashboard Application</a></li>
-<li><a class="reference internal" href="#static">static/</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a><ul>
-<li><a class="reference internal" href="#local-deployment-development">Local Deployment (Development)</a><ul>
-<li><a class="reference internal" href="#requirements">Requirements</a></li>
-<li><a class="reference internal" href="#create-virtual-environment">Create Virtual Environment</a></li>
-<li><a class="reference internal" href="#database-setup-mariadb">Database Setup (MariaDB)</a></li>
-<li><a class="reference internal" href="#run-development-server">Run Development Server</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#production-deployment-apache-mod-wsgi">Production Deployment (Apache + mod_wsgi)</a><ul>
-<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li><a class="reference internal" href="#clone-application-into-server-directory">Clone Application into Server Directory</a></li>
-<li><a class="reference internal" href="#id5">Create Virtual Environment</a></li>
-<li><a class="reference internal" href="#id6">Database Setup (MariaDB)</a></li>
-<li><a class="reference internal" href="#collect-static-files">Collect Static Files</a></li>
-<li><a class="reference internal" href="#configure-apache-mod-wsgi">Configure Apache (mod_wsgi)</a></li>
-<li><a class="reference internal" href="#enable-https-recommended">Enable HTTPS (Recommended)</a></li>
+<li><a class="reference internal" href="#compliance-monitoring">Compliance Monitoring</a><ul>
+<li><a class="reference internal" href="#selection-panel">Selection Panel</a></li>
+<li><a class="reference internal" href="#visualization-panel">Visualization Panel</a><ul>
+<li><a class="reference internal" href="#subject-qc-timeline">Subject QC Timeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notification-scheduler">Notification Scheduler</a><ul>
+<li><a class="reference internal" href="#workflow">Workflow</a><ul>
+<li><a class="reference internal" href="#generated-schedule">Generated Schedule</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notification-delivery">Notification Delivery</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a></li>
 </ul>
 </li>
 </ul>
