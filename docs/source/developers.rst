@@ -115,16 +115,6 @@ Garmin Wearable Data
 Garmin devices can provide physiological and activity-related measurements,
 depending on the device model and enabled sensors.
 
-Supported data types may include:
-
-- Heart rate
-- Respiration
-- Steps
-- Blood oxygen saturation (SpO₂)
-- Stress
-- Sleep
-- Skin temperature
-- Accelerometer streams
 
 Example: Heart Rate
 
