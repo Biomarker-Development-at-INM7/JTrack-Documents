@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'JTrack'
-copyright = '2025, INM7'
+copyright = '2026, INM-7'
 author = 'Mamaka Narava, Mehran Turna & Jona M. Fischer'
 
 # The full version, including alpha/beta/rc tags
