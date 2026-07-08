@@ -88,10 +88,67 @@ iOS - Install & Join the Study
 
 1. Open the **App Store** on your iPhone.
 2. Search for **JTrack Social** and install it.
+
+   .. image:: _static/Social_iOS_AppStore.png
+      :scale: 25%
+      :align: center
+
 3. Open **JTrack Social** and tap **Join study**.
+
+   .. image:: _static/Social_iOS_Notify.png
+      :scale: 25%
+      :align: center
+
 4. Allow **Camera** access when prompted so the app can scan your study QR code.
+
+   .. image:: _static/Social_iOS_Camera.png
+      :scale: 25%
+      :align: center
+
 5. Scan the **QR code** provided by your study team.
+
+   .. image:: _static/Social_iOS_Enrolled.png
+      :scale: 25%
+      :align: center
+
 6. Allow any additional study-related permissions requested by the app.
+
+.. raw:: html
+
+   <div style="display:flex; gap:30px; justify-content:center; flex-wrap:wrap; margin-top:20px; margin-bottom:20px;">
+
+      <div style="text-align:center;">
+         <img src="_static/Social_iOS_Activity.png" style="width:280px; border-radius:12px;">
+         <div style="margin-top:8px;"><strong>Activity</strong></div>
+      </div>
+
+      <div style="text-align:center;">
+         <img src="_static/Social_iOS_Bluetooth.png" style="width:280px; border-radius:12px;">
+         <div style="margin-top:8px;"><strong>Bluetooth</strong></div>
+      </div>
+    </div>
+
+7. SensorKit requires a few extra steps to enable.
+
+.. raw:: html
+
+   <div style="display:flex; gap:30px; justify-content:center; flex-wrap:wrap; margin-top:20px; margin-bottom:20px;">
+
+      <div style="text-align:center;">
+         <img src="_static/Social_iOS_Sensorkit1.png" style="width:190px; border-radius:12px;">
+         <div style="margin-top:8px;"><strong>Step 1</strong></div>
+      </div>
+
+      <div style="text-align:center;">
+         <img src="_static/Social_iOS_Sensorkit2.png" style="width:190px; border-radius:12px;">
+         <div style="margin-top:8px;"><strong>Step 2</strong></div>
+      </div>
+
+      <div style="text-align:center;">
+         <img src="_static/Social_iOS_Sensorkit3.png" style="width:190px; border-radius:12px;">
+         <div style="margin-top:8px;"><strong>Step 3</strong></div>
+      </div>
+    </div>
 
 .. note::
    The exact permission and system-setting screens can differ across iOS versions. Follow the in-app instructions shown on your device.
@@ -158,9 +215,20 @@ Activity Recognition Sensor
 
 Allow **Activity recognition** when prompted.
 
-.. image:: image/Social/social_12.png
-   :scale: 40%
-   :align: center
+.. raw:: html
+
+   <div style="display:flex; gap:30px; justify-content:center; flex-wrap:wrap; margin-top:20px; margin-bottom:20px;">
+
+      <div style="text-align:center;">
+         <img src="_static/Social_iOS_Activity.png" style="width:280px; border-radius:12px;">
+         <div style="margin-top:8px;"><strong>iOS</strong></div>
+      </div>
+
+      <div style="text-align:center;">
+         <img src="_static/social_12.png" style="width:280px; border-radius:12px;">
+         <div style="margin-top:8px;"><strong>Android</strong></div>
+      </div>
+    </div>
 
 What JTrack Social Records
 ==========================
