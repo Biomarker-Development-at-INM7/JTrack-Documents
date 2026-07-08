@@ -19,3 +19,66 @@
 .toc-tree-container {
     padding-top: 2rem;  /* Adjust this value as needed */
 }
+
+.sidebar-github-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 1rem;
+    margin: 1rem 0;
+}
+
+.sidebar-github-box svg {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    color: #24292f;
+}
+
+.sidebar-github-box-content {
+    width: 100%;
+}
+
+.sidebar-github-box-title {
+    margin: 0 0 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.sidebar-github-box-text {
+    margin: 0;
+    color: #444;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.sidebar-github-box-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    color: #0969da;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.sidebar-github-box-link:hover {
+    text-decoration: underline;
+}
+
+.sidebar-dev-box {
+    padding: 0.65rem 1rem;
+    margin: 0.75rem 0;
+}
+
+.sidebar-dev-link {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-brand-primary);
+    text-decoration: none;
+}
+
+.sidebar-dev-link:hover {
+    text-decoration: underline;
+}
