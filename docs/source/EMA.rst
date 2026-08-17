@@ -2,12 +2,12 @@
 JTrack EMA+
 =====================
 
-JTrack EMA is available for **Android** and **iOS**:
+JTrack EMA+ is available for **Android** and **iOS**:
 
 - In the `Google Play Store <https://play.google.com/store/apps/details?id=inm7.JTrack.JTrack_EMA_Plus>`__
 - In `Apple's App Store <https://apps.apple.com/de/app/jtrack-ema/id1605100657>`__
 
-To install this app, first go to the Google Play Store on your Android phone.
+The enrollment and survey workflow is shared across both platforms. Screenshots in this guide primarily show Android; iOS system dialogs may look different.
 
 
 What JTrack EMA+ Can Do
@@ -31,6 +31,8 @@ Prerequisites
 
 - Your study coordinator has provided a **QR code** to join the study.
 - A stable internet connection for initial setup and survey/media updates.
+
+For reminder and calendar settings that improve response rates, see :ref:`Compliance Optimization for JTrack EMA+ <compliance-ema>`.
 
 Android - Install & Join the Study
 ==================================
@@ -91,6 +93,8 @@ Starting a Survey
       :scale: 40%
       :align: center
 
+.. _ema-calendar-reminders:
+
 Calendar Reminders
 ------------------
 
@@ -98,6 +102,8 @@ Calendar Reminders
 - When the app shows the **Add Event** dialog, choose your preferred phone calendar from the list and tap **Add Event**.
 - If you do not want to add the reminder immediately, tap **Not Now**. If you never want the event added for that prompt, tap **I Don't want**.
 - Once the event is added, your phone calendar can notify you at the scheduled survey time.
+
+For the recommended notification, Focus-mode, and calendar settings, see :ref:`Compliance Optimization for JTrack EMA+ <compliance-ema>`.
 
    .. image:: image/EMA/EMA_calendar_add_event.png
       :scale: 35%
@@ -156,6 +162,8 @@ Conditional Logic
 
 - Some questions appear only if earlier responses meet certain conditions. This keeps surveys shorter and more relevant.
 
+Researchers configure surveys, schedules, media, and conditional logic in :doc:`JDash <JTrack_Dashboard>`. Example response records are shown under :doc:`Data Storage <developers>`.
+
 Troubleshooting
 ===============
 
@@ -170,3 +178,5 @@ Troubleshooting
 - **A permission was denied by mistake**
 
   Go to **System Settings -> Apps -> JTrack EMA+** and enable the required permission again.
+
+If the issue remains, complete the :ref:`Before Contacting Us <before-contacting-us>` checklist before sending a support request.

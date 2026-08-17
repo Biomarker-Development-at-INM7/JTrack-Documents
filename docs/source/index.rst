@@ -19,11 +19,11 @@
 Welcome to the JTrack Platform
 ==============================================
 
-JTrack is an open-source platform, free of charge, for remote assessments of individuals *in situ* using smartphones and wearables.
+JTrack is an open-source platform for remote *in situ* assessments using smartphones and wearables.
 
-Developed by the Biomarker Development Group at the INM – Institute of Neuroscience and Medicine (INM-7, Brain and Behaviour) of the Research Center Jülich (FZJ), JTrack is adaptable, configurable, and scalable, with a strong focus on security and privacy.
+Developed by the Biomarker Development Group at the Institute of Neuroscience and Medicine (INM-7, Brain and Behaviour) at Forschungszentrum Jülich, JTrack is adaptable, configurable, and scalable, with a strong focus on security and privacy.
 
-More than just a single application, JTrack enables researchers to create and manage studies, collect data from smartphones and wearables, and share research data through one unified platform.
+JTrack enables researchers to create and manage studies, collect smartphone, wearable, and questionnaire data, monitor study progress, and export research data through one platform.
 
 If you are interested in using JTrack in your studies, please reach out to us at: 
 `biomarkers.inm7@gmail.com <mailto:biomarkers.inm7@gmail.com>`_
@@ -33,26 +33,26 @@ If you are interested in using JTrack in your studies, please reach out to us at
 Platform Components
 ++++++++++++++++++++
 
-The platform includes three main components:
+The platform includes four main components:
 
 .. raw:: html
 
    <div style="border:1px solid #d0d7de; border-radius:12px; padding:10px; margin:5px 0;">
-      <h5>JTrack Social</h5>
+      <h5><a href="Social.html">JTrack Social</a></h5>
       <p>Enable passive sensing of social interactions, activity context, and daily-life behaviors to support longitudinal digital health and behavioral research.</p>
    </div>
 
    <div style="border:1px solid #d0d7de; border-radius:12px; padding:10px; margin:5px 0;">
-      <h5>JTrack EMA</h5>
+      <h5><a href="EMA.html">JTrack EMA+</a></h5>
       <p>Collect ecological momentary assessments, daily symptoms, and study questionnaires directly from participants in real-world settings.</p>
    </div>
 
    <div style="border:1px solid #d0d7de; border-radius:12px; padding:10px; margin:5px 0;">
-      <h5>JDash</h5>
+      <h5><a href="JTrack_Dashboard.html">JDash</a></h5>
       <p>Create studies, manage participants and surveys, configure sensor collection, and monitor study compliance and data quality from a single interface.</p>
    </div>
    <div style="border:1px solid #d0d7de; border-radius:12px; padding:10px; margin:5px 0;">
-      <h5>Database</h5>
+      <h5><a href="developers.html">Data Storage</a></h5>
       <p>Centralized BIDS-compliant repository for study metadata, participant records, sensor data, and EMA assessments supporting reproducible research workflows.</p>
    </div>
 
@@ -72,7 +72,7 @@ Minimal App Requirements
       </div>
 
       <div style="border:1px solid #d0d7de; border-radius:10px; padding:14px;">
-         <h5 style="margin:0 0 8px 0;">JTrack EMA</h5>
+         <h5 style="margin:0 0 8px 0;">JTrack EMA+</h5>
          <p style="margin:4px 0;"><strong>iOS:</strong> iOS 16+</p>
          <p style="margin:4px 0;"><strong>Android:</strong> Android 12+</p>
       </div>
@@ -88,6 +88,7 @@ Minimal App Requirements
    What_is_JTrack
    EMA
    Social
+   Compliance_Optimization
    JTrack_Dashboard
    Garmin_Integration
    developers

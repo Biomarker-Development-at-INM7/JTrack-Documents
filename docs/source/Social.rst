@@ -14,6 +14,8 @@ Prerequisites
 - Your study coordinator has provided you with a **QR code** to join the study.
 - A stable internet connection is required during the initial setup.
 
+For settings that improve background collection and participant compliance, see :ref:`Compliance Optimization for JTrack Social <compliance-social>`.
+
 .. _jtrack-social-android:
 
 Android - Install & Join the Study
@@ -153,10 +155,32 @@ iOS - Install & Join the Study
 .. note::
    The exact permission and system-setting screens can differ across iOS versions. Follow the in-app instructions shown on your device.
 
+iOS Implementation Overview
+---------------------------
+
+The Android and iOS apps use the same study enrollment, sensor configuration, active-labeling, local-storage, and server-upload concepts. Platform APIs differ, but the participant workflow and resulting JTrack data model are kept as comparable as possible.
+
+On iOS, JTrack Social currently:
+
+* records only the phone sensors enabled by the downloaded study configuration;
+* uses Core Motion for activity, pedometer, and active-labeling motion data;
+* uses SensorKit for supported historical data such as app usage and lock/unlock information;
+* supports location, Apple Health, audio during configured active-labeling tasks, and Garmin/Fitbit wearables when enabled;
+* stores data locally until it can be uploaded securely; and
+* stops new recording when the study duration ends, while allowing delayed SensorKit batches to be retrieved for up to 48 hours.
+
+As on Android, not every module is available or enabled in every study. iOS permissions and background scheduling are controlled by the operating system and may therefore differ slightly from Android.
+
+.. _social-permissions:
+
 Permissions by Sensor
 =====================
 
 JTrack Social only requests permissions for the modules enabled in your study. The screenshots below show Android examples; iOS permission prompts may look different.
+
+For a cross-platform explanation of camera, location, motion, usage access,
+SensorKit, microphone, Bluetooth, Apple Health, notification, and background
+settings, see :ref:`Application Permissions <application-permissions>`.
 
 Audio Sensor
 ------------
@@ -230,6 +254,8 @@ Allow **Activity recognition** when prompted.
       </div>
     </div>
 
+.. _social-sensors:
+
 What JTrack Social Records
 ==========================
 
@@ -257,13 +283,14 @@ Accelerometer
 -------------
 
 - Raw movement values on the x, y, and z axes.
-- These samples describe how the phone moves in space and are commonly used for activity recognition and active labeling analyses.
+- On iOS and Android, raw accelerometer recording is restricted to configured **Active Labeling** tasks; passive accelerometer monitoring is not supported.
+- The apps use the most suitable platform background API available so a running task can continue when the participant briefly opens another app.
 
 Gyroscope
 ---------
 
 - Raw rotation-rate values on the x, y, and z axes.
-- These samples describe turning and orientation changes of the phone.
+- Raw gyroscope recording is restricted to configured **Active Labeling** tasks and is not used for passive monitoring.
 
 Pedometer
 ---------
@@ -285,6 +312,24 @@ Audio
 
 .. note::
    Not every study enables every module. JTrack Social only records the sensors and permissions configured for that study.
+
+.. _social-admin-tools:
+
+Administrator Tools
+===================
+
+Both platforms provide protected tools for study staff. The exact layout differs, but the purpose is the same: verify a participant device without changing the study protocol.
+
+The iOS administration area currently includes:
+
+* **Sensor debugging:** select a sensor independently of its enabled state and inspect live hardware values or historical data from the last 72 hours.
+* **Plotting:** display incoming or stored values in an on-device graph and report explicitly when a sensor is unavailable or no historical data exists.
+* **Active Labeling preview:** inspect task selection, instructions, preparation countdown, timer, audio option, and start/stop behavior without requiring the normal study schedule.
+* **Sensor-state reporting:** send the effective local enabled/disabled flags to the server. This normally requires Wi-Fi; an administrator can approve a one-time cellular exception.
+* **Wearable diagnostics:** when Garmin or Fitbit is enabled, inspect pairing, synchronization, local data, upload state, and diagnostic logs through the corresponding dashboard.
+
+.. warning::
+   Administration and debugging controls are intended for trained study staff. Running tests or changing device configuration can temporarily affect normal participant workflows.
 
 Garmin Pairing and Sync
 =======================
@@ -313,26 +358,54 @@ Sensor Data in Comparison between iOS and Android
 
 The overview above explains the sensor modules in plain language. The comparison below is intended for more technical readers who need platform-specific units, resolutions, and implementation details.
 
-+-------------------+-----------------------------+-------------------------------+-----------------------------------------------+------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| Sensor            | Unit (iOS)                  | Unit (Android)                | Resolution (iOS)                              | Resolution (Android)                           | Notes                                                                                                         |
-+===================+=============================+===============================+===============================================+================================================+===============================================================================================================+
-| Accelerometer     | (x, y, z) in m/(s*s)        | (x, y, z) in m/(s*s)          | up to 100 Hz                                  | up to 100 Hz                                   | battery draining, recommended only for Active Labeling tasks                                                  |
-+-------------------+-----------------------------+-------------------------------+-----------------------------------------------+------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| Gyroscope         | (x, y, z) in m/(s*s)        | (x, y, z) in m/(s*s)          | up to 100 Hz                                  | up to 100 Hz                                   | Rotation rate data, battery draining, recommended only for Active Labeling tasks                              |
-+-------------------+-----------------------------+-------------------------------+-----------------------------------------------+------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| Activity          | Movement state as numerical | Movement state as numerical   | as the state changes with a minimum of        | as the state changes, Android itself defines   |                                                                                                               |
-|                   | value                       | value                         | 5 seconds for a state value                   | the interval                                   |                                                                                                               |
-+-------------------+-----------------------------+-------------------------------+-----------------------------------------------+------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| Application Usage | seconds of an App in        | ms of an App in Foreground    | 15 minute time intervals starting at          | dynamic time intervals starting at midnight    | iOS: category of app for non-Apple apps and name of app for Apple apps; Android: always app name and category |
-|                   | foreground                  |                               | midnight for each day                         | for each day                                   |                                                                                                               |
-+-------------------+-----------------------------+-------------------------------+-----------------------------------------------+------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| Lock/Unlock       | number of screen locks/wakes| every lock/unlock as event    | 15 minute time intervals starting at          | live events as lock/unlock is triggered        |                                                                                                               |
-|                   | in time interval plus amount| with value "lock" or "unlock" | midnight for each day                         |                                                |                                                                                                               |
-|                   | of time in each state       |                               |                                               |                                                |                                                                                                               |
-+-------------------+-----------------------------+-------------------------------+-----------------------------------------------+------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| Pedometer         | number of steps in a given  | number of steps in a given    | dynamic                                       | dynamic                                        |                                                                                                               |
-|                   | interval                    | interval                      |                                               |                                                |                                                                                                               |
-+-------------------+-----------------------------+-------------------------------+-----------------------------------------------+------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+Example server records and export concepts are documented under :doc:`Data Storage <developers>`.
+
+.. list-table:: Platform comparison
+   :header-rows: 1
+   :widths: 14 17 17 18 18 28
+
+   * - Sensor
+     - Unit (iOS)
+     - Unit (Android)
+     - Resolution (iOS)
+     - Resolution (Android)
+     - Notes
+   * - Accelerometer
+     - ``x, y, z`` in m/s²
+     - ``x, y, z`` in m/s²
+     - Up to 100 Hz
+     - Up to 100 Hz
+     - Active Labeling only; high sampling rates increase battery use and data volume.
+   * - Gyroscope
+     - ``x, y, z`` rotation rate
+     - ``x, y, z`` rotation rate
+     - Up to 100 Hz
+     - Up to 100 Hz
+     - Active Labeling only; records rotation and orientation changes.
+   * - Activity recognition
+     - Numeric activity code
+     - Numeric activity code
+     - On state changes, with iOS-side filtering
+     - On state changes, as provided by Android
+     - Platform support for individual activity states differs.
+   * - Application usage
+     - Foreground duration in seconds
+     - Foreground duration in milliseconds
+     - SensorKit intervals, typically 15 minutes
+     - Dynamic intervals beginning at midnight
+     - iOS may provide categories for third-party apps; Android provides app names and categories.
+   * - Lock/unlock
+     - Counts and time in each state
+     - Individual lock or unlock events
+     - SensorKit intervals, typically 15 minutes
+     - Live events
+     - The resulting records differ because the operating systems expose different APIs.
+   * - Pedometer
+     - Steps per interval
+     - Steps per interval
+     - Dynamic
+     - Dynamic
+     - Historical availability depends on the operating system and permission state.
 
 .. _active-labeling-ios:
 
@@ -416,6 +489,8 @@ If tasks do not start:
 - Ensure the task-list JSON is well-formed and downloaded successfully.
 - Verify that sensor permissions such as motion or microphone access are granted.
 - On iOS, ensure required background behavior is allowed by the device settings.
+
+For device-wide checks and the information to include in a support request, see :doc:`Troubleshooting <Troubleshooting>`.
 
 Navigating the UI
 -----------------

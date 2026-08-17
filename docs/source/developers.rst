@@ -1,3 +1,5 @@
+.. _data-storage:
+
 =========================================================================================================
 Data Storage
 =========================================================================================================
@@ -5,6 +7,8 @@ Data Storage
 JTrack stores smartphone, wearable, and EMA data using a structured,
 BIDS-inspired organization. Data is grouped by study, participant, and
 data source, facilitating longitudinal analyses and reproducible research.
+
+For study configuration and export controls, see :doc:`JDash <JTrack_Dashboard>`. For the watch-to-phone processing pipeline, see :ref:`Garmin Collection and Processing Architecture <garmin-architecture>`.
 
 .. image:: image/JDash/dash_bids.png
   :width: 50%
@@ -114,6 +118,8 @@ Garmin Wearable Data
 
 Garmin devices can provide physiological and activity-related measurements,
 depending on the device model and enabled sensors.
+
+The exact signals also depend on firmware, Garmin SDK support, and licensing. See :doc:`Garmin Integration <Garmin_Integration>` for supported workflows and limitations.
 
 
 Example: Heart Rate

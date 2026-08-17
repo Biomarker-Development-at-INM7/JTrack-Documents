@@ -7,72 +7,66 @@ A Collaborative Tool for Passive Monitoring and Ecological Momentary Assessments
 Scope of Application
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The JTrack platform consists of a web dashboard (:doc:`JDash <JTrack_Dashboard>`) and two mobile JTrack applications (:doc:`EMA <EMA>` and :doc:`Social <Social>`). We also provide server infrastructure to enable central data collection with JTrack.
+The JTrack platform consists of the :doc:`JDash web dashboard <JTrack_Dashboard>`, the :doc:`JTrack EMA+ <EMA>` and :doc:`JTrack Social <Social>` mobile applications, and server infrastructure for central study data collection.
 
-The platform was developed to gather study-specific digital phenotyping information like various :ref:`sensor data <sensor-data>` and participants’ (i.e., “users”) :ref:`self-perceptions <ema-data>` of specific events or activities occurring in their daily lives.
+The platform was developed to gather study-specific digital phenotyping information, including :ref:`sensor data <sensor-data>` and participants' :ref:`self-reports <ema-data>` about events or activities in daily life.
 
 JTrack was designed as an open-source collaboration tool to enable clinical and behavioral researchers to collect their own digital phenotyping data from study populations.
 
-The :doc:`JTrack Social <Social>` application was developed to collect sensor data from sensors embedded in modern smartphones and smartwatches, as well as general smartphone usage information. The specific sensor and phone usage combinations are study-specific and fully customizable.
+The :doc:`JTrack Social <Social>` application collects study-configured sensor data from smartphones and supported wearables, together with supported smartphone-usage summaries. Available modules and platform APIs differ between Android and iOS, but both apps use the same study-centered workflow and common JTrack data model.
 
-A high priority is assigned to data privacy to ensure that the collected data does not contain any identifiable or personal information. For example, GPS information is encoded into a random coordinate system to ensure that the user’s actual location cannot be derived.
+Data minimization and privacy are central design goals. JTrack uses pseudonymous study, participant, and device identifiers, and location data can be transformed into a relative coordinate system before storage. The applicable consent form and study protocol define which data are collected and how they may be used.
 
 JTrack Social has two different modes that can be used selectively or in combination:
 
-1. **Passive monitoring**: records data in the background with only a minimal interaction by the user.
-2. **Active labeling**: the user enters a specific activity they are performing and recorded sensor data is labeled accordingly.
+1. **Passive monitoring:** collects configured low-frequency or event-based data with minimal participant interaction.
+2. **Active Labeling:** records configured sensors during a defined task and associates the samples with that task label. Raw accelerometer and gyroscope data are supported only in this mode.
 
-The :doc:`JTrack EMA <EMA>` application was developed to collect questionnaire data in longitudinal studies. Using JTrack EMA, one can collect “user-generated” data based on users’ interactions or responses to customizable surveys. This data is collected, transferred, and stored on our servers anonymously.
+The :doc:`JTrack EMA+ <EMA>` application collects questionnaire data in longitudinal studies. Researchers can configure surveys, schedules, conditional questions, media, and reminder workflows in JDash; responses are transferred with pseudonymous study identifiers.
 
 Additionally, both apps may collect "derivative data", which is gathered automatically for technical purposes — such as sending push notifications, logging errors, or maintaining smooth app performance. This data is not stored permanently and does not include any user-identifying information.
 
-Both apps only collect data from users who have registered for a study and accepted the necessary permissions provided during installation. Installing the applications without participating in a study will not result in any data collection or storage. For all participants, only study-specific information is collected, as specified in the written informed consent.
+Both apps collect study data only after enrollment and after the participant grants the required permissions. Installing an app without joining a study does not start study data collection. Only modules configured for the enrolled study should be enabled.
+
+For practical settings that improve data completeness, see :doc:`Compliance Optimization <Compliance_Optimization>`.
 
 .. _sensor-data:
 
 Sensor Data
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The following is a non-exhaustive list of data that can be collected using the JTrack Social platform:
+JTrack Social collects only the modules enabled in the enrolled study. The actual
+data depend on the operating system, device capabilities, granted permissions,
+and study configuration. Installing the app does not by itself activate every
+module.
 
-2.1 Location Data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Depending on the study, JTrack Social can collect:
 
-Relative GPS locations are recorded, providing the phone’s position relative to an anonymized reference point. This tracking allows estimation of mobility (e.g., distance covered per day) and the number of unique locations visited.
+* relative location and mobility information;
+* activity recognition and pedometer data;
+* application usage and device lock/unlock summaries;
+* high-frequency accelerometer and gyroscope data during Active Labeling;
+* study-configured audio recordings;
+* read-only Apple Health measurements;
+* measurements from supported Garmin or Fitbit wearables; and
+* technical metadata such as app and operating-system versions, phone model,
+  synchronization status, and effective sensor states.
 
-**Anonymization:** All location data are anonymized using a random reference point with rotation, ensuring that the actual location cannot be identified.
+JTrack does not collect typed text, message content, or content viewed inside
+other applications. Study data are associated with pseudonymous JTrack
+identifiers. When configured, location coordinates are transformed into a
+relative coordinate system on the device before stored.
 
-2.2 Smartphone Usage
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The number, timestamps, and duration of phone calls can be recorded, along with the number of incoming and outgoing messages. This provides estimates of phone use for social communication.
-
-**Anonymization:** No sensitive information (e.g., phone numbers, recipients, or message contents) is recorded.
-
-2.3 Activity Recognition
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The time and duration of the following activities can be collected automatically: in vehicle, on bicycle, running, walking, still, phone tilting.
-
-**Anonymization:** Activity recognition is performed on the device, and only the time and type of recognized activities (associated with an anonymized device ID) are collected.
-
-2.4 App Usage
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Timing, duration, and app names can be collected to evaluate social vs. non-social smartphone usage (e.g., gaming, social communication, internet browsing).
-
-**Anonymization:** Only app names and timestamps are collected—never the content of user interactions.
-
-2.5 Accelerometer and Gyroscope
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Accelerometer and gyroscope data can be recorded to estimate movement patterns.
-
-**Anonymization:** These data are only combined with anonymized, JTrack-specific study and subject IDs.
+See :ref:`What JTrack Social Records <social-sensors>` for descriptions of each
+module and the :ref:`platform comparison <sensor-comparison>` for iOS and Android
+differences. Wearable signals and device limitations are documented separately
+under :doc:`Garmin Integration <Garmin_Integration>`.
 
 Sample Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Curious about how this data would look like?* :ref:`Contact us <contact-us>` *to get a sample dataset.*
+
+Technical record examples and export formats are available under :doc:`Data Storage <developers>`.
 
 .. _ema-data:
 
@@ -84,30 +78,43 @@ Information collected in each study is outlined in the written informed consent 
 3.1 User-Generated Survey Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Information provided by users when completing surveys is stored separately from any personal data. All survey responses are confidential and not used to identify participants.
+Information provided by participants when completing surveys is stored with pseudonymous study identifiers and handled according to the study protocol and consent materials.
 
 *Demographic and clinical data may be collected if specified by the study protocol. Access to this information is restricted to authorized study personnel only.*
 
 3.2 Derivative Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Data automatically collected by the application (e.g., app version, device operating system, log files) are temporarily stored and deleted when the application is uninstalled. No employee has direct access to this data, and it cannot be linked to identify any person.
+Technical metadata such as app version, operating-system version, device model, effective sensor states, and diagnostic logs may be processed to operate the platform and troubleshoot study devices. Retention and access follow the applicable study and infrastructure policies.
+
+.. _application-permissions:
 
 Application Permissions
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Our apps may request access or permission to certain device features. These features are necessary to provide a smooth experience and to access study-specific sensors.
+JTrack requests permissions in context: enrollment needs camera access, while
+sensor permissions depend on the enrolled study. A permission allows the app to
+use an operating-system API; it does not mean that every study collects the
+corresponding data. Participants can review or revoke permissions in system
+settings, although doing so can create missing study data.
 
-Below is a list of permissions the application may request:
+Depending on the application and study configuration, JTrack may request access
+to the camera, location, motion or physical activity, application-usage
+summaries, SensorKit, microphone, Bluetooth, Apple Health, notifications,
+calendar, or selected media and files. Permission names and availability differ
+between Android and iOS.
 
-* **Camera access:** Used to scan QR codes for app activation.
-* **Location information:** Required for location tracking. Coordinates are anonymized on the device before transfer to the server.
-* **File read and write access:** Used to write and save survey information (e.g., images).
-* **Battery optimization:** To prevent the application from being put to sleep, we ask users to disable the system's battery optimization.
+Background operation also depends on system settings such as Android battery
+optimization and iOS Background App Refresh. These settings are not permissions,
+but disabling them can interrupt data collection or synchronization.
 
-Users can modify permissions at any time via the device settings.
+See :ref:`Permissions by Sensor <social-permissions>` for the JTrack Social
+permission purposes and platform-specific setup instructions. EMA+ permissions
+are described in :doc:`JTrack EMA+ <EMA>`, and the recommended background
+settings are collected under :doc:`Compliance Optimization
+<Compliance_Optimization>`.
 
-4.1 Push Notifications
+Push Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If required, we may request permission to send push notifications. Notifications can be:
@@ -150,7 +157,7 @@ Any personally identifiable information is stored separately and never linked to
 Study Participants
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Users may stop data collection or leave the study at any time via the app. If a device is lost, participants may request that study owners stop data collection.
+Participants may request to leave a study according to its protocol. JTrack stops new sensor recording when the configured study duration is reached; on iOS, delayed SensorKit batches may still be retrieved for up to 48 hours before final verification. If a device is lost, participants should contact the study team.
 
 If data collection is not anonymized and a participant leaves the study, they can request deletion of their data—unless the data have already been used in publications, in which case regulations require retention for up to 10 years (or as specified in the protocol).
 

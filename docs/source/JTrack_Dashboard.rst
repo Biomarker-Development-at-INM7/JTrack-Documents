@@ -197,7 +197,7 @@ Checkbox to enable or disable EMA for this study.
       Drag-and-drop area or file picker to upload a **survey JSON** directly for
       this study.
       - Can be used instead of selecting an existing survey.
-      - The JSON structure must follow the JDash/JTrack EMA schema.
+      - The JSON structure must follow the JDash/JTrack EMA+ schema.
    - **UPLOAD EMA IMAGES ZIP FILE**
       Drag-and-drop area or file picker to upload a **ZIP archive** containing
       image assets used in EMA questions (e.g., visual prompts).
@@ -212,9 +212,9 @@ Checkbox to enable or disable EMA for this study.
 
 **Sensor configuration**
 
-**How to configure active labeling**
+**How to configure Active Labeling**
 
-In **JDash**, study conductors can configure the **Active Labeling** feature to collect labeled sensor data for specific tasks or activities. This setup is essential when precise associations between sensor signals and user-performed tasks are required.
+In **JDash**, study administrators can configure **Active Labeling** to collect sensor data for specific tasks or activities. This is useful when sensor signals need a precise participant-provided task label.
 
 .. image:: image/JDash/ActiveLabeling.png
     :width: 600px
@@ -222,20 +222,17 @@ In **JDash**, study conductors can configure the **Active Labeling** feature to 
 
 Within the study settings on **JDash**, you can:
 
-- ✅ **Enable active labeling** for your study.
-- 🎯 **Select the sensors** that should be recorded during active labeling sessions (e.g., accelerometer, gyroscope, microphone, etc.).
-- 📝 **Define multiple labeling tasks**:
+- **Enable Active Labeling** for your study.
+- **Select the sensors** that should be recorded during Active Labeling sessions, such as accelerometer, gyroscope, or microphone.
+- **Define multiple labeling tasks:**
 
-  - Each task has a 
-      - **name** (e.g., ``Walking``, ``Brushing Teeth``),
-      - **preparation time** (in seconds),
-      - **duration** (in seconds).
-      - **description/instructions** optional for participants.
-  - These tasks will appear in the participant’s app as selectable activities during active labeling.
+  - Each task has a **name**, such as ``Walking`` or ``Brushing Teeth``.
+  - A task can define **preparation time**, **duration**, and optional participant **instructions**.
+  - These tasks appear in the participant's app as selectable activities during Active Labeling.
 
 .. note::
 
-   Active labeling will only be enabled if **active sensors** are selected in the configuration.
+   Active Labeling is enabled only when at least one active sensor is selected in the study configuration.
 
 Example task list JSON:
 
@@ -271,6 +268,8 @@ part of the study.
 
 This feature enables integration of wearable sensor data alongside mobile and
 EMA data.
+
+For compatible workflows, processing details, and device-dependent limitations, see :doc:`Garmin Integration <Garmin_Integration>`.
 
 
 **Enable Wearables**
@@ -330,6 +329,8 @@ fields:
    Adding high-frequency wearable sensors may increase data volume and impact
    storage and processing performance. Choose sensors and sampling rates based
    on the study objectives.
+
+   Raw PPG and other high-frequency signals may require a compatible Garmin model and the corresponding SDK license. Configuring a signal in JDash does not guarantee that every watch can provide it.
 
 .. _study-details-subjects-view:
 
@@ -640,7 +641,7 @@ Form Fields
 
 **Scroll type**  
    Defines how participants will navigate through the survey items within
-   the JTrack EMA app. Two options are available:
+   the JTrack EMA+ app. Two options are available:
 
    - **Horizontal** – Questions scroll left/right.  
      Suitable for one-question-per-screen layouts, swipe-based navigation,
@@ -659,7 +660,7 @@ Upload Survey via JSON
 
 Instead of creating a survey manually through the dialog, you can create a
 new survey by **uploading a JSON definition file**. The JSON file must follow
-the JDash/JTrack EMA survey schema.
+the JDash/JTrack EMA+ survey schema.
 
 The JSON must:
 
@@ -728,7 +729,7 @@ When preparing a new survey, copy the provided sample JSON file and adapt:
 
 .. important::
 
-   Only JSON files following this structure will be accepted and correctly rendered by the JTrack EMA app.
+   Only JSON files following this structure are accepted and rendered correctly by JTrack EMA+.
 
 .. _survey-edit-view:
 
@@ -1169,6 +1170,8 @@ To remove an answer option, click the **trash icon** (🗑️) on the right side
 the row.  
 The option is removed immediately from the form.
 
+.. _jdash-compliance-monitoring:
+
 Compliance Monitoring
 ------------------------------
 
@@ -1179,6 +1182,8 @@ and overall data completeness.
 
 The dashboard focuses on subject-level monitoring and allows users to explore
 recording patterns across study days using an interactive heatmap.
+
+The dashboard shows whether data arrived; participant-facing settings that help prevent gaps are described in :doc:`Compliance Optimization <Compliance_Optimization>`.
 
 Selection Panel
 ~~~~~~~~~~~~~~~~~~~

@@ -22,7 +22,7 @@ copyright = '2026, INM-7'
 author = 'Mamaka Narava, Mehran Turna & Jona M. Fischer'
 
 # The full version, including alpha/beta/rc tags
-release = '2.1'
+release = '2.2 (2026-08)'
 
 master_doc = 'index'
 PYTHONUTF8 = 1

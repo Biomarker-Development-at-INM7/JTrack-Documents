@@ -2,26 +2,27 @@
 Garmin Integration
 =========================================================================================================
 
-JTrack Social supports Garmin wearable integration using the Garmin Health Standard SDK.
-The integration enables collection of physiological and behavioral sensor data directly from supported
-Garmin smartwatches while maintaining GDPR-compliant study workflows.
-We use a direct Bluetooth connection between JTrack Social and the Garmin device.
+JTrack Social supports compatible Garmin wearables through the **Garmin Health Standard SDK** on Android and iOS. The phone communicates directly with the watch over Bluetooth; the Garmin Connect app and a participant-owned Garmin account are not required for the JTrack study workflow.
+
+The study configuration determines which wearable signals are requested and at which supported sampling interval. Availability still depends on the watch model, firmware, SDK support, and the Garmin features licensed for the JTrack deployment.
 
 The Garmin integration currently supports:
 
-- Background synchronization
-- Local device-to-phone synchronization
-- Secure upload to the study server
-- Firmware updates of connected watches
-- Configuration of connected watches
+- pairing and study-specific watch configuration;
+- automatic background synchronization where the operating system permits it;
+- foreground synchronization whenever JTrack Social becomes active;
+- manual watch-to-phone synchronization and server upload;
+- local FIT-file processing and downsampling; and
+- device status, firmware, configuration, and diagnostic tools for administrators.
 
 Wearable Sensors include:
 
 - Actigraphy
 - BBI
 - Calories
-- enhancedBBI
+- Enhanced BBI
 - Heart Rate
+- PPG (only on supported and licensed devices)
 - Respiration
 - Skin Temperature
 - SpO2
@@ -32,7 +33,147 @@ Wearable Sensors include:
 
 .. note::
 
-   Garmin wearable functionality is only available in studies where Garmin support has been enabled by the study administrator.
+   Garmin wearable functionality is shown only when Garmin sensors are enabled by the study administrator. A signal listed here is not a guarantee that every Garmin model exposes it.
+
+.. _recommended-garmin-devices:
+
+Recommended Garmin Devices
+=========================================================================================================
+
+The **vívoactive 6** is the primary JTrack recommendation because it is the model currently used and tested by the project. It provides a useful balance of health signals, battery life, size, availability, and cost.
+
+The table below compares built-in consumer-device capabilities that are relevant when selecting study hardware. ``✓`` means that Garmin documents the feature for the device; ``✗`` means that the device does not provide it. These entries do **not** guarantee that the measurement is exposed by the Garmin Health Standard SDK or by the current JTrack license.
+
+.. list-table:: Garmin devices for study planning
+   :header-rows: 1
+   :stub-columns: 1
+   :widths: 24 15 15 15 15 15
+
+   * - Capability
+     - Forerunner 55
+     - vívoactive 6
+     - Forerunner 570
+     - fēnix 8 Pro
+     - CIRQA Smart Band
+   * - JTrack recommendation
+     - Budget candidate
+     - **Recommended and tested**
+     - Current running watch
+     - Flagship / specialist studies
+     - Promising; validate first
+   * - Approximate market position
+     - Entry level; often discounted near €100
+     - Mid-range health and fitness
+     - Advanced running and triathlon
+     - Premium multisport flagship
+     - Screenless health band
+   * - Wrist heart rate
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+   * - Pulse Ox / SpO2
+     - ✗
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+   * - Respiration, stress, and steps
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+   * - Sleep tracking
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+   * - Skin-temperature feature
+     - ✗
+     - ✗
+     - ✓
+     - ✓
+     - ✓
+   * - Accelerometer
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+   * - Gyroscope
+     - ✗
+     - ✓
+     - ✓
+     - ✓
+     - ✗
+   * - On-device GPS
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✗
+   * - Barometric altimeter
+     - ✗
+     - ✗
+     - ✓
+     - ✓
+     - ✗
+   * - Published smartwatch-mode battery life
+     - Up to 14 days
+     - Up to 11 days
+     - Up to 10–11 days, depending on size
+     - Up to 27 days for the 51 mm AMOLED model
+     - Up to 10 days
+
+Selection Guidance
+-------------------------------------------
+
+**For most JTrack studies**
+   Use the **vívoactive 6**. It is the project's reference device and has already produced Heart Rate, BBI, Enhanced BBI, respiration, SpO2, stress, steps, actigraphy, and related FIT data in the JTrack workflow.
+
+**For a low-cost pilot**
+   The **Forerunner 55** may be available near €100 through discounts or remaining stock, but it lacks Pulse Ox, skin temperature, and a gyroscope. Confirm exact Garmin Health Standard SDK support with Garmin before purchasing a study batch.
+
+**For running-focused studies**
+   The **Forerunner 570** adds newer health sensing, skin-temperature features, multi-band positioning, and advanced training functionality. It should still be validated with the study's exact JTrack signal list.
+
+**For outdoor or specialist protocols**
+   The **fēnix 8 Pro** offers the broadest hardware set, long battery life, premium positioning, and rugged construction. It is usually unnecessary for standard passive health monitoring and substantially increases device cost.
+
+**For discreet 24/7 wear**
+   The new **CIRQA Smart Band** is screenless and provides heart rate, Pulse Ox, respiration, stress, sleep, skin temperature, steps, and up to 10 days of battery life. It relies on connected phone GPS and is not yet a JTrack reference device. Confirm Standard SDK compatibility and complete an end-to-end pilot before choosing it for a study.
+
+.. important::
+
+   Garmin's `Health SDK overview <https://developer.garmin.com/health-sdk/overview/>`_ lists supported device families and signal categories but warns that some individual models may not be supported. Before procurement, ask Garmin Health to confirm the exact model and required Standard SDK features, then test pairing, configuration, FIT transfer, ingestion, and upload in JTrack Social.
+
+Consumer feature references: `Forerunner 55 and vívoactive 6 comparison <https://www.garmin.com/en-US/compare/?compareProduct=1555457&compareProduct=741137>`_, `Forerunner 570 announcement <https://www.garmin.com/en-US/newsroom/press-release/sports-fitness/garmin-unveils-the-forerunner-570-and-forerunner-970-its-newest-gps-running-and-triathlon-smartwatches-for-performance-driven-athletes/>`_, `fēnix 8 Pro comparison <https://www.garmin.com/en-US/compare/?compareProduct=1703902>`_, and `CIRQA product page <https://www.garmin.com/en-US/p/1989182/>`_. Features and prices can change by region, firmware, and date.
+
+.. _garmin-architecture:
+
+Collection and Processing Architecture
+=========================================================================================================
+
+Garmin records data on the watch and transfers archived FIT files to JTrack Social. JTrack then processes those files into the common JTrack ``HealthSensor`` format before upload.
+
+On iOS, the Garmin SDK is configured to persist FIT files while JTrack performs the data processing itself. Two input paths are handled:
+
+* **Custom Logging FIT:** high-resolution signals such as heart rate, BBI, Enhanced BBI, respiration, SpO2, stress, steps, actigraphy, wrist status, and other configured custom-logging fields.
+* **Wellness FIT:** Garmin wellness records that are mapped through the corresponding Garmin wellness sensor definitions.
+
+Samples are downsampled **before** Core Data objects are created. They are grouped into timestamp buckets and inserted in batches, which avoids creating millions of temporary database objects for high-frequency recordings.
+
+Supported configured intervals currently include ``1 s``, ``10 s``, ``30 s``, ``1 min``, ``5 min``, ``10 min``, and ``15 min``. The chosen interval is applied per configured wearable signal. High-resolution values present in a FIT file, such as BBI or Enhanced BBI, are retained according to their signal-specific processing rather than being interpreted as a continuous 64 Hz waveform.
+
+Passive and Active Measurements
+-------------------------------------------
+
+Normal Garmin monitoring uses the signals and intervals configured in JDash. Active Labeling can additionally associate wearable data with a defined task window, but it does not automatically unlock raw signals that the Garmin SDK, watch model, or license does not expose.
+
+Raw PPG and other experimental high-frequency cardio streams are therefore device- and license-dependent. Administrators can use the experimental Garmin diagnostic view to test the maximum available mode, including the explicit case where PPG is not licensed. These tests are diagnostic tools and are not part of the standard passive-monitoring protocol.
 
 |
 
@@ -47,7 +188,7 @@ Example configuration:
    :width: 90%
    :align: center
 
-The wearable configuration is automatically downloaded to the participant device after enrollment.
+The wearable configuration is downloaded after enrollment and stored on the phone. Each configured entry can specify the wearable, signal name, sampling rate, and unit. JTrack Social exposes the effective wearable configuration in its information and administration views.
 
 |
 
@@ -115,13 +256,13 @@ The popup will guide the user through the process.
       </div>
     </div>
 
-After pairing, JTrack Social automatically configures the Garmin device according to the study settings defined in JDash.
+After pairing, JTrack Social configures the Garmin device according to the study settings defined in JDash.
 
 This includes:
 
 - Enabled sensors
 - Sampling intervals
-- Background synchronization settings
+- Supported collection settings
 
 The configuration process may take several seconds.
 
@@ -153,7 +294,7 @@ Therefore a configuration dialogue appears that asks for relevant information af
 
 .. note::
 
-   This data is handled with great care and not being stored or examined by JTrack in any way. It solely serves the purpose to improve the accuracy of the data collected by the Garmin watch.
+   These profile values are passed to the watch so Garmin's internal algorithms can operate correctly. JTrack does not use them as research measurements or upload them as participant sensor records.
 
 |
 
@@ -185,6 +326,7 @@ It provides an overview of:
 - Connection state
 - Last synchronization
 - Local wearable data status
+- Synchronization and upload progress
 
 The dashboard also provides manual synchronization and device management functionality.
 
@@ -212,7 +354,9 @@ Pair / Unpair Devices
 Participants can pair or unpair Garmin devices directly inside the Garmin Dashboard.
 Pairing works in the same way as explained in :ref:`garmin-pair`.
 
-Unpairing removes:
+Unpairing disables future JTrack collection from that watch and removes the app-side device association and watch-side study configuration.
+
+Before unpairing, use the available synchronization controls to retrieve and upload pending records. Unpairing removes:
 
 - Device association
 - Active synchronization
@@ -239,22 +383,22 @@ Unpairing removes:
    </div>
 
 .. note::
-    Be aware that the App cannot override iOS Bluetooth settings, so to remove the Bluetooth connection open the `Settings App -> Bluetooth` and manually remove the Garmin watch.
+   The app cannot override iOS Bluetooth settings. To remove the system-level Bluetooth association, open ``Settings -> Bluetooth`` on the iPhone and remove the Garmin watch manually.
 
 |
 
 Sync to Phone
 -------------------------------------------
 
-Wearable data is first synchronized locally from the Garmin watch to the participant phone.
+Wearable data is first synchronized locally from the Garmin watch to the participant phone and then ingested from FIT into Core Data.
 
 Synchronization can occur:
 
 - Automatically in the background
-- When the app becomes active
+- Whenever the app becomes active
 - Manually using ``Sync to Phone``
 
-The synchronization process downloads new wearable sensor recordings from the watch.
+The synchronization process downloads new recordings, processes both custom-logging and wellness FIT files, downsamples configured signals, and inserts the resulting records in batches. iOS may limit background execution time; JTrack therefore also retries this work in the foreground.
 
 .. image:: _static/GarminSave.png
    :width: 350
@@ -265,16 +409,20 @@ The synchronization process downloads new wearable sensor recordings from the wa
 Send to Server
 -------------------------------------------
 
-After synchronization to the phone, wearable data can be uploaded securely to the study server.
+After synchronization and local FIT ingestion, Garmin records are sent sequentially by sensor to the study server.
 
 Uploads occur automatically when all of these conditions are met:
 
+- Wi-Fi is connected
 - Internet access is available
-- Wi-Fi restrictions allow uploads
 - The server is reachable
 - Background processing is permitted
 
-Participants may also trigger uploads manually.
+Wearable transfer is Wi-Fi-only. Participants and administrators may also trigger synchronization and upload from the Garmin Dashboard. General manual phone-data synchronization does not duplicate Garmin transfer because the wearable dashboard owns this workflow.
+
+.. important::
+
+   When the study duration has ended, JTrack stops starting new Garmin collection and does not fetch additional wearable data during the 48-hour final SensorKit waiting period. The final verified study-leave workflow handles data that was already stored locally.
 
 .. image:: _static/GarminSend.png
    :width: 350
@@ -285,9 +433,9 @@ Participants may also trigger uploads manually.
 Firmware Update
 -------------------------------------------
 
-JTrack Social can detect and perform available Garmin firmware updates through the Bluetooth connection.
+The Garmin Dashboard can detect and perform firmware updates made available through Garmin device services.
 
-Participants may be prompted to update the watch firmware. However, updates are not required but might be useful for extended study periods.
+Participants may be prompted to update the watch firmware. Study staff should schedule updates so they do not interrupt an active measurement or synchronization.
 
 .. note::
 
@@ -298,6 +446,8 @@ Participants may be prompted to update the watch firmware. However, updates are 
    :align: center
 
 |
+
+.. _garmin-admin-tools:
 
 Features for Study Administrators
 =========================================================================================================
@@ -335,13 +485,15 @@ This allows updated user settings (age, gender, weight, height, etc.) for improv
 Advanced SDK Status
 -------------------------------------------
 
-The Garmin Dashboard includes advanced SDK status information for debugging and monitoring via the ``Advanced`` tab.
+The Garmin Dashboard includes advanced SDK status information for debugging and monitoring via the ``Advanced`` tab. These controls are available independently of the normal participant workflow.
 
 Available information includes:
 
 - SDK initialization state
 - Bluetooth connection state
 - Device readiness
+- FIT ingestion and local-data state
+- Effective study configuration
 
 .. raw:: html
 
@@ -364,7 +516,7 @@ Available information includes:
 Console Logging for Debugging
 -------------------------------------------
 
-Verbose Garmin SDK console logging is enabled for debugging purposes and can be accessed via the ``Console`` tab.
+Garmin SDK and JTrack processing messages can be inspected through the ``Console`` tab. Logging covers the watch-to-phone, FIT-processing, and upload stages so administrators can distinguish connection problems from ingestion or server-transfer problems.
 
 Logs may include:
 
@@ -373,11 +525,14 @@ Logs may include:
 - Device communication
 - Sensor configuration
 - Snippets of logged data
+- FIT-file processing and downsampling
 - Upload operations
 
 .. warning::
 
    Beware that the possible actions here are only for debugging purposes and can temporarily interfere with the participant workflow.
+
+For phone-sensor debugging and the other protected iOS tools, see :ref:`Administrator Tools <social-admin-tools>`. For general connection and reporting checks, see :doc:`Troubleshooting <Troubleshooting>`.
 
 .. raw:: html
 

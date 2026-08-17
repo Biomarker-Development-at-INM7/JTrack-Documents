@@ -4,6 +4,8 @@ Partners & Collaborations
 
 JTrack and JDash are developed in collaboration with academic and clinical partners in the field of digital health, behavioral monitoring, and biomedical research.
 
+For collaboration enquiries and information about using JTrack in a study, see :ref:`Contact Us <contact-us>`.
+
 .. raw:: html
 
    <style>
