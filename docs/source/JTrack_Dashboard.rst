@@ -1002,6 +1002,8 @@ Conditional Logic
 You can define **conditional logic** for a question to dynamically activate or
 deactivate other questions based on a participant's response.
 
+
+
 .. image:: image/JDash/jdash_activate_question1.png
    :width: 90%
    :align: center
@@ -1018,7 +1020,9 @@ Each question provides the following fields:
 These fields allow you to control which questions appear next, enabling
 branching logic within a survey.
 
-**Activate Question**
+.. note::
+   Please not the conditional logic follows the on paper survey model, so the question are always visible to user
+   and only if a condition met the questions will de activated. therefore, please don't use activation condition solely. 
 
 .. image:: image/JDash/jdash_activate_question2.png
    :width: 90%
