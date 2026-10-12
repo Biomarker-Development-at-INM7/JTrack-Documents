@@ -1150,6 +1150,12 @@ investigators to define the selectable choices shown to participants.
     :width: 600px
     :align: center
 
+**Slider Settings**  
+
+For slider-type questions, the answer form allows you to define the minimum and maximum values, step size, and optional labels for the slider endpoints.
+and default value, show the slider value in the app, the slider will be pre-filled with that value when the question is displayed and if user does not change it, 
+it will considered as not answered and the default value will be ignored. so please set the default value to a value that is **not in the range** of the slider, for example, if the slider range is 0-10, set the default value to -1 or 11.
+
 
 Click **Add Choice** to insert a new answer option row.  
 Each row contains two fields:
@@ -1166,6 +1172,7 @@ Each row contains two fields:
    - ``1 → Less than 10 minutes``  
    - ``2 → 10–30 minutes``  
    - ``3 → More than 30 minutes``  
+
 
 
 **Deleting a choice**
