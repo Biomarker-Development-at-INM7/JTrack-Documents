@@ -7,6 +7,15 @@ and :doc:`JTrack EMA+ <EMA>`, and monitor data
 quality. It supports studies conducted by clinical institutions and the
 `Biomarker Development Group <https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672>`_.
 
+This guide walks you through using JDash, from creating an account and setting
+up a study to managing participants, monitoring data collection, and exporting
+results. To use our hosted service, `open JDash <https://jdash.inm7.de/>`_
+and follow the login instructions below.
+
+If you are interested in hosting your own installation of JDash on your
+preferred infrastructure, see the :ref:`Technical Overview <jdash-technical-overview>`.
+Feel free to :ref:`contact us <directcontacts>` for more details.
+
 Login
 +++++
 
@@ -1382,8 +1391,10 @@ application and are used to inform users that new EMA questions are available.
    regenerated.
 
 
-System Architecture
-+++++++++++++++++++++++++++++
+.. _jdash-technical-overview:
+
+Technical Overview
+++++++++++++++++++
 
 JDash follows a modular Django-based architecture with a Bootstrap-powered
 frontend and embedded Plotly-Dash dashboards for visualizing participant
@@ -1408,7 +1419,7 @@ Core Components
   production deployment using Apache with ``mod_wsgi``.
 
 Deployment Instructions
-++++++++++++++++++++++++++++++++++++++++++++++++++
+-----------------------
 
 
 JDash can be deployed locally for development or on a production web server
