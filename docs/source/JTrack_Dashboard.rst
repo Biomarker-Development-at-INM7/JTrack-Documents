@@ -646,680 +646,466 @@ to trace specific configuration changes.
     :alt: Audit history with actor and action filters and previous and new field values
 
 Survey
----------------------------
-Manages EMA (Ecological Momentary Assessment) questionnaires linked to studies. Displays existing surveys with title, study association, creation date, and actions (edit, copy, delete).
-Upload Section: Allows importing survey definitions via JSON files.
+------
 
+The **Surveys** tab manages questionnaires for :doc:`JTrack EMA+ <EMA>`.
+Find an existing survey with the search, category, and associated-study
+filters, or choose one of three starting points below.
 
-   * .. container:: quick-box plain
-
-            **Interface Overview:**
-            
-            - :ref:`(1) – Create Survey <create-survey>`
-            - :ref:`(2) – Upload Survey Json <upload-survey-json>`
-            - :ref:`(3) – Edit/View Survey <survey-edit-view>`
-            
-.. image:: image/JDash/dash_survey_list.png
+.. image:: image/JDash/JDashSurveyView.png
     :width: 100%
-    :alt: JDash survey list
+    :align: center
+    :alt: Surveys page with manual creation marked 1, template upload marked 2, and survey row actions marked 3
+
+.. container:: quick-box plain
+
+    **Survey starting points:**
+
+    - :ref:`Start from scratch (1) <create-survey>` using **New Survey**.
+    - :ref:`Start from a template (2) <upload-survey-json>` using
+      **Download Template** and **Upload**.
+    - :ref:`Duplicate an existing survey (3) <duplicate-survey>` using the
+      copy action in its row.
+
+The other row actions (3) open the :ref:`Survey Editor <survey-edit-view>`,
+show its history, or delete
+it. Use the editor to review questions before assigning the questionnaire in
+:ref:`study EMA settings <ema-conf>`.
 
 .. _create-survey:
 
-Create Survey
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Start from Scratch
+~~~~~~~~~~~~~~~~~~
 
-The Survey module allows administrators to define and manage EMA (Ecological
-Momentary Assessment) questionnaires that will be delivered to study
-participants. Each survey contains a title, description, scrolling behaviour,
-and associated question items uploaded later as a JSON file.
+Click **New Survey** (1) to create an empty questionnaire. Enter a recognizable
+**Title** and a **Description** of its purpose. Choose **Horizontal** for
+side-to-side navigation or **Vertical** for a scrolling layout, then click
+**Create**.
 
-The *New Survey* dialog provides a guided form for creating a survey entry in
-the system.
-
-.. image:: image/JDash/dash_create_survey.png
-    :width: 600px
+.. image:: image/JDash/JDashSurveyCreate.png
+    :width: 65%
     :align: center
+    :alt: Create a New Survey dialog with title, description, scrolling options, and Create button
 
-
-
-Form Fields
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Title**  
-   The display name of the survey. This name appears in the survey list and
-   throughout the dashboard.
-
-**Description**  
-   A short explanation of the survey’s purpose, context, or intended use.
-   This helps administrators distinguish between multiple surveys.
-
-**Scroll type**  
-   Defines how participants will navigate through the survey items within
-   the JTrack EMA+ app. Two options are available:
-
-   - **Horizontal** – Questions scroll left/right.  
-     Suitable for one-question-per-screen layouts, swipe-based navigation,
-     and compact mobile interfaces.
-
-   - **Vertical** – Questions scroll top/bottom.  
-     Suitable for longer pages, forms with multiple inputs, or free-text
-     responses requiring more space.
-
-   Select the option that best matches the design of your survey JSON file.
+Next, define :ref:`categories <survey-categories>` and
+:ref:`add questions <question-form>` in the
+:ref:`Survey Editor <survey-edit-view>`.
 
 .. _upload-survey-json:
+.. _survey-template:
 
-Upload Survey via JSON
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Start from a Template
+~~~~~~~~~~~~~~~~~~~~~
 
-Instead of creating a survey manually through the dialog, you can create a
-new survey by **uploading a JSON definition file**. The JSON file must follow
-the JDash/JTrack EMA+ survey schema.
+Use **Download Template** (2) to prepare several questions outside the
+question editor, then choose the completed file and click **Upload**.
+The question template is a tab-separated text file, rather than a survey JSON
+file. A copy is available here:
+:download:`survey question template <_static/survey_question_template.txt>`.
+Use the dashboard's download for the latest version.
 
-The JSON must:
+1. Open the template in an editor that preserves tab-separated columns and
+   its UTF-16 text encoding. Keep the header row and column order intact.
+2. Adapt the example question rows. Give each question a distinct ``id`` and
+   enter its ``title``, optional ``subText``, ``category``, and ``questionType``.
+   The template uses numeric question-type codes; retain the format shown in
+   the examples rather than substituting the display names from the editor.
+3. Set the scheduling fields, such as ``frequency``, ``nextDayToAnswer``, and
+   ``clockTime_start`` / ``clockTime_end``, to match your protocol. The repeated
+   answer-column groups hold response choices or type-specific answer settings.
+4. Save in the original tab-separated format and upload the file through the
+   Surveys page. Review the imported questions, categories, answer choices,
+   and timing in the :ref:`Survey Editor <survey-edit-view>` before using
+   the survey in a study.
 
-- Be valid UTF-8 encoded JSON.
-- Follow the JDash survey schema (field names and structure).
-- Define at least the survey metadata and a list of items/questions.
+.. note::
 
-**Sample JSON format**
+   Example values are starting points, not recommended study settings. In
+   particular, review repetition intervals and expiry days rather than
+   retaining them simply because they appear in the template.
 
-A sample format file is provided (for example: ``sample_survey.json``).  
-Use this as a template when creating new surveys:
+.. _duplicate-survey:
 
-.. code-block:: json
+Duplicate an Existing Survey
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   {
-     "title": "EMA Pilot validation survey",
-     "description": "Short description of the survey purpose and context.",
-     "scroll_type": "H",   // or "V"
-     "topN": -1
-     "questions": [
-       {
-         "id": "1",
-         "active": 1,
-         "title": "How are you feeling right now?",
-         "subText": "How did you sleep last night?",
-         "frequency": 1,
-         "clockTime": 0,
-         "clockTime_start": "480",
-         "clockTime_end": "1430",
-         "nextDayToAnswer": 0,
-         "category": 1,
-         "imageURL": "",
-         "url": "",
-         "questionType": 3,
-         "deactivateOnAnswer": "",
-         "deactivateOnDate": 0,
-         "activate_question": "",
-         "deActivate_question": "",
-         "activation_condition": "",
-         "deActivation_condition": "",
-         "answer": [
-                {
-                    "id": 1,
-                    "text": "",
-                    "subText": "",
-                    "value": 0.1,
-                    "defaultValue": 5.0,
-                    "stepSize": 1.0,
-                    "minVal": 0.0,
-                    "maxVal": 10.0,
-                    "minText": "Schlecht | Bad",
-                    "maxText": "Gut | Good"
-                }
-            ]
-       }
-       // additional items ...
-     ]
-   }
+Find the questionnaire you want to reuse and select its copy action (3).
+Open the resulting copy in the :ref:`Survey Editor <survey-edit-view>`
+and adapt its title, description, categories, and
+questions for the new study. Review inherited schedules, answer choices, and
+conditional rules as carefully as the question text.
 
-When preparing a new survey, copy the provided sample JSON file and adapt:
-
-- ``title`` and ``description`` to your study.
-- ``scroll_type`` to match the intended navigation style.
-- The ``questions`` list to include all questions, response options, and any
-  additional fields required by the schema.
-
-.. important::
-
-   Only JSON files following this structure are accepted and rendered correctly by JTrack EMA+.
+When ready, select the new questionnaire in the
+:ref:`study EMA configuration <ema-conf>`.
 
 .. _survey-edit-view:
 
-Survey Details View
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Survey Editor
+~~~~~~~~~~~~~
 
-After creating or uploading a survey, selecting it from the Survey list opens
-the **Survey Details** page. This page displays all questions defined for the
-survey and provides tools for managing categories, adding new questions, and
-exporting the survey as JSON.
+Open a survey with the edit action on the Surveys page. The numbered areas
+in the editor support three tasks:
 
-.. image:: image/JDash/dash_survey_details.png
-    :width: 600px
+.. image:: image/JDash/JDashSurveyEdit.png
+    :width: 100%
     :align: center
+    :alt: Survey editor with toolbar marked 1, question table marked 2, and question edit and copy actions marked 3
 
+- **Toolbar (1):** manage **Categories**, add a **New Question**, delete
+  checked questions with **Delete selected questions**, use **Commit changes
+  to study**, or download the survey definition with the download icon.
+  After editing a survey used by a study, use **Commit changes to study** to
+  apply the revised questionnaire to that study.
+- **Question table (2):** review question order, text, type, category, first
+  study day, repetition interval, and activation windows. Search and filters
+  help find questions that share a type or category. Use the row checkboxes
+  to choose questions for bulk deletion.
+- **Row actions (3):** edit a question or duplicate it as a starting point
+  for another question. Review copied settings before saving.
 
-**Overview of the Question List**
+The survey-definition download is separate from
+:ref:`exports of participant responses <data-export>`.
 
+.. _survey-categories:
 
-The table shows all survey questions in a structured format. Each row
-represents a single question and includes:
+Manage Categories
+^^^^^^^^^^^^^^^^^
 
-- **id** — The internal question identifier (order in the survey).  
-- **title** — The primary question text (German example shown).  
-- **subText** — The secondary text .  
-- **questionType** — Input type (e.g., Free Number, Single Choice, Multiple Choice).  
-- **category** — Category assigned to the question (e.g., IHG, GH).  
-- **frequency** — How often the question is shown in days.  
-- **clockTimeStart / clockTimeEnd** — Valid times to receive reminder notification to answer the question.  
-- **nextDayToAnswer** — day when the questions becomes available to answer.
+Use **Categories** in the toolbar (1) to organize questions into meaningful
+groups, such as Mobility, Sleep, or Mood. Click **New Category** to add a
+name, edit an existing name, or use its trash icon to remove it. Click
+**Update** to save the category changes.
 
-This view allows users to quickly review the full content of the survey and to
-edit or organize items as needed.
-
-
-
-**Categories Management**
-
-The **Categories** button opens the category management dialog. Categories help group questions into logical sections and are required for
-surveys with thematic organization (e.g., "Mobility", "Digital Use").
-Investigators can:
-
-- Create new categories  
-- Rename existing categories  
-- Delete categories
-
-.. image:: image/JDash/survey_category.png
-    :width: 600px
+.. image:: image/JDash/JDashSurveyCategories.png
+    :width: 70%
     :align: center
+    :alt: Categories dialog with Request Subject ID option, editable category names, New Category, and Update
 
-
-**Adding New Questions**
-
-
-Click **New Question** to add a new item to the survey.  
-This opens the question editor, where you can define all properties of the
-question (text, type, category, scheduling rules, etc.).
-
-For a full description of all editable fields, check :ref:`Create /Edit Question <question-form>`
-
-Once the question is saved:
-
-- It appears immediately in the question list
-- It can be edited, duplicated, or deleted through the action buttons on the right
-
-This workflow ensures that new survey items follow the same structure and
-validation rules as existing ones.
-
-
-
-**Downloading the survey JSON**
-
-
-The download icon (⬇) in the top-right corner of the page exports the entire
-survey definition as a JSON file. This JSON can be used for:
-
-- Backups  
-- Versioning  
-- Editing offline  
-- Sharing surveys between studies
-
-
-
-**Row Actions (per item)**
-
-
-Each question row includes three action buttons:
-
-**✏️ Edit**  
-   Opens the question editing dialog.  
-   Allows modification of text, category, type, time window, and all properties.
-
-**📄 Copy / Duplicate**  
-   Creates a new question using the selected item as a template.  
-   Useful when building surveys with repeated or similar formats.
-
-**🗑️ Delete**  
-   Removes the question from the survey.  
-   A confirmation prompt prevents accidental deletion.
-
-
+Enable **Request Subject ID** only if your workflow requires participants to
+enter a subject ID each time they fill in the survey. Assign each question
+using the editor's **Category** field, as described below.
 
 .. _question-form:
 
 Create / Edit Question
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
-The Question Editor allows investigators to define or modify a single survey
-question within the EMA survey. Each field controls a specific aspect of how
-the question behaves, how it appears to the user, and when it is shown.
+Click **New Question** in the survey toolbar, or the edit action on an existing
+question. Configure the question through five aspects:
 
-.. image:: image/JDash/survey_edit_question.png
-    :width: 600px
+.. container:: quick-box plain
+
+    - :ref:`1. Default settings <question-default-settings>`: text,
+      required responses, and scheduling.
+    - :ref:`2. Question types <question-types>`: choose the response format
+      within the default settings.
+    - :ref:`3. Category assignment <question-category>`: group the question
+      within the default settings.
+    - :ref:`4. Advanced settings <question-advanced-settings>`: cross-question
+      rules and supporting media or links.
+    - :ref:`5. Conditional logic <survey-conditional-logic>`: combine default
+      and advanced settings to control what is asked.
+
+.. image:: image/JDash/JDashSurveyQuestionCreate.png
+    :width: 100%
     :align: center
-
-
-
-**Form Fields**
-
-
-Below are the descriptions of all fields available in the Create/Edit Question
-form.
-
-
-**Sequence Id**
-
-
-The position of the question in the survey.  
-Questions are displayed in ascending order based on this value.
-
-
-**Type**
-
-
-Specifies the question type (e.g., Free Number, Single Choice, Multiple Choice,
-Free Text, Slider).  
-The selected type determines how the question is rendered in the participant
-application.
-
-
-**Title**
-
-
-The main question text shown to participants (e.g., in German or the primary
-study language).
-
-
-**Description**
-
-
-Additional descriptive text, explanation, or translation shown below the main
-question.  
-Useful for bilingual surveys or questions needing clarification.
-
-
-**Use default values toggle**
-
-When disabled, all values must be filled manually. If enabled, system-defined default values are used for:
-
-- Frequency  
-- NextDayToAnswer  
-- ClockTimeStart  
-- ClockTimeEnd  
-- DeactivateOnDate  
-
-
-
-
-**Category**
-
-
-A numeric category label used to group questions into thematic clusters.  
-
-.. admonition:: Example:
-
-   - 1 - Mobility  
-   - 2 - Digital Activity  
-   - 3 - Sleep  
-   - 4 - Mood
-
-
-**Frequency**
-
-
-Defines how often the question is shown.
-
-.. admonition:: Values:
-
-   - **0** — Ask at any time the user opens the survey  
-   - **1** — Ask every day  
-   - **n** — Ask every *n* days (e.g., 2 = every second day)
-
-
-**NextDayToAnswer**
-
-
-Controls on which study day this question first becomes available.
-
-.. admonition:: Examples:
-
-   - **0** — Starts on day 0  
-   - **1** — Starts on day 1  
-   - **5** — Question begins appearing on day 5  
-
-
-**DeactivateOnAnswer**
-
-
-If set, the question will be skipped or hidden in future survey sessions after
-a specific answer value is selected.  
-Commonly used to disable follow-up items after a “No” response.
-
-
-**DeactivateOnDate**
-
-
-Defines a study day after which the question should no longer be shown.
-
-.. admonition:: Example:
-
-   - **0** — No deactivation by date  
-   - **10** — Question disappears after day 10 of the study
-
-
-
-**Activation time(s)**
-
-The time (in minutes from midnight) when the question becomes active.
-
-.. admonition:: Examples:
-
-   - **480** = 08:00  
-   - **900** = 15:00
-
-If multiple times are provided (comma-separated), the user will receive
-multiple activations.
-
-These times determine when notifications are sent and when the question
-appears in the JTrack app.
-
-
-**Deactivation time(s)**
-
-The time (in minutes since midnight) when the question becomes inactive.
-
-Must match the number of entries in ClockTime Start if multiple values are
-used.
-
-.. admonition:: Example:
-
-   - **1430** = 23:50  
-   - ``480,900`` must have a matching ``600,1000`` (start/end pairs)
-
-This ensures each activation window has a corresponding end time.
-
-.. image:: image/JDash/jdash_clock_times.png
-   :width: 90%
-   :align: center
-
-.. note::
-
-   Activation and deactivation times together define the valid response window
-   for each question. Ensure that end times are logically after start times to
-   avoid invalid configurations.
-
+    :alt: Question editor with Type marked 1, default category and scheduling fields marked 2, and Show advanced settings marked 3
+
+.. _question-default-settings:
+
+1. Default Settings
+^^^^^^^^^^^^^^^^^^^
+
+The standard form contains the settings needed for a question without opening
+**Show advanced settings**. Enter the participant-facing **Title**, use
+**Description** for an explanation or translation, and enable **Mandatory**
+when an answer is required.
+
+Choose the response **Type (1)** and assign a **Category** in the default
+settings area **(2)**. The remaining fields in area (2) control when the
+question is available:
+
+.. list-table:: Default scheduling and stopping rules
+    :header-rows: 1
+    :widths: 32 68
+
+    * - Setting
+      - What to configure
+    * - Repetition interval (days)
+      - ``0`` means anytime, ``1`` every day, and ``n`` every n days.
+    * - Day to first ask
+      - First study day on which to ask the question; ``0`` is enrollment day.
+    * - Deactivate on answer
+      - An answer value that stops this question from being asked again.
+        This affects the current question, not another question.
+    * - Deactivate after X days
+      - The question's expiry day in the study; ``0`` means no expiry by day.
+    * - Activation time(s) / Deactivation time(s)
+      - Matching start and end times for the response windows, in minutes
+        after midnight.
+
+For example, ``480`` is 08:00 and ``1430`` is 23:50. For two windows, enter
+matching lists such as ``[480, 900]`` and ``[600, 1000]`` for 08:00–10:00 and
+15:00–16:40. Keep the number of start and end times equal, with each end after
+its corresponding start. These windows also inform the reminder schedule;
+see :ref:`EMA calendar reminders <ema-calendar-reminders>` for the participant
+reminder workflow.
+
+Use **Use setting from previous question** when the preceding question is a
+suitable starting point, then review the resulting values. Reusing settings
+does not replace checking them against the protocol. Click **Add Question**
+to save a new question, or save the edited question with the editor's action.
+
+.. _question-types:
+
+2. Question Types
+^^^^^^^^^^^^^^^^^
+
+Select **Type (1)** in the default form before configuring the response.
+Choose the type that matches the information you need, rather than asking
+participants to encode it in free text.
+
+.. image:: image/JDash/JDashSurveyQuestionTypes.png
+    :width: 60%
+    :align: center
+    :alt: Question type menu with instruction, choice, sliding, text, number, time, date, duration, location, and consent options
+
+.. list-table:: Choosing a response format
+    :header-rows: 1
+    :widths: 35 65
+
+    * - Type
+      - Use for
+    * - Instruction for questions
+      - Participant instructions or explanatory content.
+    * - Single Choice / Multiple Choice
+      - One answer or several answers from a defined list.
+    * - Sliding
+      - A rating on a configured numeric scale.
+    * - Free Text / Free Number
+      - A written response or a numeric value.
+    * - Time / Date / Time and Date / Duration
+      - Structured temporal responses.
+    * - Location
+      - A location response.
+    * - Consent
+      - A participant consent response.
+
+For choice and sliding questions, also configure the
+:ref:`answer settings <answer-form>` before saving.
+
+.. _question-category:
+
+3. Category Assignment
+^^^^^^^^^^^^^^^^^^^^^^
+
+Choose the question's **Category** in the default settings area (2). Create
+or rename groups through :ref:`Categories <survey-categories>` in the survey
+toolbar first. Group related questions under a consistent category so the
+survey remains easy to navigate and filter. After importing or duplicating
+questions, review their inherited category assignments.
+
+.. _question-advanced-settings:
+
+4. Advanced Settings
+^^^^^^^^^^^^^^^^^^^^
+
+Click **Show advanced settings (3)** to reveal additional controls:
+
+- **Activate question** and **Deactivate question** target other questions
+  by their sequence IDs. Enter a list such as ``[13]`` or ``[13, 14]``.
+  The associated condition fields appear when targets are entered; see
+  :ref:`Conditional Logic <survey-conditional-logic>`.
+- **Image URL** references an image used by the question. For study image
+  uploads, match the filename to the archive provided under
+  :ref:`EMA configuration <ema-conf>`.
+- **Link URL** provides a supporting external resource, such as instructions
+  or information for participants.
+
+.. image:: image/JDash/JDashSurveyQuestionAdvanced.png
+    :width: 100%
+    :align: center
+    :alt: Expanded advanced settings with activation and deactivation targets, Image URL, and Link URL
+
+Use **Hide advanced settings** to return to the compact form.
 
 .. _survey-conditional-logic:
 
-Conditional Logic
-^^^^^^^^^^^^^^^^^
+5. Conditional Logic
+^^^^^^^^^^^^^^^^^^^^
 
-You can define **conditional logic** for a question to dynamically activate or
-deactivate other questions based on a participant's response.
+Conditional behavior can use both parts of the question editor:
 
+- In **default settings**, **Deactivate on answer** stops the current
+  question after a specified response. First-day, repetition, expiry, and
+  response-window settings also determine whether that question is available.
+- In **advanced settings**, **Activate question** and **Deactivate question**
+  change other questions when the current answer meets the corresponding
+  **Activation condition** or **Deactivation condition**.
 
-
-.. image:: image/JDash/jdash_activate_question1.png
-   :width: 90%
-   :align: center
-
-**Overview**
-
-Each question provides the following fields:
-
-- **Activate Question** – Sequence IDs of questions to activate.
-- **Deactivate Question** – Sequence IDs of questions to deactivate.
-- **Activation Condition** – Displayed when **Activate Question** is configured.
-- **Deactivation Condition** – Displayed when **Deactivate Question** is configured.
-
-These fields allow you to control which questions appear next, enabling
-branching logic within a survey.
-
-.. note::
-   Please not the conditional logic follows the on paper survey model, so the question are always visible to user
-   and only if a condition met the questions will de activated. therefore, please don't use activation condition solely. 
+To configure a rule, identify the target questions in the survey table,
+enter their IDs in the appropriate advanced field, then set the answer
+condition. For **Single Choice** and **Multiple Choice**, select conditions
+from the configured answer options. For other types, enter the condition
+value manually in the form.
 
 .. image:: image/JDash/jdash_activate_question2.png
-   :width: 90%
-   :align: center
+    :width: 100%
+    :align: center
+    :alt: Advanced rule targeting question 13 with Ja selected as its activation condition
 
-A comma-separated list of question **Sequence IDs** that should be activated
-when the specified condition is met.
+For example, a question asking whether a participant drives can activate
+question ``13`` after **Ja** and deactivate question ``14`` after **Nein**.
+Both rules can be configured on the same source question:
 
-.. admonition:: Example
-
-   - ``1``
-   - ``2,3``
-
-This is typically used to display follow-up questions that are only relevant
-for certain answers.
-
-**Deactivate Question**
-
-A comma-separated list of question **Sequence IDs** that should be deactivated
-when the specified condition is met.
-
-This is useful for skipping irrelevant or mutually exclusive questions.
-
-**Conditions**
-
-The **Activation Condition** and **Deactivation Condition** fields determine
-when the corresponding branching rules are applied.
-
-- **Activation Condition** controls when questions listed in
-  **Activate Question** become visible.
-- **Deactivation Condition** controls when questions listed in
-  **Deactivate Question** are hidden or skipped.
-- These fields become available automatically after entering values in the
-  corresponding **Activate Question** or **Deactivate Question** fields.
-- Conditions must match one or more answer choices defined for the current
-  question.
-
-.. note::
-
-   Conditions are evaluated against the participant's response to the current
-   question. The selected condition value must correspond to one of the
-   configured answer options.
+.. image:: image/JDash/jdash_activate_question3.png
+    :width: 100%
+    :align: center
+    :alt: Combined rules activating question 13 on Ja and deactivating question 14 on Nein
 
 .. important::
 
-   For **Single Choice** and **Multiple Choice** questions, activation and
-   deactivation conditions can be selected directly from the available answer
-   choices.
+   Questions follow a paper-survey model: an activation rule alone does not
+   make a target question initially hidden. Plan the corresponding
+   deactivation behavior and test both matching and non-matching answers.
+   Also check the target's default schedule, since branching and timing must
+   work together.
 
-   For all other question types, condition values must be entered manually.
-   These values are compared against the participant's response to determine
-   whether the corresponding activation or deactivation rule is applied.
-
-**Combined Logic**
-
-.. image:: image/JDash/jdash_activate_question3.png
-   :width: 90%
-   :align: center
-
-Both activation and deactivation rules can be configured for the same question.
-
-In the example above:
-
-- Question ``13`` is activated when the participant selects ``Ja``.
-- Question ``14`` is deactivated when the participant selects ``Nein``.
-
-This allows complex survey flows to be created without requiring separate
-question groups.
-
-.. admonition:: Example scenario
-
-   Consider the question:
-
-   *"Do you currently drive to work?"*
-
-   Available answers:
-
-   - ``Ja``
-   - ``Nein``
-
-   Configuration:
-
-   - **Activate Question:** ``13``
-   - **Activation Condition:** ``Ja``
-
-   - **Deactivate Question:** ``14``
-   - **Deactivation Condition:** ``Nein``
-
-   Result:
-
-   - Selecting ``Ja`` activates question ``13``.
-   - Selecting ``Nein`` deactivates question ``14``.
-
-.. tip::
-
-   Use activation and deactivation logic to build conditional survey paths,
-   reduce unnecessary questions, and improve the participant experience.
-
-
-**Image URL**
-
-
-An optional image filename associated with the question (e.g., ``image1.png``).
-This image must exist in the app’s configured image directory.
-
-
-**URL**
-
-
-An optional external link related to the question (e.g., informational page,
-instructions, consent wording).  
-The link appears below the question text in the app.
+Review target IDs after reordering or duplicating questions. Test the complete
+participant flow in :doc:`JTrack EMA+ <EMA>` before committing the survey
+changes to a study.
 
 .. _answer-form:
 
 Create / Edit Answer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
-For question types that require predefined answer options (such as
-**Single Choice**, **Multiple Choice**), the Question
-Editor displays an **Answer Form** section. This section allows the
-investigators to define the selectable choices shown to participants.
+For **Single Choice** and **Multiple Choice**, click **Add Choice** to create
+response options. Enter clear labels, use the drag handles to arrange the
+options, and use the trash icon to remove an option.
 
 .. image:: image/JDash/survey_edit_answer.png
-    :width: 600px
+    :width: 90%
     :align: center
+    :alt: Answer choices Ja and Nein with Add Choice, drag handles, and delete controls
 
-**Slider Settings**  
+For **Sliding**, configure minimum and maximum values, the step size, endpoint
+labels, and the default value.
 
-For slider-type questions, the answer form allows you to define the minimum and maximum values, step size, and optional labels for the slider endpoints.
-and default value, show the slider value in the app, the slider will be pre-filled with that value when the question is displayed and if user does not change it, 
-it will considered as not answered and the default value will be ignored. so please set the default value to a value that is **not in the range** of the slider, for example, if the slider range is 0-10, set the default value to -1 or 11.
+.. important::
 
+   **Use a default value outside the slider's valid range**, for example
+   ``-1`` for a scale from ``0`` to ``10``. An unchanged default is treated
+   as unanswered, so leaving the slider untouched does not count as a response.
+   This helps distinguish an intentional answer from a question the participant
+   leaves unanswered or explicitly skips. See the
+   :doc:`JTrack EMA+ guide <EMA>` for the unanswered-question workflow.
 
-Click **Add Choice** to insert a new answer option row.  
-Each row contains two fields:
-
-**Sequence Id**  
-   The display order of the option. Choices appear in ascending order based on
-   this value.
-
-**Choice**  
-   The text label shown to the participant (e.g., *Yes*, *No*, *Often*, *Rarely*, etc.).
-
-.. admonition:: Example:
- 
-   - ``1 → Less than 10 minutes``  
-   - ``2 → 10–30 minutes``  
-   - ``3 → More than 30 minutes``  
-
-
-
-**Deleting a choice**
-
-To remove an answer option, click the **trash icon** (🗑️) on the right side of
-the row.  
-The option is removed immediately from the form.
+After changing response options, review any
+:ref:`conditional rules <survey-conditional-logic>` that depend on them.
 
 .. _jdash-compliance-monitoring:
 
 Compliance Monitoring
-------------------------------
+---------------------
 
-The **Compliance Monitoring** tab provides interactive visualizations for
-monitoring sensor data collection throughout a study. It helps researchers
-identify missing recordings, inactive participants, irregular sensor activity,
-and overall data completeness.
+Use **Compliance Monitoring** to check whether study data is arriving and
+identify participants who may need follow-up. Start with total compliance
+across the study, then inspect an individual sensor or the EMA questionnaire
+to understand a gap in more detail.
 
-The dashboard focuses on subject-level monitoring and allows users to explore
-recording patterns across study days using an interactive heatmap.
+Choose the study under **Choose Study**. To investigate one participant, use
+**Choose subject for single-subject view**. **Filter Subjects** limits the
+cohort using **Include** or **Exclude**. Switch between **overview** and the
+available sensor tabs, such as **ema** in this example.
 
-The dashboard shows whether data arrived; participant-facing settings that help prevent gaps are described in :doc:`Compliance Optimization <Compliance_Optimization>`.
+.. image:: image/JDash/JDashComplianceList.png
+    :width: 100%
+    :align: center
+    :alt: Compliance study and subject selectors, all-stream and EMA recency cards, subject filters, and follow-up table
 
-Selection Panel
-~~~~~~~~~~~~~~~~~~~
+Total Compliance
+~~~~~~~~~~~~~~~~
 
-The left-side control panel allows users to configure the displayed
-visualization.
+The **Subjects current across all streams** card summarizes how many
+participants are up to date across the study's data streams. Individual
+stream cards, such as **EMA current**, help narrow down which data is missing.
+In the example, **current** means data received within the last two days.
+This is a recency check, rather than a percentage of all expected recordings
+or questionnaire answers completed.
 
-**Choose Study**
+Use **View affected subjects** to investigate participants who need attention.
+The **Subject Follow-up Table** lists participants alongside their latest
+stream dates and **Days Since Latest Data**, helping you prioritize follow-up.
 
-Select the study for which compliance information should be displayed.
+**Activity over the study period**
 
-**Select Sensor**
+The **Subject Activity by Study Day** heatmap shows the recording pattern for
+the selected cohort:
 
-Choose the sensor type to visualize (e.g., activity, location,
-accelerometer, application usage).
+- Each row represents a participant.
+- The horizontal axis shows study days in this example. Use **X axis** to
+  change the available time-axis view.
+- The **Data received** color scale shows the amount of received data per
+  cell. Darker cells indicate more data; use the legend to read the values.
+- Hover over a participant's status marker to inspect the current study day,
+  status, days since last data, and last data day and date.
 
-**Choose X-axis**
+.. image:: image/JDash/JDashComplianceOverview.png
+    :width: 100%
+    :align: center
+    :alt: Subject Activity by Study Day heatmap with received-data scale and a status tooltip showing current and last data days
 
-Select how data should be displayed along the horizontal axis.
-Available options may include:
+Read the timeline together with the recency cards: a participant may have
+recordings earlier in the study but no recent uploads. Gaps identify periods
+to investigate; they do not by themselves establish why data is absent.
 
-- Study day
-- Calendar date
+Compliance by Sensor: EMA Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Filter Subjects**
+Select a sensor tab to inspect that stream separately. For **ema**, the
+**EMA Completion Matrix** shows the percentage of expected questions answered
+for each participant and scheduled EMA frequency window.
 
-Optionally restrict the visualization to specific participants instead of
-displaying the entire study cohort.
+.. image:: image/JDash/JDashComplianceEMA.png
+    :width: 100%
+    :align: center
+    :alt: EMA Completion Matrix with participant rows, frequency windows, completion percentages, and a Not expected tooltip; the example's last-day update is visible around day 14
 
-Visualization Panel
-~~~~~~~~~~~~~~~~~~~
+Read this matrix differently from the total-activity heatmap:
 
-The main panel displays a heatmap representing sensor activity across
-participants and study days.
+- **Orange** indicates full completion; **red** indicates zero completion
+  where responses were expected. Read intermediate values against the
+  **Completion %** legend.
+- **Grey** can mean **Not expected**, as shown in the tooltip. It should not
+  automatically be counted as a missed questionnaire.
+- Window labels include the repetition frequency, such as
+  ``freq_1_window_14``. Windows are grouped by frequency, so adjacent columns
+  from different frequency groups are not necessarily consecutive study days.
+  Hover over a cell to inspect its window and completion status.
 
-.. image:: image/JDash/jdash_compliance_monitoring.png
-   :width: 100%
-   :align: center
+**Questionnaire update at day 14**
 
-Subject QC Timeline
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this example, the questionnaire's last-day setting was updated. The change
+is visible around **study day 14**, where many daily-question rows transition
+from completed windows to windows with no expected responses. Interpret that
+boundary in the context of the questionnaire update rather than treating it
+as a simultaneous loss of compliance across participants.
 
-The **Subject QC Timeline** heatmap provides an overview of sensor recordings
-for each participant throughout the study.
-
-- **Y-axis** — Subject IDs
-- **X-axis** — Study day or selected time axis
-- **Color intensity** — amount of recorded sensor data for the selected sensor
-
-Higher color intensity indicates greater recording activity, while lighter
-regions may indicate reduced or missing data.
-
-The visualization can help identify:
-
-- Missing recordings
-- Participants with limited sensor activity
-- Periods of device inactivity
-- Sensor interruptions
-- Longitudinal recording patterns
-
-
-
+When investigating such a pattern, compare the matrix with the question's
+:ref:`default scheduling settings <question-default-settings>` and the
+:ref:`Survey Editor <survey-edit-view>`. Check repetition intervals, expiry
+days, and which questions were expected during each window. Different sensor
+tabs may use different measurements; use the displayed legend and tooltips
+rather than applying EMA completion percentages to every stream.
 
 .. note::
 
-   Depending on synchronization schedules and backend processing, uploaded
-   data may appear in the dashboard with a delay after the participant syncs
-   the device.
-
+   Uploaded data can appear with a delay after synchronization and processing.
+   Before contacting a participant about a gap, check the expected schedule
+   and latest received-data details in the
+   :ref:`subject table <subject-table>`. Participant settings that help prevent
+   gaps are described in :doc:`Compliance Optimization <Compliance_Optimization>`.
 
 Notification Scheduler
 ++++++++++++++++++++++++
