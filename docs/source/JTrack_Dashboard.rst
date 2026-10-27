@@ -1,595 +1,640 @@
-=========================================================================================================
 JDash – JTrack Dashboard
-=========================================================================================================
+========================
 
-JDash is a Django-based web platform for managing digital health studies conducted through JTrack mobile applications. This provides a unified interface to design, monitor, and manage behavioral and sensor-based research studies initiated by 
-clinical institutions and the `Biomarker Development Group <https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672>`_.
-The system connects mobile app data with researcher-controlled dashboards. The main goal is to simplify the lifecycle of digital studies — from study setup and survey design to subject enrollment, progress monitoring, and data quality.
+JDash helps researchers configure digital health studies, enroll participants,
+collect sensor data and EMA responses through :doc:`JTrack Social <Social>`
+and :doc:`JTrack EMA+ <EMA>`, and monitor data
+quality. It supports studies conducted by clinical institutions and the
+`Biomarker Development Group <https://www.fz-juelich.de/inm/inm-7/DE/Forschung/Biomarkerentwicklung/artikel.html?nn=653672>`_.
 
-System Architecture
-+++++++++++++++++++++++++++++
+Login
++++++
 
-JDash follows a modular Django-based architecture with a Bootstrap-powered
-frontend and embedded Plotly-Dash dashboards for visualizing participant
-compliance, sensor activity, and study progress.
+Use your registered researcher account to access your studies.
 
-Core Components
----------------------------
-* Backend: Django-based application handling authentication, routing,
-  form processing, database operations, and server-side rendering.
+.. image:: image/JDash/JDashLogin.png
+    :width: 80%
+    :align: center
+    :alt: Login page with numbered login, contact, deletion, and language controls
 
-* Frontend: HTML templates styled with Bootstrap, using BootstrapTables
-  and AJAX for interactive tables, filtering, file uploads, and dynamic UI
-  updates.
+.. container:: quick-box plain
 
-* Database: MariaDB stores studies, subjects, sensor settings, EMA surveys,
-  tasks, audit checks, notifications, and user-related configuration.
+    **Quick access:**
 
-* Visualization Components: Interactive compliance visualizations are implemented 
-  using Dash and Plotly components integrated within Django views and templates.
-
-* Deployment: Supports local development with Django ``runserver`` and
-  production deployment using Apache with ``mod_wsgi``.
-
-
-Login 
-++++++++++++
-
-Provides authentication for registered users such as investigators and administrators. Users log in with a username and password. A default demo user (demouser) is available for testing.
-
-   * .. container:: quick-box plain
-
-          **Quick access:**
-
-
-          - :ref:`(1) – Login form <login>`
-          - :ref:`(2) – Mail us <directcontacts>`
-          - :ref:`(3) – Data Deletion form <delete>`
-          - :ref:`(4) – Language <language>`
-
-
-.. image:: image/JDash/dash_index.png
-  :width: 100%
-  :alt: JDash login
+    - :ref:`(1) – Login form <login>`
+    - :ref:`(2) – Delete Request <delete>`
+    - :ref:`(3) – Mail us <directcontacts>`
+    - :ref:`(4) – Language <language>`
 
 .. _login:
 
 Login Form
----------------------------
+----------
 
-* Visit `https://jdash.inm7.de <https://jdash.inm7.de/>`_
-* Enter your personal credentials into the login fields and press **"Login"**.
-* You can find your login credentials inside a PDF-file that was sent to you via email.
+1. Visit `JDash <https://jdash.inm7.de/>`_.
+2. Enter your username and password. If you do not have an account,
+   :ref:`register yourself <create-account>` first.
+3. Click **Login**.
 
 .. _delete:
 
 Data Deletion Form
----------------------------
+------------------
 
-The page allows participants to request permanent removal of their collected data from the JTrack system. 
+Participants can open **Delete Request** (3) to request removal of their
+collected data. Find your **Subject ID** in the JTrack app's menu or info (i)
+view, then enter it with your email address and reason and click **Submit**.
+Deletion starts when the request is received and may take 1–2 business days
+to complete; no manual approval is required.
 
-To submit a request, users must provide:
+.. _directcontacts:
 
-- **Subject ID** — the identifier shown in the JTrack app  
-- **Email** — for confirmation or follow-up  
-- **Reason** — an explanation for the deletion request  
+Mail Us
+-------
 
-After submitting the form, the request is forwarded to the study team for
-manual verification and processing. Data deletion begins once the request is
-reviewed and approved.
+For collaboration enquiries and scientific questions, contact Dr. Juergen
+Dukart or Dr. Mehran Turna. For technical questions, contact
+`Jona M. Fischer <mailto:j.fischer@fz-juelich.de>`_ or
+`Mamaka Narava <mailto:m.narava@fz-juelich.de>`_.
+
+.. image:: image/JDash/dash_data_deletion_form.png
+    :width: 80%
+    :align: center
+    :alt: Data deletion request form and information about processing and permanence
+
+.. important::
+
+   Check your **Subject ID** before submitting. Processed deletions cannot be
+   undone. As explained on the form, anonymized data already used in scientific
+   publications may no longer be withdrawable.
 
 .. _language:
 
 Language Switcher
----------------------------
+-----------------
 
-To change the language of the website please click on the respective flag.
-Currently only German and English are supported. 
+Select the English or German flag (4) to change the website language.
 
-.. image:: image/JDash/dash_data_deletion_form.png
-    :alt: Data Deletion form screenshot
-    :width: 100%
+Profiles & Roles
+++++++++++++++++
 
-.. important::
-   The data will be **permanently** removed and cannot be restored.
-   Please make sure to provide the correct **Subject ID**.
+.. _create-account:
 
-.. _directcontacts:
+Create an Account
+------------------
 
-Direct Contacts
----------------------------
+Open the registration form from the `JDash login page <https://jdash.inm7.de/>`_
+to create your own account.
 
-For collaboration enquiries and scientific questions you can contact Dr. Juergen Dukart or Dr. Mehran Turna.
-For technical questions please contact `Jona M. Fischer <mailto:j.fischer@fz-juelich.de>`_ or `Mamaka Narava <mailto:m.narava@fz-juelich.de>`_
+1. Enter your name and email address, then choose a username and password.
+   Follow the requirements shown beneath the fields and enter the same
+   password in **Password confirmation**.
+2. Click **Send verification code** and check your email for the code.
+3. Follow the verification instructions to complete registration, then return
+   to the :ref:`Login form <login>` and sign in with your new credentials.
 
+Creating an account does not automatically give you access to studies or
+permission to create them. Ask the study's Principal Investigator to add you
+to an existing study, or request Researcher access if you need to create
+studies and surveys. See :ref:`Roles & Permissions <jdash-permissions>` for
+account types and study roles.
+
+.. image:: image/JDash/JDashRegister.png
+    :width: 80%
+    :align: center
+    :alt: Registration form for a JDash account
+
+Profile
+-------
+
+Once logged in click **Profile** in the sidebar to review your account information or to update your password via
+**Change password**.
+
+.. image:: image/JDash/JDashProfileInfo.png
+    :width: 80%
+    :align: center
+    :alt: Account profile with a Change password button
+
+.. _jdash-permissions:
+
+Roles & Permissions
+-------------------
+
+Account type and study membership control two separate levels of access.
+**✓** means permitted; **✗** means not permitted.
+
+**Account-level access**
+
+Account type determines who can create studies and surveys and who can
+administer the platform. It does not automatically grant access to existing
+studies, except for Administrators.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 40 20 20 20
+    :class: permission-matrix
+
+    * - Permission
+      - Registered User
+      - Researcher
+      - Administrator
+    * - Create studies and surveys
+      - ✗
+      - ✓
+      - ✓
+    * - Access studies with assigned membership
+      - ✓
+      - ✓
+      - ✓
+    * - Access all studies without membership
+      - ✗
+      - ✗
+      - ✓
+    * - Manage platform users
+      - ✗
+      - ✗
+      - ✓
+
+A Registered User without study membership can access their profile and request
+Researcher access by contacting `Jona M. Fischer <mailto:j.fischer@fz-juelich.de>`_ or
+`Mamaka Narava <mailto:m.narava@fz-juelich.de>`_. Administrators have platform-wide access and do not need
+individual study memberships.
+
+**Study membership access**
+
+For users with study membership, the assigned role determines what they can
+do within that study.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 40 20 20 20
+    :class: permission-matrix
+
+    * - Permission
+      - Principal Investigator
+      - Investigator
+      - Viewer
+    * - View study information, analytics, and audit history
+      - ✓
+      - ✓
+      - ✓
+    * - Download QR codes
+      - ✓
+      - ✓
+      - ✓
+    * - Download study data (sensor and EMA exports)
+      - ✓
+      - ✓
+      - ✗
+    * - Edit study configuration and surveys
+      - ✓
+      - ✓
+      - ✗
+    * - Update subject status
+      - ✓
+      - ✓
+      - ✗
+    * - Send notifications
+      - ✓
+      - ✓
+      - ✗
+    * - Remove subjects
+      - ✓
+      - ✗
+      - ✗
+    * - Delete subject data
+      - ✓
+      - ✗
+      - ✗
+    * - Manage study access
+      - ✓
+      - ✗
+      - ✗
+
+For example, a Researcher assigned as a Viewer can create their own studies
+but can only view the study where they hold Viewer membership. An Investigator
+can edit an assigned study and update subject status, but cannot remove
+subjects or delete their data.
+
+To grant access as a Principal Investigator, select the study (1), search for
+an existing username under **Registered user**, choose a **Role**, and click
+**Add user** (2). Review the membership table to check the assigned role.
+
+.. image:: image/JDash/JDashProfileAccess.png
+    :width: 80%
+    :align: center
+    :alt: Study access page with study selection, user and role controls, and memberships
 
 Dashboard Tabs
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++
 
-Studies 
----------------------------
-Central hub for study management, showing all studies the user can access or create. Grid/List Toggle: Allows switching between study card and list layouts.
-Search Bar: Filters displayed studies.
+Studies
+-------
 
-   * .. container:: quick-box plain
+The **Studies** tab shows the studies you can access. Use search, the sensor
+filter, and sorting to find a study, or switch between **Grid** and **List**
+views. Available actions depend on your study role.
 
-            **Interface Overview:**
-            
-            - :ref:`(1) – Create new study <create-study>`
-            - :ref:`(2) – View study details <study-details-subjects-view>`
-            - :ref:`(3) – Edit study <edit-study>`
-            - :ref:`(4) – Test and audit logs <audit-study>`
+.. image:: image/JDash/JDashStudyGrid.png
+    :width: 80%
+    :align: center
+    :alt: Studies grid with filters and numbered study actions
 
-.. image:: image/JDash/dash_logged_in.png
-    :width: 100%
-    :alt: JDash login
+.. container:: quick-box plain
 
+    **Study actions:**
+
+    - :ref:`(1) – Add Study <create-study>`
+    - :ref:`(2) – View <study-details-subjects-view>`
+    - :ref:`(3) – Edit <edit-study>`
+    - :ref:`(4) – QC <audit-study>`
+    - :ref:`(5) – History <history-study>`
 
 .. _create-study:
 
 Create New Study
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The **New Study** form is used to configure and start a new data collection
-project in JDash. Here you define basic metadata, sensor configuration,
-optional EMA surveys, and experimental tasks.
+~~~~~~~~~~~~~~~~
 
-.. image:: image/JDash/dash_create_empty.png
-    :width: 600px
+Click **Add Study** to define the study settings and the data participants
+will provide. Configure the components required by your protocol.
+
+.. image:: image/JDash/JDashStudyCreate.png
+    :width: 80%
     :align: center
+    :alt: Study creation form with general settings and optional tracking and EMA sections
 
-Form Fields
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. container:: quick-box plain
 
-**Study name**
+    **Study components:**
 
-Unique identifier for the study.  
-Do **not** use spaces or special characters (prefer ``MyStudy_01`` instead of
-``My Study 01``).
+    - :ref:`General <general>` (the **Test study** toggle is marked 1)
+    - :ref:`Passive Tracking (2) <passive-tracking>`
+    - :ref:`Active Tracking (3) <active-tracking>`
+    - :ref:`Ecological Momentary Assessment (EMA) (4) <ema-conf>`
+    - :ref:`Wearable Devices <wearables>`
 
-**Test study**
+.. _general:
 
-Checkbox indicating whether this is a **test/pilot** study.
+General
+^^^^^^^
 
-- Enabled: data are clearly marked as test data and can be discarded later.
-- Disabled: study is treated as a regular production study.
+Choose a **Study name** without spaces or special characters, such as
+``MyStudy_01`` instead of ``My Study 01``. The name identifies the study and
+cannot be changed after creation.
 
-**Study description**
+Set **Study duration** to the expected number of recording days for each
+participant. **Number of subjects** is the recruitment target; to create
+additional participant IDs later, use :ref:`participant management <subject-management>`.
 
+Enable **Test study** (1) for a pilot or test study. Use **Study description**
+to summarize the research objective, participant group, and protocol for the
+study team.
 
-Free-text description of the study purpose, protocol, cohort, or any notes for
-administrators. This is not shown to participants.
+.. _passive-tracking:
 
-**Duration**
+Passive Tracking
+^^^^^^^^^^^^^^^^
 
+Passive tracking collects data in the background through :doc:`JTrack Social <Social>`.
+See :ref:`Permissions by Sensor <social-permissions>` for participant setup
+and the :ref:`platform comparison <sensor-comparison>` for sensor availability.
 
-Length of the study in **days**.  
-Defines the time window during which study is active for each participant.
+1. Enable **Show passive sensors**.
+2. Select the measurements required by your protocol and click **Add**.
+3. Review the selected sensors in the table; use × to remove a selection.
 
-**Number of subjects**
+.. image:: image/JDash/JDashPassiveSensors.png
+    :width: 80%
+    :align: center
+    :alt: Passive sensor selection and table of sensors added to the study
 
+.. _active-tracking:
 
-Planned number of participants for this study.  
-Used for planning and monitoring recruitment progress.
+Active Tracking
+^^^^^^^^^^^^^^^
 
-**Recording frequency**
+Active Tracking associates sensor recordings with tasks performed by
+participants. In JTrack Social, participants access this feature as
+**Active Labeling**.
 
+1. Enable **Show active labels**.
+2. Set the **Default Recording Frequency** for continuously recorded sensors.
+   Hertz (Hz) means measurements per second: 100 Hz records 100 measurements
+   per second.
+3. Select the required active sensors and click **Add**. Use × to remove a
+   selection from the table.
+4. Configure tasks and participant instructions as described below.
 
-Sampling rate for sensor data collection, expressed in **Hertz (Hz)**.  
-This defines how many measurements are recorded per second.
+.. image:: image/JDash/JDashActiveTracking.png
+    :width: 80%
+    :align: center
+    :alt: Active tracking configuration with default recording frequency and selected sensors
 
 .. note::
 
-   Higher frequencies provide more detailed sensor data but may increase
-   battery consumption and storage requirements. Choose a value appropriate
-   for your study's goals and device performance limits.
+   At least one active sensor must be selected to enable Active Labeling.
+   Higher recording frequencies increase battery use and storage requirements;
+   choose a rate appropriate for your protocol and devices.
 
-**EMA (Ecological Momentary Assessment)**
+**Configure tasks**
 
-Checkbox to enable or disable EMA for this study.
+Click **Add task** for each activity participants should perform. Use a short,
+recognizable name and distinguish instructions for preparing from instructions
+for performing the task.
 
-- Enabled: the study is linked to EMA survey.
-- Disabled: no EMA questionnaires are used; only sensor data and tasks apply.
-   - **Survey title**
-      Dropdown to select an existing EMA survey that has been defined in the
-      :ref:`create-survey` section.  
-      This determines which questionnaire is delivered to participants.
-   - **OR UPLOAD EMA JSON FILE**
-      Drag-and-drop area or file picker to upload a **survey JSON** directly for
-      this study.
-      - Can be used instead of selecting an existing survey.
-      - The JSON structure must follow the JDash/JTrack EMA+ schema.
-   - **UPLOAD EMA IMAGES ZIP FILE**
-      Drag-and-drop area or file picker to upload a **ZIP archive** containing
-      image assets used in EMA questions (e.g., visual prompts).
-      - Filenames in the ZIP must match the ``Image Url`` fields used in survey
-      questions.
+For example, a task named **Sudoku** can give participants **5 seconds** of
+preparation time with the instruction “Switch to the Sudoku app,” followed by
+**300 seconds** of recording with the task instruction “Play Sudoku for five
+minutes.” Preparation and task durations are entered in seconds; preparation
+instructions are optional.
+
+.. image:: image/JDash/JDashActiveTasks.png
+    :width: 80%
+    :align: center
+    :alt: Two task forms showing separate preparation times, recording durations, and instructions
+
+Participants access Active Labeling from the main view of JTrack Social on
+:ref:`Active Labeling guide <active-labeling-ios>`, which also explains task
+instructions and the participant workflow.
+
+.. _ema-conf:
+
+EMA (Ecological Momentary Assessment)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable **EMA** to assign a questionnaire to the study, then choose one of two
+ways to provide it:
+
+- Select an existing questionnaire under **Survey title**. See
+  :ref:`Create Survey <create-survey>` to prepare one first.
+- Upload a survey JSON file instead. The file must follow the JDash/JTrack
+  EMA+ survey schema.
+
+If questions use images, also upload a ZIP archive containing the image files.
+Filenames must match the ``Image Url`` values in the survey questions.
+Leave EMA disabled if the study does not collect questionnaire responses.
+For the participant workflow, see :doc:`JTrack EMA+ <EMA>`; for reminder
+settings, see :ref:`EMA calendar reminders <ema-calendar-reminders>`.
 
 .. image:: image/JDash/dash_create_ema.png
-    :width: 600px
+    :width: 80%
     :align: center
+    :alt: EMA configuration with an existing-survey selector, JSON upload, and image ZIP upload
 
-.. _conf-active-labeling:
+.. _wearables:
 
-**Sensor configuration**
+Wearable Devices
+^^^^^^^^^^^^^^^^
 
-**How to configure Active Labeling**
+Configure wearable measurements alongside mobile sensor data and EMA responses:
 
-In **JDash**, study administrators can configure **Active Labeling** to collect sensor data for specific tasks or activities. This is useful when sensor signals need a precise participant-provided task label.
+1. Enable **Show wearables** and click **Add wearable device**.
+2. Select the **Device name** for the model participants will use.
+3. Select measurements under **Sensors for this device** and click **Add**.
+4. Set the sampling interval for each selected sensor. Use × to remove a sensor.
 
-.. image:: image/JDash/ActiveLabeling.png
-    :width: 600px
+The wearable **Sampling rate** values shown here are time intervals: ``1 min``
+means one minute between recordings. Active sensor frequencies in Hz instead
+specify measurements per second. The **Unit** column identifies what each
+sensor measures.
+
+.. image:: image/JDash/JDashWearables.png
+    :width: 80%
     :align: center
-
-Within the study settings on **JDash**, you can:
-
-- **Enable Active Labeling** for your study.
-- **Select the sensors** that should be recorded during Active Labeling sessions, such as accelerometer, gyroscope, or microphone.
-- **Define multiple labeling tasks:**
-
-  - Each task has a **name**, such as ``Walking`` or ``Brushing Teeth``.
-  - A task can define **preparation time**, **duration**, and optional participant **instructions**.
-  - These tasks appear in the participant's app as selectable activities during Active Labeling.
+    :alt: Wearable device configuration with selected sensors, sampling intervals, and units
 
 .. note::
 
-   Active Labeling is enabled only when at least one active sensor is selected in the study configuration.
+   Sensor availability depends on the device and integration. Raw PPG and
+   other high-frequency signals may require a compatible Garmin model and
+   SDK license. Selecting a signal in JDash does not guarantee that every
+   watch can provide it. Higher-frequency data also increases storage and
+   processing requirements.
 
-Example task list JSON:
-
-.. code-block:: json
-
-    [
-      {
-        "task_name": "Brushing Teeth",
-        "task_duration": 30,
-        "task_description": "Please simulate brushing your teeth for 30 seconds."
-      },
-      {
-        "task_name": "Walking",
-        "task_duration": 60,
-        "task_description": "Walk normally in a straight line for one minute."
-      }
-    ]
-
-This list is presented to participants inside the JTrack Social app with autocomplete, so tasks are standardized and consistent.
-
-.. tip::
-
-   Use descriptive task names and clear instructions to help participants understand what to do during each session.
-
-Inside of JTrack Social, Active Labeling is then accessible from the Main view (both in :ref:`iOS <active-labeling-ios>` and Android).
-
-
-**Wearable Devices**
-
-This section allows administrators to configure external
-devices (e.g., smartwatches) and define which sensors should be collected as
-part of the study.
-
-This feature enables integration of wearable sensor data alongside mobile and
-EMA data.
-
-For compatible workflows, processing details, and device-dependent limitations, see :doc:`Garmin Integration <Garmin_Integration>`.
-
-
-**Enable Wearables**
-
-- **Show wearables** toggle  
-  Enables or disables wearable device configuration for the study.
-
-- **Add wearable device**  
-  Button to add a new wearable device configuration.
-
-
-**Device Configuration**
-
-Each wearable device includes the following:
-
-**Device name**  
-   Name of the wearable device (e.g., ``garmin (vivoactive 6)``).
-
-**Sensors for this device**  
-   List of available sensors supported by the device, such as:
-
-   - steps  
-   - spo2  
-   - skin_temperature  
-   - bbi / enhanced_bbi  
-   - ppg  
-   - accelerometer  
-
-   Select one or more sensors and click **Add** to include them in the study.
-
-
-**Selected Sensors Table**
-
-After adding sensors, they appear in the configuration table with the following
-fields:
-
-- **Sensor**  
-  Name of the selected sensor (e.g., ``heart_rate``, ``respiration``).
-
-- **Sampling rate**  
-  Frequency at which data is recorded (e.g., ``1 min``, ``15 min``).
-
-- **Unit**  
-  Measurement unit for the sensor data (e.g., ``bpm``, ``breaths/min``,
-  ``boolean``, ``count``).
-
-- **Remove (×)**  
-  Deletes the sensor from the configuration.
-
-
-.. image:: image/JDash/dash_wearable_sensors.png
-    :width: 600px
-    :align: center
-
-.. note::
-
-   Adding high-frequency wearable sensors may increase data volume and impact
-   storage and processing performance. Choose sensors and sampling rates based
-   on the study objectives.
-
-   Raw PPG and other high-frequency signals may require a compatible Garmin model and the corresponding SDK license. Configuring a signal in JDash does not guarantee that every watch can provide it.
+See :doc:`Garmin Integration <Garmin_Integration>` for compatible workflows,
+processing details, and device limitations.
 
 .. _study-details-subjects-view:
 
-Study Details 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Study Details
+~~~~~~~~~~~~~
 
-**Overview panel**
+Click **View** on a study to review its configuration and manage participants.
+Check the recording duration, recruitment target, and selected sensors before
+preparing participant enrollment.
 
-The panel (1) provides a quick snapshot of the study configuration.
-It summarizes the most relevant study parameters so administrators can review
-key settings at a glance.
-
-.. image:: image/JDash/dash_features.png
-    :width: 600px
+.. image:: image/JDash/JDashStudyView.png
+    :width: 80%
     :align: center
+    :alt: Study details with numbered download, QC, EMA, participant actions, and subject table
 
-The panel displays:
+.. container:: quick-box plain
 
-- **Duration** — total length of the study in days  
-- **Sensors** — list of passive and active sensors enabled for the study  
-- **EMA** — indicator showing whether an EMA survey is assigned  
-  (with a *Survey details* button to view the full questionnaire)
+    **Study details actions:**
 
-This section helps users verify that the study has been configured correctly
-before adding participants or exporting data.
+    - **Download data (1):** request an export of collected sensor or EMA data;
+      download instructions are sent by email. See :ref:`Data Export <data-export>`
+      for formats and :ref:`Roles & Permissions <jdash-permissions>` for access.
+    - :ref:`QC (2) <audit-study>`: open the study's quality-control checklist.
+    - **EMA (3):** inspect the questionnaire assigned to the study.
+    - :ref:`Participant actions (4) <subject-management>`: add participants,
+      prepare QR codes, send notifications, or change status.
+    - :ref:`Subject table (5) <subject-table>`: inspect participant records
+      and received data.
 
+.. _subject-management:
 
+**Participant management (4)**
 
-**Toolbar Panel**
+Use **Add subjects** to create additional participant IDs. This is separate
+from editing the planned **Number of subjects** in the study configuration.
+The generated IDs follow the study naming convention, for example
+``Demo_Study_00005``.
 
-The toolbar (2) contains shortcut actions for managing study-level
-operations. These icons are located in the top-right corner of the Study
-Details page.
+Use **Generate QR** for the ID range shown on the button, and the QR download
+control to obtain enrollment materials. Check the range before distributing
+the codes to participants. Enrollment instructions are available in the
+:doc:`JTrack Social <Social>` and :doc:`JTrack EMA+ <EMA>` guides.
 
-The available actions typically include:
+**Remove a subject**
 
-- **Refresh** — to update the data and view the current status of subjects/sensors
-- **Export PDF** — generates a PDFs of QR codes of participant sheets that have not been used
-- **Download Data** — triggers email to downlaod the collected sensor or EMA data  
-- **Database Actions** — to delete subject data from the study and server
-  (e.g., remove all data associated with the study)
+Subject removal and subject data deletion require a Principal Investigator
+or Administrator. Investigators can update subject status but cannot perform
+either removal operation.
 
-These tools provide quick access to the most common administrative actions,
-allowing study investigators to monitor progress, retrieve data, and perform
-maintenance efficiently.
+Click **Remove Subject** for the participant you want to remove, then choose
+how to handle their existing data:
 
+- **Remove and keep existing data:** stops new data from being added while
+  retaining existing data as read-only.
+- **Remove and delete subject data:** removes the participant's data and file
+  references from the active study dataset. Use this option when deletion
+  is requested.
 
-**Subject Table**
-
-The table (1) displays all subjects associated with the
-selected study. It provides an overview of each participant’s status, app
-type, sensor configuration, and study duration.
-
-.. image:: image/JDash/dash_create_remove_subjects.png
-    :width: 600px
+.. image:: image/JDash/JDashRemoveSubject.png
+    :width: 80%
     :align: center
+    :alt: Remove subject dialog offering removal with data retained or removal with data deletion
 
-The table includes the following columns:
+**Confirm data deletion**
 
-- **Subject ID** — the unique identifier assigned to each participant  
-- **App** — indicates whether the entry belongs to the *main* app or the *EMA* app  
-- **Duration** — number of days the participant has been in the study  
-- **Sensor Information** — list of sensors enabled for that subject  
-  (e.g., ``at`` = activity, ``au`` = application usage, ``lo`` = location)  
-- **Status** — participant’s current state (e.g., *In study*, *Left study*)
+If you choose **Remove and delete subject data**:
 
-Each subject may appear multiple times if both main and EMA configurations
-exist for the same participant ID.
+1. Review **Subject IDs to delete** and the associated **QR codes and status**.
+   Check that the selection contains only the intended participants.
+2. Select a **Removal reason**.
+3. Read the deletion warning and select the acknowledgement that the active
+   application data cannot be restored through JDash.
+4. Enter the confirmation text exactly as requested by the dialog.
+5. Click **Delete subject data and remove** to complete the operation, or
+   **Back** to return without confirming deletion.
 
-Filters above the table allow administrators to search by ID, filter by app
-type, or filter by sensor usage. This panel is useful for monitoring study
-progress, reviewing sensor connectivity, and identifying participants who have
-left the study.
-
-**Subject Management Panel**
-
-The panel (2) allows administrators to add or remove
-subjects from the study.
-
-**Subject Information** 
-   Displays high-level subject counts:
-
-   - **Total Number of Subjects** — planned target number  
-   - **Number of enrolled subjects** — participants currently created in the system  
-
-**Create Subject** 
-The section allows administrators to generate new subject IDs for the study.  
-To add subjects enter the number of new subjects you want to create in the field  **Number of Subjects** and click **Create**.
-
-.. note::
-
-   The system automatically generates new subject QR codes following the study’s naming convention 
-   (e.g., ``Demo_Study_00005``) which can downloaded from **Export PDF** toolbar panel.
-
-**Remove User** 
-
-This section allows administrators to remove a subject entry from the study.
-
-To remove a subject, select the subject from the list and confirm the removal.
+.. image:: image/JDash/JDashRemoveSubjectDeleteData.png
+    :width: 80%
+    :align: center
+    :alt: Subject data deletion form with selected IDs, removal reason, QR status, acknowledgement, and typed confirmation
 
 .. important::
 
-   Removing a subject deletes it from the active study dashboard but does **not**
-   remove historical data unless server-side deletion procedures are used.
+   This option permanently deletes the selected participants' active study
+   data from this study. After deletion, their QR codes can be reused for a
+   new enrollment. Choose the keep-data option if existing recordings must
+   remain available.
 
+.. _subject-table:
 
+**Subject table (5)**
+
+Use the filters beneath the column headings to find a participant or restrict
+the view by app, sensor information, or status. **App** distinguishes JTrack
+Social (``main``) from EMA (``ema``). A participant may have multiple entries,
+including records for different apps or repeated enrollments; inspect the
+individual entry before acting on it.
+
+Sensor badges use abbreviations such as ``at`` (activity), ``au`` (application
+usage), and ``lo`` (location). Expand a row with **+** to inspect registration
+and departure dates, received batch counts, and the last-received timestamp
+for each sensor. These details help identify which recordings have arrived
+and which may need follow-up.
+
+Use the refresh control to update the view or **Export table to CSV** to save
+the displayed table separately from the study data export.
 
 .. _notifications:
 
-**Notification**
+**Send notification**
 
-The notification panel allows administrators to send custom push
-notifications to selected study participants. This can be used for reminders,
-announcements, troubleshooting instructions, or follow-up messages.
+Use **Send notification** in the participant actions to send reminders,
+instructions, or follow-up messages through the participant app.
 
-.. image:: image/JDash/dash_send_notification.png
-    :width: 100%
-    :alt: jdash notifications
+1. Enter a **Title** and the message in **Description**.
+2. Under **Subjects**, type in **Filter subjects** to find and select recipients.
+   Entries include the subject ID and app suffix, such as ``:main`` or
+   ``:ema``; check both when choosing the intended app enrollment.
+3. Review the selected recipients and message before sending the notification.
 
-The panel contains the following fields:
+.. image:: image/JDash/JDashNotification.png
+    :width: 65%
+    :align: center
+    :alt: Send notification dialog with title, description, and a searchable subject selector showing app-specific recipients
 
-- **Message title**  
-  A short title or subject line that appears in the participant’s device
-  notification.
+.. note::
 
-- **Message text**  
-  The main body of the notification. This can include instructions,
-  reminders, or any relevant message content.
-
-- **Recipients list**  
-  This box displays the subject IDs that will receive the notification.
-  Administrators can manually enter IDs or automatically populate the list
-  using the buttons below.
-
-Two shortcut buttons are provided:
-
-- **All IDs** — fills the list with *all enrolled subjects* in the study  
-- **Missing IDs** — fills the list with subjects who have not yet submitted
-  recent data or have missing entries, depending on system configuration
-
-After preparing the message and selecting recipients, click **Send
-notification** to deliver the message to the participants’ devices.
-
-
-
-.. important::
-   Notifications are sent via the JTrack backend and delivered through the
-   device’s native notification system. Delivery times may vary depending on
-   network connectivity and device settings.
+   Delivery depends on the participant device's network connection and
+   notification settings, so a message may not arrive immediately.
 
 .. _study-closure:
 
-**Close study**
+**Conclude study**
 
-This section allows investigators to formally end a study. Once
-a study is closed, no new data will be accepted from enrolled participants.
+When data collection is complete, click **Conclude study** on the Study Details
+page. Review the confirmation dialog, then click **Confirm** to conclude the
+study or **Cancel** to leave it active.
 
-.. image:: image/JDash/dash_close_study.png
-    :width: 600px
+.. image:: image/JDash/JDashConcludeStudy.png
+    :width: 80%
     :align: center
+    :alt: Conclude study confirmation explaining study archiving and inactive subjects, with Cancel and Confirm buttons
 
-
-.. important::
-
-   Closing a study does **not** delete existing data. All sensor and EMA data
-   remain available in the server for export and analysis. However, once a
-   study is closed, it will no longer be visible in the dashboard, and no
-   further data collection will occur.
+Concluding a study archives its study folder and marks the study as concluded.
+Its participants are no longer active in that study. This action does not
+perform the subject data deletion described under
+:ref:`participant management <subject-management>`.
 
 .. _edit-study:
 
 Edit Study
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The **Edit Study** page allows investigators to modify an existing study’s
-configuration, update sensor settings, change the assigned EMA survey, or
-adjust task settings. This interface is identical to the *New Study* form,
-but the fields are pre-filled with the study’s current values.
+~~~~~~~~~~
 
-.. image:: image/JDash/dash_create_checked.png
-    :width: 600px
-    :align: center
+Click **Edit** on a study to open its existing configuration. The form uses
+the same settings described under :ref:`Create New Study <create-study>`.
+Review the relevant component and save your changes.
 
-The following elements can be updated directly:
-
-- **Number of subjects** To add more participants check **Create Subject** section
-- **Duration**
-- **Recording frequency**
-- **Study description**
-- **Passive sensors** and **active sensors** (multi-select lists)
-- **EMA settings** (change the survey from list of surveys created, images ZIP upload)
-- **Task list** (add, modify, or remove tasks)
-
-All changes are immediately applied once you save the study.
-
-
-
-.. note:: 
-      The study name is fixed once the study is created and **cannot be changed**.
-      It serves as the unique identifier for the study.
-
-.. _audit-study:
-
-Audit / Quality Control 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Test checklist provides a structured way for investigators and
-research teams to verify that a study is functioning as intended before and
-during deployment. Each row represents a predefined test case that can be
-checked directly within the dashboard.
-
-This tool helps ensure data integrity, validate sensor activity, and confirm
-that participant workflows behave correctly.
-
-.. image:: image/JDash/dash_test_audit.png
-    :width: 600px
-    :align: center
-
-The checklist displays the following information for each test case:
-
-- **Admin**  
-  Checkbox used by administrators to mark whether the test case is required
-  or has been reviewed at an admin level.
-
-- **Owner**  
-  Checkbox indicating responsibility or completion for the test case by the
-  assigned user or study owner.
-
-- **Description**  
-  A brief summary of what the test case is verifying (e.g., real-time
-  monitoring, data export, participant enrollment).
-
-- **Steps**  
-  A detailed sequence of actions required to perform the test.  
-  These may include navigation steps in JDash, using the JTrack app, scanning
-  QR codes, or validating exported results.
-
-- **Expected Outcome**  
-  Describes what should occur if the test is successful.  
-  This provides a reference for determining whether the system is behaving
-  correctly.
-
-- **Comments**  
-
-  Comments allows users to add notes for each test case. Comments
-  can be used to document observations, issues, or follow-up actions during the
-  test and audit process. When a comment is submitted:
-
-  - The comment is saved with the related test case.
-  - The username and timestamp are recorded.
-  - An email notification is sent to the administrator.
-
-  This allows the study team to track audit feedback directly from the dashboard
-  and ensures that important issues are communicated to the admin promptly.
+Changing **Number of subjects** updates the recruitment target. To create
+additional participant IDs, use :ref:`participant management <subject-management>`.
+Saving updates the dashboard configuration; check enrolled apps after they
+synchronize to confirm the intended settings are in use.
 
 .. note::
 
-   Test case results do not affect participant data collection. The checklist
-   is an internal quality-assurance tool used only for validation and study
-   monitoring purposes.
+   The study name is the fixed identifier and cannot be changed after creation.
+
+.. _audit-study:
+
+Audit / Quality Control
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Open **QC** to check study workflows before recruitment and during data
+collection. Use the checklist to record validation results and follow up on
+problems.
+
+1. Find a check using **Search** or the **Completion status** filter.
+2. Follow its **Steps** and compare the result with **Expected Outcome**.
+3. Record completion in the appropriate **Admin** or **Owner** column for
+   your role, then click **Update** to save the checklist changes.
+4. Use **Comments** to document observations, failures, or follow-up work.
+   Comments retain the username and timestamp.
+
+.. image:: image/JDash/JDashQC.png
+    :width: 80%
+    :align: center
+    :alt: Quality-control checklist with Update, search, completion filters, and comments
+
+.. note::
+
+   Checklist results do not change participant data collection. Allow for
+   synchronization and processing delays when checking received data; the
+   page notes that data becomes available one day after a participant syncs.
+
+.. _history-study:
+
+Study History
+~~~~~~~~~~~~~
+
+Open **History** on a study to inspect saved configurations or trace changes.
+
+**JSON versions**
+
+Use **Details** to inspect a saved study configuration or **Download** to save
+its JSON file. The **Current** badge identifies the current version. Earlier
+versions provide a reference when investigating how settings changed.
+
+.. image:: image/JDash/JDashHistoryJSON.png
+    :width: 80%
+    :align: center
+    :alt: Saved study JSON versions with a Current badge, Details links, and Download buttons
+
+**Audit history**
+
+Switch to **Audit history** to see who changed an object and when. Use search,
+**Actor**, and **Action** filters (1) to narrow the records. In the table (2),
+**Changes** shows previous values in red and new values in green, allowing you
+to trace specific configuration changes.
+
+.. image:: image/JDash/JDashHistory.png
+    :width: 80%
+    :align: center
+    :alt: Audit history with actor and action filters and previous and new field values
 
 Survey
 ---------------------------
@@ -629,7 +674,7 @@ the system.
 
 
 Form Fields
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Title**  
    The display name of the survey. This name appears in the survey list and
@@ -996,8 +1041,10 @@ This ensures each activation window has a corresponding end time.
    avoid invalid configurations.
 
 
+.. _survey-conditional-logic:
+
 Conditional Logic
-=================
+^^^^^^^^^^^^^^^^^
 
 You can define **conditional logic** for a question to dynamically activate or
 deactivate other questions based on a participant's response.
@@ -1139,7 +1186,7 @@ The link appears below the question text in the app.
 .. _answer-form:
 
 Create / Edit Answer
-==================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For question types that require predefined answer options (such as
 **Single Choice**, **Multiple Choice**), the Question
@@ -1235,7 +1282,7 @@ participants and study days.
    :align: center
 
 Subject QC Timeline
-==================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The **Subject QC Timeline** heatmap provides an overview of sensor recordings
 for each participant throughout the study.
@@ -1293,7 +1340,7 @@ Workflow
 7. Notifications are delivered through Firebase Cloud Messaging (FCM).
 
 Generated Schedule
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 The scheduler uses a generated JSON file that maps study days to activation
 times.
@@ -1335,6 +1382,31 @@ application and are used to inform users that new EMA questions are available.
    regenerated.
 
 
+System Architecture
++++++++++++++++++++++++++++++
+
+JDash follows a modular Django-based architecture with a Bootstrap-powered
+frontend and embedded Plotly-Dash dashboards for visualizing participant
+compliance, sensor activity, and study progress.
+
+Core Components
+---------------------------
+* Backend: Django-based application handling authentication, routing,
+  form processing, database operations, and server-side rendering.
+
+* Frontend: HTML templates styled with Bootstrap, using BootstrapTables
+  and AJAX for interactive tables, filtering, file uploads, and dynamic UI
+  updates.
+
+* Database: MariaDB stores studies, subjects, sensor settings, EMA surveys,
+  tasks, audit checks, notifications, and user-related configuration.
+
+* Visualization Components: Interactive compliance visualizations are implemented 
+  using Dash and Plotly components integrated within Django views and templates.
+
+* Deployment: Supports local development with Django ``runserver`` and
+  production deployment using Apache with ``mod_wsgi``.
+
 Deployment Instructions
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -1343,4 +1415,4 @@ JDash can be deployed locally for development or on a production web server
 using Apache and ``mod_wsgi``. The latest deployment steps, environment setup, database configuration, and
 server configuration details are maintained in the official GitHub repository.
 
-https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard
+`JTrack Dashboard repository <https://github.com/Biomarker-Development-at-INM7/JTrack-dashboard>`_

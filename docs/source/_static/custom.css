@@ -82,3 +82,36 @@
 .sidebar-dev-link:hover {
     text-decoration: underline;
 }
+
+/* Expandable page contents; without JavaScript the complete list stays visible. */
+.toc-tree .toc-branch {
+    position: relative;
+}
+.toc-tree .toc-branch-toggle {
+    position: absolute;
+    inset-inline-start: -1.2rem;
+    top: 0;
+    width: 1.2rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+.toc-tree .toc-branch-toggle:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 1px;
+}
+.toc-tree ul[hidden] {
+    display: none;
+}
+
+/* Permission matrices keep role columns aligned and readable. */
+table.permission-matrix th:not(:first-child),
+table.permission-matrix td:not(:first-child) {
+    text-align: center;
+}
+table.permission-matrix td {
+    vertical-align: middle;
+}

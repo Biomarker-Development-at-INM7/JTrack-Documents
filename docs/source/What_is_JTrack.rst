@@ -63,7 +63,7 @@ differences. Wearable signals and device limitations are documented separately
 under :doc:`Garmin Integration <Garmin_Integration>`.
 
 Sample Data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 *Curious about how this data would look like?* :ref:`Contact us <contact-us>` *to get a sample dataset.*
 
 Technical record examples and export formats are available under :doc:`Data Storage <developers>`.
@@ -76,14 +76,14 @@ Ecological Momentary Assessments
 Information collected in each study is outlined in the written informed consent and study protocol. Such information may include:
 
 3.1 User-Generated Survey Data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------------------------------
 
 Information provided by participants when completing surveys is stored with pseudonymous study identifiers and handled according to the study protocol and consent materials.
 
 *Demographic and clinical data may be collected if specified by the study protocol. Access to this information is restricted to authorized study personnel only.*
 
 3.2 Derivative Data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------------------------------
 
 Technical metadata such as app version, operating-system version, device model, effective sensor states, and diagnostic logs may be processed to operate the platform and troubleshoot study devices. Retention and access follow the applicable study and infrastructure policies.
 
@@ -115,7 +115,7 @@ settings are collected under :doc:`Compliance Optimization
 <Compliance_Optimization>`.
 
 Push Notifications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------------------------------
 
 If required, we may request permission to send push notifications. Notifications can be:
 
@@ -126,7 +126,7 @@ Data Usage
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 5.1 Intended Use of Collected Information
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------------------------------
 
 We may use information collected via JTrack applications to:
 
@@ -136,12 +136,12 @@ We may use information collected via JTrack applications to:
 4. Resolve technical issues and troubleshoot problems.
 
 5.2 Third-Party Data Sharing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------------------------------
 
 Personal information will **never** be shared with third-party applications or organizations. If covered by study protocol and informed consent, anonymized study data may be shared with other researchers.
 
 5.3 Disclosure of Information
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------------------------------
 
 Personal information is **never** shared with individuals not involved in the study. It will **never** be used to contact you for reasons unrelated to the study. Data you provide will **never** be sold or used for marketing or advertising. We may share anonymized data to address scientific questions or verify study results.
 

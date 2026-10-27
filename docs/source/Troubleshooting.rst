@@ -7,20 +7,25 @@ This section provides guidance on how to report technical issues for the JTrack 
 .. _before-contacting-us:
 
 Before Contacting Us
-====================
+++++++++++++++++++++
 
 Please complete these checks first:
 
-1. **Update the app** through the Apple App Store or Google Play Store.
+1. **Update the app** using the store links in the :doc:`JTrack Social <Social>`
+   or :doc:`JTrack EMA+ <EMA>` guide.
 2. **Update the phone** to the latest operating-system version supported by the device.
 3. Restart the phone and open JTrack again.
 4. Confirm that the permissions and background settings required by the study are still enabled.
 5. Reproduce the issue once more and note the exact date and time.
 
+For background and notification settings, see
+:doc:`Compliance Optimization <Compliance_Optimization>`. For watch pairing
+and transfer issues, see :doc:`Garmin Integration <Garmin_Integration>`.
+
 Do not uninstall the app unless the study team explicitly asks you to do so. Uninstalling can remove data that has not yet been transferred.
 
 How to Report Technical Issues
-==============================
+++++++++++++++++++++++++++++++
 
 To ensure quick and effective resolution of any technical problem, please include the following information when reaching out:
 
@@ -57,10 +62,10 @@ Provide your contact in case we need follow-up details.
 |
 
 .. important::
-   Send the above information to `j.fischer@fz-juelich.de` (iOS), `m.turna@fz-juelich.de` (Android), or `m.narava@fz-juelich.de` (JDash). For general issues, you may also contact `biomarkers.inm7@gmail.com`.
+   Send the above information to `j.fischer@fz-juelich.de <mailto:j.fischer@fz-juelich.de>`_ (iOS), `m.turna@fz-juelich.de <mailto:m.turna@fz-juelich.de>`_ (Android), or `m.narava@fz-juelich.de <mailto:m.narava@fz-juelich.de>`_ (JDash). For general issues, you may also contact `biomarkers.inm7@gmail.com <mailto:biomarkers.inm7@gmail.com>`_.
 
 |
 
 Known Issues
-============
+++++++++++++
 *This section will list known technical issues and workarounds (to be added).*

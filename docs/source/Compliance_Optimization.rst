@@ -5,7 +5,7 @@ Compliance Optimization
 Reliable participation depends not only on the study configuration, but also on a few phone settings and participant habits. Study teams should explain the following instructions during enrollment and repeat them when compliance decreases.
 
 Important Instructions
-======================
+++++++++++++++++++++++
 
 .. _compliance-social:
 

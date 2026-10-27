@@ -28,7 +28,7 @@ identifier.
 
 
 Smartphone Sensor Data
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------------------------------------------------------------------------
 
 Smartphone sensors generate timestamped JSON records. Each sensor type
 produces its own data structure depending on the information collected.
@@ -85,7 +85,7 @@ Example: Location
 
 
 EMA Data
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------------------------------------------------------------------------
 
 EMA responses are stored as timestamped question-answer records.
 
@@ -114,7 +114,7 @@ Example:
 
 
 Garmin Wearable Data
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------------------------------------------------------------------------
 
 Garmin devices can provide physiological and activity-related measurements,
 depending on the device model and enabled sensors.
@@ -180,8 +180,15 @@ Example: Steps
     }
 
 
+.. _data-export:
+
 Data Export
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Use **Download data** on the :ref:`Study Details page <study-details-subjects-view>`
+in `JDash <https://jdash.inm7.de/>`_ to request study exports.
+See :ref:`Roles & Permissions <jdash-permissions>` for download access; QR-code
+downloads are separate from exports of collected study data.
 
 JDash provides functionality to export both raw and processed study data.
 

@@ -33,6 +33,26 @@ If you are interested in using JTrack in your studies, please reach out to us at
 Platform Components
 ++++++++++++++++++++
 
+Start with the :doc:`platform overview <What_is_JTrack>` or
+:doc:`frequently asked questions <FAQ>`. Researchers can
+`open JDash <https://jdash.inm7.de/>`_ and follow
+:ref:`Create New Study <create-study>`. Participants should install the app
+specified by their study team:
+
+.. list-table:: Apps and installation guides
+   :header-rows: 1
+   :widths: 40 30 30
+
+   * - App guide
+     - Android
+     - iOS
+   * - :doc:`JTrack Social <Social>`
+     - `Google Play <https://play.google.com/store/apps/details?id=inm7.JTrack.JTrack_Social>`__
+     - `App Store <https://apps.apple.com/de/app/jtrack-social/id1645319896>`__
+   * - :doc:`JTrack EMA+ <EMA>`
+     - `Google Play <https://play.google.com/store/apps/details?id=inm7.JTrack.JTrack_EMA_Plus>`__
+     - `App Store <https://apps.apple.com/de/app/jtrack-ema/id1605100657>`__
+
 The platform includes four main components:
 
 .. raw:: html

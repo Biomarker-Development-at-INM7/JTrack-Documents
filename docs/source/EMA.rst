@@ -11,7 +11,7 @@ The enrollment and survey workflow is shared across both platforms. Screenshots 
 
 
 What JTrack EMA+ Can Do
-=======================
++++++++++++++++++++++++
 
 - **Broad question types**: binary, date/time, duration, sliders, single/multiple choice, and more.
 - **Platform-independent UX** with paging for long surveys, language support, and survey categories to keep forms organized. It also provides a similar user experience on both Android and iOS devices.
@@ -27,15 +27,17 @@ What JTrack EMA+ Can Do
    :align: center
 
 Prerequisites
-=============
++++++++++++++
 
 - Your study coordinator has provided a **QR code** to join the study.
 - A stable internet connection for initial setup and survey/media updates.
 
 For reminder and calendar settings that improve response rates, see :ref:`Compliance Optimization for JTrack EMA+ <compliance-ema>`.
 
+.. _ema-install-enroll:
+
 Android - Install & Join the Study
-==================================
+++++++++++++++++++++++++++++++++++
 
 1) Install the App
 ------------------
@@ -80,7 +82,7 @@ After a successful login, the app will prompt you to adjust system settings to e
 
 
 Using JTrack EMA+
-=================
++++++++++++++++++
 
 Starting a Survey
 -----------------
@@ -162,10 +164,12 @@ Conditional Logic
 
 - Some questions appear only if earlier responses meet certain conditions. This keeps surveys shorter and more relevant.
 
-Researchers configure surveys, schedules, media, and conditional logic in :doc:`JDash <JTrack_Dashboard>`. Example response records are shown under :doc:`Data Storage <developers>`.
+Researchers configure :ref:`surveys <create-survey>`,
+:ref:`schedules <question-form>`, media, and
+:ref:`conditional logic <survey-conditional-logic>` in :doc:`JDash <JTrack_Dashboard>`. Example response records are shown under :doc:`Data Storage <developers>`.
 
 Troubleshooting
-===============
++++++++++++++++
 
 - **I can't scan the QR code**
 

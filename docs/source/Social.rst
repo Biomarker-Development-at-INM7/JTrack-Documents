@@ -9,7 +9,7 @@ JTrack Social is available for **Android** and **iOS**:
 
 
 Prerequisites
-=============
++++++++++++++
 
 - Your study coordinator has provided you with a **QR code** to join the study.
 - A stable internet connection is required during the initial setup.
@@ -19,12 +19,12 @@ For settings that improve background collection and participant compliance, see 
 .. _jtrack-social-android:
 
 Android - Install & Join the Study
-==================================
+++++++++++++++++++++++++++++++++++
 
 1. Install the App
 ------------------
 
-1. Open the **Google Play Store** on your Android device.
+1. Open `JTrack Social on Google Play <https://play.google.com/store/apps/details?id=inm7.JTrack.JTrack_Social>`__.
 2. Search for **JTrack Social** and install it.
 
 .. image:: image/Social/social_1.png
@@ -86,7 +86,7 @@ After successful login, the app may prompt you to adjust Android system settings
 .. _jtrack-social-ios:
 
 iOS - Install & Join the Study
-==============================
+++++++++++++++++++++++++++++++
 
 1. Open the **App Store** on your iPhone.
 2. Search for **JTrack Social** and install it.
@@ -174,7 +174,7 @@ As on Android, not every module is available or enabled in every study. iOS perm
 .. _social-permissions:
 
 Permissions by Sensor
-=====================
++++++++++++++++++++++
 
 JTrack Social only requests permissions for the modules enabled in your study. The screenshots below show Android examples; iOS permission prompts may look different.
 
@@ -257,7 +257,7 @@ Allow **Activity recognition** when prompted.
 .. _social-sensors:
 
 What JTrack Social Records
-==========================
+++++++++++++++++++++++++++
 
 The exact data collected depends on the study configuration. Common JTrack Social modules record the following types of information:
 
@@ -316,7 +316,7 @@ Audio
 .. _social-admin-tools:
 
 Administrator Tools
-===================
++++++++++++++++++++
 
 Both platforms provide protected tools for study staff. The exact layout differs, but the purpose is the same: verify a participant device without changing the study protocol.
 
@@ -332,7 +332,7 @@ The iOS administration area currently includes:
    Administration and debugging controls are intended for trained study staff. Running tests or changing device configuration can temporarily affect normal participant workflows.
 
 Garmin Pairing and Sync
-=======================
++++++++++++++++++++++++
 
 If your study uses a Garmin wearable, pairing and syncing are handled directly inside **JTrack Social**.
 For participants, the main steps are:
@@ -354,7 +354,7 @@ For full Garmin setup, pairing, dashboard configuration, syncing, and troublesho
 .. _sensor-comparison:
 
 Sensor Data in Comparison between iOS and Android
-=================================================
++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The overview above explains the sensor modules in plain language. The comparison below is intended for more technical readers who need platform-specific units, resolutions, and implementation details.
 
@@ -410,7 +410,7 @@ Example server records and export concepts are documented under :doc:`Data Stora
 .. _active-labeling-ios:
 
 Active Labeling
-===============
++++++++++++++++
 
 Active Labeling allows study participants to perform predefined tasks while sensor data is recorded in the background. This enables precise labeling of sensor data with task context, which is valuable for data analysis, activity recognition, and model training.
 
@@ -423,7 +423,7 @@ Active Labeling is a task-based sensor recording mode where participants are ins
 - The task name and duration are linked to the recorded sensor data.
 - Data is saved and can be uploaded for later analysis after the task ends.
 
-The goal is to associate sensor data with a clearly defined ground-truth label, such as ``Brushing Teeth``. Inside JTrack Social, Active Labeling is accessible from the main view if configured in :ref:`JDash <conf-active-labeling>`.
+The goal is to associate sensor data with a clearly defined ground-truth label, such as ``Brushing Teeth``. Inside JTrack Social, Active Labeling is accessible from the main view if configured in :ref:`JDash <active-tracking>`.
 
 Participant Flow
 ----------------

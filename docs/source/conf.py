@@ -22,7 +22,7 @@ copyright = '2026, INM-7'
 author = 'Mamaka Narava, Mehran Turna & Jona M. Fischer'
 
 # The full version, including alpha/beta/rc tags
-release = '2.2 (2026-08)'
+release = '2.3 (10/26)'
 
 master_doc = 'index'
 PYTHONUTF8 = 1
@@ -64,6 +64,7 @@ html_static_path = ['_static']
 html_css_files = [
     'custom.css',
 ]
+html_js_files = ['collapsible-toc.js']
 
 html_sidebars = {
     "**": [

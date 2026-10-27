@@ -38,7 +38,7 @@ Wearable Sensors include:
 .. _recommended-garmin-devices:
 
 Recommended Garmin Devices
-=========================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The **vívoactive 6** is the primary JTrack recommendation because it is the model currently used and tested by the project. It provides a useful balance of health signals, battery life, size, availability, and cost.
 
@@ -155,7 +155,7 @@ Consumer feature references: `Forerunner 55 and vívoactive 6 comparison <https:
 .. _garmin-architecture:
 
 Collection and Processing Architecture
-=========================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Garmin records data on the watch and transfers archived FIT files to JTrack Social. JTrack then processes those files into the common JTrack ``HealthSensor`` format before upload.
 
@@ -178,9 +178,12 @@ Raw PPG and other experimental high-frequency cardio streams are therefore devic
 |
 
 Getting Started (JDash Study Setup)
-=========================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-To enable Garmin support in a study, Garmin wearable sensors must first be configured in the JDash study editor.
+To enable Garmin support in a study, Garmin wearable sensors must first be configured in the :ref:`JDash wearable configuration <wearables>`.
+Open `JDash <https://jdash.inm7.de/>`_ to create or edit the study.
+Participants should complete :doc:`JTrack Social enrollment <Social>` before
+following the :ref:`pairing instructions <garmin-pair>`.
 
 Example configuration:
 
@@ -193,7 +196,7 @@ The wearable configuration is downloaded after enrollment and stored on the phon
 |
 
 Configure on the Phone (JTrack Social)
-=========================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. _garmin-pair:
 
@@ -450,7 +453,7 @@ Participants may be prompted to update the watch firmware. Study staff should sc
 .. _garmin-admin-tools:
 
 Features for Study Administrators
-=========================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Overwrite Watch Configuration
 -------------------------------------------
