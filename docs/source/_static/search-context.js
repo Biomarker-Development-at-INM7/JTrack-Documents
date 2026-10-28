@@ -1,74 +1,102 @@
-// Excerpts use build-time data, so local file previews need no page fetches.
+// Search each section's own text so nested sections and repeated matches stay distinct.
 (() => {
-  const wordsAroundMatch = (text, query) => {
-    text = text.replace(/\s+/gu, " ").trim();
-    const words = Array.from(text.matchAll(/\S+/gu));
-    if (!words.length) return "";
-    const lower = text.toLowerCase();
-    let start = query ? lower.indexOf(query.toLowerCase()) : -1;
-    let finish = start + query.length;
-    if (start < 0) {
-      const terms = query.toLowerCase().split(/\s+/u).filter(Boolean);
-      const word = words.find(word => terms.some(term => word[0].toLowerCase().includes(term)));
-      start = word ? word.index : 0;
-      finish = word ? word.index + word[0].length : 0;
+  const escapePattern = text => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const parseQuery = query => {
+    const include = [], exclude = [];
+    for (const token of query.matchAll(/(-?)(?:"([^"]+)"|(\S+))/gu)) {
+      const term = (token[2] || token[3]).toLowerCase();
+      (token[1] ? exclude : include).push(term);
     }
-    const first = Math.max(0, words.findIndex(word => word.index + word[0].length > start));
-    let last = first;
-    while (last + 1 < words.length && words[last + 1].index < finish) last++;
-    const from = Math.max(0, first - 8);
-    const to = Math.min(words.length, last + 9);
-    return (from ? "… " : "") + words.slice(from, to).map(word => word[0]).join(" ")
-      + (to < words.length ? " …" : "");
+    return { include: [...new Set(include)], exclude };
+  };
+  const findMatches = (documents, query) => {
+    const { include, exclude } = parseQuery(query);
+    if (!include.length) return [];
+    const pattern = new RegExp(include.slice().sort((a,b) => b.length-a.length).map(escapePattern).join("|"), "giu");
+    const matches = [];
+    for (const doc of documents) {
+      for (const section of doc.sections) {
+        const text = section.text;
+        const lower = text.toLowerCase();
+        if (!include.every(term => lower.includes(term)) || exclude.some(term => lower.includes(term))) continue;
+        const words = Array.from(text.matchAll(/\S+/gu));
+        let first = 0;
+        for (const match of text.matchAll(pattern)) {
+          while (first + 1 < words.length && words[first].index + words[first][0].length <= match.index) first++;
+          let last = first;
+          while (last + 1 < words.length && words[last + 1].index < match.index + match[0].length) last++;
+          const from = Math.max(0, first-8), to = Math.min(words.length, last+9);
+          const excerpt = (from ? "… " : "") + words.slice(from,to).map(word=>word[0]).join(" ") + (to<words.length ? " …" : "");
+          matches.push({ pageUrl: doc.url, pageTitle: doc.title || section.title.split(" > ")[0], url: doc.url + (section.anchor ? "#" + section.anchor : ""), title: section.title, excerpt });
+        }
+      }
+    }
+    return matches;
   };
   const initialize = () => {
-    const results = document.getElementById("search-results");
-    if (!results || !window.JTRACK_SEARCH_CONTEXT) return;
-    // The normal fetch-based summaries cannot work on file:// previews.
-    if (typeof DOCUMENTATION_OPTIONS !== "undefined") {
-      DOCUMENTATION_OPTIONS.SHOW_SEARCH_SUMMARY = false;
-    }
-    const query = (new URLSearchParams(window.location.search).get("q") || "")
-      .replace(/\s+/gu, " ").trim();
-    const addExcerpts = () => {
-      results.querySelectorAll("ul.search > li").forEach(item => {
-        if (item.querySelector("p.context")) return;
-        const link = item.querySelector("a");
-        if (!link) return;
-        const url = new URL(link.href, window.location.href);
-        const path = decodeURIComponent(url.pathname);
-        const data = window.JTRACK_SEARCH_CONTEXT;
-        const doc = Object.keys(data).find(name =>
-          path.endsWith(`/${name}.html`) || path.endsWith(`/${name}/`));
-        if (!doc) return;
-        const anchor = decodeURIComponent(url.hash.slice(1));
-        const text = data[doc][anchor] || data[doc][""];
-        if (!text) return;
-        const summary = document.createElement("p");
-        summary.className = "context";
-        const excerpt = wordsAroundMatch(text, query);
-        // Highlight literal query terms without interpreting document text as HTML.
-        const terms = query.split(/\s+/u).filter(Boolean)
-          .map(term => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-        const pattern = terms.length ? new RegExp(terms.join("|"), "giu") : null;
-        let offset = 0;
-        if (pattern) {
-          for (const match of excerpt.matchAll(pattern)) {
-            summary.append(document.createTextNode(excerpt.slice(offset, match.index)));
+    const output = document.getElementById("search-results");
+    if (!output || !Array.isArray(window.JTRACK_SEARCH_CONTEXT) || typeof Search === "undefined") return;
+    Search.performSearch = query => {
+      output.replaceChildren();
+      const title = document.createElement("h2");
+      title.textContent = "Search Results";
+      const status = document.createElement("p");
+      status.className = "search-summary";
+      const matches = findMatches(window.JTRACK_SEARCH_CONTEXT, query);
+      const groups = new Map();
+      matches.forEach(match => {
+        if (!groups.has(match.pageUrl)) groups.set(match.pageUrl, []);
+        groups.get(match.pageUrl).push(match);
+      });
+      status.textContent = matches.length
+        ? `${matches.length} matching occurrences across ${groups.size} pages. Expand a page to see all its matches in document order.`
+        : "No matches found. Try another word or a shorter phrase.";
+      const container = document.createElement("div");
+      container.className = "search-page-groups";
+      const terms = parseQuery(query).include;
+      const pattern = terms.length ? new RegExp(terms.slice().sort((a,b)=>b.length-a.length).map(escapePattern).join("|"), "giu") : null;
+      const sortedGroups = Array.from(groups.values()).sort((a, b) =>
+        b.length - a.length || a[0].pageTitle.localeCompare(b[0].pageTitle));
+      for (const pageMatches of sortedGroups) {
+        const group = document.createElement("details");
+        group.className = "search-page-group";
+        const summary = document.createElement("summary");
+        summary.textContent = `${pageMatches[0].pageTitle} (${pageMatches.length})`;
+        const list = document.createElement("ul");
+        list.className = "search";
+        for (const match of pageMatches) {
+          const item = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = match.url;
+          link.textContent = match.title;
+          const excerpt = document.createElement("p");
+          excerpt.className = "context";
+          let offset = 0;
+          for (const hit of match.excerpt.matchAll(pattern)) {
+            excerpt.append(document.createTextNode(match.excerpt.slice(offset, hit.index)));
             const mark = document.createElement("mark");
             mark.className = "highlighted";
-            mark.textContent = match[0];
-            summary.append(mark);
-            offset = match.index + match[0].length;
+            mark.textContent = hit[0];
+            excerpt.append(mark);
+            offset = hit.index + hit[0].length;
           }
+          excerpt.append(document.createTextNode(match.excerpt.slice(offset)));
+          item.append(link, excerpt);
+          list.append(item);
         }
-        summary.append(document.createTextNode(excerpt.slice(offset)));
-        item.append(summary);
-      });
+        group.append(summary, list);
+        container.append(group);
+      }
+      output.append(title, status, container);
     };
-    new MutationObserver(addExcerpts).observe(results, { childList: true, subtree: true });
-    addExcerpts();
+    // Sphinx normally initializes after this listener; support an already-loaded page too.
+    if (document.readyState === "complete") {
+      const query = new URLSearchParams(window.location.search).get("q");
+      if (query) Search.performSearch(query);
+    }
   };
+  // Pure search helpers are also used by the offline verification tests.
+  window.JTRACK_FIND_MATCHES = findMatches;
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initialize);
   else initialize();
 })();

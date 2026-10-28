@@ -157,3 +157,34 @@ ul.search li p.context {
     line-height: 1.5;
     color: var(--color-foreground-secondary);
 }
+
+.search-more:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+}
+
+.search-page-group {
+    margin: 0.75rem 0;
+    border: 1px solid var(--color-background-border);
+    border-radius: 0.4rem;
+}
+.search-page-group > summary {
+    padding: 0.8rem 1rem;
+    font-weight: 600;
+    color: var(--color-brand-primary);
+    cursor: pointer;
+}
+.search-page-group > summary:hover {
+    background: var(--color-background-hover);
+}
+.search-page-group > summary:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+}
+.search-page-group > ul.search {
+    margin: 0;
+    padding: 0 1rem;
+}
+.search-page-group > ul.search > li:last-child {
+    border-bottom: 0;
+}

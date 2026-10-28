@@ -77,24 +77,76 @@ html_sidebars = {
     ]
 }
 
-# Store plain-text context in a script so search excerpts also work on file://.
+# Index each section's own text once, with its breadcrumb and destination.
 def build_search_context(app, exception):
     if exception is not None or app.builder.format != 'html':
         return
     import json
     from pathlib import Path
     from docutils import nodes
+    from html.parser import HTMLParser
 
-    data = {}
+    class PlainHTML(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.parts = []
+        def handle_data(self, data):
+            self.parts.append(data)
+
+    def own_text(node):
+        parts = []
+        for child in node.children:
+            if isinstance(child, (nodes.section, nodes.comment)):
+                continue
+            if isinstance(child, nodes.raw):
+                if 'html' in child.get('format', ''):
+                    parser = PlainHTML()
+                    parser.feed(child.astext())
+                    parts.append(' '.join(parser.parts))
+            elif isinstance(child, nodes.Element):
+                parts.append(own_text(child))
+            else:
+                parts.append(child.astext())
+        return ' '.join(' '.join(parts).split())
+
+    data = []
     for docname in sorted(app.env.found_docs):
-        tree = app.env.get_doctree(docname).deepcopy()
-        for node in list(tree.findall(lambda node: isinstance(node, (nodes.raw, nodes.comment)))):
-            node.parent.remove(node)
-        sections = {'': tree.astext()}
-        for section in tree.findall(nodes.section):
-            for anchor in section.get('ids', []):
-                sections[anchor] = section.astext()
-        data[docname] = sections
+        tree = app.env.get_doctree(docname)
+        sections = []
+        page_title = app.env.titles[docname].astext()
+
+        def collect(node, titles, anchor):
+            # Flush text before descending so matches retain actual page order,
+            # including parent text appearing after a nested subsection.
+            parts = []
+            def flush():
+                text = ' '.join(' '.join(parts).split())
+                if text:
+                    sections.append({'anchor': anchor,
+                                     'title': ' > '.join(titles) or page_title,
+                                     'text': text})
+                parts.clear()
+            for child in node.children:
+                if isinstance(child, nodes.section):
+                    flush()
+                    title = next((c.astext() for c in child.children
+                                  if isinstance(c, nodes.title)), '')
+                    ids = child.get('ids', [])
+                    collect(child, titles + ([title] if title else []),
+                            ids[0] if ids else anchor)
+                elif isinstance(child, nodes.raw):
+                    if 'html' in child.get('format', ''):
+                        parser = PlainHTML()
+                        parser.feed(child.astext())
+                        parts.extend(parser.parts)
+                elif not isinstance(child, nodes.comment):
+                    parts.append(own_text(child) if isinstance(child, nodes.Element)
+                                 else child.astext())
+            flush()
+
+        collect(tree, [], '')
+        data.append({'url': app.builder.get_target_uri(docname),
+                     'title': page_title, 'sections': sections})
     output = Path(app.outdir) / '_static' / 'search-context-data.js'
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text('window.JTRACK_SEARCH_CONTEXT = '
