@@ -87,24 +87,59 @@
 .toc-tree .toc-branch {
     position: relative;
 }
+.toc-tree a.reference {
+    display: block;
+    min-height: 2rem;
+    box-sizing: border-box;
+    padding: 0.4rem 0.5rem 0.4rem 2rem;
+    border-radius: 0.3rem;
+    transition: background-color 120ms ease;
+}
+.toc-tree a.reference:hover,
+.toc-tree a.reference:focus-visible {
+    background: var(--color-background-hover);
+    color: var(--color-brand-primary);
+}
+.toc-tree li.scroll-current > a.reference {
+    color: var(--color-brand-primary);
+    font-weight: 700;
+    background: var(--color-background-secondary);
+    box-shadow: inset 3px 0 0 var(--color-brand-primary);
+}
 .toc-tree .toc-branch-toggle {
     position: absolute;
-    inset-inline-start: -1.2rem;
-    top: 0;
-    width: 1.2rem;
+    inset-inline-start: 0.15rem;
+    top: var(--toc-item-spacing-vertical);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 2rem;
     padding: 0;
     border: 0;
+    border-radius: 0.3rem;
     background: transparent;
-    color: inherit;
+    color: var(--color-brand-primary);
     font: inherit;
+    font-size: 1.3rem;
+    line-height: 1;
     cursor: pointer;
 }
-.toc-tree .toc-branch-toggle:focus-visible {
+.toc-tree .toc-branch-toggle:hover {
+    background: var(--color-background-hover);
+}
+.toc-tree .toc-branch-toggle:focus-visible,
+.toc-tree a.reference:focus-visible {
     outline: 2px solid var(--color-brand-primary);
     outline-offset: 1px;
 }
 .toc-tree ul[hidden] {
     display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    .toc-tree a.reference {
+        transition: none;
+    }
 }
 
 /* Permission matrices keep role columns aligned and readable. */
@@ -114,4 +149,11 @@ table.permission-matrix td:not(:first-child) {
 }
 table.permission-matrix td {
     vertical-align: middle;
+}
+
+/* Keep search excerpts distinct from clickable result titles. */
+ul.search li p.context {
+    margin-top: 0.35rem;
+    line-height: 1.5;
+    color: var(--color-foreground-secondary);
 }

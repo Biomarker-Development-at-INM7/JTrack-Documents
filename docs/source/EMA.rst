@@ -14,8 +14,8 @@ What JTrack EMA+ Can Do
 +++++++++++++++++++++++
 
 - **Broad question types**: binary, date/time, duration, sliders, single/multiple choice, and more.
-- **Platform-independent UX** with paging for long surveys, language support, and survey categories to keep forms organized. It also provides a similar user experience on both Android and iOS devices.
-- **Dynamic survey updates from server** so questionnaires and media/images can be revised mid-study without reinstalling the app.
+- **Platform-independent UX** with paging for long surveys, language support, and :ref:`survey categories <jdash-surveys>` to keep forms organized. It also provides a similar user experience on both Android and iOS devices.
+- **Dynamic survey updates from server** so :ref:`questionnaires <jdash-surveys>` and media/images can be revised mid-study without reinstalling the app.
 - **Save & Resume** with answered items highlighted so surveys can be resumed where they were left.
 - **Conditional logic** to show/hide questions based on earlier answers, improving relevance and reducing cognitive load.
 - **HTML text formatting support** so question text and subtext can include simple inline formatting.
@@ -67,7 +67,7 @@ Android - Install & Join the Study
 3. Use your device camera to scan the **QR code** provided by your study team.
 
 .. important::
-   For more about the study QR code, including how it is generated, see your project's QR code documentation.
+   For study setup and QR-code generation, see :ref:`Studies in JDash <jdash-studies>`.
 
 3) Complete Required App Settings (only if required)
 ----------------------------------------------------
@@ -87,7 +87,7 @@ Using JTrack EMA+
 Starting a Survey
 -----------------
 
-- Surveys appear according to your study schedule or through prompts configured by the study team.
+- :ref:`Surveys <jdash-surveys>` appear according to your study schedule or through prompts configured by the study team.
 - If no active questions are shown, pull the screen down to refresh.
 - Long surveys can open in a list view, while short surveys may use paging. Progress is saved automatically.
 
@@ -100,7 +100,7 @@ Starting a Survey
 Calendar Reminders
 ------------------
 
-- Some studies can create calendar events on your phone so you receive calendar notifications when a survey is scheduled.
+- Some studies can create calendar events on your phone so you receive calendar notifications when a :ref:`survey is scheduled <jdash-surveys>`.
 - When the app shows the **Add Event** dialog, choose your preferred phone calendar from the list and tap **Add Event**.
 - If you do not want to add the reminder immediately, tap **Not Now**. If you never want the event added for that prompt, tap **I Don't want**.
 - Once the event is added, your phone calendar can notify you at the scheduled survey time.
@@ -137,13 +137,13 @@ Leaving a Survey with Unanswered Questions
 Media & Image Sync
 ------------------
 
-- If a survey references images or media, the latest assets are pulled from the server automatically.
+- If a :ref:`survey references images or media <jdash-surveys>`, the latest assets are pulled from the server automatically.
 
 HTML Formatting in Questions
 ----------------------------
 
 JTrack EMA+ supports a small set of HTML tags in question text and subtext.
-This can be used to format questionnaire content without changing the app itself.
+This can be used to format :ref:`questionnaire content <jdash-surveys>` without changing the app itself.
 Supported tags are:
 
 .. raw:: html
@@ -164,7 +164,7 @@ Conditional Logic
 
 - Some questions appear only if earlier responses meet certain conditions. This keeps surveys shorter and more relevant.
 
-Researchers configure :ref:`surveys <create-survey>`,
+Researchers configure :ref:`surveys <jdash-surveys>`,
 :ref:`schedules <question-form>`, media, and
 :ref:`conditional logic <survey-conditional-logic>` in :doc:`JDash <JTrack_Dashboard>`. Example response records are shown under :doc:`Data Storage <developers>`.
 

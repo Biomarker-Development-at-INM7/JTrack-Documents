@@ -234,11 +234,10 @@ an existing username under **Registered user**, choose a **Role**, and click
     :align: center
     :alt: Study access page with study selection, user and role controls, and memberships
 
-Dashboard Tabs
-++++++++++++++
+.. _jdash-studies:
 
 Studies
--------
+++++++++++++++
 
 The **Studies** tab shows the studies you can access. Use search, the sensor
 filter, and sorting to find a study, or switch between **Grid** and **List**
@@ -262,7 +261,7 @@ views. Available actions depend on your study role.
 .. _create-study:
 
 Create New Study
-~~~~~~~~~~~~~~~~
+-----------------------
 
 Click **Add Study** to define the study settings and the data participants
 will provide. Configure the components required by your protocol.
@@ -285,7 +284,7 @@ will provide. Configure the components required by your protocol.
 .. _general:
 
 General
-^^^^^^^
+~~~~~~~~
 
 Choose a **Study name** without spaces or special characters, such as
 ``MyStudy_01`` instead of ``My Study 01``. The name identifies the study and
@@ -302,7 +301,7 @@ study team.
 .. _passive-tracking:
 
 Passive Tracking
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Passive tracking collects data in the background through :doc:`JTrack Social <Social>`.
 See :ref:`Permissions by Sensor <social-permissions>` for participant setup
@@ -320,7 +319,7 @@ and the :ref:`platform comparison <sensor-comparison>` for sensor availability.
 .. _active-tracking:
 
 Active Tracking
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 Active Tracking associates sensor recordings with tasks performed by
 participants. In JTrack Social, participants access this feature as
@@ -369,7 +368,7 @@ instructions and the participant workflow.
 .. _ema-conf:
 
 EMA (Ecological Momentary Assessment)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable **EMA** to assign a questionnaire to the study, then choose one of two
 ways to provide it:
@@ -393,7 +392,7 @@ settings, see :ref:`EMA calendar reminders <ema-calendar-reminders>`.
 .. _wearables:
 
 Wearable Devices
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Configure wearable measurements alongside mobile sensor data and EMA responses:
 
@@ -426,7 +425,7 @@ processing details, and device limitations.
 .. _study-details-subjects-view:
 
 Study Details
-~~~~~~~~~~~~~
+-----------------------
 
 Click **View** on a study to review its configuration and manage participants.
 Check the recording duration, recruitment target, and selected sensors before
@@ -573,7 +572,7 @@ perform the subject data deletion described under
 .. _edit-study:
 
 Edit Study
-~~~~~~~~~~
+-----------------------
 
 Click **Edit** on a study to open its existing configuration. The form uses
 the same settings described under :ref:`Create New Study <create-study>`.
@@ -591,7 +590,7 @@ synchronize to confirm the intended settings are in use.
 .. _audit-study:
 
 Audit / Quality Control
-~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Open **QC** to check study workflows before recruitment and during data
 collection. Use the checklist to record validation results and follow up on
@@ -618,7 +617,7 @@ problems.
 .. _history-study:
 
 Study History
-~~~~~~~~~~~~~
+-----------------------
 
 Open **History** on a study to inspect saved configurations or trace changes.
 
@@ -645,8 +644,10 @@ to trace specific configuration changes.
     :align: center
     :alt: Audit history with actor and action filters and previous and new field values
 
-Survey
-------
+.. _jdash-surveys:
+
+Surveys
+++++++++++++++
 
 The **Surveys** tab manages questionnaires for :doc:`JTrack EMA+ <EMA>`.
 Find an existing survey with the search, category, and associated-study
@@ -675,7 +676,7 @@ it. Use the editor to review questions before assigning the questionnaire in
 .. _create-survey:
 
 Start from Scratch
-~~~~~~~~~~~~~~~~~~
+---------------------
 
 Click **New Survey** (1) to create an empty questionnaire. Enter a recognizable
 **Title** and a **Description** of its purpose. Choose **Horizontal** for
@@ -695,7 +696,7 @@ Next, define :ref:`categories <survey-categories>` and
 .. _survey-template:
 
 Start from a Template
-~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Use **Download Template** (2) to prepare several questions outside the
 question editor, then choose the completed file and click **Upload**.
@@ -727,7 +728,7 @@ Use the dashboard's download for the latest version.
 .. _duplicate-survey:
 
 Duplicate an Existing Survey
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------
 
 Find the questionnaire you want to reuse and select its copy action (3).
 Open the resulting copy in the :ref:`Survey Editor <survey-edit-view>`
@@ -741,7 +742,7 @@ When ready, select the new questionnaire in the
 .. _survey-edit-view:
 
 Survey Editor
-~~~~~~~~~~~~~
+------------------------------------------
 
 Open a survey with the edit action on the Surveys page. The numbered areas
 in the editor support three tasks:
@@ -769,7 +770,7 @@ The survey-definition download is separate from
 .. _survey-categories:
 
 Manage Categories
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use **Categories** in the toolbar (1) to organize questions into meaningful
 groups, such as Mobility, Sleep, or Mood. Click **New Category** to add a
@@ -788,7 +789,7 @@ using the editor's **Category** field, as described below.
 .. _question-form:
 
 Create / Edit Question
-~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Click **New Question** in the survey toolbar, or the edit action on an existing
 question. Configure the question through five aspects:
@@ -814,7 +815,7 @@ question. Configure the question through five aspects:
 .. _question-default-settings:
 
 1. Default Settings
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 The standard form contains the settings needed for a question without opening
 **Show advanced settings**. Enter the participant-facing **Title**, use
@@ -859,7 +860,7 @@ to save a new question, or save the edited question with the editor's action.
 .. _question-types:
 
 2. Question Types
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Select **Type (1)** in the default form before configuring the response.
 Choose the type that matches the information you need, rather than asking
@@ -897,7 +898,7 @@ For choice and sliding questions, also configure the
 .. _question-category:
 
 3. Category Assignment
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Choose the question's **Category** in the default settings area (2). Create
 or rename groups through :ref:`Categories <survey-categories>` in the survey
@@ -908,7 +909,7 @@ questions, review their inherited category assignments.
 .. _question-advanced-settings:
 
 4. Advanced Settings
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Click **Show advanced settings (3)** to reveal additional controls:
 
@@ -932,7 +933,7 @@ Use **Hide advanced settings** to return to the compact form.
 .. _survey-conditional-logic:
 
 5. Conditional Logic
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Conditional behavior can use both parts of the question editor:
 
@@ -978,7 +979,7 @@ changes to a study.
 .. _answer-form:
 
 Create / Edit Answer
-~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 For **Single Choice** and **Multiple Choice**, click **Add Choice** to create
 response options. Enter clear labels, use the drag handles to arrange the
@@ -1007,7 +1008,7 @@ After changing response options, review any
 .. _jdash-compliance-monitoring:
 
 Compliance Monitoring
----------------------
+++++++++++++++++++++++++++++
 
 Use **Compliance Monitoring** to check whether study data is arriving and
 identify participants who may need follow-up. Start with total compliance
@@ -1025,7 +1026,7 @@ available sensor tabs, such as **ema** in this example.
     :alt: Compliance study and subject selectors, all-stream and EMA recency cards, subject filters, and follow-up table
 
 Total Compliance
-~~~~~~~~~~~~~~~~
+---------------------
 
 The **Subjects current across all streams** card summarizes how many
 participants are up to date across the study's data streams. Individual
@@ -1061,7 +1062,7 @@ recordings earlier in the study but no recent uploads. Gaps identify periods
 to investigate; they do not by themselves establish why data is absent.
 
 Compliance by Sensor: EMA Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------
 
 Select a sensor tab to inspect that stream separately. For **ema**, the
 **EMA Completion Matrix** shows the percentage of expected questions answered

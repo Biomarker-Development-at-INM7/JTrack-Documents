@@ -64,14 +64,42 @@ html_static_path = ['_static']
 html_css_files = [
     'custom.css',
 ]
-html_js_files = ['collapsible-toc.js']
+html_js_files = ['collapsible-toc.js', 'search-context-data.js', 'search-context.js']
 
 html_sidebars = {
     "**": [
         "sidebar/brand.html",
+        "sidebar/search.html",
         "sidebar/navigation.html",
         "sidebar/repo.html",
         "sidebar/ethical-ads.html",
         "footer.html",
     ]
 }
+
+# Store plain-text context in a script so search excerpts also work on file://.
+def build_search_context(app, exception):
+    if exception is not None or app.builder.format != 'html':
+        return
+    import json
+    from pathlib import Path
+    from docutils import nodes
+
+    data = {}
+    for docname in sorted(app.env.found_docs):
+        tree = app.env.get_doctree(docname).deepcopy()
+        for node in list(tree.findall(lambda node: isinstance(node, (nodes.raw, nodes.comment)))):
+            node.parent.remove(node)
+        sections = {'': tree.astext()}
+        for section in tree.findall(nodes.section):
+            for anchor in section.get('ids', []):
+                sections[anchor] = section.astext()
+        data[docname] = sections
+    output = Path(app.outdir) / '_static' / 'search-context-data.js'
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text('window.JTRACK_SEARCH_CONTEXT = '
+                      + json.dumps(data, ensure_ascii=True) + ';\n', encoding='utf-8')
+
+
+def setup(app):
+    app.connect('build-finished', build_search_context)
