@@ -96,7 +96,7 @@ def build_search_context(app, exception):
     def own_text(node):
         parts = []
         for child in node.children:
-            if isinstance(child, (nodes.section, nodes.comment)):
+            if isinstance(child, (nodes.section, nodes.comment, nodes.title)):
                 continue
             if isinstance(child, nodes.raw):
                 if 'html' in child.get('format', ''):
@@ -114,8 +114,17 @@ def build_search_context(app, exception):
         tree = app.env.get_doctree(docname)
         sections = []
         page_title = app.env.titles[docname].astext()
+        headings = []
 
         def collect(node, titles, anchor):
+            title_node = next((c for c in node.children if isinstance(c, nodes.title)), None)
+            if title_node is not None:
+                context = ' '.join(c.astext() for c in node.children
+                                   if not isinstance(c, (nodes.title, nodes.comment)))
+                headings.append({'heading': title_node.astext(),
+                                 'title': ' > '.join(titles) or page_title,
+                                 'anchor': anchor,
+                                 'text': ' '.join(context.split())})
             # Flush text before descending so matches retain actual page order,
             # including parent text appearing after a nested subsection.
             parts = []
@@ -139,14 +148,14 @@ def build_search_context(app, exception):
                         parser = PlainHTML()
                         parser.feed(child.astext())
                         parts.extend(parser.parts)
-                elif not isinstance(child, nodes.comment):
+                elif not isinstance(child, (nodes.comment, nodes.title)):
                     parts.append(own_text(child) if isinstance(child, nodes.Element)
                                  else child.astext())
             flush()
 
         collect(tree, [], '')
         data.append({'url': app.builder.get_target_uri(docname),
-                     'title': page_title, 'sections': sections})
+                     'title': page_title, 'sections': sections, 'headings': headings})
     output = Path(app.outdir) / '_static' / 'search-context-data.js'
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text('window.JTRACK_SEARCH_CONTEXT = '

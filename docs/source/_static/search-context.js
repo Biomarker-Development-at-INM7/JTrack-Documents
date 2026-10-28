@@ -33,6 +33,23 @@
     }
     return matches;
   };
+  const findHeadings = (documents, query) => {
+    const { include, exclude } = parseQuery(query);
+    if (!include.length) return [];
+    const phrase = include.join(" ");
+    const results = [];
+    for (const doc of documents) {
+      for (const heading of doc.headings || []) {
+        const text = heading.heading.toLowerCase();
+        if (!include.every(term => text.includes(term)) || exclude.some(term => text.includes(term))) continue;
+        const words = heading.text.split(/\s+/u).filter(Boolean);
+        results.push({ url: doc.url + (heading.anchor ? "#" + heading.anchor : ""),
+          title: heading.title, excerpt: words.slice(0,18).join(" ") + (words.length>18 ? " …" : ""),
+          rank: text === phrase ? 0 : text.includes(phrase) ? 1 : 2 });
+      }
+    }
+    return results.sort((a,b) => a.rank-b.rank || a.title.localeCompare(b.title));
+  };
   const initialize = () => {
     const output = document.getElementById("search-results");
     if (!output || !Array.isArray(window.JTRACK_SEARCH_CONTEXT) || typeof Search === "undefined") return;
@@ -43,18 +60,39 @@
       const status = document.createElement("p");
       status.className = "search-summary";
       const matches = findMatches(window.JTRACK_SEARCH_CONTEXT, query);
+      const headings = findHeadings(window.JTRACK_SEARCH_CONTEXT, query);
       const groups = new Map();
       matches.forEach(match => {
         if (!groups.has(match.pageUrl)) groups.set(match.pageUrl, []);
         groups.get(match.pageUrl).push(match);
       });
-      status.textContent = matches.length
-        ? `${matches.length} matching occurrences across ${groups.size} pages. Expand a page to see all its matches in document order.`
+      status.textContent = headings.length || matches.length
+        ? `${headings.length} matching headings · ${matches.length} text matches across ${groups.size} pages.`
         : "No matches found. Try another word or a shorter phrase.";
       const container = document.createElement("div");
       container.className = "search-page-groups";
       const terms = parseQuery(query).include;
       const pattern = terms.length ? new RegExp(terms.slice().sort((a,b)=>b.length-a.length).map(escapePattern).join("|"), "giu") : null;
+      const renderMatch = match => {
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = match.url;
+        link.textContent = match.title.replaceAll(" > ", " → ");
+        const excerpt = document.createElement("p");
+        excerpt.className = "context";
+        let offset = 0;
+        for (const hit of match.excerpt.matchAll(pattern)) {
+          excerpt.append(document.createTextNode(match.excerpt.slice(offset, hit.index)));
+          const mark = document.createElement("mark");
+          mark.className = "highlighted";
+          mark.textContent = hit[0];
+          excerpt.append(mark);
+          offset = hit.index + hit[0].length;
+        }
+        excerpt.append(document.createTextNode(match.excerpt.slice(offset)));
+        item.append(link, excerpt);
+        return item;
+      };
       const sortedGroups = Array.from(groups.values()).sort((a, b) =>
         b.length - a.length || a[0].pageTitle.localeCompare(b[0].pageTitle));
       for (const pageMatches of sortedGroups) {
@@ -64,30 +102,26 @@
         summary.textContent = `${pageMatches[0].pageTitle} (${pageMatches.length})`;
         const list = document.createElement("ul");
         list.className = "search";
-        for (const match of pageMatches) {
-          const item = document.createElement("li");
-          const link = document.createElement("a");
-          link.href = match.url;
-          link.textContent = match.title;
-          const excerpt = document.createElement("p");
-          excerpt.className = "context";
-          let offset = 0;
-          for (const hit of match.excerpt.matchAll(pattern)) {
-            excerpt.append(document.createTextNode(match.excerpt.slice(offset, hit.index)));
-            const mark = document.createElement("mark");
-            mark.className = "highlighted";
-            mark.textContent = hit[0];
-            excerpt.append(mark);
-            offset = hit.index + hit[0].length;
-          }
-          excerpt.append(document.createTextNode(match.excerpt.slice(offset)));
-          item.append(link, excerpt);
-          list.append(item);
-        }
+        for (const match of pageMatches) list.append(renderMatch(match));
         group.append(summary, list);
         container.append(group);
       }
-      output.append(title, status, container);
+      output.append(title, status);
+      if (headings.length) {
+        const headingTitle = document.createElement("h3");
+        headingTitle.textContent = "Matching headings";
+        const headingList = document.createElement("ul");
+        headingList.className = "search search-heading-matches";
+        headings.forEach(heading => headingList.append(renderMatch(heading)));
+        output.append(headingTitle, headingList);
+      }
+      if (matches.length) {
+        const textTitle = document.createElement("h3");
+        textTitle.textContent = "Matches in text";
+        const hint = document.createElement("p");
+        hint.textContent = "Expand a page to see its text matches from top to bottom.";
+        output.append(textTitle, hint, container);
+      }
     };
     // Sphinx normally initializes after this listener; support an already-loaded page too.
     if (document.readyState === "complete") {
@@ -97,6 +131,7 @@
   };
   // Pure search helpers are also used by the offline verification tests.
   window.JTRACK_FIND_MATCHES = findMatches;
+  window.JTRACK_FIND_HEADINGS = findHeadings;
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initialize);
   else initialize();
 })();
