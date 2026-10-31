@@ -45,6 +45,56 @@ Contact the team to arrange an **onboarding meeting**. During onboarding, we dis
 :ref:`Create New Study <create-study>` and the
 :ref:`QC checklist <audit-study>` for the dashboard workflow.
 
+.. _faq-running-study-updates:
+
+Can a study or survey be updated after participants have enrolled?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Yes. Researchers can edit the :ref:`study configuration <edit-study>` or
+:ref:`survey <survey-edit-view>` in JDash while a study is running. For a
+survey already assigned to a study, use **Commit changes to study** in the
+Survey Editor to apply the revised questionnaire to that study.
+
+Enrolled devices also need to retrieve the updated configuration. For example,
+when an enrolled participant needs a revised questionnaire in JTrack EMA+:
+
+1. Make sure the device has an internet connection.
+2. Open the app's administration menu and enter the administrator code.
+3. Select **Download questions from server** to retrieve the revised survey.
+4. Check the questions and schedule on the device against the intended version
+   before continuing study procedures.
+
+The administrator code is available to study investigators on request from
+:ref:`our team <contact-us>`. JTrack Social also provides protected
+administration settings for study configuration and diagnostics; available
+controls depend on the app and platform. See the
+:ref:`iOS Administrator Tools guide <social-admin-tools>` for its documented
+settings and checks.
+
+.. note::
+
+   Downloading an updated questionnaire is different from installing an app
+   update through the store. Coordinate changes with the study team, test the
+   revised workflow, and confirm that enrolled devices have received it.
+   Do not uninstall or re-enroll participants simply to refresh questions.
+
+.. _faq-app-admin-settings:
+
+How do I access administrator settings in EMA and Social?
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Both apps provide protected administration settings for study staff.
+Request the access code from :ref:`our team <contact-us>`, open the app's
+administration menu, and enter the code when prompted. Menu layout and
+available actions differ by app and platform.
+
+In **JTrack EMA+**, **Download questions from server** retrieves the survey
+for an enrolled participant; see :ref:`updates during a running study
+<faq-running-study-updates>`. In **JTrack Social**, administration tools
+support checking sensor settings and investigating collection or transfer
+problems. The :ref:`iOS Administrator Tools guide <social-admin-tools>`
+explains the available iOS controls.
+
 Where can I ask additional questions?
 +++++++++++++++++++++++++++++++++++++
 
@@ -58,7 +108,10 @@ No. The study configuration controls which sensors, wearable signals, Active Lab
 Which permissions does JTrack require?
 ++++++++++++++++++++++++++++++++++++++
 
-Enrollment requires camera access to scan the study QR code. Depending on the
+Camera access is needed when enrolling by QR-code scan. Alternatively, press
+and hold the enrollment button to enter a Subject ID / username manually, as
+shown in the :ref:`Social Android <jtrack-social-android>` and
+:ref:`EMA enrollment <ema-install-enroll>` guides. Depending on the
 study, JTrack Social may additionally request location, motion/physical activity,
 microphone, notifications, Bluetooth, Apple Health, Android usage access, or iOS
 SensorKit access. JTrack EMA+ may request notifications, calendar, camera, or

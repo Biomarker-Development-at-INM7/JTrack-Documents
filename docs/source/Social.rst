@@ -153,6 +153,17 @@ Install & Join the Study
 2. Join the Study
 ~~~~~~~~~~~~~~~~~
 
+Android supports both enrollment methods, just like iOS:
+
+- **Scan a QR code:** tap **Join study**, allow camera access, and scan the
+  code supplied by your study team, as illustrated below.
+- **Enter a Subject ID / username:** press and hold the enrollment button
+  (**Join study** / **Enroll to study**) for several seconds. Enter the
+  identifier supplied by your study team and follow the prompts. No QR-code
+  scan is needed for this method.
+
+**Enrollment by QR code**
+
 1. Open **JTrack Social** and tap **Join study**.
 
    .. image:: image/Social/social_2.png
@@ -168,13 +179,6 @@ Install & Join the Study
       :alt: Android camera permission prompt used during QR-code enrollment
 
 3. Use your device camera to scan the **QR code** provided by your study team.
-
-.. tip::
-
-   **Enroll without scanning a QR code:** press and hold the enrollment
-   button (**Join study** / **Enroll to study**) for several seconds to open
-   manual entry. Enter the **Subject ID / username** provided by your study
-   team and follow the prompts to complete enrollment.
 
 .. important::
    For study setup and QR-code generation, see :ref:`Studies in JDash <jdash-studies>`.
@@ -402,6 +406,70 @@ UI Troubleshooting
 - **Cannot find the + button**: Scroll slightly if the Play button covers screen elements on small displays.
 - **No suggestions appear**: Type the full name or create the activity once so future entries can suggest it.
 - **Audio toggle missing**: Your study may not require audio. Follow only the options shown in your app.
+
+.. _social-in-clinic-mode:
+
+In-Clinic Mode
+--------------
+
+In-Clinic Mode lets study staff manage participants and their wearables from
+one on-site Android smartphone or tablet. Participants use a compatible
+smartwatch or smartband while staff handle enrollment, device setup,
+synchronization, and uploads from the central device. The screenshots below
+show a Garmin workflow.
+
+**Manage participants and watches**
+
+The **Clinic** screen lists saved participants and their paired watches.
+Use search to find a participant or watch, or filter by **All watches**,
+**Connected**, or **Pending upload**. Each card shows the connection state,
+last watch synchronization, and server-upload time.
+
+.. image:: image/Social/AndroidInClinic4.jpg
+   :width: 300px
+   :align: center
+   :alt: Clinic dashboard with participant and watch cards, search, connection and pending-upload filters, and Sync controls
+
+**Add a participant**
+
+Tap **+ Add participant**, scan the participant's QR code, and check the
+participant and server details. Then select **Register and load sensor
+settings** to retrieve the study's Garmin configuration before pairing.
+The screen notes that this does not replace normal-mode enrollment.
+
+.. image:: image/Social/AndroidInClinic3.jpg
+   :width: 300px
+   :align: center
+   :alt: Add participant screen with Scan QR code and Register and load sensor settings
+
+**Pair and configure the watch**
+
+On **Pair watch**, verify the participant, study, and requested sensors.
+Complete the participant profile for the watch, place the intended watch in
+pairing mode, and tap **Scan**. Select the correct device, then use **Set up
+watch**. Check the participant-to-watch assignment before proceeding to the
+next participant. See :doc:`Garmin Integration <Garmin_Integration>` for
+supported devices and pairing details.
+
+.. image:: image/Social/AndroidInClinic2.jpg
+   :width: 300px
+   :align: center
+   :alt: Pair watch screen showing participant and study details, requested sensors, profile fields, watch selection, and Set up watch
+
+**Synchronize and check uploads**
+
+Use **Sync** on the participant's card to retrieve watch data. Check both
+stages of the transfer: **Watch → phone** and **Phone → server**. The summary
+shows received files and uploaded records; a connected watch alone does not
+confirm that its data has reached the server. Use **Pending upload** to find
+transfers that still need attention and
+:ref:`JDash Compliance Monitoring <jdash-compliance-monitoring>` for server-side
+follow-up.
+
+.. image:: image/Social/AndroidInClinic1.jpg
+   :width: 300px
+   :align: center
+   :alt: Clinic dashboard after synchronization showing watch-to-phone files and phone-to-server uploaded record counts
 
 .. _social-troubleshooting-android:
 

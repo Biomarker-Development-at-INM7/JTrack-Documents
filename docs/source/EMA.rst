@@ -15,12 +15,16 @@ What JTrack EMA+ Can Do
 
 - **Broad question types**: binary, date/time, duration, sliders, single/multiple choice, and more.
 - **Platform-independent UX** with paging for long surveys, language support, and :ref:`survey categories <jdash-surveys>` to keep forms organized. It also provides a similar user experience on both Android and iOS devices.
-- **Dynamic survey updates from server** so :ref:`questionnaires <jdash-surveys>` and media/images can be revised mid-study without reinstalling the app.
+- **Survey updates from the server** so :ref:`questionnaires <jdash-surveys>`
+  and media/images can be revised mid-study without reinstalling the app.
+  See :ref:`Updating an enrolled survey <ema-survey-updates>` to apply a
+  revised questionnaire on an enrolled device.
 - **Save & Resume** with answered items highlighted so surveys can be resumed where they were left.
 - **Conditional logic** to show/hide questions based on earlier answers, improving relevance and reducing cognitive load.
 - **HTML text formatting support** so question text and subtext can include simple inline formatting.
 - **Integrated calendar events** for time-sensitive prompts so reminders can be added to the phone calendar.
-- **Local Administration Menu** for on-device management tasks (study setup, diagnostics, etc.).
+- :ref:`Administrator settings <ema-admin-settings>` for protected on-device
+  management, including downloading revised survey questions.
 
 .. image:: image/EMA/EMA_q_type.png
    :scale: 20%
@@ -29,7 +33,8 @@ What JTrack EMA+ Can Do
 Prerequisites
 +++++++++++++
 
-- Your study coordinator has provided a **QR code** to join the study.
+- Your study coordinator has provided a **QR code** or **Subject ID / username**
+  to join the study.
 - A stable internet connection for initial setup and survey/media updates.
 
 For reminder and calendar settings that improve response rates, see :ref:`Compliance Optimization for JTrack EMA+ <compliance-ema>`.
@@ -51,6 +56,16 @@ Android - Install & Join the Study
 
 2) Join the Study
 -----------------
+
+You can enroll by scanning a QR code or by entering your study identifier:
+
+- **Scan a QR code:** tap **Join study**, allow camera access, and scan the
+  code supplied by your study team, as illustrated below.
+- **Enter a Subject ID / username:** press and hold the enrollment button
+  for several seconds to open manual entry. Enter the identifier provided
+  by your study team and follow the prompts. No QR-code scan is needed.
+
+**Enrollment by QR code**
 
 1. Open **JTrack EMA+** and tap **Join study**.
 
@@ -84,11 +99,15 @@ After a successful login, the app will prompt you to adjust system settings to e
 Using JTrack EMA+
 +++++++++++++++++
 
+.. _ema-start-survey:
+
 Starting a Survey
 -----------------
 
 - :ref:`Surveys <jdash-surveys>` appear according to your study schedule or through prompts configured by the study team.
-- If no active questions are shown, pull the screen down to refresh.
+- If no active questions are shown, pull the screen down to refresh. This
+  refreshes the displayed survey view; to retrieve an altered questionnaire,
+  use the :ref:`survey-update workflow <ema-survey-updates>`.
 - Long surveys can open in a list view, while short surveys may use paging. Progress is saved automatically.
 
    .. image:: image/EMA/EMA_listview.png
@@ -134,10 +153,19 @@ Leaving a Survey with Unanswered Questions
       :scale: 35%
       :align: center
 
+.. _ema-media-sync:
+
 Media & Image Sync
 ------------------
 
-- If a :ref:`survey references images or media <jdash-surveys>`, the latest assets are pulled from the server automatically.
+If a :ref:`survey references images or media <jdash-surveys>`, the app
+retrieves the assets from the server automatically. Keep an internet
+connection available while synchronization completes.
+
+If the survey's image references or media were changed, first retrieve the
+revised questionnaire using :ref:`Updating an enrolled survey
+<ema-survey-updates>`, then check that the referenced assets appear. If they
+do not, follow :ref:`EMA troubleshooting <ema-troubleshooting>`.
 
 HTML Formatting in Questions
 ----------------------------
@@ -168,19 +196,122 @@ Researchers configure :ref:`surveys <jdash-surveys>`,
 :ref:`schedules <question-form>`, media, and
 :ref:`conditional logic <survey-conditional-logic>` in :doc:`JDash <JTrack_Dashboard>`. Example response records are shown under :doc:`Data Storage <developers>`.
 
+.. _ema-admin-settings:
+
+Administrator Settings
+++++++++++++++++++++++
+
+JTrack EMA+ provides a protected administration menu for study staff. The
+administrator access code is provided to study investigators on request from
+:ref:`our team <contact-us>`. Open the app's administration menu and enter
+the code when prompted; the layout may differ between Android and iOS.
+
+Use **Download questions from server** to retrieve the questionnaire for the
+current enrollment. This is useful when the study team has changed questions
+or their settings during a running study. Follow the
+:ref:`update workflow <ema-survey-updates>` rather than uninstalling the app
+or enrolling the participant again.
+
+Other administrator actions depend on the app version and platform. Use them
+only for the intended study workflow; the Social app's sensor-debugging
+controls are documented separately under
+:ref:`Social Administrator Tools <social-admin-tools>`.
+
+.. _ema-survey-updates:
+
+Updating an Enrolled Survey
++++++++++++++++++++++++++++
+
+A running study can use a revised questionnaire without requiring an app
+reinstallation. Coordinate the change with the study team and check both
+sides of the update:
+
+1. **Prepare the change in JDash.** Edit the questions or settings in the
+   :ref:`Survey Editor <survey-edit-view>`. For a questionnaire assigned to a
+   study, use **Commit changes to study** to apply that revision to the study.
+2. **Download it on the enrolled device.** With an internet connection,
+   open :ref:`Administrator Settings <ema-admin-settings>`, enter the code,
+   and choose **Download questions from server**.
+3. **Verify the result.** Return to the survey and check the changed text,
+   answer options, categories, and expected availability. Check any revised
+   :ref:`schedules <question-default-settings>`,
+   :ref:`conditional rules <survey-conditional-logic>`, and
+   :ref:`media <ema-media-sync>` against the intended configuration.
+
+**Which kind of refresh do I need?**
+
+- **Pull down to refresh:** update the displayed survey view, for example
+  when checking whether scheduled questions are available.
+- **Download questions from server:** explicitly retrieve the revised
+  questionnaire for an existing enrollment. Use this when the study team
+  needs enrolled participants to receive an altered survey.
+- **Automatic media synchronization:** retrieves assets referenced by the
+  questionnaire; it is not a substitute for downloading changed questions.
+- **App-store update:** installs a new app version. It is separate from a
+  questionnaire change made in JDash.
+
+.. note::
+
+   Do not assume that a refreshed screen proves the latest questionnaire has
+   been downloaded. Confirm the intended change on the device before
+   continuing study procedures. If the result differs, follow
+   :ref:`EMA troubleshooting <ema-troubleshooting>` or contact
+   :ref:`our team <contact-us>`. See also the
+   :ref:`FAQ on running-study updates <faq-running-study-updates>`.
+
+.. _ema-troubleshooting:
+
 Troubleshooting
 +++++++++++++++
 
-- **I can't scan the QR code**
+**I cannot scan the QR code**
 
-  Ensure you granted **Camera** permission, increase screen brightness on the QR code source if needed, and hold the device steady about 15 to 25 cm from the code.
+Check **Camera** permission, screen brightness on the QR-code source, and
+hold the device steady about 15–25 cm from the code. Alternatively, press
+and hold the enrollment button to enter the **Subject ID / username**
+manually; see :ref:`Enrollment <ema-install-enroll>`.
 
-- **Survey reminders are not arriving**
+**The survey still shows old questions**
 
-  On Android, verify **Battery optimization** is **Unrestricted**, make sure **Remove permission and free up space** is disabled, and check whether **Do Not Disturb** or Focus modes are blocking notifications.
+Ask the study team to confirm that the correct questionnaire is assigned and
+its changes were committed to the study. Then follow
+:ref:`Updating an enrolled survey <ema-survey-updates>` on the device. Check a
+specific changed question to verify the result rather than relying only on
+the presence of the survey in the list.
 
-- **A permission was denied by mistake**
+**No survey or active questions appear**
 
-  Go to **System Settings -> Apps -> JTrack EMA+** and enable the required permission again.
+Pull down to refresh and check with the study team whether questions are
+expected at the current study day and time. Availability can depend on
+:ref:`scheduling <question-default-settings>` and
+:ref:`conditional rules <survey-conditional-logic>`. If a revised survey is
+expected, use the :ref:`update workflow <ema-survey-updates>`.
 
-If the issue remains, complete the :ref:`Before Contacting Us <before-contacting-us>` checklist before sending a support request.
+**Survey reminders are not arriving**
+
+Check notification permission and whether **Do Not Disturb** or Focus settings
+block notifications. On Android, verify **Battery optimization** is
+**Unrestricted** and **Remove permission and free up space** is disabled.
+For calendar and notification settings, see
+:ref:`Calendar Reminders <ema-calendar-reminders>` and
+:ref:`EMA compliance settings <compliance-ema>`. Ask the study team to confirm
+the expected question schedule if reminders remain absent.
+
+**Images or other media are missing**
+
+Keep the device connected while :ref:`media synchronization <ema-media-sync>`
+completes. If references were changed, download the revised questions first.
+Ask the study team to check that image filenames match the assets provided
+in the :ref:`study's EMA configuration <ema-conf>`.
+
+**A permission was denied by mistake**
+
+On Android, open **System Settings → Apps → JTrack EMA+** and review the
+required permissions. On iOS, review JTrack EMA's permissions in **Settings**.
+The available entries depend on the platform and features used by the study.
+
+If the issue remains, complete the
+:ref:`Before Contacting Us <before-contacting-us>` checklist and send the study
+ID, app and OS versions, expected question or reminder, and time of the issue
+to :ref:`our team <contact-us>`. Do not uninstall or re-enroll unless the study
+team instructs you to do so.
