@@ -491,6 +491,22 @@ Allow the permissions requested for the sensors enabled in your
 to your study. The :ref:`Application Permissions <application-permissions>`
 reference explains each permission's purpose.
 
+.. _social-permission-check-ios:
+
+Permission Check
+~~~~~~~~~~~~~~~~
+
+Open the main menu and choose **Check Permissions** to review the permissions
+expected for your study. If a required permission is missing, follow the app's
+instructions to open iOS Settings and grant it, then return and check again.
+This checks authorization; use the :ref:`debugger <social-debugging-ios>` to
+check whether sensor data is actually available.
+
+.. image:: image/Social/PermissionCheck.png
+   :width: 300px
+   :align: center
+   :alt: Checking for expected Permissions and pointing to iOS Settings if anything is missing
+
 Activity and Bluetooth
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -538,6 +554,19 @@ If the study requests SensorKit access, complete the research-data request:
       :align: center
       :alt: Authorisation Review showing Motion access granted and the Done button
 
+Status Reports via Mobile Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: image/Social/SocialStatusCellular.png
+    :width: 300px
+    :align: center
+    :alt: Authorisation for Mobile Data only for weekly status reports
+
+For the purpose of providing more detailed per-study and user status reports, we have weekly status reports via JTrack Social.
+These reports provide insight about enabled sensors, granted permissions and pending data. To also make sure to receive info
+if a participant is say rarely connected via WiFi, there can be an exception that allows these few KB sized weekly updates
+to be sent via mobile data.
+
 .. note::
 
    The requested categories and wording depend on the study and iOS version.
@@ -575,40 +604,284 @@ The app logs:
 - Duration
 - Sensor data during the session
 
-Troubleshooting
----------------
-
-If enrollment or collection is incomplete:
-
-- Check the QR code, internet connection, and camera permission if enrollment
-  does not complete.
-- Review the :ref:`iOS permissions <social-permissions-ios>` if a requested
-  sensor is unavailable or SensorKit authorization was not completed.
-- If a task does not start, ask the study team to check that Active Labeling
-  is enabled in the :ref:`study configuration <active-tracking>` and the task
-  list has downloaded. Check required motion and microphone permissions.
-- Follow :ref:`background collection guidance <compliance-social>` and
-  :doc:`Troubleshooting <Troubleshooting>` before reporting an issue.
-
 .. _social-admin-tools:
 
 Administrator Tools
 -------------------
 
+Open **Administration** from the iOS app menu to access the protected tools
+used by study staff. Use them to check device settings, investigate missing
+recordings, and report the phone's sensor state to the server.
 
-Use these protected iOS tools to verify a participant device without changing
-the study protocol.
+.. note::
 
-The iOS administration area currently includes:
+   The administrator access code is provided to study investigators on request.
+   Contact :ref:`our team <contact-us>` to request it.
 
-* **Sensor debugging:** select a sensor independently of its enabled state and inspect live hardware values or historical data from the last 72 hours.
-* **Plotting:** display incoming or stored values in an on-device graph and report explicitly when a sensor is unavailable or no historical data exists.
-* **Active Labeling preview:** inspect task selection, instructions, preparation countdown, timer, audio option, and start/stop behavior without requiring the normal study schedule.
-* **Sensor-state reporting:** send the effective local enabled/disabled flags to the server. This normally requires Wi-Fi; an administrator can approve a one-time cellular exception.
-* **Wearable diagnostics:** when Garmin or Fitbit is enabled, inspect pairing, synchronization, local data, upload state, and diagnostic logs through the corresponding dashboard.
+.. image:: image/Social/SocialAdminMenu.PNG
+   :width: 300px
+   :align: center
+   :alt: iOS Admin Tools menu with General, Debugging, and Send sensor states
+
+- **General:** inspect the enrolled user and device, recording frequency,
+  upload settings, and enabled sensor services.
+- **Debugging:** inspect live hardware readings or available historical sensor
+  data and plots. Historical checks can cover the last 72 hours; the app
+  reports when a sensor or its data is unavailable.
+- **Send sensor states:** report the effective local sensor enabled/disabled
+  flags to the server. This normally uses Wi-Fi; an administrator can approve
+  a one-time cellular exception.
+- **Garmin (optional):** when Garmin is configured for the study, use its
+  dashboard for pairing, synchronization, local data, upload status, and
+  diagnostic logs. See :doc:`Garmin Integration <Garmin_Integration>`.
+
+.. note::
+
+   Garmin is not shown in these screenshots because the example study does
+   not configure Garmin sensors. Its absence here does not mean that Garmin
+   administration tools are unavailable in studies that use them.
+
+.. _social-general-settings-ios:
+
+General Settings
+~~~~~~~~~~~~~~~~
+
+Use **UserID** and **DeviceID** to check which enrollment and phone you are
+investigating. Compare the **Recording frequency** with the
+:ref:`study's Active Tracking configuration <active-tracking>`; the displayed
+50 Hz is an example, not a recommended rate for every study.
+
+**Advanced Notifications** helps you observe when the app saves and sends
+data. See the :ref:`on-device troubleshooting phases <social-troubleshooting-ios>`
+for how to use it during an investigation. Under **Mobile
+Data**, **Weekly Status**, **Data sending** and **Leave + final Send** separately allow cellular
+use for adherence info, routine uploads and leaving the study with final uploads. All are
+off by default; firmware downloads remain Wi-Fi-only.
+
+.. image:: image/Social/SocialAdminSettings.jpg
+   :width: 300px
+   :align: center
+   :alt: General settings showing user and device IDs, recording frequency, Advanced Notifications, and separate mobile-data toggles
+
+**Available services** shows the local sensor toggles, while **Active Labeling**
+groups sensors used during timed tasks. In this example, accelerometer and
+gyroscope are enabled. These settings should be checked against the intended
+:ref:`study configuration <jdash-studies>`; enabling a service does not replace
+the required :ref:`iOS permissions <social-permissions-ios>`.
+
+.. image:: image/Social/SocialAdminSettingsSensor.PNG
+   :width: 300px
+   :align: center
+   :alt: General sensor settings with passive service toggles and Active Labeling sensors, including enabled accelerometer and gyroscope
+
+.. _social-debugging-ios:
+
+Debugging
+~~~~~~~~~
+
+Open **Administration → Debugging** and select a sensor to inspect its current
+readings and available historical data from the past **72 hours**. Use the
+plots to distinguish a sensor that is collecting now from one that recorded
+earlier but has since stopped. The debugger reports unavailable sensors or
+missing historical data. Compare the result with the expected
+:ref:`study configuration <jdash-studies>` and
+:ref:`permissions <social-permission-check-ios>`.
+
+.. _social-forensic-logging-ios:
+
+Forensic Logging
+~~~~~~~~~~~~~~~~
+
+Under **Administration → General → Advanced**, enable **Forensic logging**
+and relaunch the app to capture a complete startup. **Background forensics**
+opens the investigation screen, where **Prepare complete log export** prepares
+the recorded diagnostics for export. **Copy forensic log** is also available
+for copying log text. Follow the
+:ref:`troubleshooting workflow <social-troubleshooting-ios>` below when
+collecting a day of diagnostics for the team.
+
+Logs remain local and are not uploaded automatically. Disabling logging stops
+new entries but retains existing logs. Developer Mode is not required.
+
+.. image:: image/Social/SocialAdminForensic.jpg
+   :width: 400px
+   :align: center
+   :alt: Advanced settings with Forensic logging, Copy forensic log, and Background forensics
 
 .. warning::
-   Administration and debugging controls are intended for trained study staff. Running tests or changing device configuration can temporarily affect normal participant workflows.
+
+   Administration and debugging controls are intended for trained study staff.
+   Changing sensor or recording settings can affect participant data collection;
+   keep them consistent with the study protocol.
+
+.. _social-shared-mode:
+
+Shared Phone Mode
+~~~~~~~~~~~~~~~~~
+
+For active-labeling-only workflows where several participants use one iPhone,
+enable **Shared Phone Mode** under **General**. Synchronize before enabling or
+disabling this mode. Unsent recordings retain their original subject when
+switching, and the original subject remains the administration profile.
+
+.. image:: image/Social/SocialAdminShared.jpg
+   :width: 400px
+   :align: center
+   :alt: Shared Phone Mode toggle with instructions about synchronization and retaining the original administration profile
+
+**Check and switch the active participant**
+
+Check **Logged in as** on the main screen before recording a task. This
+identifies the participant currently selected on the shared phone.
+
+.. image:: image/Social/SharedModeMainEN.png
+   :width: 300px
+   :align: center
+   :alt: Main screen showing Record activity and the current participant under Logged in as
+
+Open the app menu and choose **Shared Phone Dashboard** to manage the phone's
+participants. **Active sensor data** opens the recorded-session view described
+below. **Manual Synchronization** is also available from this menu.
+
+.. image:: image/Social/SharedModeMenuEN.png
+   :width: 300px
+   :align: center
+   :alt: App menu with Manual Synchronization, Shared Phone Dashboard, Active sensor data, and Administration
+
+The dashboard identifies the **Administration profile** and the **Active
+subject**, with session counts, pending synchronizations, and unsent data
+points for each participant. Use **Switch to** on the intended participant's
+card, then recheck **Logged in as** before recording. **Create Label** provides
+access to task creation for that participant.
+
+.. image:: image/Social/SharedModeSubjectsEN.jpg
+   :width: 300px
+   :align: center
+   :alt: Shared Phone Dashboard with administration and active-subject cards, pending-session information, Create Label, and Switch to controls
+
+.. _social-active-session-data:
+
+Active Sensor Data and Quality Control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use **Active sensor data** from the app menu to review sessions by participant,
+task, and recording time. SensorKit supplements direct recordings and, as
+shown in this view, can be fetched **48–167 hours after a task ends**. Check
+the countdown or **Fetch before** deadline for the individual session.
+
+- **Waiting:** the SensorKit fetch window has not opened yet. The disabled
+  fetch control shows the remaining wait; direct recordings can still be
+  inspected with **Quality Control**.
+- **Ready to fetch:** use **Load SensorKit data** while the session is within
+  its fetch window, then inspect the available data.
+
+.. image:: image/Social/SharedModeActiveWaitingEN.png
+   :width: 300px
+   :align: center
+   :alt: Active sensor data sessions in Waiting state with countdowns until SensorKit data can be fetched
+
+.. image:: image/Social/SharedModeActiveAvailableEN.png
+   :width: 300px
+   :align: center
+   :alt: Session ready to fetch SensorKit data with a fetch deadline, Quality Control, and session-management actions
+
+Choose **Quality Control** to inspect sample counts, the split between Core
+Motion and SensorKit samples, the largest recording gaps, and sensor plots.
+Use these details to investigate recording completeness before sending the
+session. A SensorKit count of zero should be interpreted together with the
+session's fetch status; it does not imply that direct Core Motion recording
+failed.
+
+.. image:: image/Social/SharedModeActivePlotsEN.png
+   :width: 300px
+   :align: center
+   :alt: Session Quality Control showing accelerometer and gyroscope sample counts, Core Motion and SensorKit totals, recording gaps, and plots
+
+**Session actions**
+
+- **Send and delete session data** combines sending the session data with
+  deleting it locally. Use it when the session is ready for transfer.
+- **Wrap data collection** ends collection for that session without sending
+  or deleting its data.
+- **Delete session** is a deletion action, not a synchronization step; use it
+  only when the session should be discarded under the study protocol.
+
+For server-side follow-up, check :ref:`JDash Compliance Monitoring
+<jdash-compliance-monitoring>`. Local session plots and server receipt provide
+complementary checks.
+
+.. _social-troubleshooting-ios:
+
+Troubleshooting
+---------------
+
+For incomplete enrollment, first check the QR code or manually entered
+Subject ID, internet connection, and camera permission if scanning. For
+missing sensor data or uncertain background collection, work through these
+on-device checks in order. Protected administration tools should be used
+by study staff.
+
+1. Check Permissions
+~~~~~~~~~~~~~~~~~~~~
+
+Open **Check Permissions** in the main menu and resolve any missing study
+permissions. Recheck after returning from iOS Settings. See
+:ref:`Permission Check <social-permission-check-ios>` for the menu screenshot
+and instructions.
+
+2. Inspect Current and Historical Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use **Administration → Debugging** to check whether each expected sensor is
+collecting data now and whether it has recorded data during the previous
+**72 hours**. Inspect both live readings and historical plots; a permission
+being granted does not by itself confirm that recordings exist. See
+:ref:`Debugging <social-debugging-ios>`.
+
+3. Observe Save and Send Notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable **Advanced Notifications** in
+:ref:`General settings <social-general-settings-ios>` to get a feel for when
+data is saved and sent during normal phone use. Note the times when expected
+activity is missing, and compare them with the debugger and
+:ref:`JDash received-data checks <jdash-compliance-monitoring>`.
+
+Disable the extra notifications after the investigation. Notifications can
+influence phone use and the experiment, so repeat checks with them disabled
+when comparing behavior.
+
+4. Record a Day of Forensic Logs and Export
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the preceding checks do not explain the problem:
+
+1. Enable :ref:`Forensic logging <social-forensic-logging-ios>` under
+   **Administration → General → Advanced**, then relaunch the app.
+2. Leave logging enabled for about **one day** while using the phone normally.
+   Note the times of any missing recordings or failed sends.
+3. Open **Background forensics** and tap **Prepare complete log export**.
+   Export the prepared log and send it to :ref:`our team <contact-us>` with
+   the study ID, device/app versions, and the times and symptoms observed.
+   The :doc:`support reporting guide <Troubleshooting>` lists the details
+   to include.
+4. Disable forensic logging when the investigation is complete.
+
+.. image:: image/Social/SocialAdminForensic.jpg
+   :width: 400px
+   :align: center
+   :alt: Forensics screen with local logging controls and Prepare complete log export
+
+The export is prepared locally; it is not sent to the team automatically.
+The separate **Diagnostic notifications** toggle shown on this screen can
+also affect the experiment. Repeat observations with notifications disabled
+when assessing normal background behavior.
+
+For background settings, see
+:ref:`Compliance Optimization for JTrack Social <compliance-social>`.
+If an Active Labeling task will not start, also ask the study team to check
+that it is enabled in the :ref:`study configuration <active-tracking>` and
+that the task list has downloaded.
 
 Technical Notes
 +++++++++++++++
@@ -623,7 +896,7 @@ On iOS, JTrack Social currently:
 * records only the phone sensors enabled by the downloaded :ref:`study configuration <jdash-studies>`;
 * uses Core Motion for activity, pedometer, and active-labeling motion data;
 * uses SensorKit for supported historical data such as app usage and lock/unlock information;
-* supports location, Apple Health, audio during configured active-labeling tasks, and Garmin/Fitbit wearables when enabled;
+* supports location, Apple Health, audio during configured active-labeling tasks, and Garmin wearables when enabled;
 * stores data locally until it can be uploaded securely; and
 * stops new recording when the configured :ref:`study duration <jdash-studies>` ends, while allowing delayed SensorKit batches to be retrieved for up to 48 hours.
 

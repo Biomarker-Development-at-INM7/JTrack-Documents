@@ -48,7 +48,7 @@ Depending on the study, JTrack Social can collect:
 * high-frequency accelerometer and gyroscope data during Active Labeling;
 * study-configured audio recordings;
 * read-only Apple Health measurements;
-* measurements from supported Garmin or Fitbit wearables; and
+* measurements from supported Garmin wearables; and
 * technical metadata such as app and operating-system versions, phone model,
   synchronization status, and effective sensor states.
 
