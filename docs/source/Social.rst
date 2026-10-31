@@ -507,8 +507,20 @@ check whether sensor data is actually available.
    :align: center
    :alt: Checking for expected Permissions and pointing to iOS Settings if anything is missing
 
+The result distinguishes granted permissions from those **not yet requested**.
+For example, **All permissions granted** can appear alongside **Not yet
+requested: Microphone**. This does not mean microphone access was denied or
+that every possible sensor has been authorized; interpret it against the
+study's requested sensors.
+
+.. image:: image/Social/SocialPermissionCheckResult.jpg
+   :width: 300px
+   :align: center
+   :alt: Permission Check result showing All permissions granted and Microphone not yet requested
+
+
 Activity and Bluetooth
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Allow the requested motion/activity access for activity measurements. If your
 study uses a wearable, allow Bluetooth access so the phone can communicate
@@ -525,7 +537,7 @@ with it.
    :alt: iOS Bluetooth permission prompt for connecting to wearable devices
 
 SensorKit Authorization
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the study requests SensorKit access, complete the research-data request:
 
@@ -554,25 +566,38 @@ If the study requests SensorKit access, complete the research-data request:
       :align: center
       :alt: Authorisation Review showing Motion access granted and the Done button
 
-Status Reports via Mobile Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: image/Social/SocialStatusCellular.png
-    :width: 300px
-    :align: center
-    :alt: Authorisation for Mobile Data only for weekly status reports
-
-For the purpose of providing more detailed per-study and user status reports, we have weekly status reports via JTrack Social.
-These reports provide insight about enabled sensors, granted permissions and pending data. To also make sure to receive info
-if a participant is say rarely connected via WiFi, there can be an exception that allows these few KB sized weekly updates
-to be sent via mobile data.
-
 .. note::
 
    The requested categories and wording depend on the study and iOS version.
    Follow the prompts on your device. If you cancel or deny a permission,
    tell the study team so they can help check the required setup. Android's
    Usage access and battery-optimization settings do not apply to iOS.
+
+.. _social-status-mobile-data:
+
+Status Reports via Mobile Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+JTrack Social sends :ref:`weekly technical status reports
+<social-weekly-status-report>` to help the study team check enabled sensors,
+permissions, and pending data. If the phone rarely connects to Wi-Fi, you can
+choose **Enable** in the mobile-data prompt so these reports can still be sent.
+Choose **Cancel** to leave reports waiting for Wi-Fi.
+
+.. image:: image/Social/SocialStatusCellular.jpg
+   :width: 300px
+   :align: center
+   :alt: Mobile Data prompt offering Cancel or Enable for weekly technical status reports, estimated at less than 1 MB per week
+
+The prompt estimates **less than 1 MB per week** for status reports. These
+reports are linked to the Subject ID and include technical status, study and
+device identifiers, and a notification token when available. They contain no
+sensor measurements or recordings. This choice does **not** authorize
+measurement uploads over mobile data. You can review the choice under
+**Administration → General → Weekly status via mobile data**.
+
+For the report contents and sending schedule, see
+:ref:`Weekly technical status report <social-weekly-status-report>`.
 
 .. _active-labeling-ios:
 
@@ -604,6 +629,183 @@ The app logs:
 - Duration
 - Sensor data during the session
 
+.. _social-data-collection-ios:
+
+Data collection and transfer on iOS
+------------------------------------
+
+JTrack Social distinguishes between collecting measurements, storing them on
+the phone, and sending them to the study server. Data can therefore be present
+on the phone even when no recent upload is visible on the server. Collection
+depends on the study configuration, the required permissions, the availability
+of the data source, and the execution time provided by iOS.
+
+Passive collection and automatic uploads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Passive sensors collect or retrieve data without starting an active-labeling
+session. Only sensors enabled for the study are used. Depending on the sensor,
+data arrive through callbacks or are fetched during foreground or background
+execution. Wearable synchronization is a separate step: retrieving data from
+a Garmin device onto the phone does not itself upload those data to the server.
+
+The upload policy distinguishes between high-frequency measurements and other
+passive data:
+
+* High-frequency streams configured in Hz use batches of up to **2,500 data
+  points**. A final batch can contain fewer points when pending data are drained,
+  for example during an explicit upload.
+* Other passive streams become eligible for automatic upload when **1,000 data
+  points** are pending, or when no successful upload for that stream has occurred
+  on the current local calendar day, whichever condition is met first.
+  Upload requests contain up to **1,000 data points**, with a smaller final batch
+  if necessary.
+* A stream with no previous successful upload can send a smaller initial batch.
+  Empty streams do not generate measurement uploads.
+
+The daily check is an upload-scheduling rule, not a requirement that each file
+contains exactly one day's measurements. A backlog may span several measurement
+days and require multiple requests. Eligibility is evaluated separately for
+the relevant sensor or wearable stream; a low-volume stream should not have to
+wait for another stream to accumulate enough measurements.
+
+.. important::
+
+   Automatic uploads are attempted when the app has an execution opportunity
+   and an allowed network connection. iOS controls background execution, so
+   JTrack cannot guarantee an upload every day or at a fixed time. An unavailable
+   network, an unreachable server, or insufficient background execution time
+   can postpone sending. Pending data remain available for a later attempt.
+
+Manual synchronization can send pending data without waiting for the normal
+automatic-upload threshold. Upload batch sizes describe the number of stored
+records, not the sampling frequency, file size, or duration of the recording.
+Audio recordings are handled as recording files rather than batches of numeric
+sensor points.
+
+Active labeling and delayed SensorKit data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Active labeling associates measurements with a defined task, time interval,
+study, and subject. Only the active sensors configured for that study are used.
+Direct recordings can already be stored locally before supplementary SensorKit
+data become available.
+
+For enabled accelerometer and gyroscope streams, SensorKit can supplement the
+direct recordings. The Active Sensor Data view provides the session-specific
+fetch workflow, normally **48 to 167 hours after the task ends**. This is the
+app's fetch window, not a guarantee that SensorKit has recorded or will return
+data for every session. Fetching SensorKit data and sending data to the study
+server are separate operations.
+
+The session controls have distinct purposes:
+
+* **Load SensorKit data** retrieves available supplementary data for the session.
+  Repeated fetches merge new samples without intentionally duplicating samples
+  already retained or acknowledged as sent. A cooldown can temporarily disable
+  another fetch.
+* **Send and delete** uploads the session's pending data and removes the
+  successfully transferred local measurement data. A loading indicator remains
+  visible while this operation is running. A failed operation must not be
+  interpreted as a completed transfer.
+* **Wrap data collection** moves the session to the finished section. It does
+  not itself send or delete measurements. Reopening is time-limited; in Shared
+  Phone Mode it also requires that the subject has not left.
+
+In ordinary single-subject operation, enabled upload paths can transfer pending
+recordings automatically. Shared Phone Mode deliberately differs: active
+recordings are retained for local review and are not automatically uploaded.
+The conductor explicitly sends an individual session or uses the Shared Phone
+Dashboard to send all pending data. Measurements are separated by subject and
+sensor when preparing uploads, even when several subjects use the same phone.
+
+In Shared Phone Mode, local quality-control plots can display direct and
+SensorKit measurements together. These plots support review but do not certify
+complete data coverage. Participant-facing operation does not expose these
+quality-control plots as behavioral feedback.
+
+Network access and local retention
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Measurement uploads normally require **Wi-Fi**. Administrators can separately
+allow mobile data for regular data sending and for leaving a study with its
+final upload. Permission to send weekly status reports over mobile data does
+**not** authorize measurement uploads over mobile data.
+
+Records are removed from the pending upload queue only after a successful
+server response. If sending fails, unacknowledged data remain pending. A lost
+server response can still cause a retry of a request already received by the
+server; this is not an exactly-once delivery guarantee.
+
+Some data have additional local-history requirements. Garmin sleep and
+homeBeacon history are retained locally for administrative review, with sent
+state used to exclude acknowledged records from subsequent pending uploads.
+Shared active-session records and their subject attribution support delayed
+SensorKit retrieval across subject switches. Local retention and cleanup
+therefore depend on the data type and workflow, rather than every successful
+upload deleting every local record.
+
+.. _social-weekly-status-report:
+
+Weekly technical status report
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to measurements, the app sends a technical status report using the
+``update_user`` endpoint. A report becomes due when no successful report has
+been sent yet or when seven days have elapsed since the previous successful
+report. A changed push-notification token or an explicit status update can
+trigger an earlier report. A failed report does not advance its successful-send
+timestamp.
+
+.. image:: image/Social/SocialStatusCellular.jpg
+   :width: 300px
+   :align: center
+   :alt: Mobile Data consent prompt for weekly technical status reports, separate from measurement uploads
+
+The report includes:
+
+* ``sensorStates``: the effective sensor configuration reported by the app.
+* ``pendingData``: pending-data counts for the relevant enabled sensors and
+  wearable streams. These describe unsent data, not all historical data retained
+  on the phone. An unavailable count must not be interpreted as zero.
+* ``permissionStates``: ``permissionGranted``, ``permissionUnknown``, and
+  ``permissionsCheckedAt`` (Unix milliseconds). These are read-only permission
+  checks; creating a report does not request new system permissions.
+* ``connectedWifi``: whether the phone was using Wi-Fi when the report was
+  created. This is not a server-reachability test or a network-usage history.
+* Study, subject and device identifiers, app version, device model, shared-admin
+  status, and the notification token when available.
+
+.. note::
+
+   The report contains no sensor measurements or audio recordings. However,
+   it contains identifiers and is linked to study participation: it is **not
+   anonymous**. It is intended to support study operation and technical support.
+
+An enabled sensor is not necessarily authorized or delivering data. Likewise,
+absence from ``permissionGranted`` does not by itself establish that a person
+explicitly denied permission. Some permissions may not have been requested;
+others cannot be determined through a read-only iOS API. In particular,
+HealthKit does not expose the user's read-authorization decisions.
+
+The mobile-data question for weekly reports is presented only after enrollment
+and after the app's sensor-permission sequence has finished. Already-enrolled
+users who have not made this choice can receive it during a later foreground
+visit. Without this consent, status reports wait for Wi-Fi. Granting it permits
+only the technical report to use mobile data; it does not enable sensor uploads.
+
+The normal weekly status payload is small, typically **less than 1 MB per week**.
+This is an estimate for status reporting, not a limit on measurement uploads or
+a hard cap on all application network traffic.
+
+Shared Phone Mode sends status reports separately for enrolled profiles,
+including the shared administrator. Configuration and pending-data counts are
+associated with the respective subject; system permissions describe the shared
+phone. Each profile has its own report receipt. If background execution ends
+before every due profile has been processed, remaining reports stay due for a
+later opportunity.
+
+
 .. _social-admin-tools:
 
 Administrator Tools
@@ -618,11 +820,12 @@ recordings, and report the phone's sensor state to the server.
    The administrator access code is provided to study investigators on request.
    Contact :ref:`our team <contact-us>` to request it.
 
-.. image:: image/Social/SocialAdminMenu.PNG
+.. image:: image/Social/SocialAdminMenu.jpg
    :width: 300px
    :align: center
    :alt: iOS Admin Tools menu with General, Debugging, and Send sensor states
 
+- **Help & documentation:** open the documentation from the Admin Tools menu.
 - **General:** inspect the enrolled user and device, recording frequency,
   upload settings, and enabled sensor services.
 - **Debugging:** inspect live hardware readings or available historical sensor
@@ -653,10 +856,20 @@ investigating. Compare the **Recording frequency** with the
 
 **Advanced Notifications** helps you observe when the app saves and sends
 data. See the :ref:`on-device troubleshooting phases <social-troubleshooting-ios>`
-for how to use it during an investigation. Under **Mobile
-Data**, **Weekly Status**, **Data sending** and **Leave + final Send** separately allow cellular
-use for adherence info, routine uploads and leaving the study with final uploads. All are
-off by default; firmware downloads remain Wi-Fi-only.
+for how to use it during an investigation.
+
+Under **Mobile Data**, the controls have separate purposes:
+
+- **Weekly status via mobile data:** permits only
+  :ref:`technical status reports <social-weekly-status-report>` to use cellular
+  data. It does not enable measurement uploads.
+- **Data sending:** permits routine measurement uploads over cellular data.
+- **Leave + final Send:** permits cellular use when leaving the study,
+  including final uploads.
+
+These permissions are off by default until enabled; firmware downloads remain
+Wi-Fi-only. The screenshot illustrates weekly status reporting enabled while
+the two measurement-upload permissions remain off.
 
 .. image:: image/Social/SocialAdminSettings.jpg
    :width: 300px
@@ -693,9 +906,9 @@ Forensic Logging
 ~~~~~~~~~~~~~~~~
 
 Under **Administration → General → Advanced**, enable **Forensic logging**
-and relaunch the app to capture a complete startup. **Background forensics**
-opens the investigation screen, where **Prepare complete log export** prepares
-the recorded diagnostics for export. **Copy forensic log** is also available
+and relaunch the app to capture a complete startup. In the same **Advanced**
+section, **Prepare complete log export** prepares the recorded diagnostics
+for export. **Copy forensic log** is also available
 for copying log text. Follow the
 :ref:`troubleshooting workflow <social-troubleshooting-ios>` below when
 collecting a day of diagnostics for the team.
@@ -706,7 +919,7 @@ new entries but retains existing logs. Developer Mode is not required.
 .. image:: image/Social/SocialAdminForensic.jpg
    :width: 400px
    :align: center
-   :alt: Advanced settings with Forensic logging, Copy forensic log, and Background forensics
+   :alt: Advanced settings with Forensic logging, Copy forensic log, Diagnostic notifications, and Prepare complete log export
 
 .. warning::
 
@@ -749,8 +962,8 @@ below. **Manual Synchronization** is also available from this menu.
    :alt: App menu with Manual Synchronization, Shared Phone Dashboard, Active sensor data, and Administration
 
 The dashboard identifies the **Administration profile** and the **Active
-subject**, with session counts, pending synchronizations, and unsent data
-points for each participant. Use **Switch to** on the intended participant's
+subject**, with session counts, pending synchronizations, unsent data points, and the
+remaining study duration where shown. Use **Switch to** on the intended participant's
 card, then recheck **Logged in as** before recording. **Create Label** provides
 access to task creation for that participant.
 
@@ -860,7 +1073,8 @@ If the preceding checks do not explain the problem:
    **Administration → General → Advanced**, then relaunch the app.
 2. Leave logging enabled for about **one day** while using the phone normally.
    Note the times of any missing recordings or failed sends.
-3. Open **Background forensics** and tap **Prepare complete log export**.
+3. Return to **Administration → General → Advanced** and tap
+   **Prepare complete log export**.
    Export the prepared log and send it to :ref:`our team <contact-us>` with
    the study ID, device/app versions, and the times and symptoms observed.
    The :doc:`support reporting guide <Troubleshooting>` lists the details
