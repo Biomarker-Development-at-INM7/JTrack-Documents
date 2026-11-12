@@ -188,9 +188,17 @@ Check Enrollment
 
 After enrolling by QR code or manual entry, check that the app opens its main screen
 and lets you continue through the requested settings rather than returning
-to the welcome/enrollment screen. The screenshot under **Background Settings** shows the main app
+to the welcome/enrollment screen.
+The screenshot under **Background Settings** shows the main app
 behind the battery-settings prompt. Complete the permissions below
 and confirm that battery use is **Unrestricted**.
+
+.. image:: image/Social/AndroidMainMenu.png
+  :width: 300px
+  :align: center
+  :alt: Android Main Menu for enrolled subjects
+
+You should be able to access the menu and see all important enrollment details.
 
 If you remain on the welcome screen or setup cannot be completed, follow the
 :ref:`Android troubleshooting steps <social-troubleshooting-android>`. The
@@ -425,7 +433,7 @@ Use search to find a participant or watch, or filter by **All watches**,
 **Connected**, or **Pending upload**. Each card shows the connection state,
 last watch synchronization, and server-upload time.
 
-.. image:: image/Social/AndroidInClinic4.jpg
+.. image:: image/Social/AndroidClinicView.png
    :width: 300px
    :align: center
    :alt: Clinic dashboard with participant and watch cards, search, connection and pending-upload filters, and Sync controls
@@ -437,7 +445,7 @@ participant and server details. Then select **Register and load sensor
 settings** to retrieve the study's Garmin configuration before pairing.
 The screen notes that this does not replace normal-mode enrollment.
 
-.. image:: image/Social/AndroidInClinic3.jpg
+.. image:: image/Social/AndroidClinicAdd.png
    :width: 300px
    :align: center
    :alt: Add participant screen with Scan QR code and Register and load sensor settings
@@ -451,7 +459,7 @@ watch**. Check the participant-to-watch assignment before proceeding to the
 next participant. See :doc:`Garmin Integration <Garmin_Integration>` for
 supported devices and pairing details.
 
-.. image:: image/Social/AndroidInClinic2.jpg
+.. image:: image/Social/AndroidClinicSetupWatch.png
    :width: 300px
    :align: center
    :alt: Pair watch screen showing participant and study details, requested sensors, profile fields, watch selection, and Set up watch
@@ -466,10 +474,14 @@ transfers that still need attention and
 :ref:`JDash Compliance Monitoring <jdash-compliance-monitoring>` for server-side
 follow-up.
 
-.. image:: image/Social/AndroidInClinic1.jpg
+|pic1|  |pic2|
+
+.. |pic1| image:: image/Social/AndroidClinicAdded.png
    :width: 300px
-   :align: center
-   :alt: Clinic dashboard after synchronization showing watch-to-phone files and phone-to-server uploaded record counts
+
+.. |pic2| image:: image/Social/AndroidClinicViewPopulated.png
+   :width: 300px
+
 
 .. _social-troubleshooting-android:
 
@@ -594,15 +606,16 @@ Allow the requested motion/activity access for activity measurements. If your
 study uses a wearable, allow Bluetooth access so the phone can communicate
 with it.
 
-.. image:: _static/Social_iOS_Activity.png
+|act|  |bt|
+
+.. |act| image:: _static/Social_iOS_Activity.png
    :width: 300px
-   :align: center
    :alt: iOS motion and fitness permission prompt for JTrack Social
 
-.. image:: _static/Social_iOS_Bluetooth.png
+.. |bt| image:: _static/Social_iOS_Bluetooth.png
    :width: 300px
-   :align: center
    :alt: iOS Bluetooth permission prompt for connecting to wearable devices
+
 
 SensorKit Authorization
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1056,14 +1069,14 @@ the countdown or **Fetch before** deadline for the individual session.
 - **Ready to fetch:** use **Load SensorKit data** while the session is within
   its fetch window, then inspect the available data.
 
-.. image:: image/Social/SharedModeActiveWaitingEN.png
+|Shared1|  |Shared2|
+
+.. |Shared1| image:: image/Social/SharedModeActiveWaitingEN.png
    :width: 300px
-   :align: center
    :alt: Active sensor data sessions in Waiting state with countdowns until SensorKit data can be fetched
 
-.. image:: image/Social/SharedModeActiveAvailableEN.png
+.. |Shared2| image:: image/Social/SharedModeActiveAvailableEN.png
    :width: 300px
-   :align: center
    :alt: Session ready to fetch SensorKit data with a fetch deadline, Quality Control, and session-management actions
 
 Choose **Quality Control** to inspect sample counts, the split between Core
