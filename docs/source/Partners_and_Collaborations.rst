@@ -44,6 +44,17 @@ For collaboration enquiries and information about using JTrack in a study, see :
        object-fit: contain;
    }
 
+   /* Fill more of the existing card with the SensorKit artwork. */
+   .partner-card.sensorkit-card {
+       padding: 8px;
+   }
+
+   .partner-card.sensorkit-card img {
+       max-height: 144px;
+       width: 100%;
+       height: 100%;
+   }
+
    @media (max-width: 900px) {
        .partners-grid {
            grid-template-columns: 1fr;
@@ -105,6 +116,13 @@ For collaboration enquiries and information about using JTrack in a study, see :
 
    <div class="partners-grid">
 
+      <!-- Apple SensorKit -->
+      <a class="partner-card sensorkit-card"
+         href="https://healthresearch.apple.com/resources/accessing-sensorkit-data/"
+         target="_blank">
+         <img src="_static/AppleSensorkit-centered.png" alt="Apple SensorKit">
+      </a>
+
       <!-- Garmin -->
       <a class="partner-card"
          href="https://www.garmin.com/de-DE/"
@@ -120,7 +138,7 @@ For collaboration enquiries and information about using JTrack in a study, see :
       </a>
 
       <!-- UKD full width -->
-      <a class="partner-card partner-wide"
+      <a class="partner-card"
          href="https://www.uniklinik-duesseldorf.de/"
          target="_blank">
          <img src="_static/ukd.svg">
@@ -141,3 +159,72 @@ For collaboration enquiries and information about using JTrack in a study, see :
       </a>
 
    </div>
+
+
+.. _sensorkit-publications:
+
+Acknowledging SensorKit in Publications
+++++++++++++++++++++++++++++++++++++++++
+
+When publishing research that uses SensorKit data collected through JTrack
+Social, acknowledge the use of **Apple SensorKit** and identify the relevant
+data types in the methods section.
+
+Before submitting a publication, check your institution's signed SensorKit
+Addendum and study approval correspondence for any required acknowledgement
+wording. Apple's public `SensorKit access guidance
+<https://healthresearch.apple.com/resources/accessing-sensorkit-data/>`_ and
+`research proposal materials
+<https://healthresearch.apple.com/media/SensorKit-research-proposal.pdf>`_ describe
+the approval process and agreements; we have not identified a standard
+publication acknowledgement sentence in these public materials.
+
+Suggested wording (not an Apple-prescribed statement):
+
+    This study used Apple's SensorKit framework to collect [data types]
+    through the JTrack Social app.
+
+Adapt this sentence to the data actually used and any requirements in your
+study's agreement. If the required wording is unclear, confirm it with your
+institution's Apple Developer account holder or Apple SensorKit contact.
+
+
+.. important::
+
+   **Contact us before preparing your publication** if you would like help
+   identifying the SensorKit acknowledgement requirements for your JTrack
+   study. :ref:`Our team <contact-us>` can provide further details about the
+   integration and help clarify which agreement requirements to check.
+
+.. _garmin-publications:
+
+Acknowledging Garmin in Publications
+++++++++++++++++++++++++++++++++++++++++
+
+Publications using Garmin data should identify the **device model** and
+**Garmin Health Standard SDK** in the methods section. Check the applicable
+Garmin agreement for additional attribution requirements.
+
+Garmin's `API Brand Guidelines
+<https://developer.garmin.com/downloads/brand/Garmin-Developer-API-Brand-Guidelines.pdf>`_
+provide attribution rules for data displays, reports, exported visuals, and
+derived results, including identification of Garmin and the device model.
+Their applicability to a JTrack deployment must be checked against its signed
+**Garmin Health Standard SDK agreement**. Do not assume that exceptions for
+research using the Garmin Health API also apply to the Standard SDK.
+
+Suggested methods wording (not a Garmin-prescribed statement):
+
+    Wearable data were collected using Garmin [model] devices through the
+    Garmin Health Standard SDK integrated into JTrack Social.
+
+Adapt this sentence to the devices and data collection workflow actually used.
+It does not replace any attribution required in figures, reports, or other
+outputs by the applicable agreement.
+
+.. important::
+
+   **Contact us before preparing your publication** for more details about
+   Garmin attribution in your JTrack study. :ref:`Our team <contact-us>` can
+   explain the integration and help identify the relevant agreement and any
+   requirements that need confirmation with Garmin Health.

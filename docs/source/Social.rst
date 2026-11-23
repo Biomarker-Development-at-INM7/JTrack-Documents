@@ -620,6 +620,12 @@ with it.
 SensorKit Authorization
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+   **For study investigators:** publications using SensorKit data should
+   acknowledge Apple SensorKit. See :ref:`Acknowledging SensorKit in Publications
+   <sensorkit-publications>` for suggested wording and agreement checks.
+
 If the study requests SensorKit access, complete the research-data request:
 
 1. Read **Research Sensor & Usage Data Request**, including the research

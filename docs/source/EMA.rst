@@ -124,6 +124,13 @@ Calendar Reminders
 - If you do not want to add the reminder immediately, tap **Not Now**. If you never want the event added for that prompt, tap **I Don't want**.
 - Once the event is added, your phone calendar can notify you at the scheduled survey time.
 
+.. note::
+
+   When a question is set to **daily**, its calendar event is scheduled for
+   **07:00**. Follow the **Add Event** prompt to add it to your calendar.
+   Researchers configure daily repetition in the
+   :ref:`JDash question settings <question-default-settings>`.
+
 For the recommended notification, Focus-mode, and calendar settings, see :ref:`Compliance Optimization for JTrack EMA+ <compliance-ema>`.
 
    .. image:: image/EMA/EMA_calendar_add_event.png

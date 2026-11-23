@@ -432,9 +432,9 @@ Check the recording duration, recruitment target, and selected sensors before
 preparing participant enrollment.
 
 .. image:: image/JDash/JDashStudyView.png
-    :width: 80%
+    :width: 100%
     :align: center
-    :alt: Study details with numbered download, QC, EMA, participant actions, and subject table
+    :alt: Study details with seven numbered areas: data download, review tools, EMA, assigned members, status report, participant actions, and subject table
 
 .. container:: quick-box plain
 
@@ -443,16 +443,72 @@ preparing participant enrollment.
     - **Download data (1):** request an export of collected sensor or EMA data;
       download instructions are sent by email. See :ref:`Data Export <data-export>`
       for formats and :ref:`Roles & Permissions <jdash-permissions>` for access.
-    - :ref:`QC (2) <audit-study>`: open the study's quality-control checklist.
-    - **EMA (3):** inspect the questionnaire assigned to the study.
-    - :ref:`Participant actions (4) <subject-management>`: add participants,
-      prepare QR codes, send notifications, or change status.
-    - :ref:`Subject table (5) <subject-table>`: inspect participant records
+    - **Review tools (2):** open **EMA delivery** to review EMA notification
+      delivery, :ref:`History <history-study>` to inspect recorded study changes,
+      or :ref:`QC <audit-study>` for the quality-control checklist.
+    - **EMA (3):** inspect the questionnaire assigned to the study. See the
+      :ref:`survey editor <survey-edit-view>` for question configuration.
+    - :ref:`Assigned members (4) <study-assigned-members>`: review who has access
+      to the study and open membership management.
+    - :ref:`Study status (5) <study-status>`: review reported sensor and permission
+      checks and identify participants who may need follow-up.
+    - :ref:`Participant actions (6) <subject-management>`: add participants,
+      prepare QR codes, send notifications, or change participant status.
+    - :ref:`Subject table (7) <subject-table>`: inspect participant records
       and received data.
+
+.. _study-assigned-members:
+
+Assigned members
+~~~~~~~~~~~~~~~~~
+
+Expand **Assigned Members** to review the study's memberships. Use the people
+icon to open access management. Study roles determine what each member can do;
+see :ref:`Roles & Permissions <jdash-permissions>` for permissions and instructions
+for adding members.
+
+.. _study-status:
+
+Study Status
+~~~~~~~~~~~~~
+
+Expand **Status report** for a summary of sensor and permission checks. The
+badge highlights the number of participants needing attention. Click the
+report icon to open the **Study status report** popup.
+
+.. image:: image/JDash/JDashStudyStatus.png
+    :width: 100%
+    :align: center
+    :alt: Study status report with sensor and permission percentages, attention and no-report tabs, participant-specific findings, last report times, and a download button
+
+The report covers **currently enrolled participants**. **Sensors** summarizes
+reported sensor checks, while **Permissions** summarizes reported permission
+checks. Percentages use only participants who have submitted a status report.
+For example, the screenshot shows 14 reporting participants out of 33 enrolled:
+all 14 pass the sensor check, while 10 pass the permission check (71%). The
+remaining 19 participants are listed separately and are not counted as failures.
+
+- **Needs attention:** review the affected subject IDs, associated QR activation
+  codes, sensor and permission findings, and each participant's **Last report**
+  timestamp. In the example, four participants need a background-location
+  permission check despite their sensors showing **Match**.
+- **No report yet:** identify enrolled participants for whom no status report
+  is available. A missing report alone does not establish a sensor or permission
+  problem.
+- **Download report:** save the report for review and follow-up.
+
+Check report timestamps before following up: status reports describe the last
+reported device state. They do not confirm that all measurement data has arrived.
+Use the :ref:`subject table <subject-table>` and
+:ref:`Compliance Monitoring <jdash-compliance-monitoring>` to inspect received
+data. For how the iOS app sends these reports, see
+:ref:`Weekly technical status report <social-weekly-status-report>`; for device
+checks, see :ref:`iOS troubleshooting <social-troubleshooting-ios>`.
 
 .. _subject-management:
 
-**Participant management (4)**
+Participant Management
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Use **Add subjects** to create additional participant IDs. This is separate
 from editing the planned **Number of subjects** in the study configuration.
@@ -511,7 +567,8 @@ If you choose **Remove and delete subject data**:
 
 .. _subject-table:
 
-**Subject table (5)**
+Subject Table
+~~~~~~~~~~~~~~
 
 Use the filters beneath the column headings to find a participant or restrict
 the view by app, sensor information, or status. **App** distinguishes JTrack
@@ -844,6 +901,13 @@ question is available:
     * - Activation time(s) / Deactivation time(s)
       - Matching start and end times for the response windows, in minutes
         after midnight.
+
+.. note::
+
+   Setting **Repetition interval (days)** to ``1`` (**daily**) schedules the
+   question's calendar event for **07:00** in JTrack EMA+. See
+   :ref:`Calendar Reminders <ema-calendar-reminders>` for how participants
+   add the event to their phone calendar.
 
 For example, ``480`` is 08:00 and ``1430`` is 23:50. For two windows, enter
 matching lists such as ``[480, 900]`` and ``[600, 1000]`` for 08:00–10:00 and

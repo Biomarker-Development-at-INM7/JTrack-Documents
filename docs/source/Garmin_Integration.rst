@@ -6,6 +6,14 @@ JTrack Social supports compatible Garmin wearables through the **Garmin Health S
 
 The study configuration determines which wearable signals are requested and at which supported sampling interval. Availability still depends on the watch model, firmware, SDK support, and the Garmin features licensed for the JTrack deployment.
 
+.. note::
+
+   **Publishing research using Garmin data?** Identify the device model and
+   Garmin Health Standard SDK, and check the applicable attribution requirements.
+   See :ref:`Acknowledging Garmin in Publications <garmin-publications>` for
+   suggested wording. **Contact** :ref:`our team <contact-us>` **for more details**
+   about the requirements for your JTrack study.
+
 The Garmin integration currently supports:
 
 - pairing and study-specific watch configuration;
